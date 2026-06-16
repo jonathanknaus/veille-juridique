@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-06-16T16:23:10.935Z",
+  "fetchedAt": "2026-06-16T17:46:14.480Z",
   "articles": [
     {
       "id": "centre-inffo-2026-06-16-0",
@@ -79,6 +79,61 @@
       "lu": false
     },
     {
+      "id": "ministere-travail-2026-06-12-0",
+      "titre": "Les établissements ou services d'accompagnement par le travail (ESAT)",
+      "resume": "",
+      "source_id": "ministere-travail",
+      "thematique": "legislatif",
+      "niveau": "info",
+      "date": "2026-06-12",
+      "url": "https://travail-emploi.gouv.fr/les-etablissements-ou-services-daccompagnement-par-le-travail-esat",
+      "lu": false
+    },
+    {
+      "id": "ministere-travail-2026-06-12-1",
+      "titre": "Le congé parental d'éducation",
+      "resume": "",
+      "source_id": "ministere-travail",
+      "thematique": "legislatif",
+      "niveau": "info",
+      "date": "2026-06-12",
+      "url": "https://travail-emploi.gouv.fr/le-conge-parental-deducation",
+      "lu": false
+    },
+    {
+      "id": "ministere-travail-2026-06-12-2",
+      "titre": "L'information et la consultation du CSE",
+      "resume": "",
+      "source_id": "ministere-travail",
+      "thematique": "legislatif",
+      "niveau": "info",
+      "date": "2026-06-12",
+      "url": "https://travail-emploi.gouv.fr/linformation-et-la-consultation-du-cse",
+      "lu": false
+    },
+    {
+      "id": "ministere-travail-2026-06-12-3",
+      "titre": "Le congé de paternité et d'accueil de l'enfant",
+      "resume": "",
+      "source_id": "ministere-travail",
+      "thematique": "legislatif",
+      "niveau": "info",
+      "date": "2026-06-12",
+      "url": "https://travail-emploi.gouv.fr/le-conge-de-paternite-et-daccueil-de-lenfant",
+      "lu": false
+    },
+    {
+      "id": "ministere-travail-2026-06-12-4",
+      "titre": "Le congé de maternité",
+      "resume": "",
+      "source_id": "ministere-travail",
+      "thematique": "legislatif",
+      "niveau": "info",
+      "date": "2026-06-12",
+      "url": "https://travail-emploi.gouv.fr/le-conge-de-maternite",
+      "lu": false
+    },
+    {
       "id": "cnil-2026-06-10-2",
       "titre": "Le CEPD rencontre le commissaire européen McGrath et adopte un modèle commun de notification des violations de données",
       "resume": "",
@@ -109,6 +164,61 @@
       "niveau": "info",
       "date": "2026-06-04",
       "url": "https://www.cnil.fr/fr/ordre-du-jour-de-la-seance-pleniere-du-4-juin-2026",
+      "lu": false
+    },
+    {
+      "id": "agefiph-2026-06-02-1",
+      "titre": "L’Agefiph engagée pour l’innovation à hauteur de 2 millions d’euros en 2026",
+      "resume": "",
+      "source_id": "agefiph",
+      "thematique": "opco",
+      "niveau": "info",
+      "date": "2026-06-02",
+      "url": "https://www.agefiph.fr/espace-presse/tous-les-documents-presse/lagefiph-engagee-pour-linnovation-hauteur-de-2-millions",
+      "lu": false
+    },
+    {
+      "id": "agefiph-2026-05-26-2",
+      "titre": "Les partenaires sociaux acteurs incontournables pour des entreprises plus inclusives",
+      "resume": "",
+      "source_id": "agefiph",
+      "thematique": "opco",
+      "niveau": "info",
+      "date": "2026-05-26",
+      "url": "https://www.agefiph.fr/espace-presse/tous-les-documents-presse/les-partenaires-sociaux-acteurs-incontournables-pour-des",
+      "lu": false
+    },
+    {
+      "id": "agefiph-2026-05-21-3",
+      "titre": "30 ans de la SEEPH  : « Démystifier, simplifier, accompagner. L’emploi pour toutes et tous »",
+      "resume": "",
+      "source_id": "agefiph",
+      "thematique": "opco",
+      "niveau": "urgent",
+      "date": "2026-05-21",
+      "url": "https://www.agefiph.fr/espace-presse/tous-les-documents-presse/30-ans-de-la-seeph-demystifier-simplifier-accompagner",
+      "lu": false
+    },
+    {
+      "id": "agefiph-2026-03-30-0",
+      "titre": "DOETH : alerte aux démarchages frauduleux",
+      "resume": "",
+      "source_id": "agefiph",
+      "thematique": "opco",
+      "niveau": "info",
+      "date": "2026-03-30",
+      "url": "https://www.agefiph.fr/actualites-handicap/doeth-alerte-aux-demarchages-frauduleux",
+      "lu": false
+    },
+    {
+      "id": "agefiph-2026-02-27-4",
+      "titre": "Service d'appui spécifique",
+      "resume": "",
+      "source_id": "agefiph",
+      "thematique": "opco",
+      "niveau": "info",
+      "date": "2026-02-27",
+      "url": "https://www.agefiph.fr/centre-aide/service-dappui-specifique",
       "lu": false
     }
   ]

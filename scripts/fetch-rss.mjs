@@ -6,6 +6,7 @@ import { writeFileSync, mkdirSync } from 'fs'
 import { parseStringPromise } from 'xml2js'
 
 const SOURCES = [
+  // ── RSS disponibles ──────────────────────────────────────────────────────────
   {
     id: 'france-competences',
     nom: 'France Compétences',
@@ -30,6 +31,24 @@ const SOURCES = [
     thematique: 'legislatif',
     rss: 'http://www.senat.fr/rss/textes.xml',
   },
+  {
+    id: 'ministere-travail',
+    nom: 'Ministère du Travail',
+    thematique: 'legislatif',
+    rss: 'https://travail-emploi.gouv.fr/rss.xml',
+  },
+  {
+    id: 'agefiph',
+    nom: 'Agefiph',
+    thematique: 'opco',
+    rss: 'https://www.agefiph.fr/rss.xml',
+  },
+  // ── Légifrance n'expose pas de RSS public — couverture via ajout manuel ──────
+  // id: 'legifrance' → articles ajoutés manuellement via la modale Traiter
+  // ── Caisse des Dépôts n'expose pas de RSS — couverture manuelle ────────────
+  // id: 'caisse-depots' → articles ajoutés manuellement via la modale Traiter
+  // ── Padlet Veille Formation (OPCO) — pas de RSS — couverture manuelle ───────
+  // id: 'padlet-veille' → articles ajoutés manuellement via la modale Traiter
 ]
 
 // Mots-clés par thématique pour classifier les articles
