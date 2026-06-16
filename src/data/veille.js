@@ -33,7 +33,7 @@ export const ARTICLES = [
     thematique: 'qualiopi',
     niveau: 'urgent',
     date: '2026-06-05',
-    url: 'https://www.francecompetences.fr',
+    url: 'https://www.francecompetences.fr/recherche/referentiel/',
     lu: false,
   },
   {
@@ -44,7 +44,7 @@ export const ARTICLES = [
     thematique: 'qualiopi',
     niveau: 'important',
     date: '2026-05-28',
-    url: 'https://www.francecompetences.fr',
+    url: 'https://www.francecompetences.fr/recherche/referentiel/',
     lu: false,
   },
   {
@@ -55,7 +55,7 @@ export const ARTICLES = [
     thematique: 'rgpd',
     niveau: 'urgent',
     date: '2026-06-10',
-    url: 'https://www.cnil.fr',
+    url: 'https://www.cnil.fr/fr/intelligence-artificielle',
     lu: false,
   },
   {
@@ -66,7 +66,7 @@ export const ARTICLES = [
     thematique: 'rgpd',
     niveau: 'info',
     date: '2026-05-15',
-    url: 'https://www.cnil.fr',
+    url: 'https://www.cnil.fr/fr/la-cnil/publications/rapports-dactivite',
     lu: true,
   },
   {
@@ -77,7 +77,7 @@ export const ARTICLES = [
     thematique: 'opco',
     niveau: 'important',
     date: '2026-06-01',
-    url: 'https://www.caissedesdepots.fr',
+    url: 'https://www.caissedesdepots.fr/investissements-davenir',
     lu: false,
   },
   {
@@ -88,7 +88,7 @@ export const ARTICLES = [
     thematique: 'opco',
     niveau: 'info',
     date: '2026-05-20',
-    url: 'https://www.centre-inffo.fr',
+    url: 'https://www.centre-inffo.fr/vie-professionnelle-formation/actualites-de-la-formation',
     lu: false,
   },
   {
@@ -99,7 +99,7 @@ export const ARTICLES = [
     thematique: 'legislatif',
     niveau: 'important',
     date: '2026-06-08',
-    url: 'https://www.senat.fr',
+    url: 'https://www.senat.fr/travaux-parlementaires/textes-legislatifs/les-projets-et-propositions-de-loi.html',
     lu: false,
   },
   {
@@ -110,7 +110,7 @@ export const ARTICLES = [
     thematique: 'legislatif',
     niveau: 'urgent',
     date: '2026-06-03',
-    url: 'https://travail-emploi.gouv.fr',
+    url: 'https://travail-emploi.gouv.fr/formation-professionnelle/entreprise-et-formation',
     lu: false,
   },
   {
@@ -121,7 +121,7 @@ export const ARTICLES = [
     thematique: 'qualiopi',
     niveau: 'info',
     date: '2026-04-30',
-    url: 'https://www.centre-inffo.fr',
+    url: 'https://www.centre-inffo.fr/vie-professionnelle-formation/actualites-de-la-formation',
     lu: true,
   },
   {
@@ -132,7 +132,7 @@ export const ARTICLES = [
     thematique: 'legislatif',
     niveau: 'urgent',
     date: '2026-06-11',
-    url: 'https://www.legifrance.gouv.fr',
+    url: 'https://www.legifrance.gouv.fr/search/all?tab_selection=all&searchField=ALL&query=formation+professionnelle+continue&page=1&pageSize=10',
     lu: false,
   },
 ]
