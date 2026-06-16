@@ -1,19 +1,25 @@
-import { useMemo } from 'react'
-import { ARTICLES, SOURCES, NIVEAUX, THEMATIQUES } from '../data/veille'
+import { useState, useEffect, useMemo } from 'react'
+import { SOURCES, NIVEAUX } from '../data/veille'
+import { chargerArticles, getArticlesCache } from '../data/articles-store'
 import { getTraitements, DECISIONS } from '../data/traitement'
 import './VeilleFormateur.css'
 
 export default function VeilleFormateur() {
+  const [articles, setArticles] = useState(getArticlesCache())
   const traitements = getTraitements()
+
+  useEffect(() => {
+    chargerArticles().then(data => { if (data?.length) setArticles(data) })
+  }, [])
 
   const articlesDiffuses = useMemo(() => {
     const diffuses = new Set(
       traitements.filter(t => t.decision === 'diffuser').map(t => t.articleId)
     )
-    return ARTICLES
+    return articles
       .filter(a => diffuses.has(a.id))
       .sort((a, b) => new Date(b.date) - new Date(a.date))
-  }, [traitements])
+  }, [articles, traitements])
 
   return (
     <div className="vf-page">

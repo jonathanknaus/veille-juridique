@@ -1,5 +1,6 @@
 import { useState, useMemo, useEffect } from 'react'
-import { ARTICLES, SOURCES, NIVEAUX } from '../data/veille'
+import { SOURCES, NIVEAUX } from '../data/veille'
+import { chargerArticles, getArticlesCache, getDateDerniereFetch } from '../data/articles-store'
 import { getTraitements, getTraitement, enregistrerTraitement, DECISIONS, exportRegistreCSV } from '../data/traitement'
 import { getFormateurs, addFormateur, updateFormateur, removeFormateur } from '../data/formateurs'
 import { RESPONSABLE } from '../data/formateurs'
@@ -215,14 +216,18 @@ function shouldWarnBackup(traitements) {
 
 // ── Tableau de bord principal ─────────────────────────────────────────────────
 export default function TableauDeBord() {
+  const [articles, setArticles] = useState(getArticlesCache())
   const [traitements, setTraitements] = useState(getTraitements())
   const [modaleArticle, setModaleArticle] = useState(null)
   const [onglet, setOnglet] = useState('veille')
   const [banniereVisible, setBanniereVisible] = useState(() => shouldWarnBackup(getTraitements()))
   const [syncStatus, setSyncStatus] = useState(null) // null | 'saving' | 'ok' | 'error'
+  const [syncArticles, setSyncArticles] = useState(null) // null | 'loading' | 'ok' | 'error'
+  const dateFetch = getDateDerniereFetch()
 
-  // Charger depuis GitHub au démarrage
+  // Charger les articles RSS + traces GitHub au démarrage
   useEffect(() => {
+    chargerArticles().then(data => { if (data?.length) setArticles(data) })
     chargerDepuisGitHub().then(data => {
       if (Array.isArray(data) && data.length > 0) {
         localStorage.setItem('pls_traitements', JSON.stringify(data))
@@ -231,6 +236,19 @@ export default function TableauDeBord() {
       }
     })
   }, [])
+
+  async function handleSync() {
+    setSyncArticles('loading')
+    try {
+      const data = await chargerArticles()
+      if (data?.length) { setArticles(data); setSyncArticles('ok') }
+      else setSyncArticles('error')
+      setTimeout(() => setSyncArticles(null), 3000)
+    } catch {
+      setSyncArticles('error')
+      setTimeout(() => setSyncArticles(null), 3000)
+    }
+  }
 
   async function handleSaveTraitement(data) {
     enregistrerTraitement(data)
@@ -308,11 +326,11 @@ export default function TableauDeBord() {
   }
 
   const stats = useMemo(() => ({
-    total: ARTICLES.length,
+    total: articles.length,
     traites: traitements.length,
     diffuses: traitements.filter(t => t.decision === 'diffuser').length,
-    enAttente: ARTICLES.length - traitements.length,
-  }), [traitements])
+    enAttente: articles.length - traitements.length,
+  }), [articles, traitements])
 
   return (
     <div className="tdb-page">
@@ -320,12 +338,21 @@ export default function TableauDeBord() {
         <div className="tdb-head">
           <div>
             <h1 className="tdb-title">Veille juridique</h1>
-            <p className="tdb-subtitle">Responsable : {RESPONSABLE.prenom} {RESPONSABLE.nom} · {RESPONSABLE.email}</p>
+            <p className="tdb-subtitle">
+              Responsable : {RESPONSABLE.prenom} {RESPONSABLE.nom} · {RESPONSABLE.email}
+              {dateFetch && <span className="tdb-fetch-date"> · Dernière sync RSS : {dateFetch.toLocaleDateString('fr-FR')}</span>}
+            </p>
           </div>
           <div className="tdb-head-actions">
+            {syncArticles === 'loading' && <span className="sync-status sync-saving">⏳ Récupération RSS…</span>}
+            {syncArticles === 'ok'      && <span className="sync-status sync-ok">✓ Articles mis à jour</span>}
+            {syncArticles === 'error'   && <span className="sync-status sync-error">⚠️ Erreur RSS</span>}
             {syncStatus === 'saving' && <span className="sync-status sync-saving">⏳ Sync GitHub…</span>}
             {syncStatus === 'ok'     && <span className="sync-status sync-ok">✓ Sauvegardé sur GitHub</span>}
             {syncStatus === 'error'  && <span className="sync-status sync-error">⚠️ Erreur sync GitHub</span>}
+            <button className="btn-sync-rss" onClick={handleSync} title="Récupérer les nouveaux articles">
+              ↻ Actualiser les articles
+            </button>
             <button className="btn-sauvegarder" onClick={handleSauvegarder} title="Sauvegarder toutes les traces en JSON">
               ↓ Sauvegarder
             </button>
@@ -372,7 +399,7 @@ export default function TableauDeBord() {
                 </tr>
               </thead>
               <tbody>
-                {ARTICLES.sort((a, b) => new Date(b.date) - new Date(a.date)).map(article => {
+                {[...articles].sort((a, b) => new Date(b.date) - new Date(a.date)).map(article => {
                   const source = SOURCES.find(s => s.id === article.source_id)
                   const trace = getTraitement(article.id)
                   const decision = trace ? DECISIONS[trace.decision] : null

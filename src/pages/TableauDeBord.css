@@ -20,6 +20,19 @@
 .tdb-subtitle { font-size: 13px; color: var(--texte-secondaire); margin-top: 4px; }
 .tdb-head-actions { display: flex; gap: 10px; flex-wrap: wrap; }
 
+.tdb-fetch-date { color: var(--texte-secondaire); font-size: 12px; }
+
+.btn-sync-rss {
+  background: var(--vert-clair);
+  color: var(--bg-dark);
+  padding: 9px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  transition: opacity 0.15s;
+}
+.btn-sync-rss:hover { opacity: 0.8; }
+
 .btn-export {
   background: var(--bg-dark);
   color: var(--blanc);

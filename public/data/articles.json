@@ -1,0 +1,115 @@
+{
+  "fetchedAt": "2026-06-16T16:23:10.935Z",
+  "articles": [
+    {
+      "id": "centre-inffo-2026-06-16-0",
+      "titre": "Les référentiels, au cœur de l'ingénierie de certification professionnelle",
+      "resume": "",
+      "source_id": "centre-inffo",
+      "thematique": "qualiopi",
+      "niveau": "info",
+      "date": "2026-06-16",
+      "url": "https://www.centre-inffo.fr/site-centre-inffo/les-referentiels-au-coeur-de-lingenierie-de-certification-professionnelle",
+      "lu": false
+    },
+    {
+      "id": "centre-inffo-2026-06-16-1",
+      "titre": "Alerte courriel de juin 2026",
+      "resume": "",
+      "source_id": "centre-inffo",
+      "thematique": "qualiopi",
+      "niveau": "info",
+      "date": "2026-06-16",
+      "url": "https://www.centre-inffo.fr/site-droit-formation/site-fiches-pratiques/vos-services-fiches-pratiques/alerte-courriel/alerte-courriel-de-juin-2026",
+      "lu": false
+    },
+    {
+      "id": "centre-inffo-2026-06-16-2",
+      "titre": "France Travail traque les formations déviantes dans son catalogue",
+      "resume": "",
+      "source_id": "centre-inffo",
+      "thematique": "qualiopi",
+      "niveau": "info",
+      "date": "2026-06-16",
+      "url": "https://www.centre-inffo.fr/site-centre-inffo/france-travail-traque-les-formations-deviantes-dans-son-catalogue",
+      "lu": false
+    },
+    {
+      "id": "centre-inffo-2026-06-16-3",
+      "titre": "Effondrement du soutien financier à l'apprentissage",
+      "resume": "",
+      "source_id": "centre-inffo",
+      "thematique": "qualiopi",
+      "niveau": "info",
+      "date": "2026-06-16",
+      "url": "https://www.centre-inffo.fr/site-centre-inffo/actualites-centre-inffo/le-quotidien-de-la-formation-actualite-formation-professionnelle-apprentissage/actualites-2026/effondrement-du-soutien-financier-a-lapprentissage",
+      "lu": false
+    },
+    {
+      "id": "centre-inffo-2026-06-16-4",
+      "titre": "L'Opco Atlas accompagne les mutations du secteur de l'événementiel à l'ère de l'IA",
+      "resume": "",
+      "source_id": "centre-inffo",
+      "thematique": "qualiopi",
+      "niveau": "info",
+      "date": "2026-06-16",
+      "url": "https://www.centre-inffo.fr/site-centre-inffo/lopco-atlas-accompagne-les-mutations-du-secteur-de-levenementiel-a-lere-de-lia",
+      "lu": false
+    },
+    {
+      "id": "cnil-2026-06-16-0",
+      "titre": "Nomination de Jean-Michel FIETIER au poste de directeur administratif et financier de la CNIL",
+      "resume": "",
+      "source_id": "cnil",
+      "thematique": "rgpd",
+      "niveau": "info",
+      "date": "2026-06-16",
+      "url": "https://www.cnil.fr/fr/nomination-jean-michel-fietier",
+      "lu": false
+    },
+    {
+      "id": "cnil-2026-06-15-1",
+      "titre": "Revoir le webinaire - Pixels de suivi dans les courriels : présentation des recommandations de la CNIL",
+      "resume": "",
+      "source_id": "cnil",
+      "thematique": "rgpd",
+      "niveau": "info",
+      "date": "2026-06-15",
+      "url": "https://www.cnil.fr/fr/webinaire-pixels-de-suivi-recommandations-cnil",
+      "lu": false
+    },
+    {
+      "id": "cnil-2026-06-10-2",
+      "titre": "Le CEPD rencontre le commissaire européen McGrath et adopte un modèle commun de notification des violations de données",
+      "resume": "",
+      "source_id": "cnil",
+      "thematique": "rgpd",
+      "niveau": "info",
+      "date": "2026-06-10",
+      "url": "https://www.cnil.fr/fr/le-cepd-rencontre-le-commissaire-europeen-mcgrath-et-adopte-un-modele-commun-de-notification-des",
+      "lu": false
+    },
+    {
+      "id": "cnil-2026-06-10-3",
+      "titre": "Communications par voie électronique aux prospects et clients : quelles règles respecter ?",
+      "resume": "",
+      "source_id": "cnil",
+      "thematique": "rgpd",
+      "niveau": "info",
+      "date": "2026-06-10",
+      "url": "https://www.cnil.fr/fr/communication-electronique-quelles-regles",
+      "lu": false
+    },
+    {
+      "id": "cnil-2026-06-04-4",
+      "titre": "Ordre du jour de la séance plénière du 4 juin 2026",
+      "resume": "",
+      "source_id": "cnil",
+      "thematique": "rgpd",
+      "niveau": "info",
+      "date": "2026-06-04",
+      "url": "https://www.cnil.fr/fr/ordre-du-jour-de-la-seance-pleniere-du-4-juin-2026",
+      "lu": false
+    }
+  ]
+}
