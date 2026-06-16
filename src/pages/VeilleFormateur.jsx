@@ -33,6 +33,7 @@ export default function VeilleFormateur() {
             {articlesDiffuses.map(article => {
               const source = SOURCES.find(s => s.id === article.source_id)
               const trace = traitements.find(t => t.articleId === article.id)
+              const lien = trace?.urlArticle || article.url
               return (
                 <article key={article.id} className="vf-card">
                   <div className="vf-card-header">
@@ -42,7 +43,7 @@ export default function VeilleFormateur() {
                     </div>
                     <span className="vf-diffuse-badge">📢 Diffusé</span>
                   </div>
-                  <h2 className="vf-titre"><a href={article.url} target="_blank" rel="noopener noreferrer" className="lien-titre">{article.titre}</a></h2>
+                  <h2 className="vf-titre"><a href={lien} target="_blank" rel="noopener noreferrer" className="lien-titre">{article.titre}</a></h2>
                   <p className="vf-resume">{article.resume}</p>
                   <div className="vf-note">
                     <span className="vf-note-label">Message de la responsable</span>
@@ -51,7 +52,7 @@ export default function VeilleFormateur() {
                   <div className="vf-footer">
                     <span className="vf-source">{source?.nom}</span>
                     <span className="vf-date">{new Date(article.date).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
-                    <a className="vf-lien" href={article.url} target="_blank" rel="noopener noreferrer">Lire l'article →</a>
+                    <a className="vf-lien" href={lien} target="_blank" rel="noopener noreferrer">Lire l'article →</a>
                   </div>
                 </article>
               )

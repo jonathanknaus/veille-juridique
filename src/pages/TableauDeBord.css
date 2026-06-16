@@ -277,6 +277,15 @@
   text-decoration: underline; background: none; align-self: flex-start;
 }
 
+.modale-input {
+  width: 100%; padding: 10px 12px;
+  border: 1.5px solid var(--border); border-radius: 8px;
+  font-family: inherit; font-size: 14px; color: var(--texte);
+  background: var(--gris);
+  transition: border-color 0.15s;
+}
+.modale-input:focus { border-color: var(--bg-dark); outline: none; background: var(--blanc); }
+
 .modale-textarea {
   width: 100%; padding: 10px 12px;
   border: 1.5px solid var(--border); border-radius: 8px;

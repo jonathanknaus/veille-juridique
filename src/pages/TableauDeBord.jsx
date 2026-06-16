@@ -12,6 +12,7 @@ function ModaleTraitement({ article, onClose, onSave }) {
   const [decision, setDecision] = useState('')
   const [commentaire, setCommentaire] = useState('')
   const [destinataires, setDestinataires] = useState([])
+  const [urlArticle, setUrlArticle] = useState('')
   const formateurs = getFormateurs()
 
   function toggleDestinataire(email) {
@@ -29,6 +30,7 @@ function ModaleTraitement({ article, onClose, onSave }) {
       decision,
       commentaire,
       destinataires: decision === 'diffuser' ? destinataires : [],
+      urlArticle,
     })
     onClose()
   }
@@ -84,6 +86,17 @@ function ModaleTraitement({ article, onClose, onSave }) {
             </button>
           </div>
         )}
+
+        <div className="modale-section">
+          <p className="modale-label">Lien direct vers l'article</p>
+          <input
+            className="modale-input"
+            type="url"
+            placeholder="https://…"
+            value={urlArticle}
+            onChange={e => setUrlArticle(e.target.value)}
+          />
+        </div>
 
         <div className="modale-section">
           <p className="modale-label">

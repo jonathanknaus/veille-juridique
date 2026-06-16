@@ -19,7 +19,7 @@ export function getTraitement(articleId) {
   return getTraitements().find(t => t.articleId === articleId) || null
 }
 
-export function enregistrerTraitement({ articleId, articleTitre, articleSource, articleThematique, articleDate, decision, commentaire, destinataires }) {
+export function enregistrerTraitement({ articleId, articleTitre, articleSource, articleThematique, articleDate, decision, commentaire, destinataires, urlArticle }) {
   const traitements = getTraitements().filter(t => t.articleId !== articleId)
   const trace = {
     id: `t_${Date.now()}`,
@@ -31,6 +31,7 @@ export function enregistrerTraitement({ articleId, articleTitre, articleSource, 
     decision,
     commentaire: commentaire || '',
     destinataires: destinataires || [],
+    urlArticle: urlArticle || '',
     traitePar: 'sarah.briden@pennylane-partners.com',
     traiteAt: new Date().toISOString(),
   }

@@ -33,7 +33,7 @@ function ArticleCard({ article, onToggleLu }) {
       <div className="article-footer">
         <span className="article-source">{source?.nom}</span>
         <span className="article-date">{new Date(article.date).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
-        <a className="article-lien" href={article.url} target="_blank" rel="noopener noreferrer">Lire l'article →</a>
+        <a className="article-lien" href={article.url} target="_blank" rel="noopener noreferrer" title={article.url}>Lire l'article →</a>
       </div>
     </article>
   )
