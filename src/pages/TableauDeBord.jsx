@@ -9,10 +9,11 @@ import './TableauDeBord.css'
 // ── Modale de traitement ──────────────────────────────────────────────────────
 function ModaleTraitement({ article, onClose, onSave }) {
   const source = SOURCES.find(s => s.id === article.source_id)
-  const [decision, setDecision] = useState('')
-  const [commentaire, setCommentaire] = useState('')
-  const [destinataires, setDestinataires] = useState([])
-  const [urlArticle, setUrlArticle] = useState('')
+  const trace = getTraitement(article.id)
+  const [decision, setDecision] = useState(trace?.decision || '')
+  const [commentaire, setCommentaire] = useState(trace?.commentaire || '')
+  const [destinataires, setDestinataires] = useState(trace?.destinataires || [])
+  const [urlArticle, setUrlArticle] = useState(trace?.urlArticle || '')
   const formateurs = getFormateurs()
 
   function toggleDestinataire(email) {
@@ -375,11 +376,12 @@ export default function TableauDeBord() {
                   const source = SOURCES.find(s => s.id === article.source_id)
                   const trace = getTraitement(article.id)
                   const decision = trace ? DECISIONS[trace.decision] : null
+                  const lien = trace?.urlArticle || article.url
                   return (
                     <tr key={article.id} className={trace ? 'ligne-traitee' : ''}>
                       <td className="td-source">{source?.nom}</td>
                       <td className="td-date">{new Date(article.date).toLocaleDateString('fr-FR')}</td>
-                      <td className="td-titre"><a href={article.url} target="_blank" rel="noopener noreferrer" className="lien-titre">{article.titre}</a></td>
+                      <td className="td-titre"><a href={lien} target="_blank" rel="noopener noreferrer" className="lien-titre">{article.titre}</a></td>
                       <td><span className={`thematique-badge thematique-${article.thematique}`}>{article.thematique}</span></td>
                       <td><span className={`niveau-badge niveau-${article.niveau}`}>{NIVEAUX[article.niveau].label}</span></td>
                       <td>
