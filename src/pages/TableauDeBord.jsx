@@ -381,7 +381,12 @@ export default function TableauDeBord() {
                     <tr key={article.id} className={trace ? 'ligne-traitee' : ''}>
                       <td className="td-source">{source?.nom}</td>
                       <td className="td-date">{new Date(article.date).toLocaleDateString('fr-FR')}</td>
-                      <td className="td-titre"><a href={lien} target="_blank" rel="noopener noreferrer" className="lien-titre">{article.titre}</a></td>
+                      <td className="td-titre">
+                        {trace?.urlArticle
+                          ? <a href={lien} target="_blank" rel="noopener noreferrer" className="lien-titre">{article.titre}</a>
+                          : <span>{article.titre}</span>
+                        }
+                      </td>
                       <td><span className={`thematique-badge thematique-${article.thematique}`}>{article.thematique}</span></td>
                       <td><span className={`niveau-badge niveau-${article.niveau}`}>{NIVEAUX[article.niveau].label}</span></td>
                       <td>
