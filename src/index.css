@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  /* Palette officielle Pennylane 2025 */
+  --vert:           #00F872;
+  --vert-fonce:     #00BD57;
+  --vert-clair:     #DAFBF2;
+  --bg-dark:        #003D3D;
+  --bg-medium:      #006666;
+  --bg-light:       #DAFBF2;
+
+  /* UI */
+  --gris:           #F4F6F5;
+  --texte:          #0D1F1A;
+  --texte-secondaire: #4D6B62;
+  --border:         #D5E8E0;
+  --blanc:          #FFFFFF;
+  --shadow:         0 1px 4px rgba(0,61,61,0.08);
+  --radius:         12px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--gris);
+  color: var(--texte);
+  font-size: 15px;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+
+button {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+h1, h2, h3, h4 {
+  letter-spacing: -0.03em;
+  font-weight: 700;
+}

@@ -1,0 +1,73 @@
+.vf-page { padding: 32px 24px; }
+.vf-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 24px; }
+
+.vf-head { }
+.vf-title { font-size: 26px; font-weight: 800; color: var(--bg-dark); letter-spacing: -0.04em; }
+.vf-subtitle { font-size: 14px; color: var(--texte-secondaire); margin-top: 4px; }
+
+.vf-articles { display: flex; flex-direction: column; gap: 16px; }
+
+.vf-card {
+  background: var(--blanc);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+  transition: box-shadow 0.15s;
+}
+.vf-card:hover { box-shadow: 0 4px 16px rgba(0,61,61,0.1); }
+
+.vf-card-header {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; margin-bottom: 12px;
+}
+.vf-badges { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.vf-diffuse-badge {
+  font-size: 11px; font-weight: 700;
+  color: #276749; background: var(--vert-clair);
+  padding: 3px 10px; border-radius: 20px;
+  white-space: nowrap;
+}
+
+.vf-titre { font-size: 16px; font-weight: 700; color: var(--texte); line-height: 1.4; margin-bottom: 8px; }
+.vf-titre .lien-titre { color: inherit; text-decoration: underline; text-decoration-color: var(--border); text-underline-offset: 3px; transition: color 0.12s; }
+.vf-titre .lien-titre:hover { color: var(--bg-medium); text-decoration-color: var(--bg-medium); }
+.vf-resume { font-size: 14px; color: var(--texte-secondaire); line-height: 1.6; margin-bottom: 12px; }
+
+.vf-note {
+  background: #FFFBEB;
+  border-left: 3px solid #D97706;
+  border-radius: 0 8px 8px 0;
+  padding: 10px 14px;
+  margin-bottom: 12px;
+}
+.vf-note-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: #975A16; display: block; margin-bottom: 4px; }
+.vf-note p { font-size: 13px; color: var(--texte); }
+
+.vf-footer {
+  display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+  padding-top: 12px; border-top: 1px solid var(--border);
+}
+.vf-source { font-size: 13px; font-weight: 600; color: var(--bg-medium); }
+.vf-date   { font-size: 13px; color: var(--texte-secondaire); margin-left: auto; }
+.vf-lien   { font-size: 13px; font-weight: 600; color: var(--bg-dark); text-decoration: underline; text-underline-offset: 3px; }
+.vf-lien:hover { color: var(--vert-fonce); }
+
+.niveau-badge { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; padding: 3px 9px; border-radius: 20px; }
+.niveau-urgent    { background: #FED7D7; color: #C53030; }
+.niveau-important { background: #FEFCBF; color: #975A16; }
+.niveau-info      { background: #EBF8FF; color: #2B6CB0; }
+
+.thematique-badge { font-size: 11px; font-weight: 600; padding: 3px 9px; border-radius: 20px; text-transform: capitalize; }
+.thematique-qualiopi   { background: var(--vert-clair); color: var(--bg-dark); }
+.thematique-rgpd       { background: #E9D8FD; color: #553C9A; }
+.thematique-opco       { background: #FEEBC8; color: #7B341E; }
+.thematique-legislatif { background: #E2E8F0; color: #2D3748; }
+
+.vf-empty {
+  background: var(--blanc); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 64px 24px;
+  text-align: center; color: var(--texte-secondaire);
+  display: flex; flex-direction: column; gap: 8px;
+  font-size: 14px;
+}
