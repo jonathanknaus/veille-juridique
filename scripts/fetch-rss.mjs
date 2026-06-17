@@ -6,13 +6,14 @@ import { writeFileSync, mkdirSync } from 'fs'
 import { parseStringPromise } from 'xml2js'
 
 const SOURCES = [
-  // ── RSS disponibles ──────────────────────────────────────────────────────────
+  // ── Scraping HTML (pas de RSS) ───────────────────────────────────────────────
   {
     id: 'france-competences',
     nom: 'France Compétences',
     thematique: 'qualiopi',
-    rss: 'https://www.francecompetences.fr/feed/',
+    scrape: 'https://www.francecompetences.fr/actualites/',
   },
+  // ── RSS disponibles ──────────────────────────────────────────────────────────
   {
     id: 'centre-inffo',
     nom: 'Centre Inffo',
@@ -124,9 +125,64 @@ async function fetchFeed(source) {
   }
 }
 
+async function scrapeFranceCompetences(source) {
+  try {
+    const res = await fetch(source.scrape, {
+      headers: { 'User-Agent': 'VeilleJuridique/1.0 (https://jonathanknaus.github.io/veille-juridique/)' },
+      signal: AbortSignal.timeout(15000),
+    })
+    if (!res.ok) throw new Error(`HTTP ${res.status}`)
+    const html = await res.text()
+
+    // Extract /fiche/ links with their anchor text (first occurrence = clean title)
+    const ficheRe = /<a[^>]+href="(https:\/\/www\.francecompetences\.fr\/fiche\/[^"]+)"[^>]*>([\s\S]*?)<\/a>/g
+    const seen = new Set()
+    const titlesMap = {}
+    let m
+    while ((m = ficheRe.exec(html)) !== null) {
+      const url = m[1]
+      const rawText = m[2].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim()
+      if (rawText && rawText.length > 10 && !seen.has(url)) {
+        seen.add(url)
+        titlesMap[url] = rawText
+      }
+    }
+
+    // Extract dates near each fiche (format: dd.mm.yyyy)
+    const dateRe = /href="(https:\/\/www\.francecompetences\.fr\/fiche\/[^"]+)"[\s\S]{0,600}?(\d{2})\.(\d{2})\.(\d{4})/g
+    const datesMap = {}
+    while ((m = dateRe.exec(html)) !== null) {
+      const url = m[1]
+      if (!datesMap[url]) {
+        datesMap[url] = `${m[4]}-${m[3]}-${m[2]}`
+      }
+    }
+
+    const today = new Date().toISOString().slice(0, 10)
+    return Object.keys(titlesMap).slice(0, 5).map((url, idx) => {
+      const titre = titlesMap[url].slice(0, 200)
+      const date = datesMap[url] || today
+      return {
+        id: `${source.id}-${date}-${idx}`,
+        titre,
+        resume: '',
+        source_id: source.id,
+        thematique: source.thematique,
+        niveau: detectNiveau(titre, ''),
+        date,
+        url,
+        lu: false,
+      }
+    })
+  } catch (err) {
+    console.error(`[${source.id}] Erreur scraping: ${err.message}`)
+    return []
+  }
+}
+
 async function main() {
-  console.log('Récupération des flux RSS...')
-  const results = await Promise.all(SOURCES.map(fetchFeed))
+  console.log('Récupération des articles...')
+  const results = await Promise.all(SOURCES.map(s => s.scrape ? scrapeFranceCompetences(s) : fetchFeed(s)))
   const articles = results
     .flat()
     .sort((a, b) => new Date(b.date) - new Date(a.date))

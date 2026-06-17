@@ -1,8 +1,107 @@
 {
-  "fetchedAt": "2026-06-16T17:46:14.480Z",
+  "fetchedAt": "2026-06-17T09:59:40.196Z",
   "articles": [
     {
-      "id": "centre-inffo-2026-06-16-0",
+      "id": "france-competences-2026-06-17-0",
+      "titre": "Décisions d’enregistrement aux répertoires nationaux – Mai 2026",
+      "resume": "",
+      "source_id": "france-competences",
+      "thematique": "qualiopi",
+      "niveau": "info",
+      "date": "2026-06-17",
+      "url": "https://www.francecompetences.fr/fiche/decisions-denregistrement-aux-repertoires-nationaux-mai-2026/",
+      "lu": false
+    },
+    {
+      "id": "france-competences-2026-06-17-1",
+      "titre": "Certification professionnelle : les référentiels, au cœur de l’ingénierie de certification professionnelle",
+      "resume": "",
+      "source_id": "france-competences",
+      "thematique": "qualiopi",
+      "niveau": "info",
+      "date": "2026-06-17",
+      "url": "https://www.francecompetences.fr/fiche/certification-professionnelle-les-fondamentaux-et-les-enjeux-de-la-procedure-denregistrement-webinaire-n2/",
+      "lu": false
+    },
+    {
+      "id": "france-competences-2026-06-17-2",
+      "titre": "Décisions d’enregistrement aux répertoires nationaux – Avril 2026",
+      "resume": "",
+      "source_id": "france-competences",
+      "thematique": "qualiopi",
+      "niveau": "info",
+      "date": "2026-06-17",
+      "url": "https://www.francecompetences.fr/fiche/decisions-denregistrement-aux-repertoires-nationaux-avril-2026/",
+      "lu": false
+    },
+    {
+      "id": "france-competences-2026-06-17-3",
+      "titre": "Certification professionnelle Certification professionnelle : comment se préparer aux évolutions du décret 2025-500 du 6 juin 2025 ?",
+      "resume": "",
+      "source_id": "france-competences",
+      "thematique": "qualiopi",
+      "niveau": "urgent",
+      "date": "2026-06-17",
+      "url": "https://www.francecompetences.fr/fiche/certification-professionnelle-comment-se-preparer-aux-evolutions-du-decret-2025-500-du-6-juin-2025/",
+      "lu": false
+    },
+    {
+      "id": "france-competences-2026-06-17-4",
+      "titre": "Financement de la formation et de l’apprentissage Actualités 04.05.2026",
+      "resume": "",
+      "source_id": "france-competences",
+      "thematique": "qualiopi",
+      "niveau": "important",
+      "date": "2026-06-17",
+      "url": "https://www.francecompetences.fr/fiche/ouverture-de-la-campagne-2026-de-transmission-des-declarations-des-donnees-comptables-et-analytiques-des-ofa/",
+      "lu": false
+    },
+    {
+      "id": "centre-inffo-2026-06-17-0",
+      "titre": "Reconversions professionnelles après un choc technologique : le rôle des métiers-ponts",
+      "resume": "",
+      "source_id": "centre-inffo",
+      "thematique": "qualiopi",
+      "niveau": "info",
+      "date": "2026-06-17",
+      "url": "https://www.centre-inffo.fr/site-centre-inffo/reconversions-professionnelles-apres-un-choc-technologique-le-role-des-metiers-ponts",
+      "lu": false
+    },
+    {
+      "id": "centre-inffo-2026-06-17-1",
+      "titre": "L'assurance recrute moins d'alternants",
+      "resume": "",
+      "source_id": "centre-inffo",
+      "thematique": "qualiopi",
+      "niveau": "info",
+      "date": "2026-06-17",
+      "url": "https://www.centre-inffo.fr/site-centre-inffo/actualites-centre-inffo/le-quotidien-de-la-formation-actualite-formation-professionnelle-apprentissage/actualites-2026/lassurance-recrute-moins-dalternants",
+      "lu": false
+    },
+    {
+      "id": "centre-inffo-2026-06-17-2",
+      "titre": "Un jeune actif sur cinq reprend ses études en début de carrière (Céreq)",
+      "resume": "",
+      "source_id": "centre-inffo",
+      "thematique": "qualiopi",
+      "niveau": "info",
+      "date": "2026-06-17",
+      "url": "https://www.centre-inffo.fr/site-centre-inffo/actualites-centre-inffo/le-quotidien-de-la-formation-actualite-formation-professionnelle-apprentissage/actualites-2026/un-jeune-actif-sur-cinq-reprend-ses-etudes-en-debut-de-carriere-cereq",
+      "lu": false
+    },
+    {
+      "id": "ministere-travail-2026-06-17-0",
+      "titre": "Une année d'action pour la jeunesse : Sabrina Roubache réunit les acteurs de la voie professionnelle pour présenter sa feuille de route",
+      "resume": "",
+      "source_id": "ministere-travail",
+      "thematique": "legislatif",
+      "niveau": "info",
+      "date": "2026-06-17",
+      "url": "https://travail-emploi.gouv.fr/une-annee-daction-pour-la-jeunesse-sabrina-roubache-reunit-les-acteurs-de-la-voie-professionnelle-pour-presenter-sa-feuille-de-route",
+      "lu": false
+    },
+    {
+      "id": "centre-inffo-2026-06-16-3",
       "titre": "Les référentiels, au cœur de l'ingénierie de certification professionnelle",
       "resume": "",
       "source_id": "centre-inffo",
@@ -13,7 +112,7 @@
       "lu": false
     },
     {
-      "id": "centre-inffo-2026-06-16-1",
+      "id": "centre-inffo-2026-06-16-4",
       "titre": "Alerte courriel de juin 2026",
       "resume": "",
       "source_id": "centre-inffo",
@@ -21,39 +120,6 @@
       "niveau": "info",
       "date": "2026-06-16",
       "url": "https://www.centre-inffo.fr/site-droit-formation/site-fiches-pratiques/vos-services-fiches-pratiques/alerte-courriel/alerte-courriel-de-juin-2026",
-      "lu": false
-    },
-    {
-      "id": "centre-inffo-2026-06-16-2",
-      "titre": "France Travail traque les formations déviantes dans son catalogue",
-      "resume": "",
-      "source_id": "centre-inffo",
-      "thematique": "qualiopi",
-      "niveau": "info",
-      "date": "2026-06-16",
-      "url": "https://www.centre-inffo.fr/site-centre-inffo/france-travail-traque-les-formations-deviantes-dans-son-catalogue",
-      "lu": false
-    },
-    {
-      "id": "centre-inffo-2026-06-16-3",
-      "titre": "Effondrement du soutien financier à l'apprentissage",
-      "resume": "",
-      "source_id": "centre-inffo",
-      "thematique": "qualiopi",
-      "niveau": "info",
-      "date": "2026-06-16",
-      "url": "https://www.centre-inffo.fr/site-centre-inffo/actualites-centre-inffo/le-quotidien-de-la-formation-actualite-formation-professionnelle-apprentissage/actualites-2026/effondrement-du-soutien-financier-a-lapprentissage",
-      "lu": false
-    },
-    {
-      "id": "centre-inffo-2026-06-16-4",
-      "titre": "L'Opco Atlas accompagne les mutations du secteur de l'événementiel à l'ère de l'IA",
-      "resume": "",
-      "source_id": "centre-inffo",
-      "thematique": "qualiopi",
-      "niveau": "info",
-      "date": "2026-06-16",
-      "url": "https://www.centre-inffo.fr/site-centre-inffo/lopco-atlas-accompagne-les-mutations-du-secteur-de-levenementiel-a-lere-de-lia",
       "lu": false
     },
     {
@@ -79,7 +145,7 @@
       "lu": false
     },
     {
-      "id": "ministere-travail-2026-06-12-0",
+      "id": "ministere-travail-2026-06-12-1",
       "titre": "Les établissements ou services d'accompagnement par le travail (ESAT)",
       "resume": "",
       "source_id": "ministere-travail",
@@ -90,7 +156,7 @@
       "lu": false
     },
     {
-      "id": "ministere-travail-2026-06-12-1",
+      "id": "ministere-travail-2026-06-12-2",
       "titre": "Le congé parental d'éducation",
       "resume": "",
       "source_id": "ministere-travail",
@@ -101,7 +167,7 @@
       "lu": false
     },
     {
-      "id": "ministere-travail-2026-06-12-2",
+      "id": "ministere-travail-2026-06-12-3",
       "titre": "L'information et la consultation du CSE",
       "resume": "",
       "source_id": "ministere-travail",
@@ -112,7 +178,7 @@
       "lu": false
     },
     {
-      "id": "ministere-travail-2026-06-12-3",
+      "id": "ministere-travail-2026-06-12-4",
       "titre": "Le congé de paternité et d'accueil de l'enfant",
       "resume": "",
       "source_id": "ministere-travail",
@@ -120,17 +186,6 @@
       "niveau": "info",
       "date": "2026-06-12",
       "url": "https://travail-emploi.gouv.fr/le-conge-de-paternite-et-daccueil-de-lenfant",
-      "lu": false
-    },
-    {
-      "id": "ministere-travail-2026-06-12-4",
-      "titre": "Le congé de maternité",
-      "resume": "",
-      "source_id": "ministere-travail",
-      "thematique": "legislatif",
-      "niveau": "info",
-      "date": "2026-06-12",
-      "url": "https://travail-emploi.gouv.fr/le-conge-de-maternite",
       "lu": false
     },
     {
