@@ -2,8 +2,8 @@
   {
     "id": "t_1781713474844",
     "articleId": "france-competences-2026-06-17-0",
-    "articleTitre": "Décisions d’enregistrement aux répertoires nationaux – Mai 2026",
-    "articleSource": "France Compétences",
+    "articleTitre": "DÃ©cisions dâenregistrement aux rÃ©pertoires nationaux â Mai 2026",
+    "articleSource": "France CompÃ©tences",
     "articleThematique": "qualiopi",
     "articleDate": "2026-06-17",
     "decision": "archiver",
@@ -16,8 +16,8 @@
   {
     "id": "t_1781713537695",
     "articleId": "france-competences-2026-06-17-1",
-    "articleTitre": "Certification professionnelle : les référentiels, au cœur de l’ingénierie de certification professionnelle",
-    "articleSource": "France Compétences",
+    "articleTitre": "Certification professionnelle : les rÃ©fÃ©rentiels, au cÅur de lâingÃ©nierie de certification professionnelle",
+    "articleSource": "France CompÃ©tences",
     "articleThematique": "qualiopi",
     "articleDate": "2026-06-17",
     "decision": "archiver",
@@ -30,8 +30,8 @@
   {
     "id": "t_1781713542313",
     "articleId": "france-competences-2026-06-17-2",
-    "articleTitre": "Décisions d’enregistrement aux répertoires nationaux – Avril 2026",
-    "articleSource": "France Compétences",
+    "articleTitre": "DÃ©cisions dâenregistrement aux rÃ©pertoires nationaux â Avril 2026",
+    "articleSource": "France CompÃ©tences",
     "articleThematique": "qualiopi",
     "articleDate": "2026-06-17",
     "decision": "archiver",
@@ -44,8 +44,8 @@
   {
     "id": "t_1781713555498",
     "articleId": "france-competences-2026-06-17-3",
-    "articleTitre": "Certification professionnelle Certification professionnelle : comment se préparer aux évolutions du décret 2025-500 du 6 juin 2025 ?",
-    "articleSource": "France Compétences",
+    "articleTitre": "Certification professionnelle Certification professionnelle : comment se prÃ©parer aux Ã©volutions du dÃ©cret 2025-500 du 6 juin 2025 ?",
+    "articleSource": "France CompÃ©tences",
     "articleThematique": "qualiopi",
     "articleDate": "2026-06-17",
     "decision": "archiver",
@@ -72,8 +72,8 @@
   {
     "id": "t_1781713759707",
     "articleId": "ministere-travail-2026-06-12-2",
-    "articleTitre": "Le congé parental d'éducation",
-    "articleSource": "Ministère du Travail",
+    "articleTitre": "Le congÃ© parental d'Ã©ducation",
+    "articleSource": "MinistÃ¨re du Travail",
     "articleThematique": "legislatif",
     "articleDate": "2026-06-12",
     "decision": "archiver",
@@ -84,17 +84,17 @@
     "traiteAt": "2026-06-17T16:29:19.707Z"
   },
   {
-    "id": "t_1781714276118",
+    "id": "t_1781766459979",
     "articleId": "cnil-2026-06-10-3",
     "articleTitre": "Communications par voie électronique aux prospects et clients : quelles règles respecter ?",
     "articleSource": "CNIL",
     "articleThematique": "rgpd",
     "articleDate": "2026-06-10",
     "decision": "noter",
-    "commentaire": "🎯 1. Règle d’or : La nature du message détermine la règleAvant d'envoyer un e-mail ou un SMS à un stagiaire ou à un client, identifiez sa catégorie :[ Vos Échanges ] ──► TRANSACTIONNEL (Convocation, facture, lien Zoom)\n                 │    ↳ Règle : Zéro blocage, pas de consentement requis.\n                 │\n                 ──► RELATIONNEL (Conseils pédagogiques, suivi d'utilisation)\n                 │    ↳ Règle : Pas de pub cachée. Lien d'opposition requis.\n                 │\n                 ──► PROSPECTION (Catalogue, webinaire, offre commerciale)\n                      ↳ Règle : Consentement préalable (Opt-in) OBLIGATOIRE.\n🚫 2. Les pièges à éviter (Risques de requalification)L'info-pub cachée : Intégrer la promotion d'une nouvelle formation dans un e-mail de convocation ou dans un questionnaire de satisfaction est interdit sans accord préalable.Le faux mail d'info : Envoyer une newsletter d'actualité métier qui pousse subtilement à l'achat d'un module payant est considéré comme de la prospection commerciale.Le stagiaire \"sans achat\" : Un prospect qui crée simplement un compte sur notre plateforme mais ne valide aucun panier n'est pas un client existant. Vous devez obtenir son accord écrit pour lui écrire à nouveau.3. Check-list de conformité avant chaque envoi[ ] Transparence : Le stagiaire sait-il pourquoi nous collectons sa donnée dès son inscription ?[ ] Droit de retrait : Mon message (s'il est relationnel ou commercial) contient-il un lien de désinscription clair ?[ ] Liste noire (Repoussoir) : Ai-je vérifié que ce contact ne s'est pas opposé à recevoir nos messages par le passé ?[ ] Pertinence : Les données utilisées sont-elles strictement nécessaires au suivi de la formation ?💡 Le réflexe Qualiopi : La traçabilité de nos échanges et le respect des choix des stagiaires (désinscriptions, refus) font partie intégrante de notre démarche qualité. En cas de doute sur la nature d'un message, sollicitez votre référent interne avant l'envoi.",
+    "commentaire": "",
     "destinataires": [],
     "urlArticle": "",
     "traitePar": "sarah.briden@pennylane-partners.com",
-    "traiteAt": "2026-06-17T16:37:56.118Z"
+    "traiteAt": "2026-06-18T07:07:39.979Z"
   }
 ]
