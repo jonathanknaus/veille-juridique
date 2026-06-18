@@ -2,8 +2,8 @@
   {
     "id": "t_1781713474844",
     "articleId": "france-competences-2026-06-17-0",
-    "articleTitre": "DÃ©cisions dâenregistrement aux rÃ©pertoires nationaux â Mai 2026",
-    "articleSource": "France CompÃ©tences",
+    "articleTitre": "DÃÂ©cisions dÃ¢ÂÂenregistrement aux rÃÂ©pertoires nationaux Ã¢ÂÂ Mai 2026",
+    "articleSource": "France CompÃÂ©tences",
     "articleThematique": "qualiopi",
     "articleDate": "2026-06-17",
     "decision": "archiver",
@@ -16,8 +16,8 @@
   {
     "id": "t_1781713537695",
     "articleId": "france-competences-2026-06-17-1",
-    "articleTitre": "Certification professionnelle : les rÃ©fÃ©rentiels, au cÅur de lâingÃ©nierie de certification professionnelle",
-    "articleSource": "France CompÃ©tences",
+    "articleTitre": "Certification professionnelle : les rÃÂ©fÃÂ©rentiels, au cÃÂur de lÃ¢ÂÂingÃÂ©nierie de certification professionnelle",
+    "articleSource": "France CompÃÂ©tences",
     "articleThematique": "qualiopi",
     "articleDate": "2026-06-17",
     "decision": "archiver",
@@ -30,8 +30,8 @@
   {
     "id": "t_1781713542313",
     "articleId": "france-competences-2026-06-17-2",
-    "articleTitre": "DÃ©cisions dâenregistrement aux rÃ©pertoires nationaux â Avril 2026",
-    "articleSource": "France CompÃ©tences",
+    "articleTitre": "DÃÂ©cisions dÃ¢ÂÂenregistrement aux rÃÂ©pertoires nationaux Ã¢ÂÂ Avril 2026",
+    "articleSource": "France CompÃÂ©tences",
     "articleThematique": "qualiopi",
     "articleDate": "2026-06-17",
     "decision": "archiver",
@@ -44,8 +44,8 @@
   {
     "id": "t_1781713555498",
     "articleId": "france-competences-2026-06-17-3",
-    "articleTitre": "Certification professionnelle Certification professionnelle : comment se prÃ©parer aux Ã©volutions du dÃ©cret 2025-500 du 6 juin 2025 ?",
-    "articleSource": "France CompÃ©tences",
+    "articleTitre": "Certification professionnelle Certification professionnelle : comment se prÃÂ©parer aux ÃÂ©volutions du dÃÂ©cret 2025-500 du 6 juin 2025 ?",
+    "articleSource": "France CompÃÂ©tences",
     "articleThematique": "qualiopi",
     "articleDate": "2026-06-17",
     "decision": "archiver",
@@ -72,8 +72,8 @@
   {
     "id": "t_1781713759707",
     "articleId": "ministere-travail-2026-06-12-2",
-    "articleTitre": "Le congÃ© parental d'Ã©ducation",
-    "articleSource": "MinistÃ¨re du Travail",
+    "articleTitre": "Le congÃÂ© parental d'ÃÂ©ducation",
+    "articleSource": "MinistÃÂ¨re du Travail",
     "articleThematique": "legislatif",
     "articleDate": "2026-06-12",
     "decision": "archiver",
@@ -86,15 +86,29 @@
   {
     "id": "t_1781767925618",
     "articleId": "cnil-2026-06-10-3",
-    "articleTitre": "Communications par voie électronique aux prospects et clients : quelles règles respecter ?",
+    "articleTitre": "Communications par voie Ã©lectronique aux prospects et clients : quelles rÃ¨gles respecter ?",
     "articleSource": "CNIL",
     "articleThematique": "rgpd",
     "articleDate": "2026-06-10",
     "decision": "diffuser",
-    "commentaire": "article retraité sous forme de résumé/ envoyé à l'équipe le 18-06-2026",
+    "commentaire": "article retraitÃ© sous forme de rÃ©sumÃ©/ envoyÃ© Ã  l'Ã©quipe le 18-06-2026",
     "destinataires": [],
     "urlArticle": "",
     "traitePar": "sarah.briden@pennylane-partners.com",
     "traiteAt": "2026-06-18T07:32:05.618Z"
+  },
+  {
+    "id": "t_1781770949115",
+    "articleId": "france-competences-2026-06-17-4",
+    "articleTitre": "Financement de la formation et de l’apprentissage Actualités 04.05.2026",
+    "articleSource": "France Compétences",
+    "articleThematique": "qualiopi",
+    "articleDate": "2026-06-17",
+    "decision": "archiver",
+    "commentaire": "",
+    "destinataires": [],
+    "urlArticle": "",
+    "traitePar": "sarah.briden@pennylane-partners.com",
+    "traiteAt": "2026-06-18T08:22:29.115Z"
   }
 ]
