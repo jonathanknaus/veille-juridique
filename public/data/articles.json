@@ -1,96 +1,162 @@
 {
-  "fetchedAt": "2026-06-17T09:59:40.196Z",
+  "fetchedAt": "2026-06-22T18:59:03.085Z",
   "articles": [
     {
-      "id": "france-competences-2026-06-17-0",
+      "id": "france-competences-2026-06-22-0",
       "titre": "Décisions d’enregistrement aux répertoires nationaux – Mai 2026",
       "resume": "",
       "source_id": "france-competences",
       "thematique": "qualiopi",
       "niveau": "info",
-      "date": "2026-06-17",
+      "date": "2026-06-22",
       "url": "https://www.francecompetences.fr/fiche/decisions-denregistrement-aux-repertoires-nationaux-mai-2026/",
       "lu": false
     },
     {
-      "id": "france-competences-2026-06-17-1",
+      "id": "france-competences-2026-06-22-1",
       "titre": "Certification professionnelle : les référentiels, au cœur de l’ingénierie de certification professionnelle",
       "resume": "",
       "source_id": "france-competences",
       "thematique": "qualiopi",
       "niveau": "info",
-      "date": "2026-06-17",
+      "date": "2026-06-22",
       "url": "https://www.francecompetences.fr/fiche/certification-professionnelle-les-fondamentaux-et-les-enjeux-de-la-procedure-denregistrement-webinaire-n2/",
       "lu": false
     },
     {
-      "id": "france-competences-2026-06-17-2",
+      "id": "france-competences-2026-06-22-2",
       "titre": "Décisions d’enregistrement aux répertoires nationaux – Avril 2026",
       "resume": "",
       "source_id": "france-competences",
       "thematique": "qualiopi",
       "niveau": "info",
-      "date": "2026-06-17",
+      "date": "2026-06-22",
       "url": "https://www.francecompetences.fr/fiche/decisions-denregistrement-aux-repertoires-nationaux-avril-2026/",
       "lu": false
     },
     {
-      "id": "france-competences-2026-06-17-3",
+      "id": "france-competences-2026-06-22-3",
       "titre": "Certification professionnelle Certification professionnelle : comment se préparer aux évolutions du décret 2025-500 du 6 juin 2025 ?",
       "resume": "",
       "source_id": "france-competences",
       "thematique": "qualiopi",
       "niveau": "urgent",
-      "date": "2026-06-17",
+      "date": "2026-06-22",
       "url": "https://www.francecompetences.fr/fiche/certification-professionnelle-comment-se-preparer-aux-evolutions-du-decret-2025-500-du-6-juin-2025/",
       "lu": false
     },
     {
-      "id": "france-competences-2026-06-17-4",
-      "titre": "Financement de la formation et de l’apprentissage Actualités 04.05.2026",
+      "id": "france-competences-2026-06-22-4",
+      "titre": "Observation et évaluation Actualités 18.06.2026",
       "resume": "",
       "source_id": "france-competences",
       "thematique": "qualiopi",
-      "niveau": "important",
-      "date": "2026-06-17",
-      "url": "https://www.francecompetences.fr/fiche/ouverture-de-la-campagne-2026-de-transmission-des-declarations-des-donnees-comptables-et-analytiques-des-ofa/",
+      "niveau": "info",
+      "date": "2026-06-22",
+      "url": "https://www.francecompetences.fr/fiche/enquete-nationale-sur-la-qualite-de-lapprentissage/",
       "lu": false
     },
     {
-      "id": "centre-inffo-2026-06-17-0",
-      "titre": "Reconversions professionnelles après un choc technologique : le rôle des métiers-ponts",
+      "id": "centre-inffo-2026-06-22-0",
+      "titre": "Refus de participer à une formation obligatoire : le droit au repos, limite au pouvoir de sanction de l'employeur",
+      "resume": "",
+      "source_id": "centre-inffo",
+      "thematique": "qualiopi",
+      "niveau": "urgent",
+      "date": "2026-06-22",
+      "url": "https://www.centre-inffo.fr/site-droit-formation/actualites-droit/refus-de-participer-a-une-formation-obligatoire-le-droit-au-repos-limite-au-pouvoir-de-sanction-de-lemployeur",
+      "lu": false
+    },
+    {
+      "id": "centre-inffo-2026-06-22-1",
+      "titre": "Obligation de formation : la Cour de cassation confirme l'abandon du préjudice automatique",
+      "resume": "",
+      "source_id": "centre-inffo",
+      "thematique": "qualiopi",
+      "niveau": "urgent",
+      "date": "2026-06-22",
+      "url": "https://www.centre-inffo.fr/site-centre-inffo/obligation-de-formation-la-cour-de-cassation-confirme-labandon-du-prejudice-automatique",
+      "lu": false
+    },
+    {
+      "id": "centre-inffo-2026-06-22-2",
+      "titre": "AI Act : les organismes de formation sont-ils prêts à regarder leurs propres usages de l'IA ?",
       "resume": "",
       "source_id": "centre-inffo",
       "thematique": "qualiopi",
       "niveau": "info",
-      "date": "2026-06-17",
-      "url": "https://www.centre-inffo.fr/site-centre-inffo/reconversions-professionnelles-apres-un-choc-technologique-le-role-des-metiers-ponts",
+      "date": "2026-06-22",
+      "url": "https://www.centre-inffo.fr/site-centre-inffo/ai-act-les-organismes-de-formation-sont-ils-prets-a-regarder-leurs-propres-usages-de-lia",
       "lu": false
     },
     {
-      "id": "centre-inffo-2026-06-17-1",
-      "titre": "L'assurance recrute moins d'alternants",
+      "id": "centre-inffo-2026-06-22-3",
+      "titre": "50 propositions de Régions de France pour améliorer la commande publique",
       "resume": "",
       "source_id": "centre-inffo",
       "thematique": "qualiopi",
       "niveau": "info",
-      "date": "2026-06-17",
-      "url": "https://www.centre-inffo.fr/site-centre-inffo/actualites-centre-inffo/le-quotidien-de-la-formation-actualite-formation-professionnelle-apprentissage/actualites-2026/lassurance-recrute-moins-dalternants",
+      "date": "2026-06-22",
+      "url": "https://www.centre-inffo.fr/site-centre-inffo/actualites-centre-inffo/le-quotidien-de-la-formation-actualite-formation-professionnelle-apprentissage/actualites-2026/50-propositions-de-regions-de-france-pour-ameliorer-la-commande-publique",
       "lu": false
     },
     {
-      "id": "centre-inffo-2026-06-17-2",
-      "titre": "Un jeune actif sur cinq reprend ses études en début de carrière (Céreq)",
+      "id": "centre-inffo-2026-06-22-4",
+      "titre": "200 000 intérimaires ont intégré des parcours de formation financés par le FPETT en 2025",
       "resume": "",
       "source_id": "centre-inffo",
       "thematique": "qualiopi",
       "niveau": "info",
-      "date": "2026-06-17",
-      "url": "https://www.centre-inffo.fr/site-centre-inffo/actualites-centre-inffo/le-quotidien-de-la-formation-actualite-formation-professionnelle-apprentissage/actualites-2026/un-jeune-actif-sur-cinq-reprend-ses-etudes-en-debut-de-carriere-cereq",
+      "date": "2026-06-22",
+      "url": "https://www.centre-inffo.fr/site-centre-inffo/actualites-centre-inffo/le-quotidien-de-la-formation-actualite-formation-professionnelle-apprentissage/actualites-2026/200-000-interimaires-ont-integre-des-parcours-de-formation-finances-par-le-fpett-en-2025",
       "lu": false
     },
     {
-      "id": "ministere-travail-2026-06-17-0",
+      "id": "cnil-2026-06-19-0",
+      "titre": "Sécurité des données : les règles essentielles pour protéger les données et votre activité",
+      "resume": "",
+      "source_id": "cnil",
+      "thematique": "rgpd",
+      "niveau": "info",
+      "date": "2026-06-19",
+      "url": "https://www.cnil.fr/fr/securite-des-donnees-les-regles-essentielles",
+      "lu": false
+    },
+    {
+      "id": "ministere-travail-2026-06-19-0",
+      "titre": "Protéger les jeunes stagiaires accueillis en entreprise pendant l’épisode de forte chaleur",
+      "resume": "",
+      "source_id": "ministere-travail",
+      "thematique": "legislatif",
+      "niveau": "info",
+      "date": "2026-06-19",
+      "url": "https://travail-emploi.gouv.fr/proteger-les-jeunes-stagiaires-accueillis-en-entreprise-pendant-lepisode-de-forte-chaleur",
+      "lu": false
+    },
+    {
+      "id": "ministere-travail-2026-06-19-1",
+      "titre": "Le ministère du Travail et des Solidarités lance le Passeport de compétences, service public numérique des parcours professionnels",
+      "resume": "",
+      "source_id": "ministere-travail",
+      "thematique": "legislatif",
+      "niveau": "info",
+      "date": "2026-06-19",
+      "url": "https://travail-emploi.gouv.fr/le-ministere-du-travail-et-des-solidarites-lance-le-passeport-de-competences-service-public-numerique-des-parcours-professionnels",
+      "lu": false
+    },
+    {
+      "id": "cnil-2026-06-18-1",
+      "titre": "Ordre du jour de la séance plénière du 18 juin 2026",
+      "resume": "",
+      "source_id": "cnil",
+      "thematique": "rgpd",
+      "niveau": "info",
+      "date": "2026-06-18",
+      "url": "https://www.cnil.fr/fr/ordre-du-jour-de-la-seance-pleniere-du-18-juin-2026",
+      "lu": false
+    },
+    {
+      "id": "ministere-travail-2026-06-17-2",
       "titre": "Une année d'action pour la jeunesse : Sabrina Roubache réunit les acteurs de la voie professionnelle pour présenter sa feuille de route",
       "resume": "",
       "source_id": "ministere-travail",
@@ -101,29 +167,7 @@
       "lu": false
     },
     {
-      "id": "centre-inffo-2026-06-16-3",
-      "titre": "Les référentiels, au cœur de l'ingénierie de certification professionnelle",
-      "resume": "",
-      "source_id": "centre-inffo",
-      "thematique": "qualiopi",
-      "niveau": "info",
-      "date": "2026-06-16",
-      "url": "https://www.centre-inffo.fr/site-centre-inffo/les-referentiels-au-coeur-de-lingenierie-de-certification-professionnelle",
-      "lu": false
-    },
-    {
-      "id": "centre-inffo-2026-06-16-4",
-      "titre": "Alerte courriel de juin 2026",
-      "resume": "",
-      "source_id": "centre-inffo",
-      "thematique": "qualiopi",
-      "niveau": "info",
-      "date": "2026-06-16",
-      "url": "https://www.centre-inffo.fr/site-droit-formation/site-fiches-pratiques/vos-services-fiches-pratiques/alerte-courriel/alerte-courriel-de-juin-2026",
-      "lu": false
-    },
-    {
-      "id": "cnil-2026-06-16-0",
+      "id": "cnil-2026-06-16-2",
       "titre": "Nomination de Jean-Michel FIETIER au poste de directeur administratif et financier de la CNIL",
       "resume": "",
       "source_id": "cnil",
@@ -134,7 +178,7 @@
       "lu": false
     },
     {
-      "id": "cnil-2026-06-15-1",
+      "id": "cnil-2026-06-15-3",
       "titre": "Revoir le webinaire - Pixels de suivi dans les courriels : présentation des recommandations de la CNIL",
       "resume": "",
       "source_id": "cnil",
@@ -145,7 +189,7 @@
       "lu": false
     },
     {
-      "id": "ministere-travail-2026-06-12-1",
+      "id": "ministere-travail-2026-06-12-3",
       "titre": "Les établissements ou services d'accompagnement par le travail (ESAT)",
       "resume": "",
       "source_id": "ministere-travail",
@@ -156,7 +200,7 @@
       "lu": false
     },
     {
-      "id": "ministere-travail-2026-06-12-2",
+      "id": "ministere-travail-2026-06-12-4",
       "titre": "Le congé parental d'éducation",
       "resume": "",
       "source_id": "ministere-travail",
@@ -167,29 +211,7 @@
       "lu": false
     },
     {
-      "id": "ministere-travail-2026-06-12-3",
-      "titre": "L'information et la consultation du CSE",
-      "resume": "",
-      "source_id": "ministere-travail",
-      "thematique": "legislatif",
-      "niveau": "info",
-      "date": "2026-06-12",
-      "url": "https://travail-emploi.gouv.fr/linformation-et-la-consultation-du-cse",
-      "lu": false
-    },
-    {
-      "id": "ministere-travail-2026-06-12-4",
-      "titre": "Le congé de paternité et d'accueil de l'enfant",
-      "resume": "",
-      "source_id": "ministere-travail",
-      "thematique": "legislatif",
-      "niveau": "info",
-      "date": "2026-06-12",
-      "url": "https://travail-emploi.gouv.fr/le-conge-de-paternite-et-daccueil-de-lenfant",
-      "lu": false
-    },
-    {
-      "id": "cnil-2026-06-10-2",
+      "id": "cnil-2026-06-10-4",
       "titre": "Le CEPD rencontre le commissaire européen McGrath et adopte un modèle commun de notification des violations de données",
       "resume": "",
       "source_id": "cnil",
@@ -197,28 +219,6 @@
       "niveau": "info",
       "date": "2026-06-10",
       "url": "https://www.cnil.fr/fr/le-cepd-rencontre-le-commissaire-europeen-mcgrath-et-adopte-un-modele-commun-de-notification-des",
-      "lu": false
-    },
-    {
-      "id": "cnil-2026-06-10-3",
-      "titre": "Communications par voie électronique aux prospects et clients : quelles règles respecter ?",
-      "resume": "",
-      "source_id": "cnil",
-      "thematique": "rgpd",
-      "niveau": "info",
-      "date": "2026-06-10",
-      "url": "https://www.cnil.fr/fr/communication-electronique-quelles-regles",
-      "lu": false
-    },
-    {
-      "id": "cnil-2026-06-04-4",
-      "titre": "Ordre du jour de la séance plénière du 4 juin 2026",
-      "resume": "",
-      "source_id": "cnil",
-      "thematique": "rgpd",
-      "niveau": "info",
-      "date": "2026-06-04",
-      "url": "https://www.cnil.fr/fr/ordre-du-jour-de-la-seance-pleniere-du-4-juin-2026",
       "lu": false
     },
     {
