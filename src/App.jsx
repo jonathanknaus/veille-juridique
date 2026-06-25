@@ -24,8 +24,9 @@ export default function App() {
   const stored = getSession()
   const [user, setUser] = useState(stored ? getCurrentUser() : null)
 
-  function handleLogin(role) {
-    setUser(getCurrentUser())
+  function handleLogin() {
+    const u = getCurrentUser()
+    if (u) setUser(u)
   }
 
   function handleLogout() {

@@ -17,6 +17,7 @@ export default function Login({ onLogin }) {
       onLogin(role)
     } catch (err) {
       setError(err.message || 'Email ou mot de passe incorrect.')
+    } finally {
       setLoading(false)
     }
   }
