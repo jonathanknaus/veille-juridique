@@ -1,6 +1,3 @@
-// Charge les articles depuis public/data/articles.json (généré chaque lundi par le cron)
-// Fallback sur les articles statiques si le fichier n'est pas encore disponible
-
 import { ARTICLES as ARTICLES_STATIQUES } from './veille.js'
 
 const STORAGE_KEY = 'vj_articles_cache'
