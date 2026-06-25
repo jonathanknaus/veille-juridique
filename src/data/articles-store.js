@@ -34,3 +34,38 @@ export function getDateDerniereFetch() {
   const d = localStorage.getItem(STORAGE_DATE_KEY)
   return d ? new Date(d) : null
 }
+
+// ── Articles ajoutés manuellement ────────────────────────────────────────────
+const MANUEL_KEY = 'vj_articles_manuels'
+
+export function getArticlesManuels() {
+  try {
+    return JSON.parse(localStorage.getItem(MANUEL_KEY) || '[]')
+  } catch {
+    return []
+  }
+}
+
+export function saveArticleManuel(article) {
+  const list = getArticlesManuels()
+  const id = `manuel_${Date.now()}`
+  const nouveau = {
+    id,
+    titre: article.titre,
+    resume: article.resume || '',
+    source_id: 'manuel',
+    source_nom: article.source_nom || 'Source externe',
+    thematique: article.thematique,
+    niveau: article.niveau,
+    date: article.date,
+    url: article.url,
+    manuel: true,
+  }
+  localStorage.setItem(MANUEL_KEY, JSON.stringify([...list, nouveau]))
+  return nouveau
+}
+
+export function deleteArticleManuel(id) {
+  const updated = getArticlesManuels().filter(a => a.id !== id)
+  localStorage.setItem(MANUEL_KEY, JSON.stringify(updated))
+}

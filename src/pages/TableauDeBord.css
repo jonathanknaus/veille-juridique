@@ -403,7 +403,41 @@
 .btn-ajouter:hover { background: var(--bg-medium); }
 .gf-erreur { font-size: 13px; color: #C53030; }
 
+/* Articles manuels */
+.btn-add-article {
+  padding: 7px 14px;
+  background: var(--vert);
+  color: var(--blanc);
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: background 0.15s;
+}
+.btn-add-article:hover { background: #00c060; }
+
+.badge-manuel {
+  display: inline-block;
+  margin-left: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 1px 6px;
+  background: #EEF2FF;
+  color: #4338CA;
+  border-radius: 8px;
+  vertical-align: middle;
+}
+
+.ligne-manuelle td { background: #FAFAFE; }
+.td-actions { display: flex; gap: 6px; align-items: center; }
+
+/* Modale ajout article */
+.modale-ajout { max-width: 560px; }
+.modale-row { display: flex; gap: 12px; }
+.modale-erreur { font-size: 13px; color: #C53030; padding: 0 20px; }
+
 @media (max-width: 768px) {
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
   .decision-grid { grid-template-columns: 1fr; }
+  .modale-row { flex-direction: column; }
 }

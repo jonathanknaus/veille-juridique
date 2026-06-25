@@ -1,6 +1,6 @@
 import { useState, useMemo, useEffect } from 'react'
 import { SOURCES, NIVEAUX } from '../data/veille'
-import { chargerArticles, getArticlesCache, getDateDerniereFetch } from '../data/articles-store'
+import { chargerArticles, getArticlesCache, getDateDerniereFetch, getArticlesManuels, saveArticleManuel, deleteArticleManuel } from '../data/articles-store'
 import { getTraitements, getTraitement, enregistrerTraitement, DECISIONS, exportRegistreCSV, exportRegistrePDF } from '../data/traitement'
 import { getFormateurs, addFormateur, updateFormateur, removeFormateur } from '../data/formateurs'
 import { RESPONSABLE } from '../data/formateurs'
@@ -9,7 +9,7 @@ import './TableauDeBord.css'
 
 // ── Modale de traitement ──────────────────────────────────────────────────────
 function ModaleTraitement({ article, onClose, onSave }) {
-  const source = SOURCES.find(s => s.id === article.source_id)
+  const source = article.manuel ? { nom: article.source_nom || 'Source externe' } : SOURCES.find(s => s.id === article.source_id)
   const trace = getTraitement(article.id)
   const [decision, setDecision] = useState(trace?.decision || '')
   const [commentaire, setCommentaire] = useState(trace?.commentaire || '')
@@ -124,6 +124,91 @@ function ModaleTraitement({ article, onClose, onSave }) {
   )
 }
 
+// ── Modale ajout article manuel ───────────────────────────────────────────────
+const EMPTY_MANUEL = { titre: '', url: '', source_nom: '', thematique: 'qualiopi', niveau: 'info', date: '', resume: '' }
+
+function ModaleAjoutArticle({ onClose, onSave }) {
+  const [form, setForm] = useState({ ...EMPTY_MANUEL })
+  const [erreur, setErreur] = useState('')
+
+  function set(k, v) { setForm(f => ({ ...f, [k]: v })) }
+
+  function handleSave(e) {
+    e.preventDefault()
+    if (!form.titre.trim()) { setErreur('Le titre est requis.'); return }
+    if (!form.url.trim()) { setErreur("L'URL est requise."); return }
+    if (!form.date) { setErreur('La date est requise.'); return }
+    onSave(form)
+    onClose()
+  }
+
+  return (
+    <div className="modale-overlay" onClick={onClose}>
+      <div className="modale modale-ajout" onClick={e => e.stopPropagation()}>
+        <div className="modale-header">
+          <h2>Ajouter un article manuellement</h2>
+          <button className="modale-close" onClick={onClose}>✕</button>
+        </div>
+
+        <form onSubmit={handleSave}>
+          <div className="modale-section">
+            <p className="modale-label">Titre *</p>
+            <input className="modale-input" type="text" placeholder="Titre de l'article" value={form.titre} onChange={e => set('titre', e.target.value)} autoFocus />
+          </div>
+
+          <div className="modale-section">
+            <p className="modale-label">URL de l'article *</p>
+            <input className="modale-input" type="url" placeholder="https://…" value={form.url} onChange={e => set('url', e.target.value)} />
+          </div>
+
+          <div className="modale-section modale-row">
+            <div style={{ flex: 1 }}>
+              <p className="modale-label">Source (nom du site)</p>
+              <input className="modale-input" type="text" placeholder="Ex : Journal du Net, RH Info…" value={form.source_nom} onChange={e => set('source_nom', e.target.value)} />
+            </div>
+            <div style={{ flex: 1 }}>
+              <p className="modale-label">Date de publication *</p>
+              <input className="modale-input" type="date" value={form.date} onChange={e => set('date', e.target.value)} />
+            </div>
+          </div>
+
+          <div className="modale-section modale-row">
+            <div style={{ flex: 1 }}>
+              <p className="modale-label">Thématique</p>
+              <select className="modale-input" value={form.thematique} onChange={e => set('thematique', e.target.value)}>
+                <option value="qualiopi">Qualiopi</option>
+                <option value="rgpd">RGPD</option>
+                <option value="opco">OPCO</option>
+                <option value="legislatif">Législatif</option>
+              </select>
+            </div>
+            <div style={{ flex: 1 }}>
+              <p className="modale-label">Niveau</p>
+              <select className="modale-input" value={form.niveau} onChange={e => set('niveau', e.target.value)}>
+                <option value="urgent">Urgent</option>
+                <option value="important">Important</option>
+                <option value="info">Information</option>
+              </select>
+            </div>
+          </div>
+
+          <div className="modale-section">
+            <p className="modale-label">Résumé (optionnel)</p>
+            <textarea className="modale-textarea" placeholder="Brève description de l'article…" value={form.resume} onChange={e => set('resume', e.target.value)} rows={3} />
+          </div>
+
+          {erreur && <p className="modale-erreur">{erreur}</p>}
+
+          <div className="modale-footer">
+            <button type="button" className="btn-annuler" onClick={onClose}>Annuler</button>
+            <button type="submit" className="btn-valider">Ajouter l'article</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  )
+}
+
 // ── Section gestion formateurs ────────────────────────────────────────────────
 function GestionFormateurs() {
   const [formateurs, setFormateurs] = useState(getFormateurs())
@@ -217,8 +302,10 @@ function shouldWarnBackup(traitements) {
 // ── Tableau de bord principal ─────────────────────────────────────────────────
 export default function TableauDeBord() {
   const [articles, setArticles] = useState(getArticlesCache())
+  const [articlesManuels, setArticlesManuels] = useState(getArticlesManuels())
   const [traitements, setTraitements] = useState(getTraitements())
   const [modaleArticle, setModaleArticle] = useState(null)
+  const [showModaleAjout, setShowModaleAjout] = useState(false)
   const [onglet, setOnglet] = useState('veille')
   const [filtreStatut, setFiltreStatut] = useState('tous')
   const [banniereVisible, setBanniereVisible] = useState(() => shouldWarnBackup(getTraitements()))
@@ -249,6 +336,17 @@ export default function TableauDeBord() {
       setSyncArticles('error')
       setTimeout(() => setSyncArticles(null), 3000)
     }
+  }
+
+  function handleSaveArticleManuel(form) {
+    saveArticleManuel(form)
+    setArticlesManuels(getArticlesManuels())
+  }
+
+  function handleDeleteArticleManuel(id) {
+    if (!confirm('Supprimer cet article ?')) return
+    deleteArticleManuel(id)
+    setArticlesManuels(getArticlesManuels())
   }
 
   async function handleSaveTraitement(data) {
@@ -326,16 +424,18 @@ export default function TableauDeBord() {
     e.target.value = ''
   }
 
+  const tousArticles = useMemo(() => [...articles, ...articlesManuels], [articles, articlesManuels])
+
   const stats = useMemo(() => {
     const traitesIds = new Set(traitements.map(t => t.articleId))
-    const traites = articles.filter(a => traitesIds.has(a.id)).length
+    const traites = tousArticles.filter(a => traitesIds.has(a.id)).length
     return {
-      total: articles.length,
+      total: tousArticles.length,
       traites,
       diffuses: traitements.filter(t => t.decision === 'diffuser').length,
-      enAttente: articles.length - traites,
+      enAttente: tousArticles.length - traites,
     }
-  }, [articles, traitements])
+  }, [tousArticles, traitements])
 
   return (
     <div className="tdb-page">
@@ -355,6 +455,9 @@ export default function TableauDeBord() {
             {syncStatus === 'saving' && <span className="sync-status sync-saving">⏳ Sync GitHub…</span>}
             {syncStatus === 'ok'     && <span className="sync-status sync-ok">✓ Sauvegardé sur GitHub</span>}
             {syncStatus === 'error'  && <span className="sync-status sync-error">⚠️ Erreur sync GitHub</span>}
+            <button className="btn-add-article" onClick={() => setShowModaleAjout(true)} title="Ajouter un article manuellement">
+              + Article
+            </button>
             <button className="btn-sync-rss" onClick={handleSync} title="Récupérer les nouveaux articles">
               ↻ Actualiser les articles
             </button>
@@ -425,19 +528,23 @@ export default function TableauDeBord() {
                 </tr>
               </thead>
               <tbody>
-                {[...articles].sort((a, b) => new Date(b.date) - new Date(a.date)).filter(article => {
+                {[...tousArticles].sort((a, b) => new Date(b.date) - new Date(a.date)).filter(article => {
                   if (filtreStatut === 'tous') return true
                   const trace = getTraitement(article.id)
                   if (filtreStatut === 'en-attente') return !trace
                   return trace?.decision === filtreStatut
                 }).map(article => {
                   const source = SOURCES.find(s => s.id === article.source_id)
+                  const nomSource = article.manuel ? (article.source_nom || 'Source externe') : (source?.nom || article.source_id)
                   const trace = getTraitement(article.id)
                   const decision = trace ? DECISIONS[trace.decision] : null
                   const lien = trace?.urlArticle || article.url
                   return (
-                    <tr key={article.id} className={trace ? 'ligne-traitee' : ''}>
-                      <td className="td-source">{source?.nom}</td>
+                    <tr key={article.id} className={`${trace ? 'ligne-traitee' : ''} ${article.manuel ? 'ligne-manuelle' : ''}`}>
+                      <td className="td-source">
+                        {nomSource}
+                        {article.manuel && <span className="badge-manuel">Manuel</span>}
+                      </td>
                       <td className="td-date">{new Date(article.date).toLocaleDateString('fr-FR')}</td>
                       <td className="td-titre"><a href={lien} target="_blank" rel="noopener noreferrer" className="lien-titre">{article.titre}</a></td>
                       <td><span className={`thematique-badge thematique-${article.thematique}`}>{article.thematique}</span></td>
@@ -448,10 +555,13 @@ export default function TableauDeBord() {
                           : <span className="trace-badge en-attente">⏳ En attente</span>
                         }
                       </td>
-                      <td>
+                      <td className="td-actions">
                         <button className="btn-traiter" onClick={() => setModaleArticle(article)}>
                           {trace ? 'Modifier' : 'Traiter'}
                         </button>
+                        {article.manuel && (
+                          <button className="btn-suppr" onClick={() => handleDeleteArticleManuel(article.id)} title="Supprimer">✕</button>
+                        )}
                       </td>
                     </tr>
                   )
@@ -505,6 +615,13 @@ export default function TableauDeBord() {
           article={modaleArticle}
           onClose={() => setModaleArticle(null)}
           onSave={handleSaveTraitement}
+        />
+      )}
+
+      {showModaleAjout && (
+        <ModaleAjoutArticle
+          onClose={() => setShowModaleAjout(false)}
+          onSave={handleSaveArticleManuel}
         />
       )}
     </div>
