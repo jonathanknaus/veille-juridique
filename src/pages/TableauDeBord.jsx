@@ -1,7 +1,7 @@
 import { useState, useMemo, useEffect } from 'react'
 import { SOURCES, NIVEAUX } from '../data/veille'
 import { chargerArticles, getArticlesCache, getDateDerniereFetch } from '../data/articles-store'
-import { getTraitements, getTraitement, enregistrerTraitement, DECISIONS, exportRegistreCSV } from '../data/traitement'
+import { getTraitements, getTraitement, enregistrerTraitement, DECISIONS, exportRegistreCSV, exportRegistrePDF } from '../data/traitement'
 import { getFormateurs, addFormateur, updateFormateur, removeFormateur } from '../data/formateurs'
 import { RESPONSABLE } from '../data/formateurs'
 import { chargerDepuisGitHub, sauvegarderSurGitHub } from '../data/github-storage'
@@ -227,7 +227,8 @@ export default function TableauDeBord() {
 
   // Charger les articles RSS + traces GitHub au démarrage
   useEffect(() => {
-    chargerArticles().then(data => { if (data?.length) setArticles(data) })
+    const t = getTraitements()
+    chargerArticles(t).then(data => { if (data?.length) setArticles(data) })
     chargerDepuisGitHub().then(data => {
       if (Array.isArray(data) && data.length > 0) {
         localStorage.setItem('pls_traitements', JSON.stringify(data))
@@ -240,7 +241,7 @@ export default function TableauDeBord() {
   async function handleSync() {
     setSyncArticles('loading')
     try {
-      const data = await chargerArticles()
+      const data = await chargerArticles(traitements)
       if (data?.length) { setArticles(data); setSyncArticles('ok') }
       else setSyncArticles('error')
       setTimeout(() => setSyncArticles(null), 3000)
@@ -360,8 +361,11 @@ export default function TableauDeBord() {
               ↑ Restaurer
               <input type="file" accept=".json" onChange={handleRestaurer} style={{ display: 'none' }} />
             </label>
-            <button className="btn-export" onClick={handleExport} title="Exporter le registre Qualiopi">
-              ↓ Registre Qualiopi (CSV)
+            <button className="btn-export" onClick={handleExport} title="Exporter le registre Qualiopi en CSV">
+              ↓ Registre CSV
+            </button>
+            <button className="btn-export btn-export-pdf" onClick={() => exportRegistrePDF(traitements)} title="Exporter le registre Qualiopi en PDF imprimable">
+              ↓ Registre PDF
             </button>
           </div>
         </div>
@@ -408,7 +412,10 @@ export default function TableauDeBord() {
                     <tr key={article.id} className={trace ? 'ligne-traitee' : ''}>
                       <td className="td-source">{source?.nom}</td>
                       <td className="td-date">{new Date(article.date).toLocaleDateString('fr-FR')}</td>
-                      <td className="td-titre"><a href={lien} target="_blank" rel="noopener noreferrer" className="lien-titre">{article.titre}</a></td>
+                      <td className="td-titre">
+                        <a href={lien} target="_blank" rel="noopener noreferrer" className="lien-titre">{article.titre}</a>
+                        {article.archive && <span className="badge-archive">Archivé</span>}
+                      </td>
                       <td><span className={`thematique-badge thematique-${article.thematique}`}>{article.thematique}</span></td>
                       <td><span className={`niveau-badge niveau-${article.niveau}`}>{NIVEAUX[article.niveau].label}</span></td>
                       <td>

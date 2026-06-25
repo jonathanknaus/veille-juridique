@@ -44,6 +44,15 @@
 }
 .btn-export:hover { background: var(--bg-medium); }
 
+.btn-export-pdf { background: #6B21A8; }
+.btn-export-pdf:hover { background: #7C3AED; }
+
+.badge-archive {
+  font-size: 10px; font-weight: 600; padding: 2px 7px;
+  border-radius: 20px; background: #E2E8F0; color: #4A5568;
+  margin-left: 6px; vertical-align: middle;
+}
+
 .btn-sauvegarder {
   background: var(--vert);
   color: var(--bg-dark);

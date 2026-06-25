@@ -58,6 +58,17 @@ const KEYWORDS = {
   important: ['guide', 'modification', 'réforme', 'financement', 'audit', 'contrôle', 'nouvelle', 'mise à jour'],
 }
 
+function slugId(sourceId, url) {
+  try {
+    const path = new URL(url).pathname.replace(/\/$/, '').replace(/^\//, '')
+    const parts = path.split('/').filter(Boolean)
+    const slug = parts[parts.length - 1] || parts[parts.length - 2] || url
+    return `${sourceId}__${slug}`.slice(0, 120)
+  } catch {
+    return `${sourceId}__${url.replace(/[^a-z0-9]/gi, '-').slice(-60)}`
+  }
+}
+
 function detectNiveau(titre, resume) {
   const text = (titre + ' ' + resume).toLowerCase()
   if (KEYWORDS.urgent.some(k => text.includes(k))) return 'urgent'
@@ -108,7 +119,7 @@ async function fetchFeed(source) {
       const date = dateRaw ? new Date(dateRaw).toISOString().slice(0, 10) : new Date().toISOString().slice(0, 10)
 
       return {
-        id: `${source.id}-${date}-${idx}`,
+        id: slugId(source.id, url),
         titre: titre.slice(0, 200),
         resume: resume.slice(0, 400),
         source_id: source.id,
@@ -159,11 +170,11 @@ async function scrapeFranceCompetences(source) {
     }
 
     const today = new Date().toISOString().slice(0, 10)
-    return Object.keys(titlesMap).slice(0, 5).map((url, idx) => {
+    return Object.keys(titlesMap).slice(0, 5).map((url) => {
       const titre = titlesMap[url].slice(0, 200)
       const date = datesMap[url] || today
       return {
-        id: `${source.id}-${date}-${idx}`,
+        id: slugId(source.id, url),
         titre,
         resume: '',
         source_id: source.id,

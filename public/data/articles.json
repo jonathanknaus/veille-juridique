@@ -1,8 +1,8 @@
 {
-  "fetchedAt": "2026-06-25T09:52:14.111Z",
+  "fetchedAt": "2026-06-25T09:59:59.630Z",
   "articles": [
     {
-      "id": "france-competences-2026-06-25-0",
+      "id": "france-competences__decisions-denregistrement-aux-repertoires-nationaux-mai-2026",
       "titre": "Décisions d’enregistrement aux répertoires nationaux – Mai 2026",
       "resume": "",
       "source_id": "france-competences",
@@ -13,7 +13,7 @@
       "lu": false
     },
     {
-      "id": "france-competences-2026-06-25-1",
+      "id": "france-competences__certification-professionnelle-les-fondamentaux-et-les-enjeux-de-la-procedure-denregistrement-webinai",
       "titre": "Certification professionnelle : les référentiels, au cœur de l’ingénierie de certification professionnelle",
       "resume": "",
       "source_id": "france-competences",
@@ -24,7 +24,7 @@
       "lu": false
     },
     {
-      "id": "france-competences-2026-06-25-2",
+      "id": "france-competences__decisions-denregistrement-aux-repertoires-nationaux-avril-2026",
       "titre": "Décisions d’enregistrement aux répertoires nationaux – Avril 2026",
       "resume": "",
       "source_id": "france-competences",
@@ -35,7 +35,7 @@
       "lu": false
     },
     {
-      "id": "france-competences-2026-06-25-3",
+      "id": "france-competences__certification-professionnelle-comment-se-preparer-aux-evolutions-du-decret-2025-500-du-6-juin-2025",
       "titre": "Certification professionnelle Certification professionnelle : comment se préparer aux évolutions du décret 2025-500 du 6 juin 2025 ?",
       "resume": "",
       "source_id": "france-competences",
@@ -46,7 +46,7 @@
       "lu": false
     },
     {
-      "id": "france-competences-2026-06-25-4",
+      "id": "france-competences__enquete-nationale-sur-la-qualite-de-lapprentissage",
       "titre": "Observation et évaluation Actualités 18.06.2026",
       "resume": "",
       "source_id": "france-competences",
@@ -57,7 +57,7 @@
       "lu": false
     },
     {
-      "id": "centre-inffo-2026-06-25-0",
+      "id": "centre-inffo__depenses-non-rattachables-a-lactivite-de-formation-le-juge-administratif-impose-la-preuve-dune-utilite-ped",
       "titre": "Dépenses non rattachables à l'activité de formation : le juge administratif impose la preuve d'une utilité pédagogique réelle",
       "resume": "",
       "source_id": "centre-inffo",
@@ -68,7 +68,7 @@
       "lu": false
     },
     {
-      "id": "centre-inffo-2026-06-25-1",
+      "id": "centre-inffo__lia-en-formation-alliee-de-linclusion-ou-fausse-bonne-amie",
       "titre": "L'IA en formation : alliée de l'inclusion ou fausse bonne amie ?",
       "resume": "",
       "source_id": "centre-inffo",
@@ -79,7 +79,7 @@
       "lu": false
     },
     {
-      "id": "centre-inffo-2026-06-25-2",
+      "id": "centre-inffo__regulation-budgetaire-quels-impacts-sur-les-dispositifs-de-formation-club-du-droit-centre-inffo",
       "titre": "Régulation budgétaire : quels impacts sur les dispositifs de formation ? (Club du droit Centre Inffo)",
       "resume": "",
       "source_id": "centre-inffo",
@@ -90,7 +90,7 @@
       "lu": false
     },
     {
-      "id": "centre-inffo-2026-06-25-3",
+      "id": "centre-inffo__se-former-a-lia-pour-le-travail-social",
       "titre": "Se former à l'IA pour le travail social",
       "resume": "",
       "source_id": "centre-inffo",
@@ -101,7 +101,7 @@
       "lu": false
     },
     {
-      "id": "ministere-travail-2026-06-25-0",
+      "id": "ministere-travail__canicule-jean-pierre-farandou-ministre-du-travail-et-des-solidarites-reunit-les-partenaires-sociaux-p",
       "titre": "Canicule : Jean-Pierre Farandou, ministre du Travail et des Solidarités, réunit les partenaires sociaux pour échanger sur les dispositifs actuels et les changements structurels en matière de protectio",
       "resume": "",
       "source_id": "ministere-travail",
@@ -112,7 +112,7 @@
       "lu": false
     },
     {
-      "id": "centre-inffo-2026-06-24-4",
+      "id": "centre-inffo__zoom-sur-les-dernieres-parutions-25-juin-2026",
       "titre": "Zoom sur les dernières parutions - 25 juin 2026",
       "resume": "",
       "source_id": "centre-inffo",
@@ -123,7 +123,7 @@
       "lu": false
     },
     {
-      "id": "cnil-2026-06-24-0",
+      "id": "cnil__prix-ehess-cnil-2026",
       "titre": "Quatre auteurs reçoivent le deuxième prix CNIL/EHESS pour leur recherche sur la réception du règlement IA par les citoyens européens",
       "resume": "",
       "source_id": "cnil",
@@ -134,7 +134,7 @@
       "lu": false
     },
     {
-      "id": "cnil-2026-06-24-1",
+      "id": "cnil__informations-publiques",
       "titre": "Informations publiques",
       "resume": "",
       "source_id": "cnil",
@@ -145,7 +145,7 @@
       "lu": false
     },
     {
-      "id": "cnil-2026-06-24-2",
+      "id": "cnil__prix-inria-cnil-2026",
       "titre": "Remise du prix « Protection de la vie privée » 2026 par la CNIL et l’Inria",
       "resume": "",
       "source_id": "cnil",
@@ -156,7 +156,7 @@
       "lu": false
     },
     {
-      "id": "cnil-2026-06-24-3",
+      "id": "cnil__vigilance-accompagnement-violation-de-donnees",
       "titre": "Victimes de violations de données : restez vigilants face aux offres d’accompagnement",
       "resume": "",
       "source_id": "cnil",
@@ -167,7 +167,7 @@
       "lu": false
     },
     {
-      "id": "cnil-2026-06-23-4",
+      "id": "cnil__elections-professionnelles-fonction-publique-vote-electronique",
       "titre": "Élections professionnelles dans la fonction publique et vote électronique : comment transmettre les rapports d’expertise à la CNIL ?",
       "resume": "",
       "source_id": "cnil",
@@ -178,7 +178,7 @@
       "lu": false
     },
     {
-      "id": "ministere-travail-2026-06-19-1",
+      "id": "ministere-travail__proteger-les-jeunes-stagiaires-accueillis-en-entreprise-pendant-lepisode-de-forte-chaleur",
       "titre": "Protéger les jeunes stagiaires accueillis en entreprise pendant l’épisode de forte chaleur",
       "resume": "",
       "source_id": "ministere-travail",
@@ -189,7 +189,7 @@
       "lu": false
     },
     {
-      "id": "ministere-travail-2026-06-19-2",
+      "id": "ministere-travail__le-ministere-du-travail-et-des-solidarites-lance-le-passeport-de-competences-service-public-numerique",
       "titre": "Le ministère du Travail et des Solidarités lance le Passeport de compétences, service public numérique des parcours professionnels",
       "resume": "",
       "source_id": "ministere-travail",
@@ -200,7 +200,7 @@
       "lu": false
     },
     {
-      "id": "ministere-travail-2026-06-17-3",
+      "id": "ministere-travail__une-annee-daction-pour-la-jeunesse-sabrina-roubache-reunit-les-acteurs-de-la-voie-professionnelle-pou",
       "titre": "Une année d'action pour la jeunesse : Sabrina Roubache réunit les acteurs de la voie professionnelle pour présenter sa feuille de route",
       "resume": "",
       "source_id": "ministere-travail",
@@ -211,7 +211,7 @@
       "lu": false
     },
     {
-      "id": "ministere-travail-2026-06-12-4",
+      "id": "ministere-travail__les-etablissements-ou-services-daccompagnement-par-le-travail-esat",
       "titre": "Les établissements ou services d'accompagnement par le travail (ESAT)",
       "resume": "",
       "source_id": "ministere-travail",
@@ -222,7 +222,7 @@
       "lu": false
     },
     {
-      "id": "agefiph-2026-06-02-1",
+      "id": "agefiph__lagefiph-engagee-pour-linnovation-hauteur-de-2-millions",
       "titre": "L’Agefiph engagée pour l’innovation à hauteur de 2 millions d’euros en 2026",
       "resume": "",
       "source_id": "agefiph",
@@ -233,7 +233,7 @@
       "lu": false
     },
     {
-      "id": "agefiph-2026-05-26-2",
+      "id": "agefiph__les-partenaires-sociaux-acteurs-incontournables-pour-des",
       "titre": "Les partenaires sociaux acteurs incontournables pour des entreprises plus inclusives",
       "resume": "",
       "source_id": "agefiph",
@@ -244,7 +244,7 @@
       "lu": false
     },
     {
-      "id": "agefiph-2026-05-21-3",
+      "id": "agefiph__30-ans-de-la-seeph-demystifier-simplifier-accompagner",
       "titre": "30 ans de la SEEPH  : « Démystifier, simplifier, accompagner. L’emploi pour toutes et tous »",
       "resume": "",
       "source_id": "agefiph",
@@ -255,7 +255,7 @@
       "lu": false
     },
     {
-      "id": "agefiph-2026-03-30-0",
+      "id": "agefiph__doeth-alerte-aux-demarchages-frauduleux",
       "titre": "DOETH : alerte aux démarchages frauduleux",
       "resume": "",
       "source_id": "agefiph",
@@ -266,7 +266,7 @@
       "lu": false
     },
     {
-      "id": "agefiph-2026-02-27-4",
+      "id": "agefiph__service-dappui-specifique",
       "titre": "Service d'appui spécifique",
       "resume": "",
       "source_id": "agefiph",
