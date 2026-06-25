@@ -220,6 +220,7 @@ export default function TableauDeBord() {
   const [traitements, setTraitements] = useState(getTraitements())
   const [modaleArticle, setModaleArticle] = useState(null)
   const [onglet, setOnglet] = useState('veille')
+  const [filtreStatut, setFiltreStatut] = useState('tous')
   const [banniereVisible, setBanniereVisible] = useState(() => shouldWarnBackup(getTraitements()))
   const [syncStatus, setSyncStatus] = useState(null) // null | 'saving' | 'ok' | 'error'
   const [syncArticles, setSyncArticles] = useState(null) // null | 'loading' | 'ok' | 'error'
@@ -395,6 +396,24 @@ export default function TableauDeBord() {
 
         {/* Veille à traiter */}
         {onglet === 'veille' && (
+          <div>
+            <div className="filtre-statut">
+              {[
+                { id: 'tous', label: 'Tous' },
+                { id: 'en-attente', label: '⏳ En attente' },
+                { id: 'diffuser', label: '📢 Diffusé' },
+                { id: 'archiver', label: '📁 Archivé' },
+                { id: 'noter', label: '📝 Note interne' },
+              ].map(f => (
+                <button
+                  key={f.id}
+                  className={`filtre-btn ${filtreStatut === f.id ? 'actif' : ''}`}
+                  onClick={() => setFiltreStatut(f.id)}
+                >
+                  {f.label}
+                </button>
+              ))}
+            </div>
           <div className="tdb-table-wrap">
             <table className="tdb-table">
               <thead>
@@ -403,7 +422,12 @@ export default function TableauDeBord() {
                 </tr>
               </thead>
               <tbody>
-                {[...articles].sort((a, b) => new Date(b.date) - new Date(a.date)).map(article => {
+                {[...articles].sort((a, b) => new Date(b.date) - new Date(a.date)).filter(article => {
+                  if (filtreStatut === 'tous') return true
+                  const trace = getTraitement(article.id)
+                  if (filtreStatut === 'en-attente') return !trace
+                  return trace?.decision === filtreStatut
+                }).map(article => {
                   const source = SOURCES.find(s => s.id === article.source_id)
                   const trace = getTraitement(article.id)
                   const decision = trace ? DECISIONS[trace.decision] : null
@@ -434,6 +458,7 @@ export default function TableauDeBord() {
                 })}
               </tbody>
             </table>
+          </div>
           </div>
         )}
 

@@ -151,6 +151,26 @@
 .onglet-btn:hover { color: var(--texte); background: var(--gris); }
 .onglet-btn.actif { color: var(--bg-dark); border-bottom-color: var(--bg-dark); }
 
+/* Filtre statut */
+.filtre-statut {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+.filtre-btn {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  background: var(--blanc);
+  border: 1.5px solid var(--border);
+  color: var(--texte-secondaire);
+  transition: all 0.12s;
+}
+.filtre-btn:hover { border-color: var(--bg-dark); color: var(--texte); }
+.filtre-btn.actif { background: var(--bg-dark); border-color: var(--bg-dark); color: var(--blanc); }
+
 /* Table */
 .tdb-table-wrap {
   background: var(--blanc);

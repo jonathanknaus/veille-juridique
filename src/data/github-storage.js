@@ -20,7 +20,8 @@ export async function chargerDepuisGitHub() {
     if (res.status === 404) return []
     if (!res.ok) return null
     const json = await res.json()
-    return JSON.parse(atob(json.content.replace(/\n/g, '')))
+    const bytes = Uint8Array.from(atob(json.content.replace(/\n/g, '')), c => c.charCodeAt(0))
+    return JSON.parse(new TextDecoder('utf-8').decode(bytes))
   } catch {
     return null
   }
@@ -28,7 +29,9 @@ export async function chargerDepuisGitHub() {
 
 export async function sauvegarderSurGitHub(traitements) {
   if (!TOKEN) throw new Error('Token GitHub non configuré')
-  const content = btoa(unescape(encodeURIComponent(JSON.stringify(traitements, null, 2))))
+  const str = JSON.stringify(traitements, null, 2)
+  const bytes = new TextEncoder().encode(str)
+  const content = btoa(String.fromCharCode(...bytes))
 
   // Récupérer le SHA du fichier existant (requis pour mettre à jour)
   let sha = null
