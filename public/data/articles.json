@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-06-25T10:15:22.599Z",
+  "fetchedAt": "2026-06-25T10:24:33.009Z",
   "articles": [
     {
       "id": "france-competences__decisions-denregistrement-aux-repertoires-nationaux-mai-2026",
@@ -220,6 +220,17 @@
       "date": "2026-06-12",
       "url": "https://travail-emploi.gouv.fr/les-etablissements-ou-services-daccompagnement-par-le-travail-esat",
       "lu": false
+    },
+    {
+      "id": "cnil__communication-electronique-quelles-regles",
+      "titre": "Communications par voie électronique aux prospects et clients : quelles règles respecter ?",
+      "resume": "",
+      "source_id": "cnil",
+      "thematique": "rgpd",
+      "niveau": "important",
+      "date": "2026-06-10",
+      "url": "https://www.cnil.fr/fr/communication-electronique-quelles-regles",
+      "lu": true
     },
     {
       "id": "agefiph__lagefiph-engagee-pour-linnovation-hauteur-de-2-millions",

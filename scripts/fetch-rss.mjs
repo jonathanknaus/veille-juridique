@@ -2,7 +2,7 @@
 // Récupère les vrais articles depuis les flux RSS des sources surveillées
 // et écrit public/data/articles.json
 
-import { writeFileSync, mkdirSync } from 'fs'
+import { writeFileSync, mkdirSync, readFileSync } from 'fs'
 import { parseStringPromise } from 'xml2js'
 
 const SOURCES = [
@@ -194,11 +194,21 @@ async function scrapeFranceCompetences(source) {
 async function main() {
   console.log('Récupération des articles...')
   const results = await Promise.all(SOURCES.map(s => s.scrape ? scrapeFranceCompetences(s) : fetchFeed(s)))
-  const articles = results
-    .flat()
+  const nouveaux = results.flat()
+  const nouveauxIds = new Set(nouveaux.map(a => a.id))
+
+  // Conserver les anciens articles absents du flux (ex : articles traités/diffusés)
+  let anciens = []
+  try {
+    const existing = JSON.parse(readFileSync('public/data/articles.json', 'utf-8'))
+    anciens = (existing.articles || []).filter(a => !nouveauxIds.has(a.id))
+    if (anciens.length > 0) console.log(`${anciens.length} articles conservés (hors flux actuel)`)
+  } catch {}
+
+  const articles = [...nouveaux, ...anciens]
     .sort((a, b) => new Date(b.date) - new Date(a.date))
 
-  console.log(`${articles.length} articles récupérés`)
+  console.log(`${articles.length} articles au total (${nouveaux.length} nouveaux)`)
 
   mkdirSync('public/data', { recursive: true })
   writeFileSync(
