@@ -7,10 +7,19 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
 
 jobs:
-  fetch:
+  fetch-and-deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
 
@@ -33,3 +42,15 @@ jobs:
 
       - name: Push
         run: git push
+
+      - name: Build
+        run: npm run build
+        env:
+          VITE_GITHUB_DATA_TOKEN: ${{ secrets.VITE_GITHUB_DATA_TOKEN }}
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      - uses: actions/deploy-pages@v4
+        id: deployment
