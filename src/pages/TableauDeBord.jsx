@@ -326,12 +326,16 @@ export default function TableauDeBord() {
     e.target.value = ''
   }
 
-  const stats = useMemo(() => ({
-    total: articles.length,
-    traites: traitements.length,
-    diffuses: traitements.filter(t => t.decision === 'diffuser').length,
-    enAttente: articles.length - traitements.length,
-  }), [articles, traitements])
+  const stats = useMemo(() => {
+    const traitesIds = new Set(traitements.map(t => t.articleId))
+    const traites = articles.filter(a => traitesIds.has(a.id)).length
+    return {
+      total: articles.length,
+      traites,
+      diffuses: traitements.filter(t => t.decision === 'diffuser').length,
+      enAttente: articles.length - traites,
+    }
+  }, [articles, traitements])
 
   return (
     <div className="tdb-page">
