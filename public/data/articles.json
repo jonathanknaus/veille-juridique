@@ -1,6 +1,17 @@
 {
-  "fetchedAt": "2026-06-25T10:24:33.009Z",
+  "fetchedAt": "2026-06-29T12:08:47.212Z",
   "articles": [
+    {
+      "id": "france-competences__decisions-denregistrement-aux-repertoires-nationaux-juin-2026",
+      "titre": "Décisions d’enregistrement aux répertoires nationaux – Juin 2026",
+      "resume": "",
+      "source_id": "france-competences",
+      "thematique": "qualiopi",
+      "niveau": "info",
+      "date": "2026-06-29",
+      "url": "https://www.francecompetences.fr/fiche/decisions-denregistrement-aux-repertoires-nationaux-juin-2026/",
+      "lu": false
+    },
     {
       "id": "france-competences__decisions-denregistrement-aux-repertoires-nationaux-mai-2026",
       "titre": "Décisions d’enregistrement aux répertoires nationaux – Mai 2026",
@@ -8,7 +19,7 @@
       "source_id": "france-competences",
       "thematique": "qualiopi",
       "niveau": "info",
-      "date": "2026-06-25",
+      "date": "2026-06-29",
       "url": "https://www.francecompetences.fr/fiche/decisions-denregistrement-aux-repertoires-nationaux-mai-2026/",
       "lu": false
     },
@@ -19,8 +30,118 @@
       "source_id": "france-competences",
       "thematique": "qualiopi",
       "niveau": "info",
-      "date": "2026-06-25",
+      "date": "2026-06-29",
       "url": "https://www.francecompetences.fr/fiche/certification-professionnelle-les-fondamentaux-et-les-enjeux-de-la-procedure-denregistrement-webinaire-n2/",
+      "lu": false
+    },
+    {
+      "id": "france-competences__certification-professionnelle-comment-se-preparer-aux-evolutions-du-decret-2025-500-du-6-juin-2025",
+      "titre": "Certification professionnelle Certification professionnelle : comment se préparer aux évolutions du décret 2025-500 du 6 juin 2025 ?",
+      "resume": "",
+      "source_id": "france-competences",
+      "thematique": "qualiopi",
+      "niveau": "urgent",
+      "date": "2026-06-29",
+      "url": "https://www.francecompetences.fr/fiche/certification-professionnelle-comment-se-preparer-aux-evolutions-du-decret-2025-500-du-6-juin-2025/",
+      "lu": false
+    },
+    {
+      "id": "france-competences__enquete-nationale-sur-la-qualite-de-lapprentissage",
+      "titre": "Observation et évaluation Actualités 18.06.2026",
+      "resume": "",
+      "source_id": "france-competences",
+      "thematique": "qualiopi",
+      "niveau": "info",
+      "date": "2026-06-29",
+      "url": "https://www.francecompetences.fr/fiche/enquete-nationale-sur-la-qualite-de-lapprentissage/",
+      "lu": false
+    },
+    {
+      "id": "centre-inffo__lutte-contre-la-fraude-moyens-denquete-et-de-controle-de-letat-renforces-en-matiere-de-formation",
+      "titre": "Lutte contre la fraude : moyens d'enquête et de contrôle de l'Etat renforcés en matière de formation",
+      "resume": "",
+      "source_id": "centre-inffo",
+      "thematique": "qualiopi",
+      "niveau": "important",
+      "date": "2026-06-29",
+      "url": "https://www.centre-inffo.fr/site-droit-formation/actualites-droit/lutte-contre-la-fraude-moyens-denquete-et-de-controle-de-letat-renforces-en-matiere-de-formation",
+      "lu": false
+    },
+    {
+      "id": "centre-inffo__les-formations-organisees-a-distance-sous-controle-renforce",
+      "titre": "Les formations organisées à distance sous contrôle renforcé",
+      "resume": "",
+      "source_id": "centre-inffo",
+      "thematique": "qualiopi",
+      "niveau": "important",
+      "date": "2026-06-29",
+      "url": "https://www.centre-inffo.fr/site-droit-formation/actualites-droit/les-formations-organisees-a-distance-sous-controle-renforce",
+      "lu": false
+    },
+    {
+      "id": "centre-inffo__formation-de-la-fonction-support-au-levier-strategique-de-transformation",
+      "titre": "Formation : de la fonction support au levier stratégique de transformation",
+      "resume": "",
+      "source_id": "centre-inffo",
+      "thematique": "qualiopi",
+      "niveau": "info",
+      "date": "2026-06-29",
+      "url": "https://www.centre-inffo.fr/site-centre-inffo/formation-de-la-fonction-support-au-levier-strategique-de-transformation",
+      "lu": false
+    },
+    {
+      "id": "centre-inffo__objectif-ecologique-et-solidaire-comment-faire",
+      "titre": "Objectif écologique et solidaire : comment faire ?",
+      "resume": "",
+      "source_id": "centre-inffo",
+      "thematique": "qualiopi",
+      "niveau": "info",
+      "date": "2026-06-29",
+      "url": "https://www.centre-inffo.fr/site-centre-inffo/actualites-centre-inffo/le-quotidien-de-la-formation-actualite-formation-professionnelle-apprentissage/actualites-2026/objectif-ecologique-et-solidaire-comment-faire",
+      "lu": false
+    },
+    {
+      "id": "centre-inffo__insertion-les-apprentis-resistent",
+      "titre": "Insertion : les apprentis résistent",
+      "resume": "",
+      "source_id": "centre-inffo",
+      "thematique": "qualiopi",
+      "niveau": "info",
+      "date": "2026-06-29",
+      "url": "https://www.centre-inffo.fr/site-centre-inffo/actualites-centre-inffo/le-quotidien-de-la-formation-actualite-formation-professionnelle-apprentissage/actualites-2026/insertion-les-apprentis-resistent",
+      "lu": false
+    },
+    {
+      "id": "cnil__g7-technologies-protection-mineurs",
+      "titre": "Technologies émergentes et protection des mineurs : les autorités de protection des données du G7 s’accordent sur des principes clés",
+      "resume": "",
+      "source_id": "cnil",
+      "thematique": "rgpd",
+      "niveau": "info",
+      "date": "2026-06-26",
+      "url": "https://www.cnil.fr/fr/g7-technologies-protection-mineurs",
+      "lu": false
+    },
+    {
+      "id": "ministere-travail__circulaire-fie-2026-les-orientations-et-financements-prevus-pour-linsertion-professionnelle",
+      "titre": "Circulaire FIE 2026 : les orientations et financements prévus pour l’insertion professionnelle",
+      "resume": "",
+      "source_id": "ministere-travail",
+      "thematique": "legislatif",
+      "niveau": "important",
+      "date": "2026-06-25",
+      "url": "https://travail-emploi.gouv.fr/circulaire-fie-2026-les-orientations-et-financements-prevus-pour-linsertion-professionnelle",
+      "lu": false
+    },
+    {
+      "id": "ministere-travail__canicule-jean-pierre-farandou-ministre-du-travail-et-des-solidarites-reunit-les-partenaires-sociaux-p",
+      "titre": "Canicule : Jean-Pierre Farandou, ministre du Travail et des Solidarités, réunit les partenaires sociaux pour échanger sur les dispositifs actuels et les changements structurels en matière de protectio",
+      "resume": "",
+      "source_id": "ministere-travail",
+      "thematique": "legislatif",
+      "niveau": "info",
+      "date": "2026-06-25",
+      "url": "https://travail-emploi.gouv.fr/canicule-jean-pierre-farandou-ministre-du-travail-et-des-solidarites-reunit-les-partenaires-sociaux-pour-echanger-sur-les-dispositifs-actuels-et-les-changements-structurels-en-matiere-de-protection-des-travailleurs-face-aux-chaleurs-extremes",
       "lu": false
     },
     {
@@ -32,28 +153,6 @@
       "niveau": "info",
       "date": "2026-06-25",
       "url": "https://www.francecompetences.fr/fiche/decisions-denregistrement-aux-repertoires-nationaux-avril-2026/",
-      "lu": false
-    },
-    {
-      "id": "france-competences__certification-professionnelle-comment-se-preparer-aux-evolutions-du-decret-2025-500-du-6-juin-2025",
-      "titre": "Certification professionnelle Certification professionnelle : comment se préparer aux évolutions du décret 2025-500 du 6 juin 2025 ?",
-      "resume": "",
-      "source_id": "france-competences",
-      "thematique": "qualiopi",
-      "niveau": "urgent",
-      "date": "2026-06-25",
-      "url": "https://www.francecompetences.fr/fiche/certification-professionnelle-comment-se-preparer-aux-evolutions-du-decret-2025-500-du-6-juin-2025/",
-      "lu": false
-    },
-    {
-      "id": "france-competences__enquete-nationale-sur-la-qualite-de-lapprentissage",
-      "titre": "Observation et évaluation Actualités 18.06.2026",
-      "resume": "",
-      "source_id": "france-competences",
-      "thematique": "qualiopi",
-      "niveau": "info",
-      "date": "2026-06-25",
-      "url": "https://www.francecompetences.fr/fiche/enquete-nationale-sur-la-qualite-de-lapprentissage/",
       "lu": false
     },
     {
@@ -101,28 +200,6 @@
       "lu": false
     },
     {
-      "id": "ministere-travail__canicule-jean-pierre-farandou-ministre-du-travail-et-des-solidarites-reunit-les-partenaires-sociaux-p",
-      "titre": "Canicule : Jean-Pierre Farandou, ministre du Travail et des Solidarités, réunit les partenaires sociaux pour échanger sur les dispositifs actuels et les changements structurels en matière de protectio",
-      "resume": "",
-      "source_id": "ministere-travail",
-      "thematique": "legislatif",
-      "niveau": "info",
-      "date": "2026-06-25",
-      "url": "https://travail-emploi.gouv.fr/canicule-jean-pierre-farandou-ministre-du-travail-et-des-solidarites-reunit-les-partenaires-sociaux-pour-echanger-sur-les-dispositifs-actuels-et-les-changements-structurels-en-matiere-de-protection-des-travailleurs-face-aux-chaleurs-extremes",
-      "lu": false
-    },
-    {
-      "id": "centre-inffo__zoom-sur-les-dernieres-parutions-25-juin-2026",
-      "titre": "Zoom sur les dernières parutions - 25 juin 2026",
-      "resume": "",
-      "source_id": "centre-inffo",
-      "thematique": "qualiopi",
-      "niveau": "info",
-      "date": "2026-06-24",
-      "url": "https://www.centre-inffo.fr/site-centre-inffo/zoom-sur-les-dernieres-parutions-25-juin-2026",
-      "lu": false
-    },
-    {
       "id": "cnil__prix-ehess-cnil-2026",
       "titre": "Quatre auteurs reçoivent le deuxième prix CNIL/EHESS pour leur recherche sur la réception du règlement IA par les citoyens européens",
       "resume": "",
@@ -164,6 +241,17 @@
       "niveau": "info",
       "date": "2026-06-24",
       "url": "https://www.cnil.fr/fr/vigilance-accompagnement-violation-de-donnees",
+      "lu": false
+    },
+    {
+      "id": "centre-inffo__zoom-sur-les-dernieres-parutions-25-juin-2026",
+      "titre": "Zoom sur les dernières parutions - 25 juin 2026",
+      "resume": "",
+      "source_id": "centre-inffo",
+      "thematique": "qualiopi",
+      "niveau": "info",
+      "date": "2026-06-24",
+      "url": "https://www.centre-inffo.fr/site-centre-inffo/zoom-sur-les-dernieres-parutions-25-juin-2026",
       "lu": false
     },
     {
