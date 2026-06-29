@@ -2,7 +2,7 @@ name: Fetch RSS articles
 
 on:
   schedule:
-    - cron: '0 7 * * 1-5'  # Lun–Ven 9h00 heure de Paris (7h UTC)
+    - cron: '0 6 * * 1'  # Lundi 8h00 heure de Paris (6h UTC)
   workflow_dispatch:      # Déclenchement manuel possible
 
 permissions:

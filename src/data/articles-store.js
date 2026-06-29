@@ -5,7 +5,8 @@ const STORAGE_DATE_KEY = 'vj_articles_cache_date'
 
 export async function chargerArticles() {
   try {
-    const res = await fetch(`${import.meta.env.BASE_URL}data/articles.json`, { cache: 'no-store' })
+    const url = `${import.meta.env.BASE_URL}data/articles.json?t=${Date.now()}`
+    const res = await fetch(url, { cache: 'no-store' })
     if (!res.ok) throw new Error(`HTTP ${res.status}`)
     const json = await res.json()
     if (!Array.isArray(json.articles) || json.articles.length === 0) throw new Error('Vide')

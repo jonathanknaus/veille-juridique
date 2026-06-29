@@ -311,7 +311,7 @@ export default function TableauDeBord() {
   const [banniereVisible, setBanniereVisible] = useState(() => shouldWarnBackup(getTraitements()))
   const [syncStatus, setSyncStatus] = useState(null) // null | 'saving' | 'ok' | 'error'
   const [syncArticles, setSyncArticles] = useState(null) // null | 'loading' | 'ok' | 'error'
-  const dateFetch = getDateDerniereFetch()
+  const [dateFetch, setDateFetch] = useState(getDateDerniereFetch)
 
   // Charger les articles RSS + traces GitHub au démarrage
   useEffect(() => {
@@ -329,7 +329,7 @@ export default function TableauDeBord() {
     setSyncArticles('loading')
     try {
       const data = await chargerArticles()
-      if (data?.length) { setArticles(data); setSyncArticles('ok') }
+      if (data?.length) { setArticles(data); setDateFetch(getDateDerniereFetch()); setSyncArticles('ok') }
       else setSyncArticles('error')
       setTimeout(() => setSyncArticles(null), 3000)
     } catch {
