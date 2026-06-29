@@ -448,12 +448,13 @@ export default function TableauDeBord() {
 
   const stats = useMemo(() => {
     const traitesIds = new Set(traitements.map(t => t.articleId))
-    const traites = tousArticles.filter(a => traitesIds.has(a.id)).length
+    const articlesConnus = tousArticles.filter(a => !a.orphelin)
+    const traites = articlesConnus.filter(a => traitesIds.has(a.id)).length
     return {
-      total: tousArticles.length,
+      total: articlesConnus.length,
       traites,
       diffuses: traitements.filter(t => t.decision === 'diffuser').length,
-      enAttente: tousArticles.length - traites,
+      enAttente: articlesConnus.length - traites,
     }
   }, [tousArticles, traitements])
 
