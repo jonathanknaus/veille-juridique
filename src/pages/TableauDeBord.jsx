@@ -424,7 +424,27 @@ export default function TableauDeBord() {
     e.target.value = ''
   }
 
-  const tousArticles = useMemo(() => [...articles, ...articlesManuels], [articles, articlesManuels])
+  const tousArticles = useMemo(() => {
+    const base = [...articles, ...articlesManuels]
+    const baseIds = new Set(base.map(a => a.id))
+    // Réinjecter les articles orphelins depuis les traces (traités mais plus dans le flux)
+    const orphelins = traitements
+      .filter(t => !baseIds.has(t.articleId) && t.articleTitre)
+      .map(t => ({
+        id: t.articleId,
+        titre: t.articleTitre,
+        resume: '',
+        source_id: t.articleSource || 'manuel',
+        source_nom: t.articleSource || 'Source externe',
+        thematique: t.articleThematique || '',
+        niveau: 'info',
+        date: t.articleDate || '',
+        url: t.urlArticle || '',
+        lu: true,
+        orphelin: true,
+      }))
+    return [...base, ...orphelins]
+  }, [articles, articlesManuels, traitements])
 
   const stats = useMemo(() => {
     const traitesIds = new Set(traitements.map(t => t.articleId))
