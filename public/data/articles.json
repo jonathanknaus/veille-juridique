@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-06-29T12:08:47.212Z",
+  "fetchedAt": "2026-07-06T17:18:37.321Z",
   "articles": [
     {
       "id": "france-competences__decisions-denregistrement-aux-repertoires-nationaux-juin-2026",
@@ -8,7 +8,7 @@
       "source_id": "france-competences",
       "thematique": "qualiopi",
       "niveau": "info",
-      "date": "2026-06-29",
+      "date": "2026-07-06",
       "url": "https://www.francecompetences.fr/fiche/decisions-denregistrement-aux-repertoires-nationaux-juin-2026/",
       "lu": false
     },
@@ -19,7 +19,7 @@
       "source_id": "france-competences",
       "thematique": "qualiopi",
       "niveau": "info",
-      "date": "2026-06-29",
+      "date": "2026-07-06",
       "url": "https://www.francecompetences.fr/fiche/decisions-denregistrement-aux-repertoires-nationaux-mai-2026/",
       "lu": false
     },
@@ -30,7 +30,7 @@
       "source_id": "france-competences",
       "thematique": "qualiopi",
       "niveau": "info",
-      "date": "2026-06-29",
+      "date": "2026-07-06",
       "url": "https://www.francecompetences.fr/fiche/certification-professionnelle-les-fondamentaux-et-les-enjeux-de-la-procedure-denregistrement-webinaire-n2/",
       "lu": false
     },
@@ -41,8 +41,173 @@
       "source_id": "france-competences",
       "thematique": "qualiopi",
       "niveau": "urgent",
-      "date": "2026-06-29",
+      "date": "2026-07-06",
       "url": "https://www.francecompetences.fr/fiche/certification-professionnelle-comment-se-preparer-aux-evolutions-du-decret-2025-500-du-6-juin-2025/",
+      "lu": false
+    },
+    {
+      "id": "france-competences__cartographie-des-metiers-un-outil-cle-au-service-de-lemploi-et-des-parcours",
+      "titre": "Observation et évaluation Cartographie des métiers : un outil clé au service de l&#8217;emploi et des parcours 06.07.2026",
+      "resume": "",
+      "source_id": "france-competences",
+      "thematique": "qualiopi",
+      "niveau": "urgent",
+      "date": "2026-07-06",
+      "url": "https://www.francecompetences.fr/fiche/cartographie-des-metiers-un-outil-cle-au-service-de-lemploi-et-des-parcours/",
+      "lu": false
+    },
+    {
+      "id": "centre-inffo__signature-du-cprdfop-2025-2030la-reunion",
+      "titre": "Signature du CPRDFOP 2025-2030 La Réunion",
+      "resume": "",
+      "source_id": "centre-inffo",
+      "thematique": "qualiopi",
+      "niveau": "info",
+      "date": "2026-07-06",
+      "url": "https://www.centre-inffo.fr/site-regions-formation/actualites-regions/signature-du-cprdfop-2025-2030la-reunion",
+      "lu": false
+    },
+    {
+      "id": "centre-inffo__rupture-irreguliere-dun-contrat-dapprentissage-le-defaut-de-notification-a-lopco-prive-la-rupture-de-tout-",
+      "titre": "Rupture irrégulière d'un contrat d'apprentissage : le défaut de notification à l'Opco prive la rupture de tout effet",
+      "resume": "",
+      "source_id": "centre-inffo",
+      "thematique": "qualiopi",
+      "niveau": "info",
+      "date": "2026-07-06",
+      "url": "https://www.centre-inffo.fr/site-centre-inffo/rupture-irreguliere-dun-contrat-dapprentissage-le-defaut-de-notification-a-lopco-prive-la-rupture-de-tout-effet",
+      "lu": false
+    },
+    {
+      "id": "centre-inffo__comment-parler-du-travail-pour-lameliorer-le-role-cle-des-manageurs",
+      "titre": "Comment parler du travail pour l'améliorer ? Le rôle clé des manageurs",
+      "resume": "",
+      "source_id": "centre-inffo",
+      "thematique": "qualiopi",
+      "niveau": "info",
+      "date": "2026-07-06",
+      "url": "https://www.centre-inffo.fr/site-centre-inffo/comment-parler-du-travail-pour-lameliorer-le-role-cle-des-manageurs",
+      "lu": false
+    },
+    {
+      "id": "centre-inffo__les-echanges-de-donnees-entre-entites-controleuses-intensifies",
+      "titre": "Intensification des échanges de données entre entités contrôleuses",
+      "resume": "",
+      "source_id": "centre-inffo",
+      "thematique": "qualiopi",
+      "niveau": "important",
+      "date": "2026-07-06",
+      "url": "https://www.centre-inffo.fr/site-droit-formation/actualites-droit/les-echanges-de-donnees-entre-entites-controleuses-intensifies",
+      "lu": false
+    },
+    {
+      "id": "centre-inffo__transilien-sncf-voyageurs-mise-sur-lalternance-pour-recruter-600-postes-en-2026",
+      "titre": "Transilien SNCF Voyageurs mise sur l'alternance pour recruter 600 postes en 2026",
+      "resume": "",
+      "source_id": "centre-inffo",
+      "thematique": "qualiopi",
+      "niveau": "info",
+      "date": "2026-07-06",
+      "url": "https://www.centre-inffo.fr/site-centre-inffo/actualites-centre-inffo/le-quotidien-de-la-formation-actualite-formation-professionnelle-apprentissage/actualites-2026/transilien-sncf-voyageurs-mise-sur-lalternance-pour-recruter-600-postes-en-2026",
+      "lu": false
+    },
+    {
+      "id": "cnil__23-nouvelles-sanctions-simplifiees",
+      "titre": "La CNIL a prononcé 23 nouvelles sanctions depuis janvier au titre de la procédure simplifiée",
+      "resume": "",
+      "source_id": "cnil",
+      "thematique": "rgpd",
+      "niveau": "urgent",
+      "date": "2026-07-06",
+      "url": "https://www.cnil.fr/fr/23-nouvelles-sanctions-simplifiees",
+      "lu": false
+    },
+    {
+      "id": "cnil__enquete-dpo-ia",
+      "titre": "Le métier de DPO à l’heure de l’intelligence artificielle : publication des résultats de l’enquête",
+      "resume": "",
+      "source_id": "cnil",
+      "thematique": "rgpd",
+      "niveau": "info",
+      "date": "2026-07-03",
+      "url": "https://www.cnil.fr/fr/enquete-dpo-ia",
+      "lu": false
+    },
+    {
+      "id": "ministere-travail__traite-des-etres-humains-trois-condamnations-penales-confirmees-en-appel",
+      "titre": "Traite des êtres humains : trois condamnations pénales confirmées en appel",
+      "resume": "",
+      "source_id": "ministere-travail",
+      "thematique": "legislatif",
+      "niveau": "info",
+      "date": "2026-07-03",
+      "url": "https://travail-emploi.gouv.fr/traite-des-etres-humains-trois-condamnations-penales-confirmees-en-appel",
+      "lu": false
+    },
+    {
+      "id": "agefiph__controle-et-taxation-forfaitaire",
+      "titre": "Contrôle et taxation forfaitaire",
+      "resume": "",
+      "source_id": "agefiph",
+      "thematique": "opco",
+      "niveau": "important",
+      "date": "2026-07-03",
+      "url": "https://www.agefiph.fr/centre-aide/controle-et-taxation-forfaitaire",
+      "lu": false
+    },
+    {
+      "id": "cnil__ordre-du-jour-de-la-seance-pleniere-du-2-juillet-2026",
+      "titre": "Ordre du jour de la séance plénière du 2 juillet 2026",
+      "resume": "",
+      "source_id": "cnil",
+      "thematique": "rgpd",
+      "niveau": "info",
+      "date": "2026-07-02",
+      "url": "https://www.cnil.fr/fr/ordre-du-jour-de-la-seance-pleniere-du-2-juillet-2026",
+      "lu": false
+    },
+    {
+      "id": "cnil__jeux-argent-hasard-application-rgpd",
+      "titre": "Jeux d’argent et de hasard : appliquer le RGPD aux traitements de données des joueurs",
+      "resume": "",
+      "source_id": "cnil",
+      "thematique": "rgpd",
+      "niveau": "info",
+      "date": "2026-07-02",
+      "url": "https://www.cnil.fr/fr/jeux-argent-hasard-application-rgpd",
+      "lu": false
+    },
+    {
+      "id": "cnil__vehicules-connectes-utilisation-de-vos-donnees",
+      "titre": "Véhicules connectés : dans quelles conditions vos données de localisation peuvent être utilisées ?",
+      "resume": "",
+      "source_id": "cnil",
+      "thematique": "rgpd",
+      "niveau": "info",
+      "date": "2026-06-30",
+      "url": "https://www.cnil.fr/fr/vehicules-connectes-utilisation-de-vos-donnees",
+      "lu": false
+    },
+    {
+      "id": "ministere-travail__conclusions-de-talents-de-france",
+      "titre": "Conclusions de Talents de France",
+      "resume": "",
+      "source_id": "ministere-travail",
+      "thematique": "legislatif",
+      "niveau": "info",
+      "date": "2026-06-30",
+      "url": "https://travail-emploi.gouv.fr/conclusions-de-talents-de-france",
+      "lu": false
+    },
+    {
+      "id": "ministere-travail__evaluation-du-programme-inclusion-par-le-travail-independant-donnees-personnelles",
+      "titre": "Evaluation du programme Inclusion par le travail indépendant | Données personnelles",
+      "resume": "",
+      "source_id": "ministere-travail",
+      "thematique": "legislatif",
+      "niveau": "info",
+      "date": "2026-06-30",
+      "url": "https://travail-emploi.gouv.fr/evaluation-du-programme-inclusion-par-le-travail-independant-donnees-personnelles",
       "lu": false
     },
     {
@@ -109,6 +274,17 @@
       "niveau": "info",
       "date": "2026-06-29",
       "url": "https://www.centre-inffo.fr/site-centre-inffo/actualites-centre-inffo/le-quotidien-de-la-formation-actualite-formation-professionnelle-apprentissage/actualites-2026/insertion-les-apprentis-resistent",
+      "lu": false
+    },
+    {
+      "id": "ministere-travail__plan-emploi-futur-de-jeunes-ambassadeurs-engages-pour-linsertion-professionnelle",
+      "titre": "Plan Emploi Futur : de jeunes ambassadeurs engagés pour l’insertion professionnelle",
+      "resume": "",
+      "source_id": "ministere-travail",
+      "thematique": "legislatif",
+      "niveau": "urgent",
+      "date": "2026-06-26",
+      "url": "https://travail-emploi.gouv.fr/plan-emploi-futur-de-jeunes-ambassadeurs-engages-pour-linsertion-professionnelle",
       "lu": false
     },
     {
