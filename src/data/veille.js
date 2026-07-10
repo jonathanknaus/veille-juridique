@@ -8,6 +8,7 @@ export const SOURCES = [
   { id: 'legifrance',         nom: 'Légifrance',           thematique: 'legislatif', url: 'https://www.legifrance.gouv.fr', fiabilite: 'officiel', rss: null, api: 'https://piste.gouv.fr' },
   { id: 'agefiph',            nom: 'Agefiph',              thematique: 'opco',       url: 'https://www.agefiph.fr',          fiabilite: 'officiel', rss: null },
   { id: 'padlet-veille',      nom: 'Padlet Veille Formation (OPCO)', thematique: 'opco', url: 'https://padlet.com/veilleformation/les-immanquables-de-la-formation-les-opcos-faf-et-autres-org-vwc2frc8fdxp0jow', fiabilite: 'specialise', rss: null },
+  { id: 'digiformag',         nom: 'Digiformag', thematique: 'formation', url: 'https://www.digiformag.com/digiforma-veille/', fiabilite: 'specialise', rss: 'https://www.digiformag.com/feed/' },
 ]
 
 export const THEMATIQUES = [
@@ -16,6 +17,7 @@ export const THEMATIQUES = [
   { id: 'rgpd',       label: 'RGPD' },
   { id: 'opco',       label: 'OPCO' },
   { id: 'legislatif', label: 'Législatif' },
+  { id: 'formation',  label: 'Formation' },
 ]
 
 export const NIVEAUX = {

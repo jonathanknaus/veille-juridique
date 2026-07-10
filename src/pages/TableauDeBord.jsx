@@ -180,6 +180,7 @@ function ModaleAjoutArticle({ onClose, onSave }) {
                 <option value="rgpd">RGPD</option>
                 <option value="opco">OPCO</option>
                 <option value="legislatif">Législatif</option>
+                <option value="formation">Formation</option>
               </select>
             </div>
             <div style={{ flex: 1 }}>

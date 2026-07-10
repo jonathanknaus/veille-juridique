@@ -44,6 +44,12 @@ const SOURCES = [
     thematique: 'opco',
     rss: 'https://www.agefiph.fr/rss.xml',
   },
+  {
+    id: 'digiformag',
+    nom: 'Digiformag',
+    thematique: 'formation',
+    rss: 'https://www.digiformag.com/feed/',
+  },
   // ── Légifrance n'expose pas de RSS public — couverture via ajout manuel ──────
   // id: 'legifrance' → articles ajoutés manuellement via la modale Traiter
   // ── Caisse des Dépôts n'expose pas de RSS — couverture manuelle ────────────
