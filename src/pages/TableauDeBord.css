@@ -176,12 +176,14 @@
   background: var(--blanc);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  overflow: auto;
+  overflow-x: auto;
 }
 .tdb-table {
   width: 100%;
+  min-width: 900px;
   border-collapse: collapse;
   font-size: 14px;
+  table-layout: fixed;
 }
 .tdb-table th {
   background: var(--gris);
@@ -209,12 +211,20 @@
 .lien-titre { color: inherit; text-decoration: underline; text-decoration-color: var(--border); text-underline-offset: 3px; transition: color 0.12s; }
 .lien-titre:hover { color: var(--bg-medium); text-decoration-color: var(--bg-medium); }
 
-.td-source { font-weight: 600; white-space: nowrap; color: var(--bg-medium); }
+/* Colonnes garanties : Source 130 | Date 80 | Titre auto | Thématique 100 | Niveau 90 | Statut 130 | Action 110 */
+.tdb-table th:nth-child(1) { width: 130px; }
+.tdb-table th:nth-child(2) { width: 80px; }
+.tdb-table th:nth-child(4) { width: 100px; }
+.tdb-table th:nth-child(5) { width: 90px; }
+.tdb-table th:nth-child(6) { width: 130px; }
+.tdb-table th:nth-child(7) { width: 110px; }
+
+.td-source { font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--bg-medium); }
 .td-date   { white-space: nowrap; color: var(--texte-secondaire); }
-.td-titre  { max-width: 320px; line-height: 1.4; }
-.td-email  { font-size: 12px; color: var(--texte-secondaire); }
+.td-titre  { line-height: 1.4; }
+.td-email  { font-size: 12px; color: var(--texte-secondaire); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .td-dest   { white-space: nowrap; font-size: 13px; }
-.td-commentaire { font-size: 13px; color: var(--texte-secondaire); max-width: 200px; }
+.td-commentaire { font-size: 13px; color: var(--texte-secondaire); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
 /* Badges */
 .thematique-badge {
@@ -429,7 +439,9 @@
 }
 
 .ligne-manuelle td { background: #FAFAFE; }
-.td-actions { display: flex; gap: 6px; align-items: center; }
+.td-actions { white-space: nowrap; }
+.td-actions .btn-traiter { display: inline-block; }
+.td-actions .btn-suppr { display: inline-block; margin-left: 4px; }
 
 /* Modale ajout article */
 .modale-ajout { max-width: 560px; }
