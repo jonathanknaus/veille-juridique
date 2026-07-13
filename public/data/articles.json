@@ -1,6 +1,17 @@
 {
-  "fetchedAt": "2026-07-06T17:18:37.321Z",
+  "fetchedAt": "2026-07-13T13:39:56.307Z",
   "articles": [
+    {
+      "id": "france-competences__metiers-emergents-ou-en-particuliere-evolution-france-competences-elargit-son-7%e1%b5%89-appel-a-con",
+      "titre": "Métiers émergents ou en particulière évolution : lancement d'un appel à contributions",
+      "resume": "",
+      "source_id": "france-competences",
+      "thematique": "qualiopi",
+      "niveau": "info",
+      "date": "2026-07-13",
+      "url": "https://www.francecompetences.fr/fiche/metiers-emergents-ou-en-particuliere-evolution-france-competences-elargit-son-7%e1%b5%89-appel-a-contributions/",
+      "lu": false
+    },
     {
       "id": "france-competences__decisions-denregistrement-aux-repertoires-nationaux-juin-2026",
       "titre": "Décisions d’enregistrement aux répertoires nationaux – Juin 2026",
@@ -8,7 +19,7 @@
       "source_id": "france-competences",
       "thematique": "qualiopi",
       "niveau": "info",
-      "date": "2026-07-06",
+      "date": "2026-07-13",
       "url": "https://www.francecompetences.fr/fiche/decisions-denregistrement-aux-repertoires-nationaux-juin-2026/",
       "lu": false
     },
@@ -19,8 +30,206 @@
       "source_id": "france-competences",
       "thematique": "qualiopi",
       "niveau": "info",
-      "date": "2026-07-06",
+      "date": "2026-07-13",
       "url": "https://www.francecompetences.fr/fiche/decisions-denregistrement-aux-repertoires-nationaux-mai-2026/",
+      "lu": false
+    },
+    {
+      "id": "france-competences__enquete-nationale-aupres-des-organismes-certificateurs-et-des-organismes-de-formation-habilites",
+      "titre": "Observation et évaluation Enquête nationale auprès des organismes certificateurs et des organismes de formation habilités",
+      "resume": "",
+      "source_id": "france-competences",
+      "thematique": "qualiopi",
+      "niveau": "info",
+      "date": "2026-07-13",
+      "url": "https://www.francecompetences.fr/fiche/enquete-nationale-aupres-des-organismes-certificateurs-et-des-organismes-de-formation-habilites/",
+      "lu": false
+    },
+    {
+      "id": "france-competences__la-grande-bibliotheque-de-france-competences-referencee-par-lademe-academie",
+      "titre": "Observation et évaluation Actualités 09.07.2026",
+      "resume": "",
+      "source_id": "france-competences",
+      "thematique": "qualiopi",
+      "niveau": "info",
+      "date": "2026-07-13",
+      "url": "https://www.francecompetences.fr/fiche/la-grande-bibliotheque-de-france-competences-referencee-par-lademe-academie/",
+      "lu": false
+    },
+    {
+      "id": "centre-inffo__la-formation-ne-suffit-pas-a-garantir-une-reconversion-des-femmes-sorties-de-lemploi-dans-lunivers-du-nume",
+      "titre": "La formation ne suffit pas à garantir une reconversion des femmes sorties de l'emploi dans l'univers du numérique",
+      "resume": "",
+      "source_id": "centre-inffo",
+      "thematique": "qualiopi",
+      "niveau": "urgent",
+      "date": "2026-07-13",
+      "url": "https://www.centre-inffo.fr/site-centre-inffo/la-formation-ne-suffit-pas-a-garantir-une-reconversion-des-femmes-sorties-de-lemploi-dans-lunivers-du-numerique",
+      "lu": false
+    },
+    {
+      "id": "centre-inffo__les-injonctions-a-la-reconversion-professionnelles-sont-fortes-mais-les-moyens-pour-y-parvenir-sont-insuff",
+      "titre": "Fabienne Maillard : « Les injonctions à la reconversion professionnelles sont fortes, mais les moyens pour y parvenir sont insuffisants »",
+      "resume": "",
+      "source_id": "centre-inffo",
+      "thematique": "qualiopi",
+      "niveau": "info",
+      "date": "2026-07-13",
+      "url": "https://www.centre-inffo.fr/site-centre-inffo/actualites-centre-inffo/le-quotidien-de-la-formation-actualite-formation-professionnelle-apprentissage/actualites-2026/les-injonctions-a-la-reconversion-professionnelles-sont-fortes-mais-les-moyens-pour-y-parvenir-sont-insuffisants",
+      "lu": false
+    },
+    {
+      "id": "centre-inffo__france-experimentation-vient-denregistrer-son-500%e1%b5%89-dossier",
+      "titre": "France Expérimentation vient d'enregistrer son 500ᵉ dossier",
+      "resume": "",
+      "source_id": "centre-inffo",
+      "thematique": "qualiopi",
+      "niveau": "info",
+      "date": "2026-07-13",
+      "url": "https://www.centre-inffo.fr/site-centre-inffo/actualites-centre-inffo/le-quotidien-de-la-formation-actualite-formation-professionnelle-apprentissage/actualites-2026/france-experimentation-vient-denregistrer-son-500%e1%b5%89-dossier",
+      "lu": false
+    },
+    {
+      "id": "centre-inffo__les-agents-publics-se-declarent-en-attente-de-formations-a-lia",
+      "titre": "Les agents publics se déclarent en attente de formations à l'IA",
+      "resume": "",
+      "source_id": "centre-inffo",
+      "thematique": "qualiopi",
+      "niveau": "info",
+      "date": "2026-07-13",
+      "url": "https://www.centre-inffo.fr/site-centre-inffo/actualites-centre-inffo/le-quotidien-de-la-formation-actualite-formation-professionnelle-apprentissage/actualites-2026/les-agents-publics-se-declarent-en-attente-de-formations-a-lia",
+      "lu": false
+    },
+    {
+      "id": "centre-inffo__richard-lainet-capitaine-penitentiaire",
+      "titre": "Richard Lainet, capitaine pénitentiaire",
+      "resume": "",
+      "source_id": "centre-inffo",
+      "thematique": "qualiopi",
+      "niveau": "info",
+      "date": "2026-07-12",
+      "url": "https://www.centre-inffo.fr/site-centre-inffo/inffo-formation/articles-dinffo-formation/richard-lainet-capitaine-penitentiaire",
+      "lu": false
+    },
+    {
+      "id": "cnil__revoir-le-webinaire-nouveau-teleservice-sante-et-recherche-ce-qui-change-pour-vos-demandes",
+      "titre": "Revoir le webinaire : Nouveau téléservice santé et recherche, ce qui change pour vos demandes d’autorisation",
+      "resume": "",
+      "source_id": "cnil",
+      "thematique": "rgpd",
+      "niveau": "info",
+      "date": "2026-07-10",
+      "url": "https://www.cnil.fr/fr/revoir-le-webinaire-nouveau-teleservice-sante-et-recherche-ce-qui-change-pour-vos-demandes",
+      "lu": false
+    },
+    {
+      "id": "digiformag__centre-inffo-en-liquidation-judiciaire",
+      "titre": "Centre Inffo en liquidation judiciaire",
+      "resume": "Le communiqué de presse est tombé ce jeudi 9 juillet sur LinkedIn.\nCentre Inffo vient d&#8217;entrer dans une procédure de liquidation judiciaire.\nAprès 50 ans d&#8217;activité, la structure avait perdu en janvier le soutien de l&#8217;Etat et de son statut associatif sous tutelle du Ministère du travail. Un bouleversement brutal de leur modèle qui malgré de nombreuses actions internes n&#8217;a p",
+      "source_id": "digiformag",
+      "thematique": "formation",
+      "niveau": "info",
+      "date": "2026-07-10",
+      "url": "https://www.digiformag.com/centre-inffo-en-liquidation-judiciaire/",
+      "lu": false
+    },
+    {
+      "id": "cnil__controle-de-lactivite-des-personnes-employees",
+      "titre": "Travail, ressources humaines : le contrôle de l’activité des personnes employées",
+      "resume": "",
+      "source_id": "cnil",
+      "thematique": "rgpd",
+      "niveau": "important",
+      "date": "2026-07-09",
+      "url": "https://www.cnil.fr/fr/controle-de-lactivite-des-personnes-employees",
+      "lu": false
+    },
+    {
+      "id": "cnil__cepd-ia-generative-chaines-blocs",
+      "titre": "Le CEPD met en lumière l’anonymisation et le moissonnage pour l’IA générative et adopte la version finale des lignes directrices sur la chaîne de blocs",
+      "resume": "",
+      "source_id": "cnil",
+      "thematique": "rgpd",
+      "niveau": "info",
+      "date": "2026-07-09",
+      "url": "https://www.cnil.fr/fr/cepd-ia-generative-chaines-blocs",
+      "lu": false
+    },
+    {
+      "id": "ministere-travail__bilan-de-la-mesure-2025-de-la-representativite-des-organisations-syndicales-et-patronales",
+      "titre": "Bilan de la mesure 2025 de la représentativité des organisations syndicales et patronales",
+      "resume": "",
+      "source_id": "ministere-travail",
+      "thematique": "legislatif",
+      "niveau": "info",
+      "date": "2026-07-09",
+      "url": "https://travail-emploi.gouv.fr/bilan-de-la-mesure-2025-de-la-representativite-des-organisations-syndicales-et-patronales",
+      "lu": false
+    },
+    {
+      "id": "digiformag__formation-frugale-faire-mieux-avec-moins-et-parfois-beaucoup-mieux",
+      "titre": "Formation frugale : faire mieux avec moins (et parfois beaucoup mieux)",
+      "resume": "Pendant longtemps, un principe semblait s’imposer dans la formation professionnelle : plus un dispositif mobilisait de moyens, plus il était supposé être efficace. Cela a entraîné au cours des années 2010-2020 (avec la digitalisation massive des OF) une forme de course à l&#8217;armement :\n\nPlus de contenus\nPlus de vidéos\nPlus de plateformes\nPlus d’heures\nPlus d’outils\n\nCette logique a conduit de ",
+      "source_id": "digiformag",
+      "thematique": "formation",
+      "niveau": "urgent",
+      "date": "2026-07-09",
+      "url": "https://www.digiformag.com/formation-frugale-faire-mieux-avec-moins-et-parfois-beaucoup-mieux/",
+      "lu": false
+    },
+    {
+      "id": "ministere-travail__fortes-chaleurs-mesures-de-prevention-et-actions-de-linspection-du-travail",
+      "titre": "Fortes chaleurs : mesures de prévention et actions de l'inspection du travail",
+      "resume": "",
+      "source_id": "ministere-travail",
+      "thematique": "legislatif",
+      "niveau": "info",
+      "date": "2026-07-08",
+      "url": "https://travail-emploi.gouv.fr/fortes-chaleurs-mesures-de-prevention-et-actions-de-linspection-du-travail",
+      "lu": false
+    },
+    {
+      "id": "agefiph__le-cnc-lagefiph-et-ladami-devoilent-les-23-laureats-de",
+      "titre": "Le CNC, l’Agefiph et l’Adami dévoilent les 23 lauréats de l’appel à projets « Les uns et les autres » 2026",
+      "resume": "",
+      "source_id": "agefiph",
+      "thematique": "opco",
+      "niveau": "info",
+      "date": "2026-07-08",
+      "url": "https://www.agefiph.fr/espace-presse/tous-les-documents-presse/le-cnc-lagefiph-et-ladami-devoilent-les-23-laureats-de",
+      "lu": false
+    },
+    {
+      "id": "cnil__geolocalisation-applications-mobiles-proteger-vos-donnees",
+      "titre": "Géolocalisation et applications mobiles : comment protéger vos données ?",
+      "resume": "",
+      "source_id": "cnil",
+      "thematique": "rgpd",
+      "niveau": "info",
+      "date": "2026-07-07",
+      "url": "https://www.cnil.fr/fr/geolocalisation-applications-mobiles-proteger-vos-donnees",
+      "lu": false
+    },
+    {
+      "id": "cnil__geolocalisation-applications-mobiles-quelles-regles",
+      "titre": "Géolocalisation et applications mobiles : quelles règles pour protéger les données des utilisateurs ?",
+      "resume": "",
+      "source_id": "cnil",
+      "thematique": "rgpd",
+      "niveau": "info",
+      "date": "2026-07-07",
+      "url": "https://www.cnil.fr/fr/geolocalisation-applications-mobiles-quelles-regles",
+      "lu": false
+    },
+    {
+      "id": "digiformag__passeport-de-prevention-limport-de-masse-arrive-enfin",
+      "titre": "Passeport de prévention : l’import de masse arrive enfin !",
+      "resume": "Depuis le 1ᵉʳ septembre 2025, toutes vos formations santé-sécurité (SST, habilitations électriques, risques chimiques, travail en hauteur…) doivent être déclarées au Passeport Prévention. C&#8217;est une obligation légale qui concerne chaque apprenant formé, sans exception. Et on le sait, cela peut prendre beaucoup de temps.\nLa bonne nouvelle ?\nLa Caisse des dépôts ouvre la déclaration en masse vi",
+      "source_id": "digiformag",
+      "thematique": "formation",
+      "niveau": "urgent",
+      "date": "2026-07-06",
+      "url": "https://www.digiformag.com/passeport-de-prevention-limport-de-masse-arrive-enfin/",
       "lu": false
     },
     {
@@ -123,17 +332,6 @@
       "lu": false
     },
     {
-      "id": "cnil__enquete-dpo-ia",
-      "titre": "Le métier de DPO à l’heure de l’intelligence artificielle : publication des résultats de l’enquête",
-      "resume": "",
-      "source_id": "cnil",
-      "thematique": "rgpd",
-      "niveau": "info",
-      "date": "2026-07-03",
-      "url": "https://www.cnil.fr/fr/enquete-dpo-ia",
-      "lu": false
-    },
-    {
       "id": "ministere-travail__traite-des-etres-humains-trois-condamnations-penales-confirmees-en-appel",
       "titre": "Traite des êtres humains : trois condamnations pénales confirmées en appel",
       "resume": "",
@@ -153,6 +351,28 @@
       "niveau": "important",
       "date": "2026-07-03",
       "url": "https://www.agefiph.fr/centre-aide/controle-et-taxation-forfaitaire",
+      "lu": false
+    },
+    {
+      "id": "cnil__enquete-dpo-ia",
+      "titre": "Le métier de DPO à l’heure de l’intelligence artificielle : publication des résultats de l’enquête",
+      "resume": "",
+      "source_id": "cnil",
+      "thematique": "rgpd",
+      "niveau": "info",
+      "date": "2026-07-03",
+      "url": "https://www.cnil.fr/fr/enquete-dpo-ia",
+      "lu": false
+    },
+    {
+      "id": "digiformag__of-connect-change-de-nom",
+      "titre": "OF Connect change de nom !",
+      "resume": "&nbsp;\n\n\n\n\n\nCela fait maintenant plus de 4 ans que nous avons choisi OF Connect comme marque étendard pour porter la voix de tous les OF, à un moment où le secteur entamait un chemin réglementaire inédit.\n(les plus anciens se rappelleront avec émotion notre premier webinaire avec Laurent Durain de la Caisse des dépôts sur la fin du code 203 au CPF …)\nA l’approche d’une nouvelle saison qui s’annonc",
+      "source_id": "digiformag",
+      "thematique": "formation",
+      "niveau": "urgent",
+      "date": "2026-07-02",
+      "url": "https://www.digiformag.com/of-connect-change-de-nom/",
       "lu": false
     },
     {
@@ -178,17 +398,6 @@
       "lu": false
     },
     {
-      "id": "cnil__vehicules-connectes-utilisation-de-vos-donnees",
-      "titre": "Véhicules connectés : dans quelles conditions vos données de localisation peuvent être utilisées ?",
-      "resume": "",
-      "source_id": "cnil",
-      "thematique": "rgpd",
-      "niveau": "info",
-      "date": "2026-06-30",
-      "url": "https://www.cnil.fr/fr/vehicules-connectes-utilisation-de-vos-donnees",
-      "lu": false
-    },
-    {
       "id": "ministere-travail__conclusions-de-talents-de-france",
       "titre": "Conclusions de Talents de France",
       "resume": "",
@@ -208,6 +417,28 @@
       "niveau": "info",
       "date": "2026-06-30",
       "url": "https://travail-emploi.gouv.fr/evaluation-du-programme-inclusion-par-le-travail-independant-donnees-personnelles",
+      "lu": false
+    },
+    {
+      "id": "digiformag__formation-professionnelle-les-documents-indispensables-avant-pendant-et-apres-chaque-action-de-formation",
+      "titre": "Formation professionnelle : les documents indispensables avant, pendant et après chaque action de formation",
+      "resume": "Convention, convocation, émargement, évaluations, certificat de réalisation, facture… L&#8217;administration de la formation ne consiste pas à accumuler des documents, mais à pouvoir démontrer chaque étape de votre action de formation. Voici les documents indispensables à prévoir avant, pendant et après chaque session, ainsi que quelques conseils d&#8217;organisation pour sécuriser votre activité ",
+      "source_id": "digiformag",
+      "thematique": "formation",
+      "niveau": "urgent",
+      "date": "2026-06-30",
+      "url": "https://www.digiformag.com/formation-professionnelle-les-documents-indispensables-avant-pendant-et-apres-chaque-action-de-formation/",
+      "lu": false
+    },
+    {
+      "id": "cnil__vehicules-connectes-utilisation-de-vos-donnees",
+      "titre": "Véhicules connectés : dans quelles conditions vos données de localisation peuvent être utilisées ?",
+      "resume": "",
+      "source_id": "cnil",
+      "thematique": "rgpd",
+      "niveau": "info",
+      "date": "2026-06-30",
+      "url": "https://www.cnil.fr/fr/vehicules-connectes-utilisation-de-vos-donnees",
       "lu": false
     },
     {
