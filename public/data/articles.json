@@ -1,6 +1,17 @@
 {
-  "fetchedAt": "2026-07-13T13:39:56.307Z",
+  "fetchedAt": "2026-07-20T08:54:45.215Z",
   "articles": [
+    {
+      "id": "france-competences__decisions-denregistrement-aux-repertoires-nationaux-juillet-2026",
+      "titre": "Décisions d’enregistrement aux répertoires nationaux – Juillet 2026",
+      "resume": "",
+      "source_id": "france-competences",
+      "thematique": "qualiopi",
+      "niveau": "info",
+      "date": "2026-07-20",
+      "url": "https://www.francecompetences.fr/fiche/decisions-denregistrement-aux-repertoires-nationaux-juillet-2026/",
+      "lu": false
+    },
     {
       "id": "france-competences__metiers-emergents-ou-en-particuliere-evolution-france-competences-elargit-son-7%e1%b5%89-appel-a-con",
       "titre": "Métiers émergents ou en particulière évolution : lancement d'un appel à contributions",
@@ -8,7 +19,7 @@
       "source_id": "france-competences",
       "thematique": "qualiopi",
       "niveau": "info",
-      "date": "2026-07-13",
+      "date": "2026-07-20",
       "url": "https://www.francecompetences.fr/fiche/metiers-emergents-ou-en-particuliere-evolution-france-competences-elargit-son-7%e1%b5%89-appel-a-contributions/",
       "lu": false
     },
@@ -19,8 +30,107 @@
       "source_id": "france-competences",
       "thematique": "qualiopi",
       "niveau": "info",
-      "date": "2026-07-13",
+      "date": "2026-07-20",
       "url": "https://www.francecompetences.fr/fiche/decisions-denregistrement-aux-repertoires-nationaux-juin-2026/",
+      "lu": false
+    },
+    {
+      "id": "france-competences__la-grande-bibliotheque-de-france-competences-referencee-par-lademe-academie",
+      "titre": "Observation et évaluation Actualités 09.07.2026",
+      "resume": "",
+      "source_id": "france-competences",
+      "thematique": "qualiopi",
+      "niveau": "info",
+      "date": "2026-07-20",
+      "url": "https://www.francecompetences.fr/fiche/la-grande-bibliotheque-de-france-competences-referencee-par-lademe-academie/",
+      "lu": false
+    },
+    {
+      "id": "france-competences__enquete-nationale-aupres-des-organismes-certificateurs-et-des-organismes-de-formation-habilites",
+      "titre": "Observation et évaluation Actualités 07.07.2026",
+      "resume": "",
+      "source_id": "france-competences",
+      "thematique": "qualiopi",
+      "niveau": "info",
+      "date": "2026-07-20",
+      "url": "https://www.francecompetences.fr/fiche/enquete-nationale-aupres-des-organismes-certificateurs-et-des-organismes-de-formation-habilites/",
+      "lu": false
+    },
+    {
+      "id": "centre-inffo__thales-devoile-les-coulisses-de-sa-transformation-centree-sur-les-competences",
+      "titre": "Thales dévoile les coulisses de sa transformation centrée sur les compétences",
+      "resume": "",
+      "source_id": "centre-inffo",
+      "thematique": "qualiopi",
+      "niveau": "info",
+      "date": "2026-07-17",
+      "url": "https://www.centre-inffo.fr/site-centre-inffo/thales-devoile-les-coulisses-de-sa-transformation-centree-sur-les-competences",
+      "lu": false
+    },
+    {
+      "id": "centre-inffo__clap-de-fin-pour-le-quotidien-de-la-formation",
+      "titre": "Clap de fin pour le Quotidien de la formation",
+      "resume": "",
+      "source_id": "centre-inffo",
+      "thematique": "qualiopi",
+      "niveau": "info",
+      "date": "2026-07-17",
+      "url": "https://www.centre-inffo.fr/site-centre-inffo/actualites-centre-inffo/le-quotidien-de-la-formation-actualite-formation-professionnelle-apprentissage/actualites-2026/clap-de-fin-pour-le-quotidien-de-la-formation",
+      "lu": false
+    },
+    {
+      "id": "centre-inffo__lintelligence-collective-avenir-de-lapprentissage-quels-defis-a-relever",
+      "titre": "L'intelligence collective, avenir de l'apprentissage... Quels défis à relever ?",
+      "resume": "",
+      "source_id": "centre-inffo",
+      "thematique": "qualiopi",
+      "niveau": "info",
+      "date": "2026-07-17",
+      "url": "https://www.centre-inffo.fr/site-centre-inffo/actualites-centre-inffo/le-quotidien-de-la-formation-actualite-formation-professionnelle-apprentissage/actualites-2026/lintelligence-collective-avenir-de-lapprentissage-quels-defis-a-relever",
+      "lu": false
+    },
+    {
+      "id": "centre-inffo__80-des-entreprises-nexploitent-pas-encore-pleinement-le-potentiel-de-la-formation-a-distance",
+      "titre": "80 % des entreprises n'exploitent pas encore pleinement le potentiel de la formation à distance",
+      "resume": "",
+      "source_id": "centre-inffo",
+      "thematique": "qualiopi",
+      "niveau": "urgent",
+      "date": "2026-07-17",
+      "url": "https://www.centre-inffo.fr/site-centre-inffo/80-des-entreprises-nexploitent-pas-encore-pleinement-le-potentiel-de-la-formation-a-distance",
+      "lu": false
+    },
+    {
+      "id": "centre-inffo__emilie-ou-les-yeux-des-soldats-deployes-en-zone-de-guerre",
+      "titre": "Émilie ou les yeux des soldats déployés en zone de guerre",
+      "resume": "",
+      "source_id": "centre-inffo",
+      "thematique": "qualiopi",
+      "niveau": "info",
+      "date": "2026-07-17",
+      "url": "https://www.centre-inffo.fr/site-centre-inffo/actualites-centre-inffo/le-quotidien-de-la-formation-actualite-formation-professionnelle-apprentissage/actualites-2026/emilie-ou-les-yeux-des-soldats-deployes-en-zone-de-guerre",
+      "lu": false
+    },
+    {
+      "id": "cnil__ordre-du-jour-de-la-seance-pleniere-du-16-juillet-2026",
+      "titre": "Ordre du jour de la séance plénière du 16 juillet 2026",
+      "resume": "",
+      "source_id": "cnil",
+      "thematique": "rgpd",
+      "niveau": "info",
+      "date": "2026-07-16",
+      "url": "https://www.cnil.fr/fr/ordre-du-jour-de-la-seance-pleniere-du-16-juillet-2026",
+      "lu": false
+    },
+    {
+      "id": "digiformag__handicap-en-formation-les-limites-de-lobligation-de-moyens",
+      "titre": "Handicap en formation : les limites de l’obligation de moyens",
+      "resume": "L’accessibilité en formation est devenue un sujet un peu particulier dans notre secteur.\nTout le monde est d’accord avec le principe.\nTout le monde veut bien faire.\nTout le monde parle d’inclusion.\nEt honnêtement, heureusement, car avec plus de 515 000 personnes en situation de handicap inscrites à France Travail au premier semestre 2025, et un taux de chômage proche de 12 %, l&#8217;enjeu autour ",
+      "source_id": "digiformag",
+      "thematique": "formation",
+      "niveau": "urgent",
+      "date": "2026-07-16",
+      "url": "https://www.digiformag.com/handicap-en-formation-les-limites-de-lobligation-de-moyens/",
       "lu": false
     },
     {
@@ -32,28 +142,6 @@
       "niveau": "info",
       "date": "2026-07-13",
       "url": "https://www.francecompetences.fr/fiche/decisions-denregistrement-aux-repertoires-nationaux-mai-2026/",
-      "lu": false
-    },
-    {
-      "id": "france-competences__enquete-nationale-aupres-des-organismes-certificateurs-et-des-organismes-de-formation-habilites",
-      "titre": "Observation et évaluation Enquête nationale auprès des organismes certificateurs et des organismes de formation habilités",
-      "resume": "",
-      "source_id": "france-competences",
-      "thematique": "qualiopi",
-      "niveau": "info",
-      "date": "2026-07-13",
-      "url": "https://www.francecompetences.fr/fiche/enquete-nationale-aupres-des-organismes-certificateurs-et-des-organismes-de-formation-habilites/",
-      "lu": false
-    },
-    {
-      "id": "france-competences__la-grande-bibliotheque-de-france-competences-referencee-par-lademe-academie",
-      "titre": "Observation et évaluation Actualités 09.07.2026",
-      "resume": "",
-      "source_id": "france-competences",
-      "thematique": "qualiopi",
-      "niveau": "info",
-      "date": "2026-07-13",
-      "url": "https://www.francecompetences.fr/fiche/la-grande-bibliotheque-de-france-competences-referencee-par-lademe-academie/",
       "lu": false
     },
     {
@@ -200,17 +288,6 @@
       "lu": false
     },
     {
-      "id": "cnil__geolocalisation-applications-mobiles-proteger-vos-donnees",
-      "titre": "Géolocalisation et applications mobiles : comment protéger vos données ?",
-      "resume": "",
-      "source_id": "cnil",
-      "thematique": "rgpd",
-      "niveau": "info",
-      "date": "2026-07-07",
-      "url": "https://www.cnil.fr/fr/geolocalisation-applications-mobiles-proteger-vos-donnees",
-      "lu": false
-    },
-    {
       "id": "cnil__geolocalisation-applications-mobiles-quelles-regles",
       "titre": "Géolocalisation et applications mobiles : quelles règles pour protéger les données des utilisateurs ?",
       "resume": "",
@@ -219,6 +296,17 @@
       "niveau": "info",
       "date": "2026-07-07",
       "url": "https://www.cnil.fr/fr/geolocalisation-applications-mobiles-quelles-regles",
+      "lu": false
+    },
+    {
+      "id": "cnil__geolocalisation-applications-mobiles-proteger-vos-donnees",
+      "titre": "Géolocalisation et applications mobiles : comment protéger vos données ?",
+      "resume": "",
+      "source_id": "cnil",
+      "thematique": "rgpd",
+      "niveau": "info",
+      "date": "2026-07-07",
+      "url": "https://www.cnil.fr/fr/geolocalisation-applications-mobiles-proteger-vos-donnees",
       "lu": false
     },
     {
