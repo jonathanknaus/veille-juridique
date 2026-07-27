@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-20T08:54:45.215Z",
+  "fetchedAt": "2026-07-27T09:48:09.661Z",
   "articles": [
     {
       "id": "france-competences__decisions-denregistrement-aux-repertoires-nationaux-juillet-2026",
@@ -8,7 +8,7 @@
       "source_id": "france-competences",
       "thematique": "qualiopi",
       "niveau": "info",
-      "date": "2026-07-20",
+      "date": "2026-07-27",
       "url": "https://www.francecompetences.fr/fiche/decisions-denregistrement-aux-repertoires-nationaux-juillet-2026/",
       "lu": false
     },
@@ -19,7 +19,7 @@
       "source_id": "france-competences",
       "thematique": "qualiopi",
       "niveau": "info",
-      "date": "2026-07-20",
+      "date": "2026-07-27",
       "url": "https://www.francecompetences.fr/fiche/metiers-emergents-ou-en-particuliere-evolution-france-competences-elargit-son-7%e1%b5%89-appel-a-contributions/",
       "lu": false
     },
@@ -30,7 +30,7 @@
       "source_id": "france-competences",
       "thematique": "qualiopi",
       "niveau": "info",
-      "date": "2026-07-20",
+      "date": "2026-07-27",
       "url": "https://www.francecompetences.fr/fiche/decisions-denregistrement-aux-repertoires-nationaux-juin-2026/",
       "lu": false
     },
@@ -41,7 +41,7 @@
       "source_id": "france-competences",
       "thematique": "qualiopi",
       "niveau": "info",
-      "date": "2026-07-20",
+      "date": "2026-07-27",
       "url": "https://www.francecompetences.fr/fiche/la-grande-bibliotheque-de-france-competences-referencee-par-lademe-academie/",
       "lu": false
     },
@@ -52,8 +52,74 @@
       "source_id": "france-competences",
       "thematique": "qualiopi",
       "niveau": "info",
-      "date": "2026-07-20",
+      "date": "2026-07-27",
       "url": "https://www.francecompetences.fr/fiche/enquete-nationale-aupres-des-organismes-certificateurs-et-des-organismes-de-formation-habilites/",
+      "lu": false
+    },
+    {
+      "id": "digiformag__et-si-lapprentissage-netait-pas-mort",
+      "titre": "Et si l’apprentissage n’était pas mort ?",
+      "resume": "Pour beaucoup, 2026 semble être la date à indiquer sur la pierre tombale de l’apprentissage. Et c’est vrai qu’il y a de quoi être inquiet.\n\nBaisse des aides au recrutement d’apprentis.\nBaisse des effectifs.\nFermetures en série d’écoles et de CFA.\nBaisse du financement des régions et des OPCO.\n\nEt toujours une incertitude sur les NPEC à appliquer à la rentrée&#8230; Il n’y a finalement que la météo",
+      "source_id": "digiformag",
+      "thematique": "formation",
+      "niveau": "urgent",
+      "date": "2026-07-23",
+      "url": "https://www.digiformag.com/et-si-lapprentissage-netait-pas-mort/",
+      "lu": false
+    },
+    {
+      "id": "cnil__webinaire-pixels-de-suivi-fournisseurs-prestataires",
+      "titre": "Revoir le webinaire - Fournisseurs et prestataires de l’écosystème « pixels » : comment implémenter la recommandation CNIL ?",
+      "resume": "",
+      "source_id": "cnil",
+      "thematique": "rgpd",
+      "niveau": "info",
+      "date": "2026-07-22",
+      "url": "https://www.cnil.fr/fr/webinaire-pixels-de-suivi-fournisseurs-prestataires",
+      "lu": false
+    },
+    {
+      "id": "cnil__faq-recommandation-pixels-courriers-electroniques",
+      "titre": "Questions-réponses - recommandation relative aux pixels dans les courriers électroniques de la CNIL",
+      "resume": "",
+      "source_id": "cnil",
+      "thematique": "rgpd",
+      "niveau": "info",
+      "date": "2026-07-22",
+      "url": "https://www.cnil.fr/fr/faq-recommandation-pixels-courriers-electroniques",
+      "lu": false
+    },
+    {
+      "id": "cnil__ordre-du-jour-de-la-seance-pleniere-du-21-juillet-2026",
+      "titre": "Ordre du jour de la séance plénière du 21 juillet 2026",
+      "resume": "",
+      "source_id": "cnil",
+      "thematique": "rgpd",
+      "niveau": "info",
+      "date": "2026-07-21",
+      "url": "https://www.cnil.fr/fr/ordre-du-jour-de-la-seance-pleniere-du-21-juillet-2026",
+      "lu": false
+    },
+    {
+      "id": "cnil__cepd-base-juridique-interregulation",
+      "titre": "Le CEPD demande une base légale pour le partage d’informations entre régulateurs",
+      "resume": "",
+      "source_id": "cnil",
+      "thematique": "rgpd",
+      "niveau": "info",
+      "date": "2026-07-20",
+      "url": "https://www.cnil.fr/fr/cepd-base-juridique-interregulation",
+      "lu": false
+    },
+    {
+      "id": "cnil__ia-agentique-cnil-cianum-note",
+      "titre": "IA agentique et données personnelles : la CNIL et le Conseil de l’IA et du Numérique publient une note exploratoire",
+      "resume": "",
+      "source_id": "cnil",
+      "thematique": "rgpd",
+      "niveau": "info",
+      "date": "2026-07-20",
+      "url": "https://www.cnil.fr/fr/ia-agentique-cnil-cianum-note",
       "lu": false
     },
     {
@@ -112,17 +178,6 @@
       "lu": false
     },
     {
-      "id": "cnil__ordre-du-jour-de-la-seance-pleniere-du-16-juillet-2026",
-      "titre": "Ordre du jour de la séance plénière du 16 juillet 2026",
-      "resume": "",
-      "source_id": "cnil",
-      "thematique": "rgpd",
-      "niveau": "info",
-      "date": "2026-07-16",
-      "url": "https://www.cnil.fr/fr/ordre-du-jour-de-la-seance-pleniere-du-16-juillet-2026",
-      "lu": false
-    },
-    {
       "id": "digiformag__handicap-en-formation-les-limites-de-lobligation-de-moyens",
       "titre": "Handicap en formation : les limites de l’obligation de moyens",
       "resume": "L’accessibilité en formation est devenue un sujet un peu particulier dans notre secteur.\nTout le monde est d’accord avec le principe.\nTout le monde veut bien faire.\nTout le monde parle d’inclusion.\nEt honnêtement, heureusement, car avec plus de 515 000 personnes en situation de handicap inscrites à France Travail au premier semestre 2025, et un taux de chômage proche de 12 %, l&#8217;enjeu autour ",
@@ -131,6 +186,17 @@
       "niveau": "urgent",
       "date": "2026-07-16",
       "url": "https://www.digiformag.com/handicap-en-formation-les-limites-de-lobligation-de-moyens/",
+      "lu": false
+    },
+    {
+      "id": "cnil__ordre-du-jour-de-la-seance-pleniere-du-16-juillet-2026",
+      "titre": "Ordre du jour de la séance plénière du 16 juillet 2026",
+      "resume": "",
+      "source_id": "cnil",
+      "thematique": "rgpd",
+      "niveau": "info",
+      "date": "2026-07-16",
+      "url": "https://www.cnil.fr/fr/ordre-du-jour-de-la-seance-pleniere-du-16-juillet-2026",
       "lu": false
     },
     {
@@ -200,17 +266,6 @@
       "lu": false
     },
     {
-      "id": "cnil__revoir-le-webinaire-nouveau-teleservice-sante-et-recherche-ce-qui-change-pour-vos-demandes",
-      "titre": "Revoir le webinaire : Nouveau téléservice santé et recherche, ce qui change pour vos demandes d’autorisation",
-      "resume": "",
-      "source_id": "cnil",
-      "thematique": "rgpd",
-      "niveau": "info",
-      "date": "2026-07-10",
-      "url": "https://www.cnil.fr/fr/revoir-le-webinaire-nouveau-teleservice-sante-et-recherche-ce-qui-change-pour-vos-demandes",
-      "lu": false
-    },
-    {
       "id": "digiformag__centre-inffo-en-liquidation-judiciaire",
       "titre": "Centre Inffo en liquidation judiciaire",
       "resume": "Le communiqué de presse est tombé ce jeudi 9 juillet sur LinkedIn.\nCentre Inffo vient d&#8217;entrer dans une procédure de liquidation judiciaire.\nAprès 50 ans d&#8217;activité, la structure avait perdu en janvier le soutien de l&#8217;Etat et de son statut associatif sous tutelle du Ministère du travail. Un bouleversement brutal de leur modèle qui malgré de nombreuses actions internes n&#8217;a p",
@@ -222,25 +277,14 @@
       "lu": false
     },
     {
-      "id": "cnil__controle-de-lactivite-des-personnes-employees",
-      "titre": "Travail, ressources humaines : le contrôle de l’activité des personnes employées",
-      "resume": "",
-      "source_id": "cnil",
-      "thematique": "rgpd",
-      "niveau": "important",
-      "date": "2026-07-09",
-      "url": "https://www.cnil.fr/fr/controle-de-lactivite-des-personnes-employees",
-      "lu": false
-    },
-    {
-      "id": "cnil__cepd-ia-generative-chaines-blocs",
-      "titre": "Le CEPD met en lumière l’anonymisation et le moissonnage pour l’IA générative et adopte la version finale des lignes directrices sur la chaîne de blocs",
+      "id": "cnil__revoir-le-webinaire-nouveau-teleservice-sante-et-recherche-ce-qui-change-pour-vos-demandes",
+      "titre": "Revoir le webinaire : Nouveau téléservice santé et recherche, ce qui change pour vos demandes d’autorisation",
       "resume": "",
       "source_id": "cnil",
       "thematique": "rgpd",
       "niveau": "info",
-      "date": "2026-07-09",
-      "url": "https://www.cnil.fr/fr/cepd-ia-generative-chaines-blocs",
+      "date": "2026-07-10",
+      "url": "https://www.cnil.fr/fr/revoir-le-webinaire-nouveau-teleservice-sante-et-recherche-ce-qui-change-pour-vos-demandes",
       "lu": false
     },
     {
@@ -263,6 +307,28 @@
       "niveau": "urgent",
       "date": "2026-07-09",
       "url": "https://www.digiformag.com/formation-frugale-faire-mieux-avec-moins-et-parfois-beaucoup-mieux/",
+      "lu": false
+    },
+    {
+      "id": "cnil__controle-de-lactivite-des-personnes-employees",
+      "titre": "Travail, ressources humaines : le contrôle de l’activité des personnes employées",
+      "resume": "",
+      "source_id": "cnil",
+      "thematique": "rgpd",
+      "niveau": "important",
+      "date": "2026-07-09",
+      "url": "https://www.cnil.fr/fr/controle-de-lactivite-des-personnes-employees",
+      "lu": false
+    },
+    {
+      "id": "cnil__cepd-ia-generative-chaines-blocs",
+      "titre": "Le CEPD met en lumière l’anonymisation et le moissonnage pour l’IA générative et adopte la version finale des lignes directrices sur la chaîne de blocs",
+      "resume": "",
+      "source_id": "cnil",
+      "thematique": "rgpd",
+      "niveau": "info",
+      "date": "2026-07-09",
+      "url": "https://www.cnil.fr/fr/cepd-ia-generative-chaines-blocs",
       "lu": false
     },
     {
