@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-27T09:48:09.661Z",
+  "fetchedAt": "2026-08-03T09:40:05.984Z",
   "articles": [
     {
       "id": "france-competences__decisions-denregistrement-aux-repertoires-nationaux-juillet-2026",
@@ -8,7 +8,7 @@
       "source_id": "france-competences",
       "thematique": "qualiopi",
       "niveau": "info",
-      "date": "2026-07-27",
+      "date": "2026-08-03",
       "url": "https://www.francecompetences.fr/fiche/decisions-denregistrement-aux-repertoires-nationaux-juillet-2026/",
       "lu": false
     },
@@ -19,7 +19,7 @@
       "source_id": "france-competences",
       "thematique": "qualiopi",
       "niveau": "info",
-      "date": "2026-07-27",
+      "date": "2026-08-03",
       "url": "https://www.francecompetences.fr/fiche/metiers-emergents-ou-en-particuliere-evolution-france-competences-elargit-son-7%e1%b5%89-appel-a-contributions/",
       "lu": false
     },
@@ -30,8 +30,74 @@
       "source_id": "france-competences",
       "thematique": "qualiopi",
       "niveau": "info",
-      "date": "2026-07-27",
+      "date": "2026-08-03",
       "url": "https://www.francecompetences.fr/fiche/decisions-denregistrement-aux-repertoires-nationaux-juin-2026/",
+      "lu": false
+    },
+    {
+      "id": "france-competences__enquete-nationale-aupres-des-organismes-certificateurs-et-des-organismes-de-formation-habilites",
+      "titre": "Observation et évaluation Enquête nationale auprès des organismes certificateurs et des organismes de formation habilités",
+      "resume": "",
+      "source_id": "france-competences",
+      "thematique": "qualiopi",
+      "niveau": "info",
+      "date": "2026-08-03",
+      "url": "https://www.francecompetences.fr/fiche/enquete-nationale-aupres-des-organismes-certificateurs-et-des-organismes-de-formation-habilites/",
+      "lu": false
+    },
+    {
+      "id": "france-competences__enquete-nationale-sur-la-qualite-de-lapprentissage",
+      "titre": "Observation et évaluation Actualités 29.07.2026",
+      "resume": "",
+      "source_id": "france-competences",
+      "thematique": "qualiopi",
+      "niveau": "info",
+      "date": "2026-08-03",
+      "url": "https://www.francecompetences.fr/fiche/enquete-nationale-sur-la-qualite-de-lapprentissage/",
+      "lu": false
+    },
+    {
+      "id": "cnil__webinaire-mise-a-jour-mr",
+      "titre": "Revoir le webinaire - Mise à jour des MR-001 et MR-003, ce qui change en 2026",
+      "resume": "",
+      "source_id": "cnil",
+      "thematique": "rgpd",
+      "niveau": "important",
+      "date": "2026-07-31",
+      "url": "https://www.cnil.fr/fr/webinaire-mise-a-jour-mr",
+      "lu": false
+    },
+    {
+      "id": "digiformag__remplir-formations-inter-en-2026-5-leviers",
+      "titre": "Remplir ses inter en 2026 : 5 leviers qui marchent quand le marché se contracte",
+      "resume": "Soyons honnêtes : quand 65 % de vos sessions interentreprises atteignent tout juste leur seuil de rentabilité, il n&#8217;y a pas de quoi pavoiser. Ce taux, qu&#8217;on se répète dans le secteur depuis quelques années, veut surtout dire une chose : vous couvrez vos frais fixes, et c&#8217;est à peu près tout. Confortable tant que le marché tire vers le haut. Beaucoup moins quand il recule , et en ",
+      "source_id": "digiformag",
+      "thematique": "formation",
+      "niveau": "important",
+      "date": "2026-07-30",
+      "url": "https://www.digiformag.com/remplir-formations-inter-en-2026-5-leviers/",
+      "lu": false
+    },
+    {
+      "id": "ministere-travail__faq-accompagnement-des-entreprises-dans-le-cadre-des-incendies-exceptionnels",
+      "titre": "FAQ : Accompagnement des entreprises dans le cadre des incendies exceptionnels",
+      "resume": "",
+      "source_id": "ministere-travail",
+      "thematique": "legislatif",
+      "niveau": "info",
+      "date": "2026-07-28",
+      "url": "https://travail-emploi.gouv.fr/faq-accompagnement-des-entreprises-dans-le-cadre-des-incendies-exceptionnels",
+      "lu": false
+    },
+    {
+      "id": "ministere-travail__le-ministere-du-travail-et-des-solidarites-se-mobilise-pour-aider-les-entreprises-et-proteger-leurs-s",
+      "titre": "Le ministère du Travail et des Solidarités se mobilise pour aider les entreprises et protéger leurs salariés dans les territoires touchés par les incendies",
+      "resume": "",
+      "source_id": "ministere-travail",
+      "thematique": "legislatif",
+      "niveau": "info",
+      "date": "2026-07-28",
+      "url": "https://travail-emploi.gouv.fr/le-ministere-du-travail-et-des-solidarites-se-mobilise-pour-aider-les-entreprises-et-proteger-leurs-salaries-dans-les-territoires-touches-par-les-incendies",
       "lu": false
     },
     {
@@ -43,17 +109,6 @@
       "niveau": "info",
       "date": "2026-07-27",
       "url": "https://www.francecompetences.fr/fiche/la-grande-bibliotheque-de-france-competences-referencee-par-lademe-academie/",
-      "lu": false
-    },
-    {
-      "id": "france-competences__enquete-nationale-aupres-des-organismes-certificateurs-et-des-organismes-de-formation-habilites",
-      "titre": "Observation et évaluation Actualités 07.07.2026",
-      "resume": "",
-      "source_id": "france-competences",
-      "thematique": "qualiopi",
-      "niveau": "info",
-      "date": "2026-07-27",
-      "url": "https://www.francecompetences.fr/fiche/enquete-nationale-aupres-des-organismes-certificateurs-et-des-organismes-de-formation-habilites/",
       "lu": false
     },
     {
@@ -593,17 +648,6 @@
       "niveau": "info",
       "date": "2026-06-30",
       "url": "https://www.cnil.fr/fr/vehicules-connectes-utilisation-de-vos-donnees",
-      "lu": false
-    },
-    {
-      "id": "france-competences__enquete-nationale-sur-la-qualite-de-lapprentissage",
-      "titre": "Observation et évaluation Actualités 18.06.2026",
-      "resume": "",
-      "source_id": "france-competences",
-      "thematique": "qualiopi",
-      "niveau": "info",
-      "date": "2026-06-29",
-      "url": "https://www.francecompetences.fr/fiche/enquete-nationale-sur-la-qualite-de-lapprentissage/",
       "lu": false
     },
     {
