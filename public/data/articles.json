@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-03T09:40:05.984Z",
+  "fetchedAt": "2026-08-10T07:28:29.853Z",
   "articles": [
     {
       "id": "france-competences__decisions-denregistrement-aux-repertoires-nationaux-juillet-2026",
@@ -8,7 +8,7 @@
       "source_id": "france-competences",
       "thematique": "qualiopi",
       "niveau": "info",
-      "date": "2026-08-03",
+      "date": "2026-08-10",
       "url": "https://www.francecompetences.fr/fiche/decisions-denregistrement-aux-repertoires-nationaux-juillet-2026/",
       "lu": false
     },
@@ -19,7 +19,7 @@
       "source_id": "france-competences",
       "thematique": "qualiopi",
       "niveau": "info",
-      "date": "2026-08-03",
+      "date": "2026-08-10",
       "url": "https://www.francecompetences.fr/fiche/metiers-emergents-ou-en-particuliere-evolution-france-competences-elargit-son-7%e1%b5%89-appel-a-contributions/",
       "lu": false
     },
@@ -30,7 +30,7 @@
       "source_id": "france-competences",
       "thematique": "qualiopi",
       "niveau": "info",
-      "date": "2026-08-03",
+      "date": "2026-08-10",
       "url": "https://www.francecompetences.fr/fiche/decisions-denregistrement-aux-repertoires-nationaux-juin-2026/",
       "lu": false
     },
@@ -41,7 +41,7 @@
       "source_id": "france-competences",
       "thematique": "qualiopi",
       "niveau": "info",
-      "date": "2026-08-03",
+      "date": "2026-08-10",
       "url": "https://www.francecompetences.fr/fiche/enquete-nationale-aupres-des-organismes-certificateurs-et-des-organismes-de-formation-habilites/",
       "lu": false
     },
@@ -52,8 +52,107 @@
       "source_id": "france-competences",
       "thematique": "qualiopi",
       "niveau": "info",
-      "date": "2026-08-03",
+      "date": "2026-08-10",
       "url": "https://www.francecompetences.fr/fiche/enquete-nationale-sur-la-qualite-de-lapprentissage/",
+      "lu": false
+    },
+    {
+      "id": "cnil__dpo-identifier-gerer-conflits-interets",
+      "titre": "Délégué à la protection des données : identifier et gérer les conflits d’intérêts liés à la fonction de DPO",
+      "resume": "",
+      "source_id": "cnil",
+      "thematique": "rgpd",
+      "niveau": "info",
+      "date": "2026-08-10",
+      "url": "https://www.cnil.fr/fr/dpo-identifier-gerer-conflits-interets",
+      "lu": false
+    },
+    {
+      "id": "digiformag__vae-2-textes-a-integrer-avant-la-rentree",
+      "titre": "VAE : 2 textes à intégrer avant la rentrée",
+      "resume": "Juillet 2026, et la VAE continue tranquillement sa mue. Deux actualités méritent en effet qu&#8217;on s&#8217;y arrête cinq minutes.\nLa première est un décret qui débloque (enfin) le financement du dispositif via Transitions Pro.\nLa seconde concerne 2 nouvelles obligations qui touchent les structures d&#8217;accompagnement en VAE sur EDOF (l&#8217;espace organisme de formation de Mon Compte Format",
+      "source_id": "digiformag",
+      "thematique": "formation",
+      "niveau": "urgent",
+      "date": "2026-08-10",
+      "url": "https://www.digiformag.com/vae-2-textes-a-integrer-avant-la-rentree/",
+      "lu": false
+    },
+    {
+      "id": "ministere-travail__taux-de-chomage-au-deuxieme-trimestre-2026-des-fondamentaux-solides-qui-soulignent-la-resistance-du-m",
+      "titre": "Taux de chômage au deuxième trimestre 2026 : des fondamentaux solides qui soulignent la résistance du marché de l'emploi en France et une hausse en partie liée à la poursuite des effets de la loi plei",
+      "resume": "",
+      "source_id": "ministere-travail",
+      "thematique": "legislatif",
+      "niveau": "urgent",
+      "date": "2026-08-07",
+      "url": "https://travail-emploi.gouv.fr/taux-de-chomage-au-deuxieme-trimestre-2026-des-fondamentaux-solides-qui-soulignent-la-resistance-du-marche-de-lemploi-en-france-et-une-hausse-en-partie-liee-la-poursuite-des-effets-de-la-loi-plein-emploi",
+      "lu": false
+    },
+    {
+      "id": "cnil__supprimer-mes-donnees-presse",
+      "titre": "Puis-je demander à supprimer des données me concernant figurant dans un article de presse diffusé en ligne ?",
+      "resume": "",
+      "source_id": "cnil",
+      "thematique": "rgpd",
+      "niveau": "info",
+      "date": "2026-08-05",
+      "url": "https://www.cnil.fr/fr/supprimer-mes-donnees-presse",
+      "lu": false
+    },
+    {
+      "id": "cnil__college-de-la-cnil-5-nouveaux-membres-nommes-le-2-aout-2026",
+      "titre": "Collège de la CNIL : 5 nouveaux membres nommés le 2 août 2026",
+      "resume": "",
+      "source_id": "cnil",
+      "thematique": "rgpd",
+      "niveau": "info",
+      "date": "2026-08-05",
+      "url": "https://www.cnil.fr/fr/college-de-la-cnil-5-nouveaux-membres-nommes-le-2-aout-2026",
+      "lu": false
+    },
+    {
+      "id": "ministere-travail__chiffres-du-chomage-comprendre-son-evolution",
+      "titre": "Chiffres du chômage : comprendre son évolution",
+      "resume": "",
+      "source_id": "ministere-travail",
+      "thematique": "legislatif",
+      "niveau": "info",
+      "date": "2026-08-05",
+      "url": "https://travail-emploi.gouv.fr/chiffres-du-chomage-comprendre-son-evolution",
+      "lu": false
+    },
+    {
+      "id": "ministere-travail__retraites-le-gouvernement-renforce-les-droits-des-femmes-en-ameliorant-la-prise-en-compte-de-la-paren",
+      "titre": "Retraites : le Gouvernement renforce les droits des femmes en améliorant la prise en compte de la parentalité",
+      "resume": "",
+      "source_id": "ministere-travail",
+      "thematique": "legislatif",
+      "niveau": "info",
+      "date": "2026-08-05",
+      "url": "https://travail-emploi.gouv.fr/retraites-le-gouvernement-renforce-les-droits-des-femmes-en-ameliorant-la-prise-en-compte-de-la-parentalite",
+      "lu": false
+    },
+    {
+      "id": "ministere-travail__incendies-en-gironde-et-dans-les-landes-une-mesure-exceptionnelle-pour-soutenir-les-pme-et-preserver-",
+      "titre": "Incendies en Gironde et dans les Landes : une mesure exceptionnelle pour soutenir les TPE et PME et préserver l'emploi",
+      "resume": "",
+      "source_id": "ministere-travail",
+      "thematique": "legislatif",
+      "niveau": "urgent",
+      "date": "2026-08-04",
+      "url": "https://travail-emploi.gouv.fr/incendies-en-gironde-et-dans-les-landes-une-mesure-exceptionnelle-pour-soutenir-les-pme-et-preserver-lemploi",
+      "lu": false
+    },
+    {
+      "id": "digiformag__qualiopi-du-nouveau-a-venir-pour-novembre-2026",
+      "titre": "Qualiopi : du nouveau à venir pour novembre 2026",
+      "resume": "Nous l&#8217;attendions. Le décret n° 2026-728 a été publié ce jour sur le Journal Officiel. Avec une mise en application au 1er novembre. Dans la veine du plan de lutte contre la fraude, l&#8217;audit qualiopi version 2026 mettra l&#8217;accent sur la transparence et la communication des offres de formation auprès du public. Mais pas que ! Une attention particulière est posée sur le respect de l&",
+      "source_id": "digiformag",
+      "thematique": "formation",
+      "niveau": "urgent",
+      "date": "2026-08-04",
+      "url": "https://www.digiformag.com/qualiopi-du-nouveau-a-venir-pour-novembre-2026/",
       "lu": false
     },
     {
@@ -387,17 +486,6 @@
       "lu": false
     },
     {
-      "id": "ministere-travail__fortes-chaleurs-mesures-de-prevention-et-actions-de-linspection-du-travail",
-      "titre": "Fortes chaleurs : mesures de prévention et actions de l'inspection du travail",
-      "resume": "",
-      "source_id": "ministere-travail",
-      "thematique": "legislatif",
-      "niveau": "info",
-      "date": "2026-07-08",
-      "url": "https://travail-emploi.gouv.fr/fortes-chaleurs-mesures-de-prevention-et-actions-de-linspection-du-travail",
-      "lu": false
-    },
-    {
       "id": "agefiph__le-cnc-lagefiph-et-ladami-devoilent-les-23-laureats-de",
       "titre": "Le CNC, l’Agefiph et l’Adami dévoilent les 23 lauréats de l’appel à projets « Les uns et les autres » 2026",
       "resume": "",
@@ -406,6 +494,17 @@
       "niveau": "info",
       "date": "2026-07-08",
       "url": "https://www.agefiph.fr/espace-presse/tous-les-documents-presse/le-cnc-lagefiph-et-ladami-devoilent-les-23-laureats-de",
+      "lu": false
+    },
+    {
+      "id": "ministere-travail__fortes-chaleurs-mesures-de-prevention-et-actions-de-linspection-du-travail",
+      "titre": "Fortes chaleurs : mesures de prévention et actions de l'inspection du travail",
+      "resume": "",
+      "source_id": "ministere-travail",
+      "thematique": "legislatif",
+      "niveau": "info",
+      "date": "2026-07-08",
+      "url": "https://travail-emploi.gouv.fr/fortes-chaleurs-mesures-de-prevention-et-actions-de-linspection-du-travail",
       "lu": false
     },
     {
@@ -541,17 +640,6 @@
       "lu": false
     },
     {
-      "id": "ministere-travail__traite-des-etres-humains-trois-condamnations-penales-confirmees-en-appel",
-      "titre": "Traite des êtres humains : trois condamnations pénales confirmées en appel",
-      "resume": "",
-      "source_id": "ministere-travail",
-      "thematique": "legislatif",
-      "niveau": "info",
-      "date": "2026-07-03",
-      "url": "https://travail-emploi.gouv.fr/traite-des-etres-humains-trois-condamnations-penales-confirmees-en-appel",
-      "lu": false
-    },
-    {
       "id": "agefiph__controle-et-taxation-forfaitaire",
       "titre": "Contrôle et taxation forfaitaire",
       "resume": "",
@@ -560,6 +648,17 @@
       "niveau": "important",
       "date": "2026-07-03",
       "url": "https://www.agefiph.fr/centre-aide/controle-et-taxation-forfaitaire",
+      "lu": false
+    },
+    {
+      "id": "ministere-travail__traite-des-etres-humains-trois-condamnations-penales-confirmees-en-appel",
+      "titre": "Traite des êtres humains : trois condamnations pénales confirmées en appel",
+      "resume": "",
+      "source_id": "ministere-travail",
+      "thematique": "legislatif",
+      "niveau": "info",
+      "date": "2026-07-03",
+      "url": "https://travail-emploi.gouv.fr/traite-des-etres-humains-trois-condamnations-penales-confirmees-en-appel",
       "lu": false
     },
     {
