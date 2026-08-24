@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-17T06:50:29.346Z",
+  "fetchedAt": "2026-08-24T06:53:38.808Z",
   "articles": [
     {
       "id": "france-competences__decisions-denregistrement-aux-repertoires-nationaux-juillet-2026",
@@ -8,7 +8,7 @@
       "source_id": "france-competences",
       "thematique": "qualiopi",
       "niveau": "info",
-      "date": "2026-08-17",
+      "date": "2026-08-24",
       "url": "https://www.francecompetences.fr/fiche/decisions-denregistrement-aux-repertoires-nationaux-juillet-2026/",
       "lu": false
     },
@@ -19,7 +19,7 @@
       "source_id": "france-competences",
       "thematique": "qualiopi",
       "niveau": "info",
-      "date": "2026-08-17",
+      "date": "2026-08-24",
       "url": "https://www.francecompetences.fr/fiche/metiers-emergents-ou-en-particuliere-evolution-france-competences-elargit-son-7%e1%b5%89-appel-a-contributions/",
       "lu": false
     },
@@ -30,7 +30,7 @@
       "source_id": "france-competences",
       "thematique": "qualiopi",
       "niveau": "info",
-      "date": "2026-08-17",
+      "date": "2026-08-24",
       "url": "https://www.francecompetences.fr/fiche/decisions-denregistrement-aux-repertoires-nationaux-juin-2026/",
       "lu": false
     },
@@ -41,7 +41,7 @@
       "source_id": "france-competences",
       "thematique": "qualiopi",
       "niveau": "info",
-      "date": "2026-08-17",
+      "date": "2026-08-24",
       "url": "https://www.francecompetences.fr/fiche/enquete-nationale-aupres-des-organismes-certificateurs-et-des-organismes-de-formation-habilites/",
       "lu": false
     },
@@ -52,8 +52,52 @@
       "source_id": "france-competences",
       "thematique": "qualiopi",
       "niveau": "info",
-      "date": "2026-08-17",
+      "date": "2026-08-24",
       "url": "https://www.francecompetences.fr/fiche/enquete-nationale-sur-la-qualite-de-lapprentissage/",
+      "lu": false
+    },
+    {
+      "id": "cnil__le-refus-de-credit-en-questions",
+      "titre": "Le refus de crédit en questions",
+      "resume": "",
+      "source_id": "cnil",
+      "thematique": "rgpd",
+      "niveau": "info",
+      "date": "2026-08-19",
+      "url": "https://www.cnil.fr/fr/le-refus-de-credit-en-questions",
+      "lu": false
+    },
+    {
+      "id": "cnil__piratage-du-systeme-dinformation-des-impots-les-verifications-sont-en-cours",
+      "titre": "Piratage du système d’information des impôts : les vérifications sont en cours",
+      "resume": "",
+      "source_id": "cnil",
+      "thematique": "rgpd",
+      "niveau": "info",
+      "date": "2026-08-18",
+      "url": "https://www.cnil.fr/fr/piratage-du-systeme-dinformation-des-impots-les-verifications-sont-en-cours",
+      "lu": false
+    },
+    {
+      "id": "ministere-travail__donnees-personnelles-et-cookies",
+      "titre": "Données personnelles et cookies",
+      "resume": "",
+      "source_id": "ministere-travail",
+      "thematique": "legislatif",
+      "niveau": "info",
+      "date": "2026-08-18",
+      "url": "https://travail-emploi.gouv.fr/donnees-personnelles-et-cookies",
+      "lu": false
+    },
+    {
+      "id": "digiformag__cpf-quelles-sanctions-en-cas-de-non-presentation-a-lexamen-final",
+      "titre": "CPF : quelles sanctions en cas de non présentation à l’examen final",
+      "resume": "Depuis le 27 juin 2026, mobiliser son CPF pour une formation certifiante ne signifie plus seulement suivre le parcours.Cela signifie aller jusqu&#8217;au bout. En clair, s&#8217;inscrire à la certification et se présenter à l&#8217;épreuve finale.\nC&#8217;est ce que consacre l&#8217;article 59 de la loi n° 2026-534 du 25 juin 2026 relative à la lutte contre les fraudes sociales et fiscales, publié",
+      "source_id": "digiformag",
+      "thematique": "formation",
+      "niveau": "urgent",
+      "date": "2026-08-17",
+      "url": "https://www.digiformag.com/cpf-quelles-sanctions-en-cas-de-non-presentation-a-lexamen-final/",
       "lu": false
     },
     {
@@ -68,6 +112,17 @@
       "lu": false
     },
     {
+      "id": "ministere-travail__le-conge-de-mobilite",
+      "titre": "Le congé de mobilité",
+      "resume": "",
+      "source_id": "ministere-travail",
+      "thematique": "legislatif",
+      "niveau": "info",
+      "date": "2026-08-14",
+      "url": "https://travail-emploi.gouv.fr/le-conge-de-mobilite",
+      "lu": false
+    },
+    {
       "id": "ministere-travail__lepreuve-des-risques-professionnels-industriels-et-environnementaux-linspection-du-travail-et-linspec",
       "titre": "À l’épreuve des risques professionnels, industriels et environnementaux : l’inspection du travail et l’inspection des installations classées (1810-2020)",
       "resume": "",
@@ -76,6 +131,17 @@
       "niveau": "info",
       "date": "2026-08-14",
       "url": "https://travail-emploi.gouv.fr/lepreuve-des-risques-professionnels-industriels-et-environnementaux-linspection-du-travail-et-linspection-des-installations-classees-1810-2020",
+      "lu": false
+    },
+    {
+      "id": "ministere-travail__le-comite-dhistoire-des-administrations-chargees-du-travail-de-lemploi-et-de-la-formation-professionn",
+      "titre": "Le Comité d’histoire des administrations du travail (CHATEFP)",
+      "resume": "",
+      "source_id": "ministere-travail",
+      "thematique": "legislatif",
+      "niveau": "info",
+      "date": "2026-08-14",
+      "url": "https://travail-emploi.gouv.fr/le-comite-dhistoire-des-administrations-chargees-du-travail-de-lemploi-et-de-la-formation-professionnelle-chatefp-presentation-et-travaux",
       "lu": false
     },
     {
