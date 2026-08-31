@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-24T06:53:38.808Z",
+  "fetchedAt": "2026-08-31T12:42:02.347Z",
   "articles": [
     {
       "id": "france-competences__decisions-denregistrement-aux-repertoires-nationaux-juillet-2026",
@@ -8,7 +8,7 @@
       "source_id": "france-competences",
       "thematique": "qualiopi",
       "niveau": "info",
-      "date": "2026-08-24",
+      "date": "2026-08-31",
       "url": "https://www.francecompetences.fr/fiche/decisions-denregistrement-aux-repertoires-nationaux-juillet-2026/",
       "lu": false
     },
@@ -19,7 +19,7 @@
       "source_id": "france-competences",
       "thematique": "qualiopi",
       "niveau": "info",
-      "date": "2026-08-24",
+      "date": "2026-08-31",
       "url": "https://www.francecompetences.fr/fiche/metiers-emergents-ou-en-particuliere-evolution-france-competences-elargit-son-7%e1%b5%89-appel-a-contributions/",
       "lu": false
     },
@@ -30,7 +30,7 @@
       "source_id": "france-competences",
       "thematique": "qualiopi",
       "niveau": "info",
-      "date": "2026-08-24",
+      "date": "2026-08-31",
       "url": "https://www.francecompetences.fr/fiche/decisions-denregistrement-aux-repertoires-nationaux-juin-2026/",
       "lu": false
     },
@@ -41,7 +41,7 @@
       "source_id": "france-competences",
       "thematique": "qualiopi",
       "niveau": "info",
-      "date": "2026-08-24",
+      "date": "2026-08-31",
       "url": "https://www.francecompetences.fr/fiche/enquete-nationale-aupres-des-organismes-certificateurs-et-des-organismes-de-formation-habilites/",
       "lu": false
     },
@@ -52,8 +52,129 @@
       "source_id": "france-competences",
       "thematique": "qualiopi",
       "niveau": "info",
-      "date": "2026-08-24",
+      "date": "2026-08-31",
       "url": "https://www.francecompetences.fr/fiche/enquete-nationale-sur-la-qualite-de-lapprentissage/",
+      "lu": false
+    },
+    {
+      "id": "cnil__ril-2026",
+      "titre": "Participez aux Rencontres Informatique & Libertés le 29 septembre 2026",
+      "resume": "",
+      "source_id": "cnil",
+      "thematique": "rgpd",
+      "niveau": "info",
+      "date": "2026-08-31",
+      "url": "https://www.cnil.fr/fr/ril-2026",
+      "lu": false
+    },
+    {
+      "id": "ministere-travail__agenda-de-sabrina-roubache",
+      "titre": "Agenda de Sabrina Roubache",
+      "resume": "",
+      "source_id": "ministere-travail",
+      "thematique": "legislatif",
+      "niveau": "info",
+      "date": "2026-08-31",
+      "url": "https://travail-emploi.gouv.fr/agenda-de-sabrina-roubache",
+      "lu": false
+    },
+    {
+      "id": "ministere-travail__endometriose-un-mooc-pour-les-professionnels-de-la-sante-au-travail",
+      "titre": "Endométriose : un MOOC pour les professionnels de la santé au travail",
+      "resume": "",
+      "source_id": "ministere-travail",
+      "thematique": "legislatif",
+      "niveau": "info",
+      "date": "2026-08-28",
+      "url": "https://travail-emploi.gouv.fr/endometriose-un-mooc-pour-les-professionnels-de-la-sante-au-travail",
+      "lu": false
+    },
+    {
+      "id": "ministere-travail__laide-aux-employeurs-qui-recrutent-en-apprentissage",
+      "titre": "L'aide aux employeurs qui recrutent en apprentissage",
+      "resume": "",
+      "source_id": "ministere-travail",
+      "thematique": "legislatif",
+      "niveau": "info",
+      "date": "2026-08-28",
+      "url": "https://travail-emploi.gouv.fr/laide-aux-employeurs-qui-recrutent-en-apprentissage",
+      "lu": false
+    },
+    {
+      "id": "ministere-travail__lagence-nationale-pour-la-formation-professionnelle-des-adultes-afpa",
+      "titre": "L'Agence nationale pour la formation professionnelle des adultes (Afpa)",
+      "resume": "",
+      "source_id": "ministere-travail",
+      "thematique": "legislatif",
+      "niveau": "info",
+      "date": "2026-08-28",
+      "url": "https://travail-emploi.gouv.fr/lagence-nationale-pour-la-formation-professionnelle-des-adultes-afpa",
+      "lu": false
+    },
+    {
+      "id": "cnil__sensibiliser-les-eleves-de-cm2-la-protection-des-donnees",
+      "titre": "Sensibiliser les élèves de CM2 à la protection des données",
+      "resume": "",
+      "source_id": "cnil",
+      "thematique": "rgpd",
+      "niveau": "info",
+      "date": "2026-08-27",
+      "url": "https://www.cnil.fr/fr/sensibiliser-les-eleves-de-cm2-la-protection-des-donnees",
+      "lu": false
+    },
+    {
+      "id": "ministere-travail__faq-accompagnement-des-entreprises-dans-le-cadre-des-incendies-exceptionnels",
+      "titre": "FAQ : Accompagnement des entreprises dans le cadre des incendies exceptionnels",
+      "resume": "",
+      "source_id": "ministere-travail",
+      "thematique": "legislatif",
+      "niveau": "info",
+      "date": "2026-08-27",
+      "url": "https://travail-emploi.gouv.fr/faq-accompagnement-des-entreprises-dans-le-cadre-des-incendies-exceptionnels",
+      "lu": false
+    },
+    {
+      "id": "cnil__ia-la-cnil-met-jour-son-outil-de-tracabilite-des-modeles-publies-en-source-ouverte",
+      "titre": "IA : la CNIL met à jour son outil de traçabilité des modèles publiés en source ouverte",
+      "resume": "",
+      "source_id": "cnil",
+      "thematique": "rgpd",
+      "niveau": "info",
+      "date": "2026-08-26",
+      "url": "https://www.cnil.fr/fr/ia-la-cnil-met-jour-son-outil-de-tracabilite-des-modeles-publies-en-source-ouverte",
+      "lu": false
+    },
+    {
+      "id": "digiformag__appels-offres-dans-la-formation-trouver-gagner-marches",
+      "titre": "Appels d’offres en formation : la méthode infaillible pour trouver, cibler et remporter des marchés !",
+      "resume": "En 2026, répondre à un appel d&#8217;offres n&#8217;a plus grand-chose à voir avec l&#8217;exercice d&#8217;il y a cinq ans ! \nLes volumes se réduisent. On est passé sous la barre des 1 200 consultations annuelles, et la tendance ne date pas d&#8217;hier. Les marchés grossissent, et le choc budgétaire est bien réel : la coupe sur les Pactes régionaux d&#8217;investissement dans les compétences a f",
+      "source_id": "digiformag",
+      "thematique": "formation",
+      "niveau": "urgent",
+      "date": "2026-08-25",
+      "url": "https://www.digiformag.com/appels-offres-dans-la-formation-trouver-gagner-marches/",
+      "lu": false
+    },
+    {
+      "id": "cnil__enseignement-superieur-bonnes-pratiques-outils-collaboratifs",
+      "titre": "Enseignement supérieur : les règles et bonnes pratiques pour utiliser des outils collaboratifs en ligne",
+      "resume": "",
+      "source_id": "cnil",
+      "thematique": "rgpd",
+      "niveau": "info",
+      "date": "2026-08-24",
+      "url": "https://www.cnil.fr/fr/enseignement-superieur-bonnes-pratiques-outils-collaboratifs",
+      "lu": false
+    },
+    {
+      "id": "cnil__enseignement-premier-second-degres-bonnes-pratiques-outils-collaboratifs",
+      "titre": "Enseignement du premier et du second degrés : les règles et bonnes pratiques pour utiliser les outils collaboratifs en ligne",
+      "resume": "",
+      "source_id": "cnil",
+      "thematique": "rgpd",
+      "niveau": "info",
+      "date": "2026-08-24",
+      "url": "https://www.cnil.fr/fr/enseignement-premier-second-degres-bonnes-pratiques-outils-collaboratifs",
       "lu": false
     },
     {
@@ -145,17 +266,6 @@
       "lu": false
     },
     {
-      "id": "cnil__dpo-identifier-gerer-conflits-interets",
-      "titre": "Délégué à la protection des données : identifier et gérer les conflits d’intérêts liés à la fonction de DPO",
-      "resume": "",
-      "source_id": "cnil",
-      "thematique": "rgpd",
-      "niveau": "info",
-      "date": "2026-08-10",
-      "url": "https://www.cnil.fr/fr/dpo-identifier-gerer-conflits-interets",
-      "lu": false
-    },
-    {
       "id": "digiformag__vae-2-textes-a-integrer-avant-la-rentree",
       "titre": "VAE : 2 textes à intégrer avant la rentrée",
       "resume": "Juillet 2026, et la VAE continue tranquillement sa mue. Deux actualités méritent en effet qu&#8217;on s&#8217;y arrête cinq minutes.\nLa première est un décret qui débloque (enfin) le financement du dispositif via Transitions Pro.\nLa seconde concerne 2 nouvelles obligations qui touchent les structures d&#8217;accompagnement en VAE sur EDOF (l&#8217;espace organisme de formation de Mon Compte Format",
@@ -164,6 +274,17 @@
       "niveau": "urgent",
       "date": "2026-08-10",
       "url": "https://www.digiformag.com/vae-2-textes-a-integrer-avant-la-rentree/",
+      "lu": false
+    },
+    {
+      "id": "cnil__dpo-identifier-gerer-conflits-interets",
+      "titre": "Délégué à la protection des données : identifier et gérer les conflits d’intérêts liés à la fonction de DPO",
+      "resume": "",
+      "source_id": "cnil",
+      "thematique": "rgpd",
+      "niveau": "info",
+      "date": "2026-08-10",
+      "url": "https://www.cnil.fr/fr/dpo-identifier-gerer-conflits-interets",
       "lu": false
     },
     {
@@ -263,17 +384,6 @@
       "niveau": "important",
       "date": "2026-07-30",
       "url": "https://www.digiformag.com/remplir-formations-inter-en-2026-5-leviers/",
-      "lu": false
-    },
-    {
-      "id": "ministere-travail__faq-accompagnement-des-entreprises-dans-le-cadre-des-incendies-exceptionnels",
-      "titre": "FAQ : Accompagnement des entreprises dans le cadre des incendies exceptionnels",
-      "resume": "",
-      "source_id": "ministere-travail",
-      "thematique": "legislatif",
-      "niveau": "info",
-      "date": "2026-07-28",
-      "url": "https://travail-emploi.gouv.fr/faq-accompagnement-des-entreprises-dans-le-cadre-des-incendies-exceptionnels",
       "lu": false
     },
     {
