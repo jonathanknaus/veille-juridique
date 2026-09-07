@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-31T12:42:02.347Z",
+  "fetchedAt": "2026-09-07T11:35:44.374Z",
   "articles": [
     {
       "id": "france-competences__decisions-denregistrement-aux-repertoires-nationaux-juillet-2026",
@@ -8,7 +8,7 @@
       "source_id": "france-competences",
       "thematique": "qualiopi",
       "niveau": "info",
-      "date": "2026-08-31",
+      "date": "2026-09-07",
       "url": "https://www.francecompetences.fr/fiche/decisions-denregistrement-aux-repertoires-nationaux-juillet-2026/",
       "lu": false
     },
@@ -19,7 +19,7 @@
       "source_id": "france-competences",
       "thematique": "qualiopi",
       "niveau": "info",
-      "date": "2026-08-31",
+      "date": "2026-09-07",
       "url": "https://www.francecompetences.fr/fiche/metiers-emergents-ou-en-particuliere-evolution-france-competences-elargit-son-7%e1%b5%89-appel-a-contributions/",
       "lu": false
     },
@@ -30,8 +30,140 @@
       "source_id": "france-competences",
       "thematique": "qualiopi",
       "niveau": "info",
-      "date": "2026-08-31",
+      "date": "2026-09-07",
       "url": "https://www.francecompetences.fr/fiche/decisions-denregistrement-aux-repertoires-nationaux-juin-2026/",
+      "lu": false
+    },
+    {
+      "id": "france-competences__france-competences-publie-le-referentiel-complet-des-niveaux-de-prise-en-charge-des-contrats-dappren",
+      "titre": "Financement de la formation et de l’apprentissage France compétences publie le référentiel complet des niveaux de prise en charge des contrats d’apprentissage (NPEC)",
+      "resume": "",
+      "source_id": "france-competences",
+      "thematique": "qualiopi",
+      "niveau": "important",
+      "date": "2026-09-07",
+      "url": "https://www.francecompetences.fr/fiche/france-competences-publie-le-referentiel-complet-des-niveaux-de-prise-en-charge-des-contrats-dapprentissage-npec/",
+      "lu": false
+    },
+    {
+      "id": "france-competences__rapport-dactivite-2025-des-resultats-concrets-pour-lefficacite-et-la-soutenabilite-du-systeme-de-for",
+      "titre": "Gouvernance Rapport d’activité 2025 : des résultats concrets pour l’efficacité et la soutenabilité du système de formation professionnelle 02.09.2026",
+      "resume": "",
+      "source_id": "france-competences",
+      "thematique": "qualiopi",
+      "niveau": "info",
+      "date": "2026-09-07",
+      "url": "https://www.francecompetences.fr/fiche/rapport-dactivite-2025-des-resultats-concrets-pour-lefficacite-et-la-soutenabilite-du-systeme-de-formation-professionnelle/",
+      "lu": false
+    },
+    {
+      "id": "ministere-travail__resultats-du-concours-de-linspection-du-travail-2026",
+      "titre": "Résultats du concours de l’inspection du travail 2026",
+      "resume": "",
+      "source_id": "ministere-travail",
+      "thematique": "legislatif",
+      "niveau": "info",
+      "date": "2026-09-04",
+      "url": "https://travail-emploi.gouv.fr/resultats-du-concours-de-linspection-du-travail-2026",
+      "lu": false
+    },
+    {
+      "id": "cnil__ordre-du-jour-de-la-seance-pleniere-du-3-septembre-2026",
+      "titre": "Ordre du jour de la séance plénière du 3 septembre 2026",
+      "resume": "",
+      "source_id": "cnil",
+      "thematique": "rgpd",
+      "niveau": "info",
+      "date": "2026-09-03",
+      "url": "https://www.cnil.fr/fr/ordre-du-jour-de-la-seance-pleniere-du-3-septembre-2026",
+      "lu": false
+    },
+    {
+      "id": "cnil__sanction-hopital-prive-loire",
+      "titre": "Violation de données en matière de santé : sanction de 500 000 euros à l’encontre de l’HÔPITAL PRIVÉ DE LA LOIRE",
+      "resume": "",
+      "source_id": "cnil",
+      "thematique": "rgpd",
+      "niveau": "urgent",
+      "date": "2026-09-03",
+      "url": "https://www.cnil.fr/fr/sanction-hopital-prive-loire",
+      "lu": false
+    },
+    {
+      "id": "ministere-travail__calendrier-et-modalites-dinscription-aux-concours-du-ministere-du-travail",
+      "titre": "Calendrier du concours et voies d'accès au métier d'inspecteur du travail",
+      "resume": "",
+      "source_id": "ministere-travail",
+      "thematique": "legislatif",
+      "niveau": "info",
+      "date": "2026-09-03",
+      "url": "https://travail-emploi.gouv.fr/calendrier-et-modalites-dinscription-aux-concours-du-ministere-du-travail",
+      "lu": false
+    },
+    {
+      "id": "digiformag__reseau-franchise-pourquoi-la-formation-professionnelle-est-votre-meilleure-infrastructure-de-developpement",
+      "titre": "Réseau de franchise : pourquoi la formation professionnelle est votre meilleure infrastructure de développement",
+      "resume": "Entretien avec Pauline Moquet, dirigeante du réseau Daniel Moquet\nLe métier de franchiseur consiste à répliquer un savoir-faire pour le déployer à grande échelle et couvrir un territoire qu&#8217;une entreprise seule n&#8217;atteindrait jamais. La France en compte près de 2 000, dans des secteurs aussi variés que les services, la distribution, la restauration ou encore, l&#8217;automobile. C’est u",
+      "source_id": "digiformag",
+      "thematique": "formation",
+      "niveau": "urgent",
+      "date": "2026-09-03",
+      "url": "https://www.digiformag.com/reseau-franchise-pourquoi-la-formation-professionnelle-est-votre-meilleure-infrastructure-de-developpement/",
+      "lu": false
+    },
+    {
+      "id": "ministere-travail__le-comite-dhistoire-des-administrations-chargees-du-travail-de-lemploi-et-de-la-formation-professionn",
+      "titre": "Le Comité d’histoire des administrations du travail (CHATEFP)",
+      "resume": "",
+      "source_id": "ministere-travail",
+      "thematique": "legislatif",
+      "niveau": "info",
+      "date": "2026-09-02",
+      "url": "https://travail-emploi.gouv.fr/le-comite-dhistoire-des-administrations-chargees-du-travail-de-lemploi-et-de-la-formation-professionnelle-chatefp-presentation-et-travaux",
+      "lu": false
+    },
+    {
+      "id": "digiformag__edito-une-rentree-decisive-pour-les-organismes-de-formation",
+      "titre": "EDITO – Une rentrée décisive pour les organismes de formation",
+      "resume": "Cette rentrée, plus qu&#8217;aucune autre, s&#8217;annonce particulière pour les acteurs de la formation professionnelle.\n\nLa baisse des financements, l’arrivée de la facture électronique, un futur projet de loi de finances qui risque de connaître de vifs débats fin septembre, une augmentation des contrôles et des exigences réglementaires (avec notamment une V2 de Qualiopi) et des entreprises de p",
+      "source_id": "digiformag",
+      "thematique": "formation",
+      "niveau": "urgent",
+      "date": "2026-09-02",
+      "url": "https://www.digiformag.com/edito-une-rentree-decisive-pour-les-organismes-de-formation/",
+      "lu": false
+    },
+    {
+      "id": "ministere-travail__la-direction-des-affaires-juridiques-daj-des-ministeres-sociaux",
+      "titre": "La Direction des affaires juridiques (DAJ) des ministères sociaux",
+      "resume": "",
+      "source_id": "ministere-travail",
+      "thematique": "legislatif",
+      "niveau": "info",
+      "date": "2026-09-01",
+      "url": "https://travail-emploi.gouv.fr/la-direction-des-affaires-juridiques-daj-des-ministeres-sociaux",
+      "lu": false
+    },
+    {
+      "id": "ministere-travail__retraites-des-femmes-et-parentalite-de-nouveaux-droits-au-1er-septembre-2026",
+      "titre": "Retraites des femmes et parentalité : de nouveaux droits au 1er septembre 2026",
+      "resume": "",
+      "source_id": "ministere-travail",
+      "thematique": "legislatif",
+      "niveau": "info",
+      "date": "2026-09-01",
+      "url": "https://travail-emploi.gouv.fr/retraites-des-femmes-et-parentalite-de-nouveaux-droits-au-1er-septembre-2026",
+      "lu": false
+    },
+    {
+      "id": "cnil__ril-2026",
+      "titre": "Participez aux Rencontres Informatique & Libertés le 29 septembre 2026",
+      "resume": "",
+      "source_id": "cnil",
+      "thematique": "rgpd",
+      "niveau": "info",
+      "date": "2026-08-31",
+      "url": "https://www.cnil.fr/fr/ril-2026",
       "lu": false
     },
     {
@@ -54,17 +186,6 @@
       "niveau": "info",
       "date": "2026-08-31",
       "url": "https://www.francecompetences.fr/fiche/enquete-nationale-sur-la-qualite-de-lapprentissage/",
-      "lu": false
-    },
-    {
-      "id": "cnil__ril-2026",
-      "titre": "Participez aux Rencontres Informatique & Libertés le 29 septembre 2026",
-      "resume": "",
-      "source_id": "cnil",
-      "thematique": "rgpd",
-      "niveau": "info",
-      "date": "2026-08-31",
-      "url": "https://www.cnil.fr/fr/ril-2026",
       "lu": false
     },
     {
@@ -252,17 +373,6 @@
       "niveau": "info",
       "date": "2026-08-14",
       "url": "https://travail-emploi.gouv.fr/lepreuve-des-risques-professionnels-industriels-et-environnementaux-linspection-du-travail-et-linspection-des-installations-classees-1810-2020",
-      "lu": false
-    },
-    {
-      "id": "ministere-travail__le-comite-dhistoire-des-administrations-chargees-du-travail-de-lemploi-et-de-la-formation-professionn",
-      "titre": "Le Comité d’histoire des administrations du travail (CHATEFP)",
-      "resume": "",
-      "source_id": "ministere-travail",
-      "thematique": "legislatif",
-      "niveau": "info",
-      "date": "2026-08-14",
-      "url": "https://travail-emploi.gouv.fr/le-comite-dhistoire-des-administrations-chargees-du-travail-de-lemploi-et-de-la-formation-professionnelle-chatefp-presentation-et-travaux",
       "lu": false
     },
     {
