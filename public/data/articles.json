@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-07T11:35:44.374Z",
+  "fetchedAt": "2026-09-14T11:48:28.055Z",
   "articles": [
     {
       "id": "france-competences__decisions-denregistrement-aux-repertoires-nationaux-juillet-2026",
@@ -8,7 +8,7 @@
       "source_id": "france-competences",
       "thematique": "qualiopi",
       "niveau": "info",
-      "date": "2026-09-07",
+      "date": "2026-09-14",
       "url": "https://www.francecompetences.fr/fiche/decisions-denregistrement-aux-repertoires-nationaux-juillet-2026/",
       "lu": false
     },
@@ -19,7 +19,7 @@
       "source_id": "france-competences",
       "thematique": "qualiopi",
       "niveau": "info",
-      "date": "2026-09-07",
+      "date": "2026-09-14",
       "url": "https://www.francecompetences.fr/fiche/metiers-emergents-ou-en-particuliere-evolution-france-competences-elargit-son-7%e1%b5%89-appel-a-contributions/",
       "lu": false
     },
@@ -30,7 +30,7 @@
       "source_id": "france-competences",
       "thematique": "qualiopi",
       "niveau": "info",
-      "date": "2026-09-07",
+      "date": "2026-09-14",
       "url": "https://www.francecompetences.fr/fiche/decisions-denregistrement-aux-repertoires-nationaux-juin-2026/",
       "lu": false
     },
@@ -41,7 +41,7 @@
       "source_id": "france-competences",
       "thematique": "qualiopi",
       "niveau": "important",
-      "date": "2026-09-07",
+      "date": "2026-09-14",
       "url": "https://www.francecompetences.fr/fiche/france-competences-publie-le-referentiel-complet-des-niveaux-de-prise-en-charge-des-contrats-dapprentissage-npec/",
       "lu": false
     },
@@ -52,8 +52,30 @@
       "source_id": "france-competences",
       "thematique": "qualiopi",
       "niveau": "info",
-      "date": "2026-09-07",
+      "date": "2026-09-14",
       "url": "https://www.francecompetences.fr/fiche/rapport-dactivite-2025-des-resultats-concrets-pour-lefficacite-et-la-soutenabilite-du-systeme-de-formation-professionnelle/",
+      "lu": false
+    },
+    {
+      "id": "ministere-travail__agenda-de-sabrina-roubache",
+      "titre": "Agenda de Sabrina Roubache",
+      "resume": "",
+      "source_id": "ministere-travail",
+      "thematique": "legislatif",
+      "niveau": "info",
+      "date": "2026-09-14",
+      "url": "https://travail-emploi.gouv.fr/agenda-de-sabrina-roubache",
+      "lu": false
+    },
+    {
+      "id": "ministere-travail__coordonnees-des-organisations-syndicales-de-salaries",
+      "titre": "Coordonnées des organisations syndicales de salariés",
+      "resume": "",
+      "source_id": "ministere-travail",
+      "thematique": "legislatif",
+      "niveau": "info",
+      "date": "2026-09-14",
+      "url": "https://travail-emploi.gouv.fr/coordonnees-des-organisations-syndicales-de-salaries",
       "lu": false
     },
     {
@@ -63,8 +85,74 @@
       "source_id": "ministere-travail",
       "thematique": "legislatif",
       "niveau": "info",
-      "date": "2026-09-04",
+      "date": "2026-09-11",
       "url": "https://travail-emploi.gouv.fr/resultats-du-concours-de-linspection-du-travail-2026",
+      "lu": false
+    },
+    {
+      "id": "cnil__ordre-du-jour-de-la-seance-pleniere-du-10-septembre-2026",
+      "titre": "Ordre du jour de la séance plénière du 10 septembre 2026",
+      "resume": "",
+      "source_id": "cnil",
+      "thematique": "rgpd",
+      "niveau": "info",
+      "date": "2026-09-10",
+      "url": "https://www.cnil.fr/fr/ordre-du-jour-de-la-seance-pleniere-du-10-septembre-2026",
+      "lu": false
+    },
+    {
+      "id": "cnil__facturation-electronique-quels-enjeux",
+      "titre": "Facturation électronique : quels enjeux pour la protection des données personnelles ?",
+      "resume": "",
+      "source_id": "cnil",
+      "thematique": "rgpd",
+      "niveau": "info",
+      "date": "2026-09-10",
+      "url": "https://www.cnil.fr/fr/facturation-electronique-quels-enjeux",
+      "lu": false
+    },
+    {
+      "id": "cnil__audeladelecran",
+      "titre": "La CNIL publie le tome 2 de L’Agence Privacy : une nouvelle enquête pour mieux comprendre la cybercriminalité",
+      "resume": "",
+      "source_id": "cnil",
+      "thematique": "rgpd",
+      "niveau": "important",
+      "date": "2026-09-10",
+      "url": "https://www.cnil.fr/fr/audeladelecran",
+      "lu": false
+    },
+    {
+      "id": "ministere-travail__presentation-en-conseil-des-ministres-du-projet-de-loi-portant-transposition-de-la-directive-relative",
+      "titre": "Présentation en conseil des ministres du projet de loi portant transposition de la directive relative à l’égalité des rémunérations entre les femmes et les hommes par la transparence des rémunérations",
+      "resume": "",
+      "source_id": "ministere-travail",
+      "thematique": "legislatif",
+      "niveau": "urgent",
+      "date": "2026-09-10",
+      "url": "https://travail-emploi.gouv.fr/presentation-en-conseil-des-ministres-du-projet-de-loi-portant-transposition-de-la-directive-relative-legalite-des-remunerations-entre-les-femmes-et-les-hommes-par-la-transparence-des-remunerations",
+      "lu": false
+    },
+    {
+      "id": "ministere-travail__pilotage-des-dispositifs-de-la-politique-de-lemploi-et-de-la-formation-professionnelle-traitement-des",
+      "titre": "Pilotage des dispositifs de la politique de l’emploi et de la formation professionnelle | Traitement des données personnelles",
+      "resume": "",
+      "source_id": "ministere-travail",
+      "thematique": "legislatif",
+      "niveau": "urgent",
+      "date": "2026-09-10",
+      "url": "https://travail-emploi.gouv.fr/pilotage-des-dispositifs-de-la-politique-de-lemploi-et-de-la-formation-professionnelle-traitement-des-donnees-personnelles",
+      "lu": false
+    },
+    {
+      "id": "cnil__sanction-non-respect-droits-personnes-extia",
+      "titre": "Non-respect des droits des personnes : sanction de 300 000 euros à l’encontre de la société EXTIA",
+      "resume": "",
+      "source_id": "cnil",
+      "thematique": "rgpd",
+      "niveau": "urgent",
+      "date": "2026-09-09",
+      "url": "https://www.cnil.fr/fr/sanction-non-respect-droits-personnes-extia",
       "lu": false
     },
     {
@@ -186,17 +274,6 @@
       "niveau": "info",
       "date": "2026-08-31",
       "url": "https://www.francecompetences.fr/fiche/enquete-nationale-sur-la-qualite-de-lapprentissage/",
-      "lu": false
-    },
-    {
-      "id": "ministere-travail__agenda-de-sabrina-roubache",
-      "titre": "Agenda de Sabrina Roubache",
-      "resume": "",
-      "source_id": "ministere-travail",
-      "thematique": "legislatif",
-      "niveau": "info",
-      "date": "2026-08-31",
-      "url": "https://travail-emploi.gouv.fr/agenda-de-sabrina-roubache",
       "lu": false
     },
     {
