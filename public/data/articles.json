@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-14T11:48:28.055Z",
+  "fetchedAt": "2026-09-21T12:00:07.495Z",
   "articles": [
     {
       "id": "france-competences__decisions-denregistrement-aux-repertoires-nationaux-juillet-2026",
@@ -8,7 +8,7 @@
       "source_id": "france-competences",
       "thematique": "qualiopi",
       "niveau": "info",
-      "date": "2026-09-14",
+      "date": "2026-09-21",
       "url": "https://www.francecompetences.fr/fiche/decisions-denregistrement-aux-repertoires-nationaux-juillet-2026/",
       "lu": false
     },
@@ -19,7 +19,7 @@
       "source_id": "france-competences",
       "thematique": "qualiopi",
       "niveau": "info",
-      "date": "2026-09-14",
+      "date": "2026-09-21",
       "url": "https://www.francecompetences.fr/fiche/metiers-emergents-ou-en-particuliere-evolution-france-competences-elargit-son-7%e1%b5%89-appel-a-contributions/",
       "lu": false
     },
@@ -30,19 +30,118 @@
       "source_id": "france-competences",
       "thematique": "qualiopi",
       "niveau": "info",
-      "date": "2026-09-14",
+      "date": "2026-09-21",
       "url": "https://www.francecompetences.fr/fiche/decisions-denregistrement-aux-repertoires-nationaux-juin-2026/",
       "lu": false
     },
     {
       "id": "france-competences__france-competences-publie-le-referentiel-complet-des-niveaux-de-prise-en-charge-des-contrats-dappren",
-      "titre": "Financement de la formation et de l’apprentissage France compétences publie le référentiel complet des niveaux de prise en charge des contrats d’apprentissage (NPEC)",
+      "titre": "Financement de la formation et de l’apprentissage Le référentiel complet des niveaux de prise en charge des contrats d’apprentissage",
       "resume": "",
       "source_id": "france-competences",
       "thematique": "qualiopi",
       "niveau": "important",
-      "date": "2026-09-14",
+      "date": "2026-09-21",
       "url": "https://www.francecompetences.fr/fiche/france-competences-publie-le-referentiel-complet-des-niveaux-de-prise-en-charge-des-contrats-dapprentissage-npec/",
+      "lu": false
+    },
+    {
+      "id": "france-competences__semaines-de-levolution-professionnelle-2026",
+      "titre": "Conseil en évolution professionnelle Semaines de l’évolution professionnelle 2026 18.09.2026",
+      "resume": "",
+      "source_id": "france-competences",
+      "thematique": "qualiopi",
+      "niveau": "info",
+      "date": "2026-09-21",
+      "url": "https://www.francecompetences.fr/fiche/semaines-de-levolution-professionnelle-2026/",
+      "lu": false
+    },
+    {
+      "id": "ministere-travail__le-conge-de-paternite-et-daccueil-de-lenfant",
+      "titre": "Le congé de paternité et d'accueil de l'enfant",
+      "resume": "",
+      "source_id": "ministere-travail",
+      "thematique": "legislatif",
+      "niveau": "info",
+      "date": "2026-09-21",
+      "url": "https://travail-emploi.gouv.fr/le-conge-de-paternite-et-daccueil-de-lenfant",
+      "lu": false
+    },
+    {
+      "id": "ministere-travail__le-conge-dadoption",
+      "titre": "Le congé d'adoption",
+      "resume": "",
+      "source_id": "ministere-travail",
+      "thematique": "legislatif",
+      "niveau": "info",
+      "date": "2026-09-21",
+      "url": "https://travail-emploi.gouv.fr/le-conge-dadoption",
+      "lu": false
+    },
+    {
+      "id": "ministere-travail__le-conge-de-maternite",
+      "titre": "Le congé de maternité",
+      "resume": "",
+      "source_id": "ministere-travail",
+      "thematique": "legislatif",
+      "niveau": "info",
+      "date": "2026-09-21",
+      "url": "https://travail-emploi.gouv.fr/le-conge-de-maternite",
+      "lu": false
+    },
+    {
+      "id": "ministere-travail__lautorisation-de-conduite-des-appareils-de-levage",
+      "titre": "L'autorisation de conduite des appareils de levage",
+      "resume": "",
+      "source_id": "ministere-travail",
+      "thematique": "legislatif",
+      "niveau": "info",
+      "date": "2026-09-18",
+      "url": "https://travail-emploi.gouv.fr/lautorisation-de-conduite-des-appareils-de-levage",
+      "lu": false
+    },
+    {
+      "id": "ministere-travail__la-prevention-des-risques-lies-lamiante",
+      "titre": "La prévention des risques liés à l'amiante",
+      "resume": "",
+      "source_id": "ministere-travail",
+      "thematique": "legislatif",
+      "niveau": "info",
+      "date": "2026-09-18",
+      "url": "https://travail-emploi.gouv.fr/la-prevention-des-risques-lies-lamiante",
+      "lu": false
+    },
+    {
+      "id": "cnil__ordre-du-jour-de-la-seance-pleniere-du-17-septembre-2026",
+      "titre": "Ordre du jour de la séance plénière du 17 septembre 2026",
+      "resume": "",
+      "source_id": "cnil",
+      "thematique": "rgpd",
+      "niveau": "info",
+      "date": "2026-09-17",
+      "url": "https://www.cnil.fr/fr/ordre-du-jour-de-la-seance-pleniere-du-17-septembre-2026",
+      "lu": false
+    },
+    {
+      "id": "digiformag__enquete-au-dela-du-buzz-comment-les-formateurs-utilisent-ils-lia-au-quotidien",
+      "titre": "Enquête – Au-delà du buzz : comment les formateurs utilisent-ils l’IA au quotidien ?",
+      "resume": "L’intelligence artificielle s’est-elle déjà durablement installée dans le quotidien des organismes de formation ? Pour mesurer l’impact réel de ces technologies sur le terrain, Digiforma a mené l&#8217;enquête auprès de ses clients.\nRéalisée en juin 2026, celle-ci rassemble une grande variété de profils, portée en majorité par des directeurs et directrices d’OF (33,9 %) et des responsables pédagog",
+      "source_id": "digiformag",
+      "thematique": "formation",
+      "niveau": "urgent",
+      "date": "2026-09-17",
+      "url": "https://www.digiformag.com/enquete-au-dela-du-buzz-comment-les-formateurs-utilisent-ils-lia-au-quotidien/",
+      "lu": false
+    },
+    {
+      "id": "digiformag__les-jurys-de-certifications-rncp-et-rs-roles-composition-et-responsabilites",
+      "titre": "Les jurys de certifications RNCP et RS : rôles, composition et responsabilités",
+      "resume": "Dans le cadre des certifications enregistrées au RNCP (Répertoire National des Certifications Professionnelles) et au RS (Répertoire Spécifique), le rôle des jurys est primordial. Notez que j&#8217;écris des jurys et non du jury, et que je considère un jury comme un ensemble de personnes travaillant ensemble dans les différents volets de l&#8217;évaluation, et non comme une personne à part entière",
+      "source_id": "digiformag",
+      "thematique": "formation",
+      "niveau": "important",
+      "date": "2026-09-15",
+      "url": "https://www.digiformag.com/les-jurys-de-certifications-rncp-et-rs-roles-composition-et-responsabilites/",
       "lu": false
     },
     {
@@ -76,6 +175,17 @@
       "niveau": "info",
       "date": "2026-09-14",
       "url": "https://travail-emploi.gouv.fr/coordonnees-des-organisations-syndicales-de-salaries",
+      "lu": false
+    },
+    {
+      "id": "digiformag__apprentissage-les-7-dossiers-a-surveiller-dici-la-fin-de-lannee-2026",
+      "titre": "Apprentissage : les 7 dossiers à surveiller d’ici la fin de l’année 2026",
+      "resume": "La rentrée est là, il faut gérer les urgences, les modifications de dernière minute, continuer d’accompagner les candidats sans employeur, et dans le même temps, suivre les futures évolutions importantes qui vont rythmer les prochains mois. Financements, contrôles, qualité, effectifs, budget 2027… Pour vous aider à ne rien manquer, voici un petit récap de ce qu’il ne faudra pas rater dans les proc",
+      "source_id": "digiformag",
+      "thematique": "formation",
+      "niveau": "urgent",
+      "date": "2026-09-11",
+      "url": "https://www.digiformag.com/apprentissage-les-7-dossiers-a-surveiller-dici-la-fin-de-lannee-2026/",
       "lu": false
     },
     {
@@ -156,6 +266,28 @@
       "lu": false
     },
     {
+      "id": "digiformag__france-travail-les-grands-chantiers-de-la-formation-professionnelle-pour-2026-2027-entretien-avec-herve-joua",
+      "titre": "France Travail : les grands chantiers de la formation professionnelle pour 2026-2027 (entretien avec Hervé Jouanneau)",
+      "resume": "Entretien avec Hervé Jouanneau, Directeur Orientation et Formation à France Travail.\nCybersécurité de Kairos, intelligence artificielle au service du recrutement en formation, critères de financement de plus en plus liés à l&#8217;employabilité, avenir du CPF et de la POEI&#8230; Hervé Jouanneau, Directeur Orientation et Formation à France Travail a répondu à nos questions. Il dresse un panorama c",
+      "source_id": "digiformag",
+      "thematique": "formation",
+      "niveau": "urgent",
+      "date": "2026-09-08",
+      "url": "https://www.digiformag.com/france-travail-les-grands-chantiers-de-la-formation-professionnelle-pour-2026-2027-entretien-avec-herve-jouanneau/",
+      "lu": false
+    },
+    {
+      "id": "digiformag__reseau-franchise-pourquoi-la-formation-professionnelle-est-votre-meilleure-infrastructure-de-developpement",
+      "titre": "Réseau de franchise : pourquoi la formation professionnelle est votre meilleure infrastructure de développement",
+      "resume": "Entretien avec Pauline Moquet, dirigeante du réseau Daniel Moquet\nLe métier de franchiseur consiste à répliquer un savoir-faire pour le déployer à grande échelle et couvrir un territoire qu&#8217;une entreprise seule n&#8217;atteindrait jamais. La France en compte près de 2 000, dans des secteurs aussi variés que les services, la distribution, la restauration ou encore, l&#8217;automobile. C’est u",
+      "source_id": "digiformag",
+      "thematique": "formation",
+      "niveau": "urgent",
+      "date": "2026-09-03",
+      "url": "https://www.digiformag.com/reseau-franchise-pourquoi-la-formation-professionnelle-est-votre-meilleure-infrastructure-de-developpement/",
+      "lu": false
+    },
+    {
       "id": "cnil__ordre-du-jour-de-la-seance-pleniere-du-3-septembre-2026",
       "titre": "Ordre du jour de la séance plénière du 3 septembre 2026",
       "resume": "",
@@ -186,17 +318,6 @@
       "niveau": "info",
       "date": "2026-09-03",
       "url": "https://travail-emploi.gouv.fr/calendrier-et-modalites-dinscription-aux-concours-du-ministere-du-travail",
-      "lu": false
-    },
-    {
-      "id": "digiformag__reseau-franchise-pourquoi-la-formation-professionnelle-est-votre-meilleure-infrastructure-de-developpement",
-      "titre": "Réseau de franchise : pourquoi la formation professionnelle est votre meilleure infrastructure de développement",
-      "resume": "Entretien avec Pauline Moquet, dirigeante du réseau Daniel Moquet\nLe métier de franchiseur consiste à répliquer un savoir-faire pour le déployer à grande échelle et couvrir un territoire qu&#8217;une entreprise seule n&#8217;atteindrait jamais. La France en compte près de 2 000, dans des secteurs aussi variés que les services, la distribution, la restauration ou encore, l&#8217;automobile. C’est u",
-      "source_id": "digiformag",
-      "thematique": "formation",
-      "niveau": "urgent",
-      "date": "2026-09-03",
-      "url": "https://www.digiformag.com/reseau-franchise-pourquoi-la-formation-professionnelle-est-votre-meilleure-infrastructure-de-developpement/",
       "lu": false
     },
     {
