@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-21T12:00:07.495Z",
+  "fetchedAt": "2026-09-28T12:55:20.814Z",
   "articles": [
     {
       "id": "france-competences__decisions-denregistrement-aux-repertoires-nationaux-juillet-2026",
@@ -8,7 +8,7 @@
       "source_id": "france-competences",
       "thematique": "qualiopi",
       "niveau": "info",
-      "date": "2026-09-21",
+      "date": "2026-09-28",
       "url": "https://www.francecompetences.fr/fiche/decisions-denregistrement-aux-repertoires-nationaux-juillet-2026/",
       "lu": false
     },
@@ -19,7 +19,7 @@
       "source_id": "france-competences",
       "thematique": "qualiopi",
       "niveau": "info",
-      "date": "2026-09-21",
+      "date": "2026-09-28",
       "url": "https://www.francecompetences.fr/fiche/metiers-emergents-ou-en-particuliere-evolution-france-competences-elargit-son-7%e1%b5%89-appel-a-contributions/",
       "lu": false
     },
@@ -30,7 +30,7 @@
       "source_id": "france-competences",
       "thematique": "qualiopi",
       "niveau": "info",
-      "date": "2026-09-21",
+      "date": "2026-09-28",
       "url": "https://www.francecompetences.fr/fiche/decisions-denregistrement-aux-repertoires-nationaux-juin-2026/",
       "lu": false
     },
@@ -41,7 +41,7 @@
       "source_id": "france-competences",
       "thematique": "qualiopi",
       "niveau": "important",
-      "date": "2026-09-21",
+      "date": "2026-09-28",
       "url": "https://www.francecompetences.fr/fiche/france-competences-publie-le-referentiel-complet-des-niveaux-de-prise-en-charge-des-contrats-dapprentissage-npec/",
       "lu": false
     },
@@ -52,8 +52,140 @@
       "source_id": "france-competences",
       "thematique": "qualiopi",
       "niveau": "info",
-      "date": "2026-09-21",
+      "date": "2026-09-28",
       "url": "https://www.francecompetences.fr/fiche/semaines-de-levolution-professionnelle-2026/",
+      "lu": false
+    },
+    {
+      "id": "cnil__air2026",
+      "titre": "Évènement air 2026 : Convaincre ou manipuler ? L'éthique du numérique à l'épreuve des urnes, le 16 novembre à la CNIL",
+      "resume": "",
+      "source_id": "cnil",
+      "thematique": "rgpd",
+      "niveau": "info",
+      "date": "2026-09-28",
+      "url": "https://www.cnil.fr/fr/air2026",
+      "lu": false
+    },
+    {
+      "id": "ministere-travail__le-comite-de-deontologie-des-ministeres-charges-des-affaires-sociales-presentation-et-travaux",
+      "titre": "Le Comité de déontologie des ministères chargés des affaires sociales | Présentation et travaux",
+      "resume": "",
+      "source_id": "ministere-travail",
+      "thematique": "legislatif",
+      "niveau": "info",
+      "date": "2026-09-25",
+      "url": "https://travail-emploi.gouv.fr/le-comite-de-deontologie-des-ministeres-charges-des-affaires-sociales-presentation-et-travaux",
+      "lu": false
+    },
+    {
+      "id": "ministere-travail__les-risques-lies-aux-grues-tour",
+      "titre": "Les risques liés aux grues à tour",
+      "resume": "",
+      "source_id": "ministere-travail",
+      "thematique": "legislatif",
+      "niveau": "info",
+      "date": "2026-09-25",
+      "url": "https://travail-emploi.gouv.fr/les-risques-lies-aux-grues-tour",
+      "lu": false
+    },
+    {
+      "id": "ministere-travail__faq-accompagnement-des-entreprises-dans-le-cadre-des-incendies-exceptionnels",
+      "titre": "FAQ : Accompagnement des entreprises dans le cadre des incendies exceptionnels",
+      "resume": "",
+      "source_id": "ministere-travail",
+      "thematique": "legislatif",
+      "niveau": "info",
+      "date": "2026-09-25",
+      "url": "https://travail-emploi.gouv.fr/faq-accompagnement-des-entreprises-dans-le-cadre-des-incendies-exceptionnels",
+      "lu": false
+    },
+    {
+      "id": "cnil__ordre-du-jour-de-la-seance-pleniere-du-24-septembre-2026",
+      "titre": "Ordre du jour de la séance plénière du 24 septembre 2026",
+      "resume": "",
+      "source_id": "cnil",
+      "thematique": "rgpd",
+      "niveau": "info",
+      "date": "2026-09-24",
+      "url": "https://www.cnil.fr/fr/ordre-du-jour-de-la-seance-pleniere-du-24-septembre-2026",
+      "lu": false
+    },
+    {
+      "id": "cnil__cloture-injonction-solocal-marketing-services",
+      "titre": "Clôture de l’injonction prononcée à l’encontre de la société SOLOCAL MARKETING SERVICES",
+      "resume": "",
+      "source_id": "cnil",
+      "thematique": "rgpd",
+      "niveau": "info",
+      "date": "2026-09-24",
+      "url": "https://www.cnil.fr/fr/cloture-injonction-solocal-marketing-services",
+      "lu": false
+    },
+    {
+      "id": "ministere-travail__comite-national-pour-lemploi-la-transition-demographique-au-coeur-des-echanges",
+      "titre": "Comité national pour l’emploi : la transition démographique au cœur des échanges",
+      "resume": "",
+      "source_id": "ministere-travail",
+      "thematique": "legislatif",
+      "niveau": "urgent",
+      "date": "2026-09-24",
+      "url": "https://travail-emploi.gouv.fr/comite-national-pour-lemploi-la-transition-demographique-au-coeur-des-echanges",
+      "lu": false
+    },
+    {
+      "id": "ministere-travail__questions-reponses-quels-recours-contre-un-avis-dinaptitude",
+      "titre": "Questions-réponses | Quels recours contre un avis d’inaptitude ?",
+      "resume": "",
+      "source_id": "ministere-travail",
+      "thematique": "legislatif",
+      "niveau": "info",
+      "date": "2026-09-24",
+      "url": "https://travail-emploi.gouv.fr/questions-reponses-quels-recours-contre-un-avis-dinaptitude",
+      "lu": false
+    },
+    {
+      "id": "digiformag__handicap-en-formation-comment-passer-de-la-simple-conformite-a-une-vraie-culture-daccueil",
+      "titre": "Handicap en formation : comment passer de la simple conformité à une vraie culture d’accueil ?",
+      "resume": "Beaucoup d&#8217;organismes de formation pensent être prêts à accueillir une personne en situation de handicap (PSH) parce qu&#8217;ils ont nommé un référent handicap et rédigé une politique dédiée. Pourtant, sur le terrain, les situations de handicap ne se présentent pas toujours comme prévu. Elles peuvent être invisibles, non déclarées ou apparaître en cours de parcours. La question n&#8217;est ",
+      "source_id": "digiformag",
+      "thematique": "formation",
+      "niveau": "urgent",
+      "date": "2026-09-24",
+      "url": "https://www.digiformag.com/handicap-en-formation-comment-passer-de-la-simple-conformite-a-une-vraie-culture-daccueil/",
+      "lu": false
+    },
+    {
+      "id": "cnil__pleniere-cepd-amendes-reglement-services-numeriques",
+      "titre": "Amendes RGPD et interaction avec le règlement sur les services numériques : retour sur la plénière du CEPD du 17 septembre 2026",
+      "resume": "",
+      "source_id": "cnil",
+      "thematique": "rgpd",
+      "niveau": "urgent",
+      "date": "2026-09-23",
+      "url": "https://www.cnil.fr/fr/pleniere-cepd-amendes-reglement-services-numeriques",
+      "lu": false
+    },
+    {
+      "id": "digiformag__declaration-de-sous-traitance-cpf-sur-edof-le-guide-express-de-la-campagne-2026",
+      "titre": "Déclaration de sous-traitance CPF sur EDOF : le guide express de la campagne 2026",
+      "resume": "La campagne de déclaration de sous-traitance 2026 est ouverte, et cette fois, plus d&#8217;excuses : vous avez déjà vécu la première édition en 2025. Bonne nouvelle, EDOF a simplifié le parcours (chiffre d&#8217;affaires prérempli, historique de vos déclarations, consultation d&#8217;un sous-traitant par SIRET). Moins bonne nouvelle : la date limite tombe le 30 septembre 2026, et elle concerne tou",
+      "source_id": "digiformag",
+      "thematique": "formation",
+      "niveau": "urgent",
+      "date": "2026-09-22",
+      "url": "https://www.digiformag.com/declaration-de-sous-traitance-cpf-sur-edof-le-guide-express-de-la-campagne-2026/",
+      "lu": false
+    },
+    {
+      "id": "agefiph__mondial-relay-inpost-et-lagefiph-signent-une-convention-de",
+      "titre": "Mondial Relay by InPost et l’Agefiph signent une convention de développement de l’emploi",
+      "resume": "",
+      "source_id": "agefiph",
+      "thematique": "opco",
+      "niveau": "urgent",
+      "date": "2026-09-21",
+      "url": "https://www.agefiph.fr/espace-presse/tous-les-documents-presse/mondial-relay-inpost-et-lagefiph-signent-une-convention-de",
       "lu": false
     },
     {
@@ -125,7 +257,7 @@
     {
       "id": "digiformag__enquete-au-dela-du-buzz-comment-les-formateurs-utilisent-ils-lia-au-quotidien",
       "titre": "Enquête – Au-delà du buzz : comment les formateurs utilisent-ils l’IA au quotidien ?",
-      "resume": "L’intelligence artificielle s’est-elle déjà durablement installée dans le quotidien des organismes de formation ? Pour mesurer l’impact réel de ces technologies sur le terrain, Digiforma a mené l&#8217;enquête auprès de ses clients.\nRéalisée en juin 2026, celle-ci rassemble une grande variété de profils, portée en majorité par des directeurs et directrices d’OF (33,9 %) et des responsables pédagog",
+      "resume": "L’intelligence artificielle s’est-elle déjà durablement installée dans le quotidien des organismes de formation ? Pour mesurer l’impact réel de ces technologies sur le terrain, Digiforma a mené l&#8217;enquête auprès de plus de 700 organismes de formation.\nRéalisée en juin 2026, celle-ci rassemble une grande variété de profils, portée en majorité par des directeurs et directrices d’OF (33,9 %) et ",
       "source_id": "digiformag",
       "thematique": "formation",
       "niveau": "urgent",
@@ -439,17 +571,6 @@
       "niveau": "info",
       "date": "2026-08-27",
       "url": "https://www.cnil.fr/fr/sensibiliser-les-eleves-de-cm2-la-protection-des-donnees",
-      "lu": false
-    },
-    {
-      "id": "ministere-travail__faq-accompagnement-des-entreprises-dans-le-cadre-des-incendies-exceptionnels",
-      "titre": "FAQ : Accompagnement des entreprises dans le cadre des incendies exceptionnels",
-      "resume": "",
-      "source_id": "ministere-travail",
-      "thematique": "legislatif",
-      "niveau": "info",
-      "date": "2026-08-27",
-      "url": "https://travail-emploi.gouv.fr/faq-accompagnement-des-entreprises-dans-le-cadre-des-incendies-exceptionnels",
       "lu": false
     },
     {
