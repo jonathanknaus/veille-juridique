@@ -7,6 +7,18 @@ import { RESPONSABLE } from '../data/formateurs'
 import { ecouterTraces, sauvegarderTraces } from '../data/veille-storage'
 import './TableauDeBord.css'
 
+// Au-delà de ce délai, un article NON TRAITÉ sort de la liste à traiter : passé
+// 45 jours, l'information réglementaire est périmée et le stock de « en attente »
+// grossissait indéfiniment. Les articles déjà traités ne sont jamais masqués, et
+// les masqués restent affichables d'un clic — rien ne disparaît en silence.
+const JOURS_AVANT_MASQUAGE = 45
+
+function ageEnJours(dateArticle) {
+  const d = new Date(dateArticle)
+  if (Number.isNaN(d.getTime())) return null // date illisible : on ne masque pas
+  return Math.floor((Date.now() - d.getTime()) / 86400000)
+}
+
 // ── Modale de traitement ──────────────────────────────────────────────────────
 function ModaleTraitement({ article, onClose, onSave }) {
   const source = article.manuel ? { nom: article.source_nom || 'Source externe' } : SOURCES.find(s => s.id === article.source_id)
@@ -353,6 +365,7 @@ export default function TableauDeBord() {
   const [onglet, setOnglet] = useState('veille')
   const [filtreStatut, setFiltreStatut] = useState('tous')
   const [filtreIndicateur, setFiltreIndicateur] = useState('tous')
+  const [afficherAnciens, setAfficherAnciens] = useState(false)
   const [banniereVisible, setBanniereVisible] = useState(() => shouldWarnBackup(getTraitements()))
   const [syncStatus, setSyncStatus] = useState(null) // null | 'saving' | 'ok' | 'error'
   const [syncArticles, setSyncArticles] = useState(null) // null | 'loading' | 'ok' | 'error'
@@ -596,6 +609,27 @@ export default function TableauDeBord() {
                 </button>
               ))}
             </div>
+
+            {(() => {
+              const masques = tousArticles.filter(a => {
+                if (getTraitement(a.id)) return false
+                const age = ageEnJours(a.date)
+                return age !== null && age > JOURS_AVANT_MASQUAGE
+              }).length
+              if (masques === 0) return null
+              return (
+                <div className="anciens-masques">
+                  <span>
+                    <strong>{masques}</strong> article{masques > 1 ? 's' : ''} non traité{masques > 1 ? 's' : ''} de plus de {JOURS_AVANT_MASQUAGE} jours
+                    {afficherAnciens ? ' (affichés)' : ' (masqués)'}
+                  </span>
+                  <button className="btn-anciens" onClick={() => setAfficherAnciens(v => !v)}>
+                    {afficherAnciens ? 'Masquer' : 'Afficher quand même'}
+                  </button>
+                </div>
+              )
+            })()}
+
           <div className="tdb-table-wrap">
             <table className="tdb-table">
               <thead>
@@ -605,8 +639,13 @@ export default function TableauDeBord() {
               </thead>
               <tbody>
                 {[...tousArticles].sort((a, b) => new Date(b.date) - new Date(a.date)).filter(article => {
-                  if (filtreStatut === 'tous') return true
                   const trace = getTraitement(article.id)
+                  // Un article non traité et trop ancien sort de la liste.
+                  if (!trace && !afficherAnciens) {
+                    const age = ageEnJours(article.date)
+                    if (age !== null && age > JOURS_AVANT_MASQUAGE) return false
+                  }
+                  if (filtreStatut === 'tous') return true
                   if (filtreStatut === 'en-attente') return !trace
                   return trace?.decision === filtreStatut
                 }).map(article => {
@@ -685,8 +724,9 @@ export default function TableauDeBord() {
               {filtreIndicateur === 'non_qualifie' && compte.non_qualifie > 0 && (
                 <p className="registre-aide">
                   Ces traces n'ont pas encore de rattachement 23/24/25. Elles restent valables,
-                  mais ne remontent dans aucun registre d'indicateur. Rouvre l'article depuis
-                  l'onglet Veille pour les qualifier.
+                  mais ne remontent dans aucun registre d'indicateur. Utilise le bouton
+                  « Qualifier » sur chaque ligne — inutile de repasser par l'onglet Veille,
+                  l'article d'origine a pu en sortir sans que la trace soit perdue.
                 </p>
               )}
 
@@ -701,7 +741,7 @@ export default function TableauDeBord() {
                   <table className="tdb-table">
                     <thead>
                       <tr>
-                        <th>Date</th><th>Ind.</th><th>Titre</th><th>Source</th><th>Impact / action menée</th><th>Décision</th><th>Traité par</th>
+                        <th>Date</th><th>Ind.</th><th>Titre</th><th>Source</th><th>Impact / action menée</th><th>Décision</th><th>Traité par</th><th>Action</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -721,6 +761,26 @@ export default function TableauDeBord() {
                             <td className="td-commentaire">{t.impact || <em className="td-vide">non renseigné</em>}</td>
                             <td><span className="trace-badge" style={{ color: d?.color }}>{d?.icon} {d?.label}</span></td>
                             <td className="td-email">{t.traitePar}</td>
+                            <td className="td-actions">
+                              {/* La trace doit être modifiable ICI : l'article d'origine
+                                  peut avoir été purgé de la liste Veille (rétention 90 j),
+                                  alors que la trace, elle, est conservée. */}
+                              <button
+                                className="btn-traiter"
+                                onClick={() => setModaleArticle({
+                                  id: t.articleId,
+                                  titre: t.articleTitre,
+                                  source_id: t.articleSource,
+                                  source_nom: t.articleSource,
+                                  thematique: t.articleThematique,
+                                  date: t.articleDate,
+                                  url: t.urlArticle,
+                                  manuel: true,
+                                })}
+                              >
+                                {t.indicateur ? 'Modifier' : 'Qualifier'}
+                              </button>
+                            </td>
                           </tr>
                         )
                       })}

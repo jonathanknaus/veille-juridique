@@ -229,6 +229,16 @@ async function main() {
   let anciens = []
   try {
     const existing = JSON.parse(readFileSync('public/data/articles.json', 'utf-8'))
+    // ⚠️ On conserve TOUS les articles sortis des flux, sans purge par l'âge.
+    //
+    // Une purge a été tentée puis retirée le 2026-10-05 : ce script tourne dans
+    // GitHub Actions et ne peut pas savoir quels articles ont été traités (les
+    // traces sont dans Firebase, dont la lecture exige un compte Pennylane
+    // autorisé). Il purgeait donc à l'aveugle et faisait disparaître de la liste
+    // des articles déjà traités — inacceptable, ce sont des pièces de preuve.
+    //
+    // Le désencombrement se fait côté interface, qui connaît les traces : elle
+    // masque les articles NON TRAITÉS de plus de 45 jours, et jamais les autres.
     anciens = (existing.articles || []).filter(a => !nouveauxIds.has(a.id))
     if (anciens.length > 0) console.log(`${anciens.length} articles conservés (hors flux actuel)`)
   } catch {}
