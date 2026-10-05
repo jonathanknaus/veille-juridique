@@ -11,12 +11,48 @@
       "$entree": {
         ".validate": "newData.hasChildren(['email', 'profil'])",
         "email":  { ".validate": "newData.isString() && newData.val().length > 4 && newData.val().length < 200" },
-        "profil": { ".validate": "newData.val() === 'administrateur' || newData.val() === 'formateur_interne' || newData.val() === 'consultatif'" },
+        "profil": { ".validate": "newData.val() === 'administrateur' || newData.val() === 'formateur_interne' || newData.val() === 'formateur_externe' || newData.val() === 'consultatif'" },
         "nom":    { ".validate": "newData.isString() && newData.val().length < 100" },
         "prenom": { ".validate": "newData.isString() && newData.val().length < 100" },
         "actif":  { ".validate": "newData.isBoolean()" },
         "creeLe": { ".validate": "newData.isString() && newData.val().length < 40" },
         "creePar": { ".validate": "newData.isString() && newData.val().length < 200" },
+
+        "permsPersonnalisees": { ".validate": "newData.isBoolean()" },
+        "perms": {
+          "$module": {
+            "acces":    { ".validate": "newData.isBoolean()" },
+            "lecture":  { ".validate": "newData.isBoolean()" },
+            "ecriture": { ".validate": "newData.isBoolean()" },
+            "$autreChamp": { ".validate": false }
+          }
+        },
+
+        "$autre": { ".validate": false }
+      }
+    },
+
+    "profils": {
+      ".read": "auth != null && auth.token.email != null && auth.token.email_verified === true && (auth.token.email.endsWith('@pennylane.com') || auth.token.email.endsWith('@pennylane-partners.com'))",
+
+      ".write": "auth != null && auth.token.email != null && auth.token.email_verified === true && (auth.token.email === 'jonathan.knaus@pennylane.com' || auth.token.email === 'sarah.briden@pennylane-partners.com')",
+
+      "$profil": {
+        ".validate": "$profil === 'administrateur' || $profil === 'formateur_interne' || $profil === 'formateur_externe' || $profil === 'consultatif'",
+        "label":       { ".validate": "newData.isString() && newData.val().length > 0 && newData.val().length < 100" },
+        "description": { ".validate": "newData.isString() && newData.val().length < 300" },
+        "role":        { ".validate": "newData.val() === 'admin' || newData.val() === 'formateur'" },
+        "ordre":       { ".validate": "newData.isNumber()" },
+        "majLe":       { ".validate": "newData.isString() && newData.val().length < 40" },
+        "majPar":      { ".validate": "newData.isString() && newData.val().length < 200" },
+        "perms": {
+          "$module": {
+            "acces":    { ".validate": "newData.isBoolean()" },
+            "lecture":  { ".validate": "newData.isBoolean()" },
+            "ecriture": { ".validate": "newData.isBoolean()" },
+            "$autreChamp": { ".validate": false }
+          }
+        },
         "$autre": { ".validate": false }
       }
     }

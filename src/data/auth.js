@@ -1,5 +1,5 @@
 import {
-  connexionGoogle, deconnexionGoogle, lireAcces, resoudreProfil, PROFILS,
+  connexionGoogle, deconnexionGoogle, lireAcces, lireProfils, resoudreProfil, PROFILS,
 } from './firebase-auth.js'
 
 export const ROLES = {
@@ -32,18 +32,28 @@ export async function loginWithGoogle() {
   const email = (utilisateur.email || '').toLowerCase()
 
   let liste = []
+  let profils = null
   try {
-    liste = await lireAcces()
+    // Les deux lectures sont arbitrées par les règles : un domaine non autorisé
+    // échoue ici, côté serveur, et pas dans l'interface.
+    ;[liste, profils] = await Promise.all([lireAcces(), lireProfils()])
   } catch {
-    // Lecture refusée = le domaine n'est pas autorisé par les règles.
     await deconnexionGoogle().catch(() => {})
     throw new Error(`Le compte ${email} n'est pas autorisé à accéder à cet outil.`)
   }
 
-  const resolu = resoudreProfil(email, liste)
+  const resolu = resoudreProfil(email, liste, profils)
   if (!resolu) {
     await deconnexionGoogle().catch(() => {})
     throw new Error(`Le compte ${email} n'a pas d'accès attribué. Contacte un administrateur.`)
+  }
+
+  // Cet outil correspond au module « veille » de la matrice de droits : sans
+  // accès à ce module, inutile d'entrer. L'écriture (traiter et diffuser un
+  // article) sera câblée avec le chantier veille.
+  if (!resolu.perms?.veille?.acces) {
+    await deconnexionGoogle().catch(() => {})
+    throw new Error(`Ton profil (${profils?.[resolu.profil]?.label || resolu.profil}) n'ouvre pas l'accès à la veille juridique.`)
   }
 
   const data = {
@@ -57,11 +67,27 @@ export async function loginWithGoogle() {
       photo: utilisateur.photoURL || '',
       role: resolu.role,
       profilId: resolu.profil,
-      profilLabel: PROFILS[resolu.profil]?.label || resolu.profil,
+      profilLabel: profils?.[resolu.profil]?.label || PROFILS[resolu.profil]?.label || resolu.profil,
+      perms: resolu.perms,
+      permsPersonnalisees: !!resolu.entree?.permsPersonnalisees,
     },
   }
   localStorage.setItem(SESSION_KEY, JSON.stringify(data))
   return resolu.role
+}
+
+// ── Droits de l'utilisateur connecté ─────────────────────────────────────────
+// Pilote l'affichage. Voir l'avertissement en tête de firebase-auth.js : ce
+// n'est pas une frontière de sécurité tant qu'il n'y a pas de backend.
+
+export function permsCourantes() {
+  return getCurrentUser()?.perms || null
+}
+
+export function peutEcrireVeille() {
+  const p = permsCourantes()
+  if (!p) return true // session antérieure aux permissions : ne rien casser
+  return !!p.veille?.ecriture
 }
 
 export function getSession() {
