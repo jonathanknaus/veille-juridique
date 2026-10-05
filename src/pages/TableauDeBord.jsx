@@ -4,7 +4,7 @@ import { chargerArticles, getArticlesCache, getDateDerniereFetch, getArticlesMan
 import { getTraitements, getTraitement, enregistrerTraitement, DECISIONS, exportRegistreCSV, exportRegistrePDF } from '../data/traitement'
 import { getFormateurs, addFormateur, updateFormateur, removeFormateur } from '../data/formateurs'
 import { RESPONSABLE } from '../data/formateurs'
-import { chargerDepuisGitHub, sauvegarderSurGitHub } from '../data/github-storage'
+import { ecouterTraces, sauvegarderTraces } from '../data/veille-storage'
 import './TableauDeBord.css'
 
 // ── Modale de traitement ──────────────────────────────────────────────────────
@@ -314,16 +314,26 @@ export default function TableauDeBord() {
   const [syncArticles, setSyncArticles] = useState(null) // null | 'loading' | 'ok' | 'error'
   const [dateFetch, setDateFetch] = useState(getDateDerniereFetch)
 
-  // Charger les articles RSS + traces GitHub au démarrage
+  // Charger les articles RSS + traces de veille au démarrage
   useEffect(() => {
     chargerArticles().then(data => { if (data?.length) setArticles(data) })
-    chargerDepuisGitHub().then(data => {
-      if (Array.isArray(data) && data.length > 0) {
+    // Traces en écoute temps réel : un traitement fait par Sarah apparaît
+    // immédiatement ici, et inversement. Plus besoin de naviguer pour rafraîchir.
+    let premier = true
+    const stop = ecouterTraces(
+      data => {
+        if (!Array.isArray(data)) return
+        // Au premier instantané, un registre vide signifie « rien encore
+        // migré » : on ne vide pas le cache local pour autant.
+        if (premier && data.length === 0) { premier = false; return }
+        premier = false
         localStorage.setItem('pls_traitements', JSON.stringify(data))
         setTraitements(data)
         setBanniereVisible(shouldWarnBackup(data))
-      }
-    })
+      },
+      () => {}, // registre inaccessible : on continue sur le cache local
+    )
+    return () => stop()
   }, [])
 
   async function handleSync() {
@@ -358,7 +368,7 @@ export default function TableauDeBord() {
     // Sauvegarde automatique sur GitHub à chaque modification
     setSyncStatus('saving')
     try {
-      await sauvegarderSurGitHub(updated)
+      await sauvegarderTraces(updated)
       setLastBackup()
       setBanniereVisible(false)
       setSyncStatus('ok')
@@ -392,7 +402,7 @@ export default function TableauDeBord() {
     // Sauvegarde GitHub
     setSyncStatus('saving')
     try {
-      await sauvegarderSurGitHub(traitements)
+      await sauvegarderTraces(traitements)
       setLastBackup()
       setBanniereVisible(false)
       setSyncStatus('ok')
@@ -474,9 +484,9 @@ export default function TableauDeBord() {
             {syncArticles === 'loading' && <span className="sync-status sync-saving">⏳ Récupération RSS…</span>}
             {syncArticles === 'ok'      && <span className="sync-status sync-ok">✓ Articles mis à jour</span>}
             {syncArticles === 'error'   && <span className="sync-status sync-error">⚠️ Erreur RSS</span>}
-            {syncStatus === 'saving' && <span className="sync-status sync-saving">⏳ Sync GitHub…</span>}
-            {syncStatus === 'ok'     && <span className="sync-status sync-ok">✓ Sauvegardé sur GitHub</span>}
-            {syncStatus === 'error'  && <span className="sync-status sync-error">⚠️ Erreur sync GitHub</span>}
+            {syncStatus === 'saving' && <span className="sync-status sync-saving">⏳ Enregistrement…</span>}
+            {syncStatus === 'ok'     && <span className="sync-status sync-ok">✓ Enregistré</span>}
+            {syncStatus === 'error'  && <span className="sync-status sync-error">⚠️ Échec de l'enregistrement</span>}
             <button className="btn-add-article" onClick={() => setShowModaleAjout(true)} title="Ajouter un article manuellement">
               + Article
             </button>

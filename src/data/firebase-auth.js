@@ -44,6 +44,10 @@ function normaliser(email) {
   return String(email || '').trim().toLowerCase()
 }
 
+// Partage l'instance de base avec les autres modules (veille-storage), pour
+// n'avoir qu'une seule initialisation Firebase dans l'application.
+export function baseDeDonnees() { return db() }
+
 export function estAdminRacine(email) {
   return ADMINS_RACINE.includes(normaliser(email))
 }
