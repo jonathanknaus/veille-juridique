@@ -30,8 +30,6 @@ jobs:
 
       - name: Build
         run: npm run build
-        env:
-          VITE_GITHUB_DATA_TOKEN: ${{ secrets.VITE_GITHUB_DATA_TOKEN }}
 
       - uses: actions/upload-pages-artifact@v3
         with:
