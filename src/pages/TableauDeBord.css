@@ -532,3 +532,5 @@
   cursor: pointer;
 }
 .seuil-select:focus { border-color: var(--bg-dark); outline: none; }
+
+.anciens-actions { display: inline-flex; gap: 8px; flex-wrap: wrap; }

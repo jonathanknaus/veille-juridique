@@ -4,14 +4,18 @@ import { chargerArticles, getArticlesCache, getDateDerniereFetch, getArticlesMan
 import { getTraitements, getTraitement, enregistrerTraitement, DECISIONS, INDICATEURS, INDICATEURS_IDS, exportRegistreCSV, exportRegistrePDF, filtrerParIndicateur, compterParIndicateur } from '../data/traitement'
 import { getFormateurs, addFormateur, updateFormateur, removeFormateur } from '../data/formateurs'
 import { RESPONSABLE } from '../data/formateurs'
-import { ecouterTraces, sauvegarderTraces } from '../data/veille-storage'
+import { ecouterTraces, sauvegarderTraces, ecouterArchives, archiverArticles, desarchiverArticle } from '../data/veille-storage'
 import './TableauDeBord.css'
 
-// Au-delà de ce délai, un article NON TRAITÉ sort de la liste à traiter : passé
-// 45 jours, l'information réglementaire est périmée et le stock de « en attente »
-// grossissait indéfiniment. Les articles déjà traités ne sont jamais masqués, et
-// les masqués restent affichables d'un clic — rien ne disparaît en silence.
-const SEUILS_MASQUAGE = [15, 30, 45, 60, 90, 180, 0] // 0 = ne jamais masquer
+// Seuil d'ancienneté proposé pour l'ARCHIVAGE des articles non traités.
+//
+// Archiver est une décision tracée — qui, quand, avec quel seuil — et non un
+// simple filtre d'affichage : « ces articles ont été examinés puis archivés » se
+// documente, « ils ont disparu de ma vue » ne se documente pas.
+//
+// Un article déjà traité n'est jamais archivable, et une archive se défait d'un
+// clic : rien n'est perdu.
+const SEUILS_MASQUAGE = [15, 30, 45, 60, 90, 180, 0] // 0 = ne rien proposer à l'archivage
 const SEUIL_DEFAUT = 45
 const CLE_SEUIL = 'pls_seuil_masquage_veille'
 
@@ -23,7 +27,7 @@ function lireSeuil() {
 }
 
 function libelleSeuil(j) {
-  return j === 0 ? 'Ne jamais masquer' : `Plus de ${j} jours`
+  return j === 0 ? 'Ne rien proposer' : `Plus de ${j} jours`
 }
 
 function ageEnJours(dateArticle) {
@@ -378,13 +382,14 @@ export default function TableauDeBord() {
   const [onglet, setOnglet] = useState('veille')
   const [filtreStatut, setFiltreStatut] = useState('tous')
   const [filtreIndicateur, setFiltreIndicateur] = useState('tous')
-  const [afficherAnciens, setAfficherAnciens] = useState(false)
   const [seuilMasquage, setSeuilMasquage] = useState(lireSeuil)
+  const [archives, setArchives] = useState([])
+  const [voirArchives, setVoirArchives] = useState(false)
+  const [archivageEnCours, setArchivageEnCours] = useState(false)
 
   function changerSeuil(jours) {
     setSeuilMasquage(jours)
     localStorage.setItem(CLE_SEUIL, String(jours))
-    setAfficherAnciens(false)
   }
   const [banniereVisible, setBanniereVisible] = useState(() => shouldWarnBackup(getTraitements()))
   const [syncStatus, setSyncStatus] = useState(null) // null | 'saving' | 'ok' | 'error'
@@ -410,8 +415,29 @@ export default function TableauDeBord() {
       },
       () => {}, // registre inaccessible : on continue sur le cache local
     )
-    return () => stop()
+    const stopArchives = ecouterArchives(setArchives, () => {})
+    return () => { stop(); stopArchives() }
   }, [])
+
+  // Archive les articles non traités au-delà du seuil. Les traités en sont
+  // exclus par construction : on ne touche jamais à une pièce de preuve.
+  async function archiverAnciens(candidats) {
+    if (candidats.length === 0) return
+    if (!confirm(
+      `Archiver ${candidats.length} article(s) non traité(s) de plus de ${seuilMasquage} jours ?\n\n`
+      + 'Ils sortiront de la liste à traiter. L\'archivage est tracé et réversible.'
+    )) return
+    setArchivageEnCours(true)
+    try {
+      await archiverArticles(candidats, {
+        seuilJours: seuilMasquage,
+        emailAuteur: getCurrentUser()?.email,
+      })
+    } catch (err) {
+      alert(`Archivage refusé : ${err?.message || err}`)
+    }
+    setArchivageEnCours(false)
+  }
 
   async function handleSync() {
     setSyncArticles('loading')
@@ -629,12 +655,12 @@ export default function TableauDeBord() {
                 </button>
               ))}
               <label className="seuil-masquage">
-                Masquer les non traités :
+                Proposer l'archivage au-delà de :
                 <select
                   className="seuil-select"
                   value={seuilMasquage}
                   onChange={e => changerSeuil(parseInt(e.target.value, 10))}
-                  title="Les articles déjà traités ne sont jamais masqués, quel que soit ce réglage."
+                  title="Les articles déjà traités ne sont jamais proposés à l'archivage, quel que soit ce réglage."
                 >
                   {SEUILS_MASQUAGE.map(j => (
                     <option key={j} value={j}>{libelleSeuil(j)}</option>
@@ -644,21 +670,45 @@ export default function TableauDeBord() {
             </div>
 
             {(() => {
-              const masques = tousArticles.filter(a => {
+              // Candidats : non traités, non déjà archivés, au-delà du seuil.
+              const candidats = seuilMasquage === 0 ? [] : tousArticles.filter(a => {
                 if (getTraitement(a.id)) return false
+                if (archives.some(x => x.id === a.id)) return false
                 const age = ageEnJours(a.date)
-                return seuilMasquage > 0 && age !== null && age > seuilMasquage
-              }).length
-              if (masques === 0) return null
+                return age !== null && age > seuilMasquage
+              })
+              if (candidats.length === 0 && archives.length === 0) return null
               return (
                 <div className="anciens-masques">
                   <span>
-                    <strong>{masques}</strong> article{masques > 1 ? 's' : ''} non traité{masques > 1 ? 's' : ''} de plus de {seuilMasquage} jours
-                    {afficherAnciens ? ' (affichés)' : ' (masqués)'}
+                    {candidats.length > 0 ? (
+                      <>
+                        <strong>{candidats.length}</strong> article{candidats.length > 1 ? 's' : ''} non
+                        traité{candidats.length > 1 ? 's' : ''} de plus de {seuilMasquage} jours
+                      </>
+                    ) : (
+                      <>Aucun article à archiver au seuil actuel</>
+                    )}
+                    {archives.length > 0 && (
+                      <> · <strong>{archives.length}</strong> en archive</>
+                    )}
                   </span>
-                  <button className="btn-anciens" onClick={() => setAfficherAnciens(v => !v)}>
-                    {afficherAnciens ? 'Masquer' : 'Afficher quand même'}
-                  </button>
+                  <span className="anciens-actions">
+                    {candidats.length > 0 && !voirArchives && (
+                      <button
+                        className="btn-anciens"
+                        disabled={archivageEnCours}
+                        onClick={() => archiverAnciens(candidats)}
+                      >
+                        {archivageEnCours ? 'Archivage…' : `Archiver ces ${candidats.length} articles`}
+                      </button>
+                    )}
+                    {archives.length > 0 && (
+                      <button className="btn-anciens" onClick={() => setVoirArchives(v => !v)}>
+                        {voirArchives ? '← Revenir à la liste' : `Consulter l'archive (${archives.length})`}
+                      </button>
+                    )}
+                  </span>
                 </div>
               )
             })()}
@@ -673,11 +723,10 @@ export default function TableauDeBord() {
               <tbody>
                 {[...tousArticles].sort((a, b) => new Date(b.date) - new Date(a.date)).filter(article => {
                   const trace = getTraitement(article.id)
-                  // Un article non traité et trop ancien sort de la liste.
-                  if (!trace && !afficherAnciens && seuilMasquage > 0) {
-                    const age = ageEnJours(article.date)
-                    if (age !== null && age > seuilMasquage) return false
-                  }
+                  // Un article archivé sort de la liste à traiter, sauf si l'on
+                  // consulte justement les archives.
+                  const estArchive = archives.some(x => x.id === article.id)
+                  if (estArchive !== voirArchives) return false
                   if (filtreStatut === 'tous') return true
                   if (filtreStatut === 'en-attente') return !trace
                   return trace?.decision === filtreStatut
@@ -707,6 +756,16 @@ export default function TableauDeBord() {
                         <button className="btn-traiter" onClick={() => setModaleArticle(article)}>
                           {trace ? 'Modifier' : 'Traiter'}
                         </button>
+                        {voirArchives && (
+                          <button
+                            className="btn-anciens"
+                            style={{ marginLeft: 4 }}
+                            title="Remettre cet article dans la liste à traiter"
+                            onClick={() => desarchiverArticle(article.id).catch(e => alert(e.message))}
+                          >
+                            ↩ Désarchiver
+                          </button>
+                        )}
                         {article.manuel && (
                           <button className="btn-suppr" onClick={() => handleDeleteArticleManuel(article.id)} title="Supprimer">✕</button>
                         )}

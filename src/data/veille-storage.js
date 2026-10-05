@@ -13,7 +13,7 @@
 // ⚠️ Ce registre est une preuve Qualiopi (indicateur 7, veille réglementaire).
 // Les écritures sont réservées aux administrateurs racine côté serveur.
 
-import { ref, get, set, onValue } from 'firebase/database'
+import { ref, get, set, onValue, update } from 'firebase/database'
 import { baseDeDonnees, authPrete } from './firebase-auth.js'
 
 const CHEMIN = 'veille/traitements'
@@ -118,6 +118,70 @@ export function ecouterTraces(callback, onErreur) {
 // Remplace l'ensemble du registre. Conserve la sémantique de l'ancienne
 // synchro (le composant envoie la liste complète), ce qui évite de réécrire
 // la logique d'état des deux tableaux de bord.
+// ── Archives ─────────────────────────────────────────────────────────────────
+//
+// Articles écartés sans traitement, au-delà d'un seuil d'ancienneté. Archiver
+// est une DÉCISION tracée (qui, quand, avec quel seuil), à la différence d'un
+// simple masquage d'affichage qui ne laisse rien derrière lui.
+//
+// Rangées à part du registre : celui-ci ne doit contenir que des décisions
+// documentées avec leur impact. Un archivage de masse y diluerait la preuve.
+
+const CHEMIN_ARCHIVES = 'veille/archives'
+
+export async function lireArchives() {
+  await authPrete()
+  const snap = await get(ref(baseDeDonnees(), CHEMIN_ARCHIVES))
+  const v = snap.val()
+  if (!v) return []
+  return Object.entries(v).map(([id, a]) => ({ id, ...reparerProfond(a) }))
+}
+
+export function ecouterArchives(callback, onErreur) {
+  let stop = null
+  let annule = false
+  authPrete().then(() => {
+    if (annule) return
+    stop = onValue(
+      ref(baseDeDonnees(), CHEMIN_ARCHIVES),
+      snap => {
+        const v = snap.val()
+        callback(v ? Object.entries(v).map(([id, a]) => ({ id, ...reparerProfond(a) })) : [])
+      },
+      err => { if (onErreur) onErreur(err) },
+    )
+  })
+  return () => { annule = true; if (stop) stop() }
+}
+
+// Archive un lot d'articles. Rend le nombre réellement archivé.
+export async function archiverArticles(articles, { seuilJours, emailAuteur }) {
+  await authPrete()
+  const maj = {}
+  const horodatage = new Date().toISOString()
+  for (const a of articles || []) {
+    if (!a?.id) continue
+    maj[a.id] = {
+      titre: String(a.titre || '').slice(0, 500),
+      source: String(a.source_nom || a.source_id || '').slice(0, 200),
+      date: String(a.date || ''),
+      archiveLe: horodatage,
+      archivePar: String(emailAuteur || '').toLowerCase(),
+      seuilJours: Number(seuilJours) || 0,
+    }
+  }
+  const n = Object.keys(maj).length
+  if (n === 0) return 0
+  await update(ref(baseDeDonnees(), CHEMIN_ARCHIVES), maj)
+  return n
+}
+
+// Remet un article dans la liste à traiter.
+export async function desarchiverArticle(articleId) {
+  await authPrete()
+  await set(ref(baseDeDonnees(), `${CHEMIN_ARCHIVES}/${articleId}`), null)
+}
+
 export async function sauvegarderTraces(traces) {
   await authPrete()
   const map = {}
