@@ -1,6 +1,17 @@
 {
-  "fetchedAt": "2026-09-28T12:55:20.814Z",
+  "fetchedAt": "2026-10-05T13:36:45.185Z",
   "articles": [
+    {
+      "id": "france-competences__decisions-denregistrement-aux-repertoires-nationaux-septembre-2026",
+      "titre": "Décisions d’enregistrement aux répertoires nationaux – Septembre 2026",
+      "resume": "",
+      "source_id": "france-competences",
+      "thematique": "qualiopi",
+      "niveau": "info",
+      "date": "2026-10-05",
+      "url": "https://www.francecompetences.fr/fiche/decisions-denregistrement-aux-repertoires-nationaux-septembre-2026/",
+      "lu": false
+    },
     {
       "id": "france-competences__decisions-denregistrement-aux-repertoires-nationaux-juillet-2026",
       "titre": "Décisions d’enregistrement aux répertoires nationaux – Juillet 2026",
@@ -8,7 +19,7 @@
       "source_id": "france-competences",
       "thematique": "qualiopi",
       "niveau": "info",
-      "date": "2026-09-28",
+      "date": "2026-10-05",
       "url": "https://www.francecompetences.fr/fiche/decisions-denregistrement-aux-repertoires-nationaux-juillet-2026/",
       "lu": false
     },
@@ -19,19 +30,8 @@
       "source_id": "france-competences",
       "thematique": "qualiopi",
       "niveau": "info",
-      "date": "2026-09-28",
+      "date": "2026-10-05",
       "url": "https://www.francecompetences.fr/fiche/metiers-emergents-ou-en-particuliere-evolution-france-competences-elargit-son-7%e1%b5%89-appel-a-contributions/",
-      "lu": false
-    },
-    {
-      "id": "france-competences__decisions-denregistrement-aux-repertoires-nationaux-juin-2026",
-      "titre": "Décisions d’enregistrement aux répertoires nationaux – Juin 2026",
-      "resume": "",
-      "source_id": "france-competences",
-      "thematique": "qualiopi",
-      "niveau": "info",
-      "date": "2026-09-28",
-      "url": "https://www.francecompetences.fr/fiche/decisions-denregistrement-aux-repertoires-nationaux-juin-2026/",
       "lu": false
     },
     {
@@ -41,7 +41,7 @@
       "source_id": "france-competences",
       "thematique": "qualiopi",
       "niveau": "important",
-      "date": "2026-09-28",
+      "date": "2026-10-05",
       "url": "https://www.francecompetences.fr/fiche/france-competences-publie-le-referentiel-complet-des-niveaux-de-prise-en-charge-des-contrats-dapprentissage-npec/",
       "lu": false
     },
@@ -52,8 +52,151 @@
       "source_id": "france-competences",
       "thematique": "qualiopi",
       "niveau": "info",
-      "date": "2026-09-28",
+      "date": "2026-10-05",
       "url": "https://www.francecompetences.fr/fiche/semaines-de-levolution-professionnelle-2026/",
+      "lu": false
+    },
+    {
+      "id": "digiformag__auditeurs-days-une-2eme-edition-placee-sous-le-signe-de-la-v10-de-qualiopi",
+      "titre": "Auditeurs Days : une 2ème édition placée sous le signe de la V10 de Qualiopi !",
+      "resume": "Les Auditeurs Days reviennent pour une deuxième édition. Cet événement virtuel dédié au métier d&#8217;auditeur sera l&#8217;occasion de revenir sur les dernières actualités de qualiopi.\nNous vous donnons rendez-vous du 12 au 15 octobre pour trois webinaires inédits offrant un éclairage sur le quotidien des auditeurs indépendants et des certificateurs, ainsi que les enjeux de leur profession !\n&nb",
+      "source_id": "digiformag",
+      "thematique": "formation",
+      "niveau": "important",
+      "date": "2026-10-05",
+      "url": "https://www.digiformag.com/auditeurs-days-une-2eme-edition-placee-sous-le-signe-de-la-v10-de-qualiopi/",
+      "lu": false
+    },
+    {
+      "id": "cnil__violations-de-donnees-personnelles-cas-indemnite",
+      "titre": "Violations de données personnelles : dans quels cas peut-on être indemnisé ?",
+      "resume": "",
+      "source_id": "cnil",
+      "thematique": "rgpd",
+      "niveau": "info",
+      "date": "2026-10-02",
+      "url": "https://www.cnil.fr/fr/violations-de-donnees-personnelles-cas-indemnite",
+      "lu": false
+    },
+    {
+      "id": "ministere-travail__conventions-collectives-nomenclatures",
+      "titre": "Conventions collectives : nomenclatures",
+      "resume": "",
+      "source_id": "ministere-travail",
+      "thematique": "legislatif",
+      "niveau": "info",
+      "date": "2026-10-02",
+      "url": "https://travail-emploi.gouv.fr/conventions-collectives-nomenclatures",
+      "lu": false
+    },
+    {
+      "id": "digiformag__lorganisme-de-formation-de-demain-sera-t-il-pilote-comme-une-entreprise-de-donnees",
+      "titre": "L’organisme de formation de demain sera-t-il piloté comme une entreprise de données ?",
+      "resume": "Les organismes de formation disposent déjà d’une quantité considérable de données sur leur activité : clients, devis, remplissage des sessions, coûts, intervenants, satisfaction, qualité, facturation ou encore historique commercial. Pourtant, ces informations sont encore souvent utilisées avant tout pour administrer et justifier l’activité. Et si la prochaine étape de leur transformation numérique",
+      "source_id": "digiformag",
+      "thematique": "formation",
+      "niveau": "urgent",
+      "date": "2026-10-02",
+      "url": "https://www.digiformag.com/lorganisme-de-formation-de-demain-sera-t-il-pilote-comme-une-entreprise-de-donnees/",
+      "lu": false
+    },
+    {
+      "id": "cnil__ordre-du-jour-de-la-seance-pleniere-du-1er-octobre-2026",
+      "titre": "Ordre du jour de la séance plénière du 1er octobre 2026",
+      "resume": "",
+      "source_id": "cnil",
+      "thematique": "rgpd",
+      "niveau": "info",
+      "date": "2026-10-01",
+      "url": "https://www.cnil.fr/fr/ordre-du-jour-de-la-seance-pleniere-du-1er-octobre-2026",
+      "lu": false
+    },
+    {
+      "id": "cnil__cybermois-2026",
+      "titre": "Cybermois 2026 : la CNIL et Cybermalveillance.gouv.fr publient une nouvelle ressource pour adopter les bons réflexes face à une violation de données",
+      "resume": "",
+      "source_id": "cnil",
+      "thematique": "rgpd",
+      "niveau": "important",
+      "date": "2026-10-01",
+      "url": "https://www.cnil.fr/fr/cybermois-2026",
+      "lu": false
+    },
+    {
+      "id": "ministere-travail__budget-relatif-au-projet-de-loi-de-finances-pour-2027",
+      "titre": "Budget relatif au projet de loi de finances pour 2027",
+      "resume": "",
+      "source_id": "ministere-travail",
+      "thematique": "legislatif",
+      "niveau": "urgent",
+      "date": "2026-10-01",
+      "url": "https://travail-emploi.gouv.fr/budget-relatif-au-projet-de-loi-de-finances-pour-2027",
+      "lu": false
+    },
+    {
+      "id": "ministere-travail__deffinum-preparer-les-competences-de-demain-en-transformant-la-formation-aujourdhui",
+      "titre": "DEFFINUM : préparer les compétences de demain en transformant la formation aujourd’hui",
+      "resume": "",
+      "source_id": "ministere-travail",
+      "thematique": "legislatif",
+      "niveau": "info",
+      "date": "2026-10-01",
+      "url": "https://travail-emploi.gouv.fr/deffinum-preparer-les-competences-de-demain-en-transformant-la-formation-aujourdhui",
+      "lu": false
+    },
+    {
+      "id": "agefiph__la-france-mutualiste-renforce-son-engagement-pour-lemploi",
+      "titre": "La France Mutualiste renforce son engagement pour l’emploi des personnes handicapées aux côtés de l'Agefiph",
+      "resume": "",
+      "source_id": "agefiph",
+      "thematique": "opco",
+      "niveau": "urgent",
+      "date": "2026-10-01",
+      "url": "https://www.agefiph.fr/espace-presse/tous-les-documents-presse/la-france-mutualiste-renforce-son-engagement-pour-lemploi",
+      "lu": false
+    },
+    {
+      "id": "agefiph__trouver-une-formation-accessible-devient-plus-simple-sur",
+      "titre": "Trouver une formation accessible devient plus simple sur l’outil « QuiForme »",
+      "resume": "",
+      "source_id": "agefiph",
+      "thematique": "opco",
+      "niveau": "info",
+      "date": "2026-10-01",
+      "url": "https://www.agefiph.fr/espace-presse/tous-les-documents-presse/trouver-une-formation-accessible-devient-plus-simple-sur",
+      "lu": false
+    },
+    {
+      "id": "ministere-travail__la-reforme-des-retraites-de-2023",
+      "titre": "La réforme des retraites de 2023",
+      "resume": "",
+      "source_id": "ministere-travail",
+      "thematique": "legislatif",
+      "niveau": "important",
+      "date": "2026-09-30",
+      "url": "https://travail-emploi.gouv.fr/la-reforme-des-retraites-de-2023",
+      "lu": false
+    },
+    {
+      "id": "ministere-travail__mobiliser-les-employeurs-en-faveur-de-lapprentissage",
+      "titre": "Faire de l'apprentissage un levier de réussite pour tous les jeunes et les entreprises",
+      "resume": "",
+      "source_id": "ministere-travail",
+      "thematique": "legislatif",
+      "niveau": "info",
+      "date": "2026-09-30",
+      "url": "https://travail-emploi.gouv.fr/mobiliser-les-employeurs-en-faveur-de-lapprentissage",
+      "lu": false
+    },
+    {
+      "id": "digiformag__cpf-150-e-aujourdhui-jusqua-350-e-demain",
+      "titre": "CPF : 150 € aujourd’hui, jusqu’à 350 € demain ?",
+      "resume": "Le gouvernement envisage une nouvelle évolution des règles du Compte personnel de formation (CPF). Le principe : faire varier la participation financière du titulaire selon le caractère prioritaire (ou non) de la formation choisie et l&#8217;existence d&#8217;un cofinancement. Sur le papier, un simple ajustement de barème. En réalité, c&#8217;est une autre conception du CPF qui se dessine : moins ",
+      "source_id": "digiformag",
+      "thematique": "formation",
+      "niveau": "urgent",
+      "date": "2026-09-29",
+      "url": "https://www.digiformag.com/cpf-150-e-aujourdhui-jusqua-350-e-demain/",
       "lu": false
     },
     {
@@ -65,6 +208,17 @@
       "niveau": "info",
       "date": "2026-09-28",
       "url": "https://www.cnil.fr/fr/air2026",
+      "lu": false
+    },
+    {
+      "id": "france-competences__decisions-denregistrement-aux-repertoires-nationaux-juin-2026",
+      "titre": "Décisions d’enregistrement aux répertoires nationaux – Juin 2026",
+      "resume": "",
+      "source_id": "france-competences",
+      "thematique": "qualiopi",
+      "niveau": "info",
+      "date": "2026-09-28",
+      "url": "https://www.francecompetences.fr/fiche/decisions-denregistrement-aux-repertoires-nationaux-juin-2026/",
       "lu": false
     },
     {
@@ -112,6 +266,17 @@
       "lu": false
     },
     {
+      "id": "digiformag__handicap-en-formation-comment-passer-de-la-simple-conformite-a-une-vraie-culture-daccueil",
+      "titre": "Handicap en formation : comment passer de la simple conformité à une vraie culture d’accueil ?",
+      "resume": "Beaucoup d&#8217;organismes de formation pensent être prêts à accueillir une personne en situation de handicap (PSH) parce qu&#8217;ils ont nommé un référent handicap et rédigé une politique dédiée. Pourtant, sur le terrain, les situations de handicap ne se présentent pas toujours comme prévu. Elles peuvent être invisibles, non déclarées ou apparaître en cours de parcours. La question n&#8217;est ",
+      "source_id": "digiformag",
+      "thematique": "formation",
+      "niveau": "urgent",
+      "date": "2026-09-24",
+      "url": "https://www.digiformag.com/handicap-en-formation-comment-passer-de-la-simple-conformite-a-une-vraie-culture-daccueil/",
+      "lu": false
+    },
+    {
       "id": "cnil__cloture-injonction-solocal-marketing-services",
       "titre": "Clôture de l’injonction prononcée à l’encontre de la société SOLOCAL MARKETING SERVICES",
       "resume": "",
@@ -142,17 +307,6 @@
       "niveau": "info",
       "date": "2026-09-24",
       "url": "https://travail-emploi.gouv.fr/questions-reponses-quels-recours-contre-un-avis-dinaptitude",
-      "lu": false
-    },
-    {
-      "id": "digiformag__handicap-en-formation-comment-passer-de-la-simple-conformite-a-une-vraie-culture-daccueil",
-      "titre": "Handicap en formation : comment passer de la simple conformité à une vraie culture d’accueil ?",
-      "resume": "Beaucoup d&#8217;organismes de formation pensent être prêts à accueillir une personne en situation de handicap (PSH) parce qu&#8217;ils ont nommé un référent handicap et rédigé une politique dédiée. Pourtant, sur le terrain, les situations de handicap ne se présentent pas toujours comme prévu. Elles peuvent être invisibles, non déclarées ou apparaître en cours de parcours. La question n&#8217;est ",
-      "source_id": "digiformag",
-      "thematique": "formation",
-      "niveau": "urgent",
-      "date": "2026-09-24",
-      "url": "https://www.digiformag.com/handicap-en-formation-comment-passer-de-la-simple-conformite-a-une-vraie-culture-daccueil/",
       "lu": false
     },
     {
