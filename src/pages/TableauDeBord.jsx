@@ -1,7 +1,7 @@
 import { useState, useMemo, useEffect } from 'react'
 import { SOURCES, NIVEAUX } from '../data/veille'
 import { chargerArticles, getArticlesCache, getDateDerniereFetch, getArticlesManuels, saveArticleManuel, deleteArticleManuel } from '../data/articles-store'
-import { getTraitements, getTraitement, enregistrerTraitement, DECISIONS, exportRegistreCSV, exportRegistrePDF } from '../data/traitement'
+import { getTraitements, getTraitement, enregistrerTraitement, DECISIONS, INDICATEURS, INDICATEURS_IDS, exportRegistreCSV, exportRegistrePDF, filtrerParIndicateur, compterParIndicateur } from '../data/traitement'
 import { getFormateurs, addFormateur, updateFormateur, removeFormateur } from '../data/formateurs'
 import { RESPONSABLE } from '../data/formateurs'
 import { ecouterTraces, sauvegarderTraces } from '../data/veille-storage'
@@ -15,6 +15,12 @@ function ModaleTraitement({ article, onClose, onSave }) {
   const [commentaire, setCommentaire] = useState(trace?.commentaire || '')
   const [destinataires, setDestinataires] = useState(trace?.destinataires || [])
   const [urlArticle, setUrlArticle] = useState(trace?.urlArticle || '')
+  // Pré-remplit avec l'indicateur suggéré par la source de l'article : la trace
+  // arrive qualifiée par défaut, il n'y a plus qu'à confirmer ou corriger.
+  const [indicateur, setIndicateur] = useState(
+    String(trace?.indicateur || article.indicateur || '')
+  )
+  const [impact, setImpact] = useState(trace?.impact || '')
   const formateurs = getFormateurs()
 
   function toggleDestinataire(email) {
@@ -33,6 +39,8 @@ function ModaleTraitement({ article, onClose, onSave }) {
       commentaire,
       destinataires: decision === 'diffuser' ? destinataires : [],
       urlArticle,
+      indicateur,
+      impact,
     })
     onClose()
   }
@@ -49,6 +57,27 @@ function ModaleTraitement({ article, onClose, onSave }) {
           <span className={`thematique-badge thematique-${article.thematique}`}>{article.thematique}</span>
           <p className="modale-titre">{article.titre}</p>
           <p className="modale-meta">{source?.nom} · {new Date(article.date).toLocaleDateString('fr-FR')}</p>
+        </div>
+
+        <div className="modale-section">
+          <p className="modale-label">Type de veille (indicateur Qualiopi)</p>
+          <div className="indicateur-grid">
+            {INDICATEURS_IDS.map(id => (
+              <button
+                key={id}
+                className={`indicateur-btn ${indicateur === id ? 'actif' : ''}`}
+                style={indicateur === id ? { borderColor: INDICATEURS[id].color, background: INDICATEURS[id].color } : undefined}
+                onClick={() => setIndicateur(indicateur === id ? '' : id)}
+                title={INDICATEURS[id].description}
+              >
+                <span className="indicateur-num">{id}</span>
+                <span className="indicateur-label">{INDICATEURS[id].court}</span>
+              </button>
+            ))}
+          </div>
+          {indicateur
+            ? <p className="indicateur-aide">{INDICATEURS[indicateur].description}</p>
+            : <p className="indicateur-aide">Facultatif, mais c'est ce rattachement qui rend la trace exploitable comme preuve Qualiopi.</p>}
         </div>
 
         <div className="modale-section">
@@ -111,6 +140,20 @@ function ModaleTraitement({ article, onClose, onSave }) {
             onChange={e => setCommentaire(e.target.value)}
             rows={3}
           />
+        </div>
+
+        <div className="modale-section">
+          <p className="modale-label">Impact / action menée sur l'organisme</p>
+          <textarea
+            className="modale-textarea"
+            placeholder={indicateur ? INDICATEURS[indicateur].exemplePreuve : 'Ex. : modification des trames de devis, ajout d\'un chapitre au programme X, test d\'un outil sur la session Y…'}
+            value={impact}
+            onChange={e => setImpact(e.target.value)}
+            rows={2}
+          />
+          <p className="indicateur-aide">
+            L'auditeur ne regarde pas ce qu'on a lu, mais ce qu'on en a fait. C'est ce champ qui porte la preuve.
+          </p>
         </div>
 
         <div className="modale-footer">
@@ -309,6 +352,7 @@ export default function TableauDeBord() {
   const [showModaleAjout, setShowModaleAjout] = useState(false)
   const [onglet, setOnglet] = useState('veille')
   const [filtreStatut, setFiltreStatut] = useState('tous')
+  const [filtreIndicateur, setFiltreIndicateur] = useState('tous')
   const [banniereVisible, setBanniereVisible] = useState(() => shouldWarnBackup(getTraitements()))
   const [syncStatus, setSyncStatus] = useState(null) // null | 'saving' | 'ok' | 'error'
   const [syncArticles, setSyncArticles] = useState(null) // null | 'loading' | 'ok' | 'error'
@@ -605,37 +649,88 @@ export default function TableauDeBord() {
         )}
 
         {/* Registre des traces */}
-        {onglet === 'registre' && (
-          <div className="tdb-table-wrap">
-            {traitements.length === 0 ? (
-              <div className="registre-empty">Aucun article traité pour l'instant.</div>
-            ) : (
-              <table className="tdb-table">
-                <thead>
-                  <tr>
-                    <th>Date traitement</th><th>Titre</th><th>Source</th><th>Décision</th><th>Traité par</th><th>Destinataires</th><th>Commentaire</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {[...traitements].sort((a, b) => new Date(b.traiteAt) - new Date(a.traiteAt)).map(t => {
-                    const d = DECISIONS[t.decision]
-                    return (
-                      <tr key={t.id}>
-                        <td className="td-date">{new Date(t.traiteAt).toLocaleString('fr-FR', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' })}</td>
-                        <td className="td-titre">{t.articleTitre}</td>
-                        <td>{t.articleSource}</td>
-                        <td><span className="trace-badge" style={{ color: d?.color }}>{d?.icon} {d?.label}</span></td>
-                        <td className="td-email">{t.traitePar}</td>
-                        <td className="td-dest">{t.destinataires.length > 0 ? `${t.destinataires.length} formateur(s)` : '—'}</td>
-                        <td className="td-commentaire">{t.commentaire || '—'}</td>
+        {onglet === 'registre' && (() => {
+          const compte = compterParIndicateur(traitements)
+          const vue = filtrerParIndicateur(traitements, filtreIndicateur)
+          const onglets = [
+            { id: 'tous', libelle: 'Toutes les traces' },
+            ...INDICATEURS_IDS.map(id => ({ id, libelle: `Ind. ${id} · ${INDICATEURS[id].court}` })),
+            { id: 'non_qualifie', libelle: 'À qualifier' },
+          ]
+          return (
+            <div>
+              {/* Un registre par indicateur : c'est sous cette forme que la preuve
+                  se présente en audit, indicateur par indicateur. */}
+              <div className="filtre-statut">
+                {onglets.map(o => (
+                  <button
+                    key={o.id}
+                    className={`filtre-btn ${filtreIndicateur === o.id ? 'actif' : ''}`}
+                    onClick={() => setFiltreIndicateur(o.id)}
+                  >
+                    {o.libelle} ({compte[o.id] ?? 0})
+                  </button>
+                ))}
+                {vue.length > 0 && (
+                  <button
+                    className="btn-export btn-export-pdf"
+                    onClick={() => exportRegistrePDF(traitements, filtreIndicateur)}
+                    title="Exporter cette vue en PDF, avec le rappel de l'objectif et de la preuve attendue"
+                  >
+                    📄 Exporter cette vue
+                  </button>
+                )}
+              </div>
+
+              {filtreIndicateur === 'non_qualifie' && compte.non_qualifie > 0 && (
+                <p className="registre-aide">
+                  Ces traces n'ont pas encore de rattachement 23/24/25. Elles restent valables,
+                  mais ne remontent dans aucun registre d'indicateur. Rouvre l'article depuis
+                  l'onglet Veille pour les qualifier.
+                </p>
+              )}
+
+              <div className="tdb-table-wrap">
+                {vue.length === 0 ? (
+                  <div className="registre-empty">
+                    {traitements.length === 0
+                      ? 'Aucun article traité pour l\'instant.'
+                      : 'Aucune trace pour ce filtre.'}
+                  </div>
+                ) : (
+                  <table className="tdb-table">
+                    <thead>
+                      <tr>
+                        <th>Date</th><th>Ind.</th><th>Titre</th><th>Source</th><th>Impact / action menée</th><th>Décision</th><th>Traité par</th>
                       </tr>
-                    )
-                  })}
-                </tbody>
-              </table>
-            )}
-          </div>
-        )}
+                    </thead>
+                    <tbody>
+                      {[...vue].sort((a, b) => new Date(b.traiteAt) - new Date(a.traiteAt)).map(t => {
+                        const d = DECISIONS[t.decision]
+                        const ind = t.indicateur ? INDICATEURS[t.indicateur] : null
+                        return (
+                          <tr key={t.id}>
+                            <td className="td-date">{new Date(t.traiteAt).toLocaleDateString('fr-FR')}</td>
+                            <td>
+                              {ind
+                                ? <span className="indicateur-badge" style={{ background: ind.color }} title={ind.label}>{t.indicateur}</span>
+                                : <span className="indicateur-badge vide" title="Non rattaché à un indicateur">—</span>}
+                            </td>
+                            <td className="td-titre">{t.articleTitre}</td>
+                            <td>{t.articleSource}</td>
+                            <td className="td-commentaire">{t.impact || <em className="td-vide">non renseigné</em>}</td>
+                            <td><span className="trace-badge" style={{ color: d?.color }}>{d?.icon} {d?.label}</span></td>
+                            <td className="td-email">{t.traitePar}</td>
+                          </tr>
+                        )
+                      })}
+                    </tbody>
+                  </table>
+                )}
+              </div>
+            </div>
+          )
+        })()}
 
         {/* Formateurs */}
         {onglet === 'formateurs' && <GestionFormateurs />}

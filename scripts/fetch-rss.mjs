@@ -11,6 +11,7 @@ const SOURCES = [
     id: 'france-competences',
     nom: 'France Compétences',
     thematique: 'qualiopi',
+    indicateur: '24', // métiers, compétences, répertoires
     scrape: 'https://www.francecompetences.fr/actualites/',
   },
   // ── RSS disponibles ──────────────────────────────────────────────────────────
@@ -18,38 +19,55 @@ const SOURCES = [
     id: 'centre-inffo',
     nom: 'Centre Inffo',
     thematique: 'qualiopi',
+    indicateur: '23', // droit de la formation, financement, audit
     rss: 'https://www.centre-inffo.fr/feed',
   },
   {
     id: 'cnil',
     nom: 'CNIL',
     thematique: 'rgpd',
+    indicateur: '23', // cadre légal applicable à l'OF
     rss: 'https://www.cnil.fr/fr/rss.xml',
   },
   {
     id: 'senat',
     nom: 'Sénat',
     thematique: 'legislatif',
+    indicateur: '23',
     rss: 'http://www.senat.fr/rss/textes.xml',
   },
   {
     id: 'ministere-travail',
     nom: 'Ministère du Travail',
     thematique: 'legislatif',
+    indicateur: '23',
     rss: 'https://travail-emploi.gouv.fr/rss.xml',
   },
   {
     id: 'agefiph',
     nom: 'Agefiph',
     thematique: 'opco',
+    indicateur: '23',
     rss: 'https://www.agefiph.fr/rss.xml',
   },
   {
     id: 'digiformag',
     nom: 'Digiformag',
     thematique: 'formation',
+    indicateur: '25', // innovation pédagogique et EdTech
     rss: 'https://www.digiformag.com/feed/',
   },
+  {
+    // Demandé par Sarah (2026-10-05) : syndicat des organismes de formation,
+    // suit de près l'évolution de la loi sur les OF, Qualiopi et les OPCO.
+    id: 'acteurs-competence',
+    nom: 'Les Acteurs de la Compétence',
+    thematique: 'legislatif',
+    indicateur: '23',
+    rss: 'https://www.lesacteursdelacompetence.fr/feed/',
+  },
+  // ── Service-Public.fr n'expose pas de flux RSS accessible (404 sur toutes les
+  //    URL candidates testées le 2026-10-05) → couverture par ajout manuel ─────
   // ── Légifrance n'expose pas de RSS public — couverture via ajout manuel ──────
   // id: 'legifrance' → articles ajoutés manuellement via la modale Traiter
   // ── Caisse des Dépôts n'expose pas de RSS — couverture manuelle ────────────
@@ -61,7 +79,7 @@ const SOURCES = [
 // Mots-clés par thématique pour classifier les articles
 const KEYWORDS = {
   urgent: ['décret', 'ordonnance', 'obligation', 'sanction', 'amende', 'loi', 'arrêté', 'mise en demeure'],
-  important: ['guide', 'modification', 'réforme', 'financement', 'audit', 'contrôle', 'nouvelle', 'mise à jour'],
+  important: ['guide', 'modification', 'réforme', 'financement', 'audit', 'contrôle', 'nouvelle', 'mise à jour', 'qualiopi', 'opco', 'certification', 'organisme de formation', 'référentiel', 'bpf', 'france compétences'],
 }
 
 function slugId(sourceId, url) {
@@ -130,6 +148,9 @@ async function fetchFeed(source) {
         resume: resume.slice(0, 400),
         source_id: source.id,
         thematique: source.thematique,
+        // Indicateur Qualiopi suggéré d'après la source : la trace arrive
+        // pré-qualifiée, la personne qui traite n'a plus qu'à confirmer.
+        indicateur: source.indicateur || '',
         niveau: detectNiveau(titre, resume),
         date,
         url,
@@ -185,6 +206,7 @@ async function scrapeFranceCompetences(source) {
         resume: '',
         source_id: source.id,
         thematique: source.thematique,
+        indicateur: source.indicateur || '',
         niveau: detectNiveau(titre, ''),
         date,
         url,
