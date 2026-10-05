@@ -1,0 +1,24 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+
+    "acces": {
+      ".read": "auth != null && auth.token.email != null && auth.token.email_verified === true && (auth.token.email.endsWith('@pennylane.com') || auth.token.email.endsWith('@pennylane-partners.com'))",
+
+      ".write": "auth != null && auth.token.email != null && auth.token.email_verified === true && (auth.token.email === 'jonathan.knaus@pennylane.com' || auth.token.email === 'sarah.briden@pennylane-partners.com')",
+
+      "$entree": {
+        ".validate": "newData.hasChildren(['email', 'profil'])",
+        "email":  { ".validate": "newData.isString() && newData.val().length > 4 && newData.val().length < 200" },
+        "profil": { ".validate": "newData.val() === 'administrateur' || newData.val() === 'formateur_interne' || newData.val() === 'consultatif'" },
+        "nom":    { ".validate": "newData.isString() && newData.val().length < 100" },
+        "prenom": { ".validate": "newData.isString() && newData.val().length < 100" },
+        "actif":  { ".validate": "newData.isBoolean()" },
+        "creeLe": { ".validate": "newData.isString() && newData.val().length < 40" },
+        "creePar": { ".validate": "newData.isString() && newData.val().length < 200" },
+        "$autre": { ".validate": false }
+      }
+    }
+  }
+}

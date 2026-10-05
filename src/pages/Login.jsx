@@ -1,31 +1,24 @@
 import { useState } from 'react'
-import { login } from '../data/auth'
+import { loginWithGoogle } from '../data/auth'
 import './Login.css'
 
 export default function Login({ onLogin }) {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
 
-  async function handleSubmit(e) {
-    e.preventDefault()
+  async function handleGoogle() {
     setLoading(true)
     setError('')
     try {
-      const role = await login(email, password)
+      const role = await loginWithGoogle()
       onLogin(role)
     } catch (err) {
-      setError(err.message || 'Email ou mot de passe incorrect.')
-    } finally {
+      // Popup fermée volontairement : inutile d'alarmer l'utilisateur.
+      const annulee = err?.code === 'auth/popup-closed-by-user'
+        || err?.code === 'auth/cancelled-popup-request'
+      setError(annulee ? '' : (err.message || 'Connexion Google refusée.'))
       setLoading(false)
     }
-  }
-
-  function fillDemo(demoEmail) {
-    setEmail(demoEmail)
-    setPassword('demo2026')
-    setError('')
   }
 
   return (
@@ -42,46 +35,18 @@ export default function Login({ onLogin }) {
         <h1 className="login-title">Veille Juridique · AFS</h1>
         <p className="login-subtitle">Accès sécurisé</p>
 
-        <form className="login-form" onSubmit={handleSubmit}>
-          <div className="login-field">
-            <label htmlFor="email">Email</label>
-            <input
-              id="email"
-              type="email"
-              value={email}
-              onChange={e => { setEmail(e.target.value); setError('') }}
-              placeholder="prenom.nom@pennylane.com"
-              autoFocus
-              autoComplete="username"
-            />
-          </div>
-          <div className="login-field">
-            <label htmlFor="password">Mot de passe</label>
-            <input
-              id="password"
-              type="password"
-              value={password}
-              onChange={e => { setPassword(e.target.value); setError('') }}
-              placeholder="••••••••••"
-              autoComplete="current-password"
-            />
-          </div>
-          {error && <p className="login-error">{error}</p>}
-          <button className="login-btn" type="submit" disabled={loading || !email || !password}>
-            {loading ? 'Connexion…' : 'Se connecter'}
+        <div className="login-google">
+          <button type="button" className="login-google-btn" onClick={handleGoogle} disabled={loading}>
+            <svg viewBox="0 0 18 18" width="18" height="18" aria-hidden="true">
+              <path fill="#4285F4" d="M17.64 9.2c0-.64-.06-1.25-.16-1.84H9v3.48h4.84a4.14 4.14 0 0 1-1.8 2.72v2.26h2.92c1.71-1.57 2.68-3.88 2.68-6.62z"/>
+              <path fill="#34A853" d="M9 18c2.43 0 4.47-.8 5.96-2.18l-2.92-2.26c-.81.54-1.84.86-3.04.86-2.34 0-4.32-1.58-5.03-3.7H.96v2.33A8.99 8.99 0 0 0 9 18z"/>
+              <path fill="#FBBC05" d="M3.97 10.72a5.4 5.4 0 0 1 0-3.44V4.96H.96a9 9 0 0 0 0 8.08l3.01-2.32z"/>
+              <path fill="#EA4335" d="M9 3.58c1.32 0 2.5.45 3.44 1.35l2.58-2.59C13.46.89 11.43 0 9 0A8.99 8.99 0 0 0 .96 4.96l3.01 2.32C4.68 5.16 6.66 3.58 9 3.58z"/>
+            </svg>
+            <span>{loading ? 'Connexion…' : 'Se connecter avec Google'}</span>
           </button>
-        </form>
-
-        <div className="login-demo">
-          <p className="login-demo-label">Accès démo :</p>
-          <div className="login-demo-btns">
-            <button type="button" className="login-demo-btn" onClick={() => fillDemo('demo@pennylane.com')}>
-              Admin demo
-            </button>
-            <button type="button" className="login-demo-btn" onClick={() => fillDemo('formateur@demo.com')}>
-              Formateur demo
-            </button>
-          </div>
+          <p className="login-google-hint">Accès réservé aux comptes autorisés</p>
+          {error && <p className="login-error">{error}</p>}
         </div>
       </div>
     </div>
