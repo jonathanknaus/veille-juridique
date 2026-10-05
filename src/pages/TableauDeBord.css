@@ -514,3 +514,21 @@
   transition: all 0.12s;
 }
 .btn-anciens:hover { background: var(--blanc); border-color: var(--bg-dark); }
+
+/* ── Réglage du seuil de masquage ── */
+.seuil-masquage {
+  display: inline-flex; align-items: center; gap: 7px;
+  margin-left: auto;
+  font-size: 12px; color: var(--texte-secondaire);
+  white-space: nowrap;
+}
+.seuil-select {
+  font-family: inherit; font-size: 12px; font-weight: 600;
+  color: var(--bg-dark);
+  background: var(--blanc);
+  border: 1.5px solid var(--border);
+  border-radius: 6px;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+.seuil-select:focus { border-color: var(--bg-dark); outline: none; }

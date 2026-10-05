@@ -11,7 +11,20 @@ import './TableauDeBord.css'
 // 45 jours, l'information réglementaire est périmée et le stock de « en attente »
 // grossissait indéfiniment. Les articles déjà traités ne sont jamais masqués, et
 // les masqués restent affichables d'un clic — rien ne disparaît en silence.
-const JOURS_AVANT_MASQUAGE = 45
+const SEUILS_MASQUAGE = [15, 30, 45, 60, 90, 180, 0] // 0 = ne jamais masquer
+const SEUIL_DEFAUT = 45
+const CLE_SEUIL = 'pls_seuil_masquage_veille'
+
+// Les deux outils sont servis depuis la même origine GitHub Pages : ce réglage
+// est donc commun à PLS et à l'outil de veille, sans synchronisation à écrire.
+function lireSeuil() {
+  const v = parseInt(localStorage.getItem(CLE_SEUIL) ?? '', 10)
+  return SEUILS_MASQUAGE.includes(v) ? v : SEUIL_DEFAUT
+}
+
+function libelleSeuil(j) {
+  return j === 0 ? 'Ne jamais masquer' : `Plus de ${j} jours`
+}
 
 function ageEnJours(dateArticle) {
   const d = new Date(dateArticle)
@@ -366,6 +379,13 @@ export default function TableauDeBord() {
   const [filtreStatut, setFiltreStatut] = useState('tous')
   const [filtreIndicateur, setFiltreIndicateur] = useState('tous')
   const [afficherAnciens, setAfficherAnciens] = useState(false)
+  const [seuilMasquage, setSeuilMasquage] = useState(lireSeuil)
+
+  function changerSeuil(jours) {
+    setSeuilMasquage(jours)
+    localStorage.setItem(CLE_SEUIL, String(jours))
+    setAfficherAnciens(false)
+  }
   const [banniereVisible, setBanniereVisible] = useState(() => shouldWarnBackup(getTraitements()))
   const [syncStatus, setSyncStatus] = useState(null) // null | 'saving' | 'ok' | 'error'
   const [syncArticles, setSyncArticles] = useState(null) // null | 'loading' | 'ok' | 'error'
@@ -608,19 +628,32 @@ export default function TableauDeBord() {
                   {f.label}
                 </button>
               ))}
+              <label className="seuil-masquage">
+                Masquer les non traités :
+                <select
+                  className="seuil-select"
+                  value={seuilMasquage}
+                  onChange={e => changerSeuil(parseInt(e.target.value, 10))}
+                  title="Les articles déjà traités ne sont jamais masqués, quel que soit ce réglage."
+                >
+                  {SEUILS_MASQUAGE.map(j => (
+                    <option key={j} value={j}>{libelleSeuil(j)}</option>
+                  ))}
+                </select>
+              </label>
             </div>
 
             {(() => {
               const masques = tousArticles.filter(a => {
                 if (getTraitement(a.id)) return false
                 const age = ageEnJours(a.date)
-                return age !== null && age > JOURS_AVANT_MASQUAGE
+                return seuilMasquage > 0 && age !== null && age > seuilMasquage
               }).length
               if (masques === 0) return null
               return (
                 <div className="anciens-masques">
                   <span>
-                    <strong>{masques}</strong> article{masques > 1 ? 's' : ''} non traité{masques > 1 ? 's' : ''} de plus de {JOURS_AVANT_MASQUAGE} jours
+                    <strong>{masques}</strong> article{masques > 1 ? 's' : ''} non traité{masques > 1 ? 's' : ''} de plus de {seuilMasquage} jours
                     {afficherAnciens ? ' (affichés)' : ' (masqués)'}
                   </span>
                   <button className="btn-anciens" onClick={() => setAfficherAnciens(v => !v)}>
@@ -641,9 +674,9 @@ export default function TableauDeBord() {
                 {[...tousArticles].sort((a, b) => new Date(b.date) - new Date(a.date)).filter(article => {
                   const trace = getTraitement(article.id)
                   // Un article non traité et trop ancien sort de la liste.
-                  if (!trace && !afficherAnciens) {
+                  if (!trace && !afficherAnciens && seuilMasquage > 0) {
                     const age = ageEnJours(article.date)
-                    if (age !== null && age > JOURS_AVANT_MASQUAGE) return false
+                    if (age !== null && age > seuilMasquage) return false
                   }
                   if (filtreStatut === 'tous') return true
                   if (filtreStatut === 'en-attente') return !trace
