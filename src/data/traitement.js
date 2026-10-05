@@ -17,24 +17,36 @@ export const DECISIONS = {
   noter:     { label: 'Note interne',        icon: '📝', color: '#2B6CB0' },
 }
 
+// Libellés conformes au référentiel national annexé au chapitre VI du Code du
+// travail. Vérifié sur Légifrance le 2026-10-05 : le décret n° 2026-728 du
+// 1er août 2026, applicable au 1er novembre 2026, remplace l'annexe en vigueur
+// SANS changer la numérotation — 23, 24 et 25 restent les indicateurs de veille,
+// et le référentiel compte toujours 32 indicateurs.
+//
+// Les trois libellés officiels se terminent par « et en exploite les
+// enseignements » : l'indicateur n'exige pas de faire de la veille, mais d'en
+// tirer des conséquences. C'est tout le sens du champ 'impact'.
 export const INDICATEURS = {
   23: {
     label: 'Veille légale et réglementaire',
     court: 'Légal',
+    officiel: 'Le prestataire réalise une veille légale et réglementaire sur le champ de la formation professionnelle et en exploite les enseignements.',
     description: 'Droit de la formation professionnelle, financement, règles d\'audit : Qualiopi, OPCO, évolution de la loi sur les organismes de formation.',
     exemplePreuve: 'Adaptation d\'une convention de formation ou du règlement intérieur suite à une nouvelle loi.',
     color: '#B91C1C',
   },
   24: {
-    label: 'Veille métiers, compétences et innovations du secteur',
+    label: 'Veille sur les compétences, les métiers et les emplois',
     court: 'Métiers',
-    description: 'Évolution du marché du travail et de l\'état de l\'art : France Compétences, observatoires métiers et GPEC, presse sectorielle.',
+    officiel: 'Le prestataire réalise une veille sur les évolutions des compétences, des métiers et des emplois dans ses secteurs d\'intervention et en exploite les enseignements.',
+    description: 'Évolution du marché du travail dans les secteurs d\'intervention : France Compétences, observatoires métiers et GPEC, presse sectorielle.',
     exemplePreuve: 'Mise à jour du contenu d\'un cours, ajout d\'un module après la sortie d\'un nouvel outil métier.',
     color: '#1D4ED8',
   },
   25: {
-    label: 'Veille sur l\'innovation pédagogique et technologique',
+    label: 'Veille sur les innovations pédagogiques et technologiques',
     court: 'Pédagogie',
+    officiel: 'Le prestataire réalise une veille sur les innovations pédagogiques et technologiques permettant une évolution de ses prestations et en exploite les enseignements.',
     description: 'Modernisation des méthodes et des outils : distanciel, IA, gamification, neurosciences, LMS, plateformes interactives.',
     exemplePreuve: 'Intégration d\'un outil interactif, passage d\'un cours en blended learning, webinaire sur l\'IA appliquée à la pédagogie.',
     color: '#6D28D9',
@@ -176,7 +188,7 @@ export function exportRegistrePDF(traitements, indicateur) {
   }).join('')
 
   const rappel = info
-    ? `<p class="rappel"><strong>Objectif :</strong> ${echap(info.description)}<br><strong>Preuve attendue :</strong> ${echap(info.exemplePreuve)}</p>`
+    ? `<p class="rappel"><strong>Libellé officiel (référentiel national, annexe au chapitre VI du code du travail) :</strong><br>« ${echap(info.officiel)} »<br><br><strong>Périmètre :</strong> ${echap(info.description)}<br><strong>Preuve attendue :</strong> ${echap(info.exemplePreuve)}</p>`
     : ''
 
   const html = `<!DOCTYPE html>
