@@ -18,10 +18,18 @@ export const DECISIONS = {
 }
 
 // Libellés conformes au référentiel national annexé au chapitre VI du Code du
-// travail. Vérifié sur Légifrance le 2026-10-05 : le décret n° 2026-728 du
-// 1er août 2026, applicable au 1er novembre 2026, remplace l'annexe en vigueur
-// SANS changer la numérotation — 23, 24 et 25 restent les indicateurs de veille,
-// et le référentiel compte toujours 32 indicateurs.
+// travail. Revérifiés mot à mot sur Légifrance le 2026-10-06 (décret
+// n° 2026-728 du 1er août 2026, JORF n°0180 du 4 août, article 1er) : les trois
+// libellés ci-dessous sont EXACTEMENT ceux du texte, et 23, 24, 25 restent les
+// indicateurs de veille, tous trois sous le critère 6.
+//
+// ⚠️ Correction d'une note antérieure qui affirmait « 32 indicateurs, sans
+// changement de numérotation » : la nouvelle annexe va jusqu'à l'indicateur 33.
+// Le 33 est un indicateur spécifique (il ne porte qu'une croix dans le tableau
+// des types d'action) et impose « un dispositif d'évaluation des contenus et des
+// enseignements par les apprenants, distinct du recueil général de
+// satisfaction ». À vérifier avant le 1er novembre 2026 : savoir s'il s'applique
+// à nos actions de formation ou seulement à l'apprentissage.
 //
 // Les trois libellés officiels se terminent par « et en exploite les
 // enseignements » : l'indicateur n'exige pas de faire de la veille, mais d'en

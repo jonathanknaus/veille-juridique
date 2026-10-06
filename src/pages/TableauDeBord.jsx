@@ -5,7 +5,38 @@ import { getTraitements, getTraitement, enregistrerTraitement, DECISIONS, INDICA
 import { getFormateurs, addFormateur, updateFormateur, removeFormateur } from '../data/formateurs'
 import { RESPONSABLE } from '../data/formateurs'
 import { ecouterTraces, sauvegarderTraces, ecouterArchives, archiverArticles, desarchiverArticle } from '../data/veille-storage'
+import { annoterArticles, CONFIANCES } from '../data/classement-veille'
 import './TableauDeBord.css'
+
+// Onglets de la liste de veille : un par indicateur Qualiopi, plus la vue
+// d'ensemble et le dépôt de ce qui a été écarté.
+//
+// « Hors périmètre » n'est pas une poubelle : rien n'y est supprimé, le motif du
+// rejet est affiché, et traiter un article l'en fait sortir aussitôt. C'est la
+// contrepartie du ciblage — on ne propose au traitement que ce qui est
+// pertinent, à condition de pouvoir vérifier ce qu'on a laissé de côté.
+const CATEGORIES = [
+  { id: 'a-traiter', libelle: 'À traiter', aide: 'Les articles retenus comme pertinents, tous indicateurs confondus' },
+  { id: '23', libelle: 'Légal',     aide: 'Indicateur 23 — veille légale et réglementaire' },
+  { id: '24', libelle: 'Métiers',   aide: 'Indicateur 24 — compétences, métiers et emplois de nos secteurs d\'intervention' },
+  { id: '25', libelle: 'Pédagogie', aide: 'Indicateur 25 — innovations pédagogiques et technologiques' },
+  { id: 'hors', libelle: 'Hors périmètre', aide: 'Écartés par le classement, conservés et traitables : le motif est affiché' },
+]
+
+// Où ranger un article. La décision humaine passe devant le classement
+// automatique, et un article déjà traité reste proposé quoi qu'il arrive : c'est
+// une pièce de preuve, elle ne peut pas sortir de la liste parce qu'une règle a
+// changé.
+function rangement(article, trace) {
+  const indicateur = String(trace?.indicateur || article?.classement?.indicateur || '')
+  return {
+    indicateur,
+    pertinent: trace ? true : !!article?.classement?.pertinent,
+    motif: article?.classement?.motif || '',
+    confiance: article?.classement?.confiance || 'faible',
+    motifs: article?.classement?.motifs || [],
+  }
+}
 
 // Seuil d'ancienneté proposé pour l'ARCHIVAGE des articles non traités.
 //
@@ -107,6 +138,15 @@ function ModaleTraitement({ article, onClose, onSave }) {
           {indicateur
             ? <p className="indicateur-aide">{INDICATEURS[indicateur].description}</p>
             : <p className="indicateur-aide">Facultatif, mais c'est ce rattachement qui rend la trace exploitable comme preuve Qualiopi.</p>}
+          {/* Le classement automatique se montre et s'explique : c'est une
+              proposition, la trace enregistre le choix de la personne. */}
+          {article.classement && !trace?.indicateur && (
+            <p className="indicateur-aide">
+              {article.classement.pertinent
+                ? <>Proposé d'après le contenu : <strong>indicateur {article.classement.indicateur}</strong> — {CONFIANCES[article.classement.confiance].label.toLowerCase()}{article.classement.motifs.length ? ` (${article.classement.motifs.join(', ')})` : ''}.</>
+                : <>Classé hors périmètre : {article.classement.motif}. Si tu le traites quand même, il rejoint l'indicateur choisi ci-dessus.</>}
+            </p>
+          )}
         </div>
 
         <div className="modale-section">
@@ -381,6 +421,9 @@ export default function TableauDeBord() {
   const [showModaleAjout, setShowModaleAjout] = useState(false)
   const [onglet, setOnglet] = useState('veille')
   const [filtreStatut, setFiltreStatut] = useState('tous')
+  // Onglet de catégorie. Par défaut « À traiter » : la liste proposée est la
+  // liste ciblée, pas le tout-venant des flux.
+  const [categorie, setCategorie] = useState('a-traiter')
   const [filtreIndicateur, setFiltreIndicateur] = useState('tous')
   const [seuilMasquage, setSeuilMasquage] = useState(lireSeuil)
   const [archives, setArchives] = useState([])
@@ -539,7 +582,10 @@ export default function TableauDeBord() {
   }
 
   const tousArticles = useMemo(() => {
-    const base = [...articles, ...articlesManuels]
+    // Classement recalculé à chaque rendu, articles manuels et orphelins
+    // compris : une règle corrigée dans classement-veille.js requalifie tout
+    // l'historique sans attendre la passe RSS du lundi.
+    const base = annoterArticles([...articles, ...articlesManuels])
     const baseIds = new Set(base.map(a => a.id))
     // Réinjecter les articles orphelins depuis les traces (traités mais plus dans le flux)
     const orphelins = traitements
@@ -557,18 +603,40 @@ export default function TableauDeBord() {
         lu: true,
         orphelin: true,
       }))
-    return [...base, ...orphelins]
+    return [...base, ...annoterArticles(orphelins)]
   }, [articles, articlesManuels, traitements])
+
+  // Compteurs d'onglets. Les archives n'y figurent pas : elles ont leur propre
+  // vue, et les compter ici gonflerait le travail restant.
+  const comptes = useMemo(() => {
+    const c = { 'a-traiter': 0, 23: 0, 24: 0, 25: 0, hors: 0 }
+    for (const a of tousArticles) {
+      if (archives.some(x => x.id === a.id)) continue
+      const r = rangement(a, getTraitement(a.id))
+      if (!r.pertinent) { c.hors += 1; continue }
+      c['a-traiter'] += 1
+      if (r.indicateur) c[r.indicateur] += 1
+    }
+    return c
+  }, [tousArticles, traitements, archives])
 
   const stats = useMemo(() => {
     const traitesIds = new Set(traitements.map(t => t.articleId))
     const articlesConnus = tousArticles.filter(a => !a.orphelin)
     const traites = articlesConnus.filter(a => traitesIds.has(a.id)).length
+    // « En attente » ne compte que ce qui mérite une décision : un article hors
+    // périmètre n'est pas du travail en retard, sinon le compteur affiche 160
+    // alors qu'il n'y a que 40 articles à regarder.
+    const enAttente = articlesConnus.filter(a => {
+      if (traitesIds.has(a.id)) return false
+      return rangement(a, null).pertinent
+    }).length
     return {
       total: articlesConnus.length,
       traites,
       diffuses: traitements.filter(t => t.decision === 'diffuser').length,
-      enAttente: articlesConnus.length - traites,
+      enAttente,
+      hors: articlesConnus.length - traites - enAttente,
     }
   }, [tousArticles, traitements])
 
@@ -625,7 +693,12 @@ export default function TableauDeBord() {
           <div className="stat-card"><span className="stat-val">{stats.total}</span><span className="stat-lbl">Articles reçus</span></div>
           <div className="stat-card stat-ok"><span className="stat-val">{stats.traites}</span><span className="stat-lbl">Traités</span></div>
           <div className="stat-card stat-vert"><span className="stat-val">{stats.diffuses}</span><span className="stat-lbl">Diffusés</span></div>
-          <div className="stat-card stat-warn"><span className="stat-val">{stats.enAttente}</span><span className="stat-lbl">En attente</span></div>
+          <div className="stat-card stat-warn" title="Articles pertinents qui attendent une décision. Les articles hors périmètre n'y sont pas comptés.">
+            <span className="stat-val">{stats.enAttente}</span><span className="stat-lbl">En attente</span>
+          </div>
+          <div className="stat-card stat-neutre" title="Écartés par le classement : conservés, consultables et traitables dans l'onglet « Hors périmètre ».">
+            <span className="stat-val">{stats.hors}</span><span className="stat-lbl">Hors périmètre</span>
+          </div>
         </div>
 
         {/* Onglets */}
@@ -638,6 +711,43 @@ export default function TableauDeBord() {
         {/* Veille à traiter */}
         {onglet === 'veille' && (
           <div>
+            {/* Onglets de catégorie : la veille se présente en audit indicateur
+                par indicateur, elle se trie donc de la même façon à l'écran. */}
+            <div className="cat-onglets">
+              {CATEGORIES.map(c => {
+                const couleur = INDICATEURS[c.id]?.color
+                const actif = categorie === c.id
+                return (
+                  <button
+                    key={c.id}
+                    className={`cat-btn ${actif ? 'actif' : ''} ${c.id === 'hors' ? 'cat-btn--hors' : ''}`}
+                    style={actif && couleur ? { background: couleur, borderColor: couleur, color: '#fff' } : undefined}
+                    onClick={() => setCategorie(c.id)}
+                    title={c.aide}
+                  >
+                    {INDICATEURS[c.id] ? `${c.id} · ${c.libelle}` : c.libelle}
+                    <span className="cat-compte">{comptes[c.id] ?? 0}</span>
+                  </button>
+                )
+              })}
+            </div>
+
+            {categorie === 'hors' && (
+              <p className="registre-aide">
+                Ces articles ont été écartés du traitement, <strong>pas supprimés</strong> : le motif
+                est indiqué sur chaque ligne. Si l'un d'eux compte, traite-le normalement — il
+                rejoindra aussitôt l'indicateur que tu choisis. Les règles de tri se corrigent dans
+                <code> classement-veille.js</code>.
+              </p>
+            )}
+            {categorie !== 'hors' && comptes[categorie] === 0 && (
+              <p className="registre-aide">
+                Aucun article ici pour l'instant. Si cet onglet reste vide semaine après semaine,
+                ce ne sont pas les règles de tri qu'il faut revoir mais les <strong>sources</strong> :
+                un indicateur sans matière est un indicateur sans preuve en audit.
+              </p>
+            )}
+
             <div className="filtre-statut">
               {[
                 { id: 'tous', label: 'Tous' },
@@ -717,7 +827,7 @@ export default function TableauDeBord() {
             <table className="tdb-table">
               <thead>
                 <tr>
-                  <th>Source</th><th>Date</th><th>Titre</th><th>Thématique</th><th>Niveau</th><th>Statut</th><th>Action</th>
+                  <th>Source</th><th>Date</th><th>Titre</th><th>Type de veille</th><th>Niveau</th><th>Statut</th><th>Action</th>
                 </tr>
               </thead>
               <tbody>
@@ -727,6 +837,10 @@ export default function TableauDeBord() {
                   // consulte justement les archives.
                   const estArchive = archives.some(x => x.id === article.id)
                   if (estArchive !== voirArchives) return false
+                  const r = rangement(article, trace)
+                  if (categorie === 'hors') { if (r.pertinent) return false }
+                  else if (!r.pertinent) return false
+                  else if (categorie !== 'a-traiter' && r.indicateur !== categorie) return false
                   if (filtreStatut === 'tous') return true
                   if (filtreStatut === 'en-attente') return !trace
                   return trace?.decision === filtreStatut
@@ -736,6 +850,8 @@ export default function TableauDeBord() {
                   const trace = getTraitement(article.id)
                   const decision = trace ? DECISIONS[trace.decision] : null
                   const lien = trace?.urlArticle || article.url
+                  const r = rangement(article, trace)
+                  const ind = INDICATEURS[r.indicateur]
                   return (
                     <tr key={article.id} className={`${trace ? 'ligne-traitee' : ''} ${article.manuel ? 'ligne-manuelle' : ''}`}>
                       <td className="td-source">
@@ -744,7 +860,29 @@ export default function TableauDeBord() {
                       </td>
                       <td className="td-date">{new Date(article.date).toLocaleDateString('fr-FR')}</td>
                       <td className="td-titre"><a href={lien} target="_blank" rel="noopener noreferrer" className="lien-titre">{article.titre}</a></td>
-                      <td><span className={`thematique-badge thematique-${article.thematique}`}>{article.thematique}</span></td>
+                      {/* Type de veille. Le titre de survol porte les termes qui
+                          ont décidé du classement : une règle doit pouvoir être
+                          contestée sans ouvrir le code. */}
+                      <td>
+                        {ind ? (
+                          <span
+                            className="indicateur-badge"
+                            style={{ background: ind.color }}
+                            title={[
+                              `Indicateur ${r.indicateur} — ${ind.label}`,
+                              trace?.indicateur ? 'Choisi par la personne qui a traité l\'article.' : `Proposé automatiquement — ${CONFIANCES[r.confiance].label.toLowerCase()}.`,
+                              r.motifs.length ? `Termes retenus : ${r.motifs.join(', ')}` : '',
+                            ].filter(Boolean).join('\n')}
+                          >
+                            {r.indicateur} · {ind.court}
+                            {!trace?.indicateur && CONFIANCES[r.confiance].marque}
+                          </span>
+                        ) : r.pertinent ? (
+                          <span className="indicateur-badge vide" title="Pertinent mais non rattaché : à qualifier au traitement.">à qualifier</span>
+                        ) : (
+                          <span className="td-motif" title="Motif du classement hors périmètre. Traiter l'article le fait revenir dans la liste.">{r.motif}</span>
+                        )}
+                      </td>
                       <td><span className={`niveau-badge niveau-${article.niveau}`}>{NIVEAUX[article.niveau].label}</span></td>
                       <td>
                         {decision
