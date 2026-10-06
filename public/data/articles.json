@@ -1,185 +1,497 @@
 {
-  "fetchedAt": "2026-10-05T19:00:35.118Z",
+  "fetchedAt": "2026-10-06T07:16:44.784Z",
   "articles": [
     {
       "id": "france-competences__decisions-denregistrement-aux-repertoires-nationaux-septembre-2026",
       "titre": "Décisions d’enregistrement aux répertoires nationaux – Septembre 2026",
       "resume": "",
+      "categories": [],
       "source_id": "france-competences",
       "thematique": "qualiopi",
-      "indicateur": "24",
       "niveau": "info",
-      "date": "2026-10-05",
+      "date": "2026-10-06",
       "url": "https://www.francecompetences.fr/fiche/decisions-denregistrement-aux-repertoires-nationaux-septembre-2026/",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "offre certifiante RNCP — nous ne sommes pas certificateur (« repertoires nationaux »)"
     },
     {
       "id": "france-competences__decisions-denregistrement-aux-repertoires-nationaux-juillet-2026",
       "titre": "Décisions d’enregistrement aux répertoires nationaux – Juillet 2026",
       "resume": "",
+      "categories": [],
       "source_id": "france-competences",
       "thematique": "qualiopi",
-      "indicateur": "24",
       "niveau": "info",
-      "date": "2026-10-05",
+      "date": "2026-10-06",
       "url": "https://www.francecompetences.fr/fiche/decisions-denregistrement-aux-repertoires-nationaux-juillet-2026/",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "offre certifiante RNCP — nous ne sommes pas certificateur (« repertoires nationaux »)"
     },
     {
       "id": "france-competences__metiers-emergents-ou-en-particuliere-evolution-france-competences-elargit-son-7%e1%b5%89-appel-a-con",
       "titre": "Métiers émergents ou en particulière évolution : lancement d'un appel à contributions",
       "resume": "",
+      "categories": [],
       "source_id": "france-competences",
       "thematique": "qualiopi",
-      "indicateur": "24",
       "niveau": "info",
-      "date": "2026-10-05",
+      "date": "2026-10-06",
       "url": "https://www.francecompetences.fr/fiche/metiers-emergents-ou-en-particuliere-evolution-france-competences-elargit-son-7%e1%b5%89-appel-a-contributions/",
-      "lu": false
+      "lu": false,
+      "indicateur": "24",
+      "pertinent": true,
+      "confiance": "faible",
+      "motifClassement": ""
     },
     {
       "id": "france-competences__france-competences-publie-le-referentiel-complet-des-niveaux-de-prise-en-charge-des-contrats-dappren",
       "titre": "Financement de la formation et de l’apprentissage Le référentiel complet des niveaux de prise en charge des contrats d’apprentissage",
       "resume": "",
+      "categories": [],
       "source_id": "france-competences",
       "thematique": "qualiopi",
-      "indicateur": "24",
       "niveau": "important",
-      "date": "2026-10-05",
+      "date": "2026-10-06",
       "url": "https://www.francecompetences.fr/fiche/france-competences-publie-le-referentiel-complet-des-niveaux-de-prise-en-charge-des-contrats-dapprentissage-npec/",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "apprentissage et alternance — hors de notre offre (« apprentis »)"
     },
     {
       "id": "france-competences__semaines-de-levolution-professionnelle-2026",
       "titre": "Conseil en évolution professionnelle Semaines de l’évolution professionnelle 2026 18.09.2026",
       "resume": "",
+      "categories": [],
       "source_id": "france-competences",
       "thematique": "qualiopi",
-      "indicateur": "24",
       "niveau": "info",
-      "date": "2026-10-05",
+      "date": "2026-10-06",
       "url": "https://www.francecompetences.fr/fiche/semaines-de-levolution-professionnelle-2026/",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
+    },
+    {
+      "id": "france-competences__lobservation-emploi-formation-des-etudes-au-service-de-la-decision",
+      "titre": "Observation et évaluation L’observation emploi-formation : des études au service de la décision 16.09.2026",
+      "resume": "",
+      "categories": [],
+      "source_id": "france-competences",
+      "thematique": "qualiopi",
+      "niveau": "urgent",
+      "date": "2026-10-06",
+      "url": "https://www.francecompetences.fr/fiche/lobservation-emploi-formation-des-etudes-au-service-de-la-decision/",
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
+    },
+    {
+      "id": "france-competences__rapport-dactivite-2025-des-resultats-concrets-pour-lefficacite-et-la-soutenabilite-du-systeme-de-for",
+      "titre": "Gouvernance Rapport d’activité 2025 : des résultats concrets pour l’efficacité et la soutenabilité du système de formation professionnelle 02.09.2026",
+      "resume": "",
+      "categories": [],
+      "source_id": "france-competences",
+      "thematique": "qualiopi",
+      "niveau": "info",
+      "date": "2026-10-06",
+      "url": "https://www.francecompetences.fr/fiche/rapport-dactivite-2025-des-resultats-concrets-pour-lefficacite-et-la-soutenabilite-du-systeme-de-formation-professionnelle/",
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
+    },
+    {
+      "id": "france-competences__enquete-nationale-aupres-des-organismes-certificateurs-et-des-organismes-de-formation-habilites",
+      "titre": "Observation et évaluation Enquête nationale auprès des organismes certificateurs et des organismes de formation habilités 29.07.2026",
+      "resume": "",
+      "categories": [],
+      "source_id": "france-competences",
+      "thematique": "qualiopi",
+      "niveau": "info",
+      "date": "2026-10-06",
+      "url": "https://www.francecompetences.fr/fiche/enquete-nationale-aupres-des-organismes-certificateurs-et-des-organismes-de-formation-habilites/",
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "offre certifiante RNCP — nous ne sommes pas certificateur (« organismes certificateurs »)"
+    },
+    {
+      "id": "france-competences__enquete-nationale-sur-la-qualite-de-lapprentissage",
+      "titre": "Observation et évaluation Enquête nationale sur la qualité de l’apprentissage 29.07.2026",
+      "resume": "",
+      "categories": [],
+      "source_id": "france-competences",
+      "thematique": "qualiopi",
+      "niveau": "info",
+      "date": "2026-10-06",
+      "url": "https://www.francecompetences.fr/fiche/enquete-nationale-sur-la-qualite-de-lapprentissage/",
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "apprentissage et alternance — hors de notre offre (« apprentis »)"
+    },
+    {
+      "id": "france-competences__la-grande-bibliotheque-de-france-competences-referencee-par-lademe-academie",
+      "titre": "Observation et évaluation La Grande Bibliothèque de France compétences référencée par l&rsquo;ADEME Académie 09.07.2026",
+      "resume": "",
+      "categories": [],
+      "source_id": "france-competences",
+      "thematique": "qualiopi",
+      "niveau": "important",
+      "date": "2026-10-06",
+      "url": "https://www.francecompetences.fr/fiche/la-grande-bibliotheque-de-france-competences-referencee-par-lademe-academie/",
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
+    },
+    {
+      "id": "senat__ppl25-965.html",
+      "titre": "Contre la fraude en ligne - texte N° 965",
+      "resume": "Proposition de loi contre la fraude en ligne : texte N° 965 de Mme Nathalie GOULET et plusieurs de ses collègues, déposé au Sénat le 25 septembre 2026",
+      "categories": [],
+      "source_id": "senat",
+      "thematique": "legislatif",
+      "niveau": "urgent",
+      "date": "2026-10-06",
+      "url": "http://www.senat.fr/leg/ppl25-965.html",
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
+    },
+    {
+      "id": "senat__ppr26-004.html",
+      "titre": "Sécuriser le ciel de l'Ukraine en construisant un bouclier européen - texte N° 4",
+      "resume": "Proposition de résolution en application de l'article 34-1 de la Constitution, visant à sécuriser le ciel de l'Ukraine en construisant un bouclier européen de protection des populations civiles : texte N° 4 de M. Claude MALHURET, déposé au Sénat le 2 octobre 2026",
+      "categories": [],
+      "source_id": "senat",
+      "thematique": "legislatif",
+      "niveau": "info",
+      "date": "2026-10-06",
+      "url": "http://www.senat.fr/leg/ppr26-004.html",
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
+    },
+    {
+      "id": "senat__ppl26-002.html",
+      "titre": "Refonder le statut constitutionnel des outre-mer - texte N° 2",
+      "resume": "Proposition de loi constitutionnelle visant à refonder le statut constitutionnel des outre-mer en substituant aux articles 73 et 74 un article 73 unique instituant un régime « à la carte », fondé sur la libre administration et la différenciation : texte N° 2 de M. Dominique THÉOPHILE, déposé au Sénat le 1er octobre 2026",
+      "categories": [],
+      "source_id": "senat",
+      "thematique": "legislatif",
+      "niveau": "urgent",
+      "date": "2026-10-05",
+      "url": "http://www.senat.fr/leg/ppl26-002.html",
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
+    },
+    {
+      "id": "senat__ppr25-958.html",
+      "titre": "Préserver le modèle français du financement du logement - texte N° 958",
+      "resume": "Proposition de résolution en application de l'article 34-1 de la Constitution, visant à préserver le modèle français du financement du logement et le crédit immobilier à taux fixe : texte N° 958 de Mme Marie-Claire CARRÈRE-GÉE, déposé au Sénat le 21 septembre 2026",
+      "categories": [],
+      "source_id": "senat",
+      "thematique": "legislatif",
+      "niveau": "important",
+      "date": "2026-10-05",
+      "url": "http://www.senat.fr/leg/ppr25-958.html",
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
     },
     {
       "id": "digiformag__auditeurs-days-une-2eme-edition-placee-sous-le-signe-de-la-v10-de-qualiopi",
       "titre": "Auditeurs Days : une 2ème édition placée sous le signe de la V10 de Qualiopi !",
-      "resume": "Les Auditeurs Days reviennent pour une deuxième édition. Cet événement virtuel dédié au métier d&#8217;auditeur sera l&#8217;occasion de revenir sur les dernières actualités de qualiopi.\nNous vous donnons rendez-vous du 12 au 15 octobre pour trois webinaires inédits offrant un éclairage sur le quotidien des auditeurs indépendants et des certificateurs, ainsi que les enjeux de leur profession !\n&nb",
+      "resume": "Les Auditeurs Days reviennent pour une deuxième édition. Cet événement virtuel dédié au métier d auditeur sera l occasion de revenir sur les dernières actualités de qualiopi. Nous vous donnons rendez-vous du 12 au 15 octobre pour trois webinaires inédits offrant un éclairage sur le quotidien des auditeurs indépendants et des certificateurs, ainsi que les enjeux de leur profession ! [ ] L’article A",
+      "categories": [
+        "Actualité de la formation",
+        "Agenda"
+      ],
       "source_id": "digiformag",
       "thematique": "formation",
-      "indicateur": "25",
       "niveau": "important",
       "date": "2026-10-05",
       "url": "https://www.digiformag.com/auditeurs-days-une-2eme-edition-placee-sous-le-signe-de-la-v10-de-qualiopi/",
-      "lu": false
+      "lu": false,
+      "indicateur": "23",
+      "pertinent": true,
+      "confiance": "forte",
+      "motifClassement": ""
     },
     {
       "id": "acteurs-competence__les-acteurs-de-la-competence-organisent-une-semaine-de-la-cybersecurite-du-12-au-16-octobre-en-colla",
       "titre": "Les Acteurs de la Compétence organisent une Semaine de la Cybersécurité du 12 au 16 octobre, en collaboration avec l’ANSSI",
-      "resume": "À l&rsquo;occasion du Mois européen de la cybersécurité, Les Acteurs de la Compétence organisent une semaine de webinaires nationaux et régionaux, gratuits, pour aider les&nbsp;organismes de formation et les entreprises de la filière des compétences (EdTech, CFA, certificateurs, cabinets RH) à mieux anticiper les risques cyber.\n\n\n\n\n\n\n\nDes webinaires à destination des TPE-PME\n\n\n\nLa semaine s’articu",
+      "resume": "À l occasion du Mois européen de la cybersécurité, Les Acteurs de la Compétence organisent une semaine de webinaires nationaux et régionaux, gratuits, pour aider les organismes de formation et les entreprises de la filière des compétences (EdTech, CFA, certificateurs, cabinets RH) à mieux anticiper les risques cyber. Des webinaires à destination des TPE-PME La semaine s’articule [ ] L’article Les ",
+      "categories": [
+        "À la une",
+        "Actualités"
+      ],
       "source_id": "acteurs-competence",
       "thematique": "legislatif",
-      "indicateur": "23",
-      "niveau": "important",
+      "niveau": "info",
       "date": "2026-10-05",
       "url": "https://lesacteursdelacompetence.fr/les-acteurs-de-la-competence-organisent-une-semaine-de-la-cybersecurite-du-12-au-16-octobre-en-collaboration-avec-lanssi/",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "événement ou communication institutionnelle (« semaine de la »)"
+    },
+    {
+      "id": "senat__ppl25-963.html",
+      "titre": "Vie démocratique et exercice de la citoyenneté dans les communes - texte N° 963",
+      "resume": "Proposition de loi visant à faciliter la vie démocratique et l'exercice de la citoyenneté dans les communes : texte N° 963 de Mme Else JOSEPH, déposé au Sénat le 23 septembre 2026",
+      "categories": [],
+      "source_id": "senat",
+      "thematique": "legislatif",
+      "niveau": "urgent",
+      "date": "2026-10-03",
+      "url": "http://www.senat.fr/leg/ppl25-963.html",
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
     },
     {
       "id": "cnil__violations-de-donnees-personnelles-cas-indemnite",
       "titre": "Violations de données personnelles : dans quels cas peut-on être indemnisé ?",
-      "resume": "",
+      "resume": "Une fuite ou un vol de données peut causer un préjudice pour les personnes concernées. Si l’incident résulte d’un manquement au RGPD, elles peuvent, sous certaines conditions, demander une indemnisation. C’est au juge, et non à la CNIL, de l’accorder.",
+      "categories": [],
       "source_id": "cnil",
       "thematique": "rgpd",
-      "indicateur": "23",
       "niveau": "info",
       "date": "2026-10-02",
       "url": "https://www.cnil.fr/fr/violations-de-donnees-personnelles-cas-indemnite",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
+    },
+    {
+      "id": "senat__ppl25-966.html",
+      "titre": "Garantir un service public de proximité dans chaque commune - texte N° 966",
+      "resume": "Proposition de loi visant à garantir un service public de proximité dans chaque communevisant à garantir un service public de proximité dans chaque commune : texte N° 966 de Mme Alexandra BORCHIO FONTIMP, déposé au Sénat le 28 septembre 2026",
+      "categories": [],
+      "source_id": "senat",
+      "thematique": "legislatif",
+      "niveau": "urgent",
+      "date": "2026-10-02",
+      "url": "http://www.senat.fr/leg/ppl25-966.html",
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
+    },
+    {
+      "id": "senat__ppl25-961.html",
+      "titre": "Permettre un rétablissement des anciennes régions - texte N° 961",
+      "resume": "Proposition de loi visant à permettre un rétablissement des anciennes régions : texte N° 961 de M. Alain JOYANDET et plusieurs de ses collègues, déposé au Sénat le 22 septembre 2026",
+      "categories": [],
+      "source_id": "senat",
+      "thematique": "legislatif",
+      "niveau": "urgent",
+      "date": "2026-10-02",
+      "url": "http://www.senat.fr/leg/ppl25-961.html",
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
+    },
+    {
+      "id": "senat__ppl25-962.html",
+      "titre": "Indemnités de licenciement des salariés de sécurité privée - texte N° 962",
+      "resume": "Proposition de loi visant à supprimer les indemnités de licenciement en cas de retrait de la carte professionnelle délivrée par le Conseil national des activités privées de sécurité : texte N° 962 de M. Hugues SAURY, déposé au Sénat le 23 septembre 2026",
+      "categories": [],
+      "source_id": "senat",
+      "thematique": "legislatif",
+      "niveau": "urgent",
+      "date": "2026-10-02",
+      "url": "http://www.senat.fr/leg/ppl25-962.html",
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
     },
     {
       "id": "ministere-travail__conventions-collectives-nomenclatures",
       "titre": "Conventions collectives : nomenclatures",
-      "resume": "",
+      "resume": "Cette page regroupe l'ensemble des nomenclatures statistiques relatives aux conventions collectives.",
+      "categories": [],
       "source_id": "ministere-travail",
       "thematique": "legislatif",
-      "indicateur": "23",
       "niveau": "info",
       "date": "2026-10-02",
       "url": "https://travail-emploi.gouv.fr/conventions-collectives-nomenclatures",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "droit social hors champ de la formation (« conventions collectives »)"
     },
     {
       "id": "digiformag__lorganisme-de-formation-de-demain-sera-t-il-pilote-comme-une-entreprise-de-donnees",
       "titre": "L’organisme de formation de demain sera-t-il piloté comme une entreprise de données ?",
-      "resume": "Les organismes de formation disposent déjà d’une quantité considérable de données sur leur activité : clients, devis, remplissage des sessions, coûts, intervenants, satisfaction, qualité, facturation ou encore historique commercial. Pourtant, ces informations sont encore souvent utilisées avant tout pour administrer et justifier l’activité. Et si la prochaine étape de leur transformation numérique",
+      "resume": "CRM, sessions, rentabilité : découvrez comment transformer les données administratives de votre organisme de formation en outils de décision stratégique. L’article L’organisme de formation de demain sera-t-il piloté comme une entreprise de données ? est apparu en premier sur Digiformag .",
+      "categories": [
+        "Actualité de la formation",
+        "Financements"
+      ],
       "source_id": "digiformag",
       "thematique": "formation",
-      "indicateur": "25",
-      "niveau": "urgent",
+      "niveau": "important",
       "date": "2026-10-02",
       "url": "https://www.digiformag.com/lorganisme-de-formation-de-demain-sera-t-il-pilote-comme-une-entreprise-de-donnees/",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
     },
     {
       "id": "acteurs-competence__projet-de-loi-de-finances-2027-une-loi-pas-encore-votee-mais-deja-retroactive",
       "titre": "Projet de loi de finances 2027 : une loi pas encore votée, mais déjà rétroactive ?",
-      "resume": "Les Acteurs de la Compétence dénoncent les nouvelles restrictions aux droits à la formation des actifs et étudient les voies de recours contre la rétroactivité de ces mesures prévue par le texte\n\n\n\nLe Projet de loi de finances pour 2027 franchit une nouvelle étape dans le recul du droit des actifs à choisir librement leur formation. Son article 89 prévoit de&nbsp;nouvelles barrières à l’accès au C",
+      "resume": "Les Acteurs de la Compétence dénoncent les nouvelles restrictions aux droits à la formation des actifs et étudient les voies de recours contre la rétroactivité de ces mesures prévue par le texte Le Projet de loi de finances pour 2027 franchit une nouvelle étape dans le recul du droit des actifs à choisir librement leur [ ] L’article Projet de loi de finances 2027 : une loi pas encore votée, mais d",
+      "categories": [
+        "À la une",
+        "Actualités"
+      ],
       "source_id": "acteurs-competence",
       "thematique": "legislatif",
-      "indicateur": "23",
       "niveau": "urgent",
       "date": "2026-10-02",
       "url": "https://lesacteursdelacompetence.fr/projet-de-loi-de-finances-2027-une-loi-pas-encore-votee-mais-deja-retroactive/",
-      "lu": false
+      "lu": false,
+      "indicateur": "23",
+      "pertinent": true,
+      "confiance": "forte",
+      "motifClassement": ""
     },
     {
       "id": "cnil__ordre-du-jour-de-la-seance-pleniere-du-1er-octobre-2026",
       "titre": "Ordre du jour de la séance plénière du 1er octobre 2026",
-      "resume": "",
+      "resume": "La Commission nationale de l'informatique et des libertés s’est réunie le jeudi 1er octobre 2026 à 9 nbsp;h nbsp;30 avec l’ordre du jour suivant nbsp;:",
+      "categories": [],
       "source_id": "cnil",
       "thematique": "rgpd",
-      "indicateur": "23",
       "niveau": "info",
       "date": "2026-10-01",
       "url": "https://www.cnil.fr/fr/ordre-du-jour-de-la-seance-pleniere-du-1er-octobre-2026",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "vie interne de l'institution (« ordre du jour »)"
     },
     {
       "id": "cnil__cybermois-2026",
       "titre": "Cybermois 2026 : la CNIL et Cybermalveillance.gouv.fr publient une nouvelle ressource pour adopter les bons réflexes face à une violation de données",
-      "resume": "",
+      "resume": "À l’occasion du Mois européen de la cybersécurité, Cybermois en France, la CNIL et Cybermalveillance.gouv.fr s’associent autour d’un nouveau support pratique pour aider les particuliers à réagir en cas de violation de données personnelles et à adopter les bons réflexes pour limiter les risques.",
+      "categories": [],
       "source_id": "cnil",
       "thematique": "rgpd",
-      "indicateur": "23",
       "niveau": "important",
       "date": "2026-10-01",
       "url": "https://www.cnil.fr/fr/cybermois-2026",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
+    },
+    {
+      "id": "senat__ppl25-957.html",
+      "titre": "Renforcer la lutte contre la précarité énergétique - texte N° 957",
+      "resume": "Proposition de loi visant à renforcer la lutte contre la précarité énergétique : texte N° 957 de M. Fabien GAY et plusieurs de ses collègues, déposé au Sénat le 18 septembre 2026",
+      "categories": [],
+      "source_id": "senat",
+      "thematique": "legislatif",
+      "niveau": "urgent",
+      "date": "2026-10-01",
+      "url": "http://www.senat.fr/leg/ppl25-957.html",
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
     },
     {
       "id": "ministere-travail__budget-relatif-au-projet-de-loi-de-finances-pour-2027",
       "titre": "Budget relatif au projet de loi de finances pour 2027",
-      "resume": "",
+      "resume": "Le Gouvernement a présenté les principales orientations budgétaires du projet de loi de finances (PLF) pour 2027 ce jeudi 1er octobre 2026.",
+      "categories": [],
       "source_id": "ministere-travail",
       "thematique": "legislatif",
-      "indicateur": "23",
       "niveau": "urgent",
       "date": "2026-10-01",
       "url": "https://travail-emploi.gouv.fr/budget-relatif-au-projet-de-loi-de-finances-pour-2027",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
     },
     {
       "id": "ministere-travail__deffinum-preparer-les-competences-de-demain-en-transformant-la-formation-aujourdhui",
       "titre": "DEFFINUM : préparer les compétences de demain en transformant la formation aujourd’hui",
-      "resume": "",
+      "resume": "Premier levier du Plan de transformation et de digitalisation de la formation professionnelle lancé en 2021 par le ministère du Travail et des Solidarités, l’appel à projets DEFFINUM (Dispositifs France Formation Innovante Numérique) s’achève.",
+      "categories": [],
       "source_id": "ministere-travail",
       "thematique": "legislatif",
-      "indicateur": "23",
       "niveau": "info",
       "date": "2026-10-01",
       "url": "https://travail-emploi.gouv.fr/deffinum-preparer-les-competences-de-demain-en-transformant-la-formation-aujourdhui",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "signal trop faible pour tenir comme preuve de veille"
+    },
+    {
+      "id": "ordre-experts-comptables__tpe-pme-un-second-trimestre-consecutif-de-legere-hausse",
+      "titre": "TPE-PME : un second trimestre consécutif de légère hausse de CA",
+      "resume": "TPE-PME : un second trimestre consécutif de légère hausse de CA jeu 01/10/2026 - 16:45 --> Jeudi 1 octobre 2026 - Composant L’Ordre des experts-comptables et son Observatoire de la profession comptable constatent, à travers leur baromètre Image PME, qui suit l’activité économique des 660 000 TPE-PME françaises analysées, une légère hausse de CA de 0,8 % en valeur par rapport au 2e trimestre 2025. ",
+      "categories": [],
+      "source_id": "ordre-experts-comptables",
+      "thematique": "formation",
+      "niveau": "info",
+      "date": "2026-10-01",
+      "url": "https://www.experts-comptables.fr/sic-emissions-evenements-presse/sic-webzine/tpe-pme-un-second-trimestre-consecutif-de-legere-hausse",
+      "lu": false,
+      "indicateur": "24",
+      "pertinent": true,
+      "confiance": "forte",
+      "motifClassement": ""
     },
     {
       "id": "agefiph__la-france-mutualiste-renforce-son-engagement-pour-lemploi",
@@ -187,11 +499,14 @@
       "resume": "",
       "source_id": "agefiph",
       "thematique": "opco",
-      "indicateur": "23",
+      "indicateur": "",
       "niveau": "urgent",
       "date": "2026-10-01",
       "url": "https://www.agefiph.fr/espace-presse/tous-les-documents-presse/la-france-mutualiste-renforce-son-engagement-pour-lemploi",
-      "lu": false
+      "lu": false,
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "événement ou communication institutionnelle (« renforce son engagement »)"
     },
     {
       "id": "agefiph__trouver-une-formation-accessible-devient-plus-simple-sur",
@@ -199,59 +514,225 @@
       "resume": "",
       "source_id": "agefiph",
       "thematique": "opco",
-      "indicateur": "23",
+      "indicateur": "",
       "niveau": "info",
       "date": "2026-10-01",
       "url": "https://www.agefiph.fr/espace-presse/tous-les-documents-presse/trouver-une-formation-accessible-devient-plus-simple-sur",
-      "lu": false
+      "lu": false,
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "signal trop faible pour tenir comme preuve de veille"
     },
     {
       "id": "ministere-travail__la-reforme-des-retraites-de-2023",
       "titre": "La réforme des retraites de 2023",
-      "resume": "",
+      "resume": "Le Gouvernement a présenté en janvier 2023 son projet pour l’avenir du système de retraite français.",
+      "categories": [],
       "source_id": "ministere-travail",
       "thematique": "legislatif",
-      "indicateur": "23",
       "niveau": "important",
       "date": "2026-09-30",
       "url": "https://travail-emploi.gouv.fr/la-reforme-des-retraites-de-2023",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "droit social hors champ de la formation (« retraite »)"
     },
     {
       "id": "ministere-travail__mobiliser-les-employeurs-en-faveur-de-lapprentissage",
       "titre": "Faire de l'apprentissage un levier de réussite pour tous les jeunes et les entreprises",
-      "resume": "",
+      "resume": "De nombreuses personnes inscrites en apprentissage n’ont pas encore trouvé de contrat. Le ministère invite les employeurs à se mobiliser.",
+      "categories": [],
       "source_id": "ministere-travail",
       "thematique": "legislatif",
-      "indicateur": "23",
       "niveau": "info",
       "date": "2026-09-30",
       "url": "https://travail-emploi.gouv.fr/mobiliser-les-employeurs-en-faveur-de-lapprentissage",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "apprentissage et alternance — hors de notre offre (« apprentis »)"
+    },
+    {
+      "id": "ministere-travail__les-operateurs-de-competences-opco",
+      "titre": "Les opérateurs de compétences (OPCO)",
+      "resume": "Le 1er avril 2019, onze opérateurs de compétences (OPCO), chargés d’accompagner la formation professionnelle, ont été agréés. Ils remplacent les anciens organismes paritaires collecteurs agréées (OPCA).",
+      "categories": [],
+      "source_id": "ministere-travail",
+      "thematique": "legislatif",
+      "niveau": "important",
+      "date": "2026-09-30",
+      "url": "https://travail-emploi.gouv.fr/les-operateurs-de-competences-opco",
+      "lu": false,
+      "indicateur": "23",
+      "pertinent": true,
+      "confiance": "faible",
+      "motifClassement": ""
+    },
+    {
+      "id": "senat__ppl25-964.html",
+      "titre": "Abrogation des « codes noirs » et reconnaissance de l'esclavage - texte N° 964",
+      "resume": "Proposition de loi visant l'abrogation des « codes noirs » et la reconnaissance de l'esclavage dans tous les territoires : texte N° 964 de Mme Evelyne CORBIÈRE NAMINZO, M. Robert Wienie XOWIE et plusieurs de leurs collègues, déposé au Sénat le 24 septembre 2026",
+      "categories": [],
+      "source_id": "senat",
+      "thematique": "legislatif",
+      "niveau": "urgent",
+      "date": "2026-09-29",
+      "url": "http://www.senat.fr/leg/ppl25-964.html",
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
+    },
+    {
+      "id": "senat__ppl25-960.html",
+      "titre": "Autorisations environnementales pour les élevages de saumons en circuit fermé - texte N° 960",
+      "resume": "Proposition de loi visant à suspendre les autorisations environnementales pour les élevages de saumons en circuit fermé : texte N° 960 de Mme Monique de MARCO et plusieurs de ses collègues, déposé au Sénat le 22 septembre 2026",
+      "categories": [],
+      "source_id": "senat",
+      "thematique": "legislatif",
+      "niveau": "urgent",
+      "date": "2026-09-29",
+      "url": "http://www.senat.fr/leg/ppl25-960.html",
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
+    },
+    {
+      "id": "ministere-travail__publication-de-lindex-egalite-2025-des-ministeres-sociaux",
+      "titre": "Publication de l'Index Égalité 2025 des ministères sociaux",
+      "resume": "L’obligation de publication d’un Index relatif aux écarts de rémunération a été introduite dans les articles L. 132-9-3 et suivants du code général de la fonction publique visant à renforcer l'accès des femmes aux responsabilités dans la fonction publique. Le résultat du Ministère pour l’année 2025 est de 95/100.",
+      "categories": [],
+      "source_id": "ministere-travail",
+      "thematique": "legislatif",
+      "niveau": "urgent",
+      "date": "2026-09-29",
+      "url": "https://travail-emploi.gouv.fr/publication-de-lindex-egalite-2025-des-ministeres-sociaux",
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
+    },
+    {
+      "id": "ministere-travail__le-comite-de-deontologie-des-ministeres-charges-des-affaires-sociales-presentation-et-travaux",
+      "titre": "Le Comité de déontologie des ministères chargés des affaires sociales | Présentation et travaux",
+      "resume": "",
+      "categories": [],
+      "source_id": "ministere-travail",
+      "thematique": "legislatif",
+      "niveau": "info",
+      "date": "2026-09-29",
+      "url": "https://travail-emploi.gouv.fr/le-comite-de-deontologie-des-ministeres-charges-des-affaires-sociales-presentation-et-travaux",
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "vie interne de l'institution (« comite de deontologie »)"
+    },
+    {
+      "id": "ministere-travail__impulsion-ia-2027-publication-de-lappel-manifestation-dinteret-engagement-developpement-de-lemploi-et",
+      "titre": "Impulsion IA 2027 : publication de l’appel à manifestation d’intérêt « Engagement développement de l'emploi et des compétences relatif à l’intelligence artificielle »",
+      "resume": "Le ministère du Travail et des Solidarités lance son appel manifestation d’intérêt (AMI) à destination des branches professionnelles et de leurs OPCO pour impulser une série d’Engagements Développement de l’Emploi et des Compétences (EDEC) sur le thème de l’IA. Cet appel à manifestation d’intérêt « EDEC relatif à l’intelligence artificielle » est l’une des mesures présentées dans le cadre du plan ",
+      "categories": [],
+      "source_id": "ministere-travail",
+      "thematique": "legislatif",
+      "niveau": "urgent",
+      "date": "2026-09-29",
+      "url": "https://travail-emploi.gouv.fr/impulsion-ia-2027-publication-de-lappel-manifestation-dinteret-engagement-developpement-de-lemploi-et-des-competences-relatif-lintelligence-artificielle",
+      "lu": false,
+      "indicateur": "23",
+      "pertinent": true,
+      "confiance": "faible",
+      "motifClassement": ""
     },
     {
       "id": "digiformag__cpf-150-e-aujourdhui-jusqua-350-e-demain",
       "titre": "CPF : 150 € aujourd’hui, jusqu’à 350 € demain ?",
-      "resume": "Le gouvernement envisage une nouvelle évolution des règles du Compte personnel de formation (CPF). Le principe : faire varier la participation financière du titulaire selon le caractère prioritaire (ou non) de la formation choisie et l&#8217;existence d&#8217;un cofinancement. Sur le papier, un simple ajustement de barème. En réalité, c&#8217;est une autre conception du CPF qui se dessine : moins ",
+      "resume": "Le reste à charge du CPF pourrait grimper jusqu'à 350 € pour les formations non prioritaires. Décryptage des annonces et impacts pour les actifs et les OF. L’article CPF : 150 € aujourd hui, jusqu à 350 € demain ? est apparu en premier sur Digiformag .",
+      "categories": [
+        "Actualité de la formation",
+        "CPF"
+      ],
       "source_id": "digiformag",
       "thematique": "formation",
-      "indicateur": "25",
-      "niveau": "urgent",
+      "niveau": "info",
       "date": "2026-09-29",
       "url": "https://www.digiformag.com/cpf-150-e-aujourdhui-jusqua-350-e-demain/",
-      "lu": false
+      "lu": false,
+      "indicateur": "23",
+      "pertinent": true,
+      "confiance": "faible",
+      "motifClassement": ""
     },
     {
       "id": "cnil__air2026",
       "titre": "Évènement air 2026 : Convaincre ou manipuler ? L'éthique du numérique à l'épreuve des urnes, le 16 novembre à la CNIL",
-      "resume": "",
+      "resume": "Protection des droits des électeurs, ingérences étrangères… lundi 16 nbsp;novembre 2026, à partir de 14 nbsp;h, la CNIL vous invite à son événement dédié aux enjeux éthiques associés aux communications politiques et aux ingérences. Les inscriptions sont ouvertes.",
+      "categories": [],
       "source_id": "cnil",
       "thematique": "rgpd",
-      "indicateur": "23",
       "niveau": "info",
       "date": "2026-09-28",
       "url": "https://www.cnil.fr/fr/air2026",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "événement ou communication institutionnelle (« evenement »)"
+    },
+    {
+      "id": "senat__ppl25-947.html",
+      "titre": "Instituer une journée nationale du drapeau tricolore français - texte N° 947",
+      "resume": "Proposition de loi visant à instituer une journée nationale du drapeau tricolore français : texte N° 947 de M. Olivier PACCAUD et plusieurs de ses collègues, déposé au Sénat le 15 septembre 2026",
+      "categories": [],
+      "source_id": "senat",
+      "thematique": "legislatif",
+      "niveau": "urgent",
+      "date": "2026-09-28",
+      "url": "http://www.senat.fr/leg/ppl25-947.html",
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
+    },
+    {
+      "id": "ministere-travail__agenda-de-sabrina-roubache",
+      "titre": "Agenda de Sabrina Roubache",
+      "resume": "",
+      "categories": [],
+      "source_id": "ministere-travail",
+      "thematique": "legislatif",
+      "niveau": "info",
+      "date": "2026-09-28",
+      "url": "https://travail-emploi.gouv.fr/agenda-de-sabrina-roubache",
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "vie interne de l'institution (« agenda de »)"
+    },
+    {
+      "id": "ministere-travail__deffinum",
+      "titre": "DEFFINUM",
+      "resume": "DEFFINUM s’inscrit dans le cadre d’un vaste plan de transformation et de digitalisation de la formation pour franchir un cap de transformation de la formation et positionner la France au meilleur niveau en matière d’innovation pédagogique.",
+      "categories": [],
+      "source_id": "ministere-travail",
+      "thematique": "legislatif",
+      "niveau": "info",
+      "date": "2026-09-28",
+      "url": "https://travail-emploi.gouv.fr/deffinum",
+      "lu": false,
+      "indicateur": "25",
+      "pertinent": true,
+      "confiance": "moyenne",
+      "motifClassement": ""
     },
     {
       "id": "france-competences__decisions-denregistrement-aux-repertoires-nationaux-juin-2026",
@@ -262,29 +743,27 @@
       "niveau": "info",
       "date": "2026-09-28",
       "url": "https://www.francecompetences.fr/fiche/decisions-denregistrement-aux-repertoires-nationaux-juin-2026/",
-      "lu": false
-    },
-    {
-      "id": "ministere-travail__le-comite-de-deontologie-des-ministeres-charges-des-affaires-sociales-presentation-et-travaux",
-      "titre": "Le Comité de déontologie des ministères chargés des affaires sociales | Présentation et travaux",
-      "resume": "",
-      "source_id": "ministere-travail",
-      "thematique": "legislatif",
-      "niveau": "info",
-      "date": "2026-09-25",
-      "url": "https://travail-emploi.gouv.fr/le-comite-de-deontologie-des-ministeres-charges-des-affaires-sociales-presentation-et-travaux",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "offre certifiante RNCP — nous ne sommes pas certificateur (« repertoires nationaux »)"
     },
     {
       "id": "ministere-travail__les-risques-lies-aux-grues-tour",
       "titre": "Les risques liés aux grues à tour",
-      "resume": "",
+      "resume": "Risques liés à l’accès de la cabine de contrôle - Risques de chute - Risque de malaise: lié aux efforts physiques fournis Risques liés aux intempéries - Risques de renversement des grues à tour en girouette: liés au vent violent, qui est de vitesse supérieure à celle prise en compte dans les normes de calcul Risques liés aux effets de site - Risques de rotation de la grue: liés aux perturbations l",
+      "categories": [],
       "source_id": "ministere-travail",
       "thematique": "legislatif",
-      "niveau": "info",
+      "niveau": "important",
       "date": "2026-09-25",
       "url": "https://travail-emploi.gouv.fr/les-risques-lies-aux-grues-tour",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
     },
     {
       "id": "ministere-travail__faq-accompagnement-des-entreprises-dans-le-cadre-des-incendies-exceptionnels",
@@ -295,42 +774,93 @@
       "niveau": "info",
       "date": "2026-09-25",
       "url": "https://travail-emploi.gouv.fr/faq-accompagnement-des-entreprises-dans-le-cadre-des-incendies-exceptionnels",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "santé-sécurité au travail (« incendie »)"
     },
     {
       "id": "cnil__ordre-du-jour-de-la-seance-pleniere-du-24-septembre-2026",
       "titre": "Ordre du jour de la séance plénière du 24 septembre 2026",
-      "resume": "",
+      "resume": "La Commission nationale de l'informatique et des libertés s’est réunie le jeudi 24 septembre 2026 à 9 nbsp;h nbsp;30 avec l’ordre du jour suivant nbsp;:",
+      "categories": [],
       "source_id": "cnil",
       "thematique": "rgpd",
-      "indicateur": "23",
       "niveau": "info",
       "date": "2026-09-24",
       "url": "https://www.cnil.fr/fr/ordre-du-jour-de-la-seance-pleniere-du-24-septembre-2026",
-      "lu": false
-    },
-    {
-      "id": "digiformag__handicap-en-formation-comment-passer-de-la-simple-conformite-a-une-vraie-culture-daccueil",
-      "titre": "Handicap en formation : comment passer de la simple conformité à une vraie culture d’accueil ?",
-      "resume": "Beaucoup d&#8217;organismes de formation pensent être prêts à accueillir une personne en situation de handicap (PSH) parce qu&#8217;ils ont nommé un référent handicap et rédigé une politique dédiée. Pourtant, sur le terrain, les situations de handicap ne se présentent pas toujours comme prévu. Elles peuvent être invisibles, non déclarées ou apparaître en cours de parcours. La question n&#8217;est ",
-      "source_id": "digiformag",
-      "thematique": "formation",
-      "indicateur": "25",
-      "niveau": "urgent",
-      "date": "2026-09-24",
-      "url": "https://www.digiformag.com/handicap-en-formation-comment-passer-de-la-simple-conformite-a-une-vraie-culture-daccueil/",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "vie interne de l'institution (« ordre du jour »)"
     },
     {
       "id": "cnil__cloture-injonction-solocal-marketing-services",
       "titre": "Clôture de l’injonction prononcée à l’encontre de la société SOLOCAL MARKETING SERVICES",
-      "resume": "",
+      "resume": "Par délibération du 17 septembre 2026, la CNIL a clôturé l’injonction prononcée le 15 nbsp;mai 2025 à l’encontre de la société SOLOCAL MARKETING SERVICES.",
+      "categories": [],
       "source_id": "cnil",
       "thematique": "rgpd",
       "niveau": "info",
       "date": "2026-09-24",
       "url": "https://www.cnil.fr/fr/cloture-injonction-solocal-marketing-services",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
+    },
+    {
+      "id": "digiformag__handicap-en-formation-comment-passer-de-la-simple-conformite-a-une-vraie-culture-daccueil",
+      "titre": "Handicap en formation : comment passer de la simple conformité à une vraie culture d’accueil ?",
+      "resume": "Nommer un référent handicap ne suffit pas. Climat de confiance, écoute des besoins et adaptations concrètes : découvrez comment réussir l’inclusion en formation. L’article Handicap en formation : comment passer de la simple conformité à une vraie culture d accueil ? est apparu en premier sur Digiformag .",
+      "categories": [
+        "Handicap"
+      ],
+      "source_id": "digiformag",
+      "thematique": "formation",
+      "niveau": "info",
+      "date": "2026-09-24",
+      "url": "https://www.digiformag.com/handicap-en-formation-comment-passer-de-la-simple-conformite-a-une-vraie-culture-daccueil/",
+      "lu": false,
+      "indicateur": "23",
+      "pertinent": true,
+      "confiance": "forte",
+      "motifClassement": ""
+    },
+    {
+      "id": "ordre-experts-comptables__observatoire-economique-de-la-restauration-les-experts",
+      "titre": "Observatoire économique de la restauration : les experts-comptables révèlent les fragilités du secteur",
+      "resume": "Observatoire économique de la restauration : les experts-comptables révèlent les fragilités du secteur jeu 24/09/2026 - 16:54 --> Jeudi 24 septembre 2026 - Composant L'Ordre et l'Union des métiers et des industries de l'hôtellerie (UMIH) lancent l'Observatoire économique de la restauration. Alimenté par les données comptables et fiscales de l’Ordre, cet outil inédit permet de suivre au plus près l",
+      "categories": [],
+      "source_id": "ordre-experts-comptables",
+      "thematique": "formation",
+      "niveau": "info",
+      "date": "2026-09-24",
+      "url": "https://www.experts-comptables.fr/sic-emissions-evenements-presse/sic-webzine/observatoire-economique-de-la-restauration-les-experts",
+      "lu": false,
+      "indicateur": "24",
+      "pertinent": true,
+      "confiance": "moyenne",
+      "motifClassement": ""
+    },
+    {
+      "id": "ordre-experts-comptables__expertise-comptable-un-guide-pour-decouvrir-des-metiers",
+      "titre": "Expertise comptable : un guide pour découvrir des métiers qui recrutent",
+      "resume": "Expertise comptable : un guide pour découvrir des métiers qui recrutent jeu 24/09/2026 - 16:48 --> Jeudi 24 septembre 2026 - Composant L’Onisep et le Conseil national de l’ordre des experts-comptables publient un guide consacré aux métiers en cabinet d’expertise comptable. Destinée aux jeunes, à leurs familles et aux équipes éducatives, cette publication met en lumière les nombreuses opportunités ",
+      "categories": [],
+      "source_id": "ordre-experts-comptables",
+      "thematique": "formation",
+      "niveau": "important",
+      "date": "2026-09-24",
+      "url": "https://www.experts-comptables.fr/sic-emissions-evenements-presse/sic-webzine/expertise-comptable-un-guide-pour-decouvrir-des-metiers",
+      "lu": false,
+      "indicateur": "24",
+      "pertinent": true,
+      "confiance": "forte",
+      "motifClassement": ""
     },
     {
       "id": "ministere-travail__comite-national-pour-lemploi-la-transition-demographique-au-coeur-des-echanges",
@@ -341,7 +871,11 @@
       "niveau": "urgent",
       "date": "2026-09-24",
       "url": "https://travail-emploi.gouv.fr/comite-national-pour-lemploi-la-transition-demographique-au-coeur-des-echanges",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
     },
     {
       "id": "ministere-travail__questions-reponses-quels-recours-contre-un-avis-dinaptitude",
@@ -352,30 +886,63 @@
       "niveau": "info",
       "date": "2026-09-24",
       "url": "https://travail-emploi.gouv.fr/questions-reponses-quels-recours-contre-un-avis-dinaptitude",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
     },
     {
       "id": "cnil__pleniere-cepd-amendes-reglement-services-numeriques",
       "titre": "Amendes RGPD et interaction avec le règlement sur les services numériques : retour sur la plénière du CEPD du 17 septembre 2026",
-      "resume": "",
+      "resume": "Le 17 septembre 2026, le CEPD a adopté des lignes directrices sur le pouvoir des autorités de protection des données d’infliger des amendes administratives et la version finale de ses lignes directrices sur l'interaction entre le règlement sur les services numériques (DSA) et le RGPD.",
+      "categories": [],
       "source_id": "cnil",
       "thematique": "rgpd",
       "niveau": "urgent",
       "date": "2026-09-23",
       "url": "https://www.cnil.fr/fr/pleniere-cepd-amendes-reglement-services-numeriques",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "signal trop faible pour tenir comme preuve de veille"
+    },
+    {
+      "id": "ordre-experts-comptables__sante-mentale-des-experts-comptables-l-ordre-et-agipi",
+      "titre": "Santé mentale des experts-comptables : l’Ordre et AGIPI lancent un dispositif de prévention",
+      "resume": "Santé mentale des experts-comptables : l’Ordre et AGIPI lancent un dispositif de prévention mer 23/09/2026 - 14:19 --> Mercredi 23 septembre 2026 - Composant Agnès Pfertzel, présidente d’AGIPI, et Damien Charrier, président du CNOEC. Alors que la santé mentale est érigée en grande cause nationale pour la deuxième année consécutive, l’Ordre des experts-comptables et AGIPI renforcent leur engagement",
+      "categories": [],
+      "source_id": "ordre-experts-comptables",
+      "thematique": "formation",
+      "niveau": "info",
+      "date": "2026-09-23",
+      "url": "https://www.experts-comptables.fr/sic-emissions-evenements-presse/sic-webzine/sante-mentale-des-experts-comptables-l-ordre-et-agipi",
+      "lu": false,
+      "indicateur": "24",
+      "pertinent": true,
+      "confiance": "forte",
+      "motifClassement": ""
     },
     {
       "id": "digiformag__declaration-de-sous-traitance-cpf-sur-edof-le-guide-express-de-la-campagne-2026",
       "titre": "Déclaration de sous-traitance CPF sur EDOF : le guide express de la campagne 2026",
-      "resume": "La campagne de déclaration de sous-traitance 2026 est ouverte, et cette fois, plus d&#8217;excuses : vous avez déjà vécu la première édition en 2025. Bonne nouvelle, EDOF a simplifié le parcours (chiffre d&#8217;affaires prérempli, historique de vos déclarations, consultation d&#8217;un sous-traitant par SIRET). Moins bonne nouvelle : la date limite tombe le 30 septembre 2026, et elle concerne tou",
+      "resume": "Plafond de 80 %, calcul du CA, vérification SIRET : déclarez sereinement votre sous-traitance CPF sur EDOF avant le 30 septembre 2026. Guide pas à pas. L’article Déclaration de sous-traitance CPF sur EDOF : le guide express de la campagne 2026 est apparu en premier sur Digiformag .",
+      "categories": [
+        "Actualité de la formation",
+        "CPF",
+        "Réglementation"
+      ],
       "source_id": "digiformag",
       "thematique": "formation",
-      "indicateur": "25",
-      "niveau": "urgent",
+      "niveau": "important",
       "date": "2026-09-22",
       "url": "https://www.digiformag.com/declaration-de-sous-traitance-cpf-sur-edof-le-guide-express-de-la-campagne-2026/",
-      "lu": false
+      "lu": false,
+      "indicateur": "23",
+      "pertinent": true,
+      "confiance": "forte",
+      "motifClassement": ""
     },
     {
       "id": "agefiph__mondial-relay-inpost-et-lagefiph-signent-une-convention-de",
@@ -383,11 +950,14 @@
       "resume": "",
       "source_id": "agefiph",
       "thematique": "opco",
-      "indicateur": "23",
+      "indicateur": "",
       "niveau": "urgent",
       "date": "2026-09-21",
       "url": "https://www.agefiph.fr/espace-presse/tous-les-documents-presse/mondial-relay-inpost-et-lagefiph-signent-une-convention-de",
-      "lu": false
+      "lu": false,
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "événement ou communication institutionnelle (« signent une convention »)"
     },
     {
       "id": "ministere-travail__le-conge-de-paternite-et-daccueil-de-lenfant",
@@ -398,7 +968,11 @@
       "niveau": "info",
       "date": "2026-09-21",
       "url": "https://travail-emploi.gouv.fr/le-conge-de-paternite-et-daccueil-de-lenfant",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "droit social hors champ de la formation (« conge de paternite »)"
     },
     {
       "id": "ministere-travail__le-conge-dadoption",
@@ -409,7 +983,11 @@
       "niveau": "info",
       "date": "2026-09-21",
       "url": "https://travail-emploi.gouv.fr/le-conge-dadoption",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "droit social hors champ de la formation (« conge d'adoption »)"
     },
     {
       "id": "ministere-travail__le-conge-de-maternite",
@@ -420,7 +998,11 @@
       "niveau": "info",
       "date": "2026-09-21",
       "url": "https://travail-emploi.gouv.fr/le-conge-de-maternite",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "droit social hors champ de la formation (« conge de maternite »)"
     },
     {
       "id": "ministere-travail__lautorisation-de-conduite-des-appareils-de-levage",
@@ -431,7 +1013,11 @@
       "niveau": "info",
       "date": "2026-09-18",
       "url": "https://travail-emploi.gouv.fr/lautorisation-de-conduite-des-appareils-de-levage",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "santé-sécurité au travail (« appareils de levage »)"
     },
     {
       "id": "ministere-travail__la-prevention-des-risques-lies-lamiante",
@@ -442,62 +1028,81 @@
       "niveau": "info",
       "date": "2026-09-18",
       "url": "https://travail-emploi.gouv.fr/la-prevention-des-risques-lies-lamiante",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "santé-sécurité au travail (« amiante »)"
     },
     {
       "id": "cnil__ordre-du-jour-de-la-seance-pleniere-du-17-septembre-2026",
       "titre": "Ordre du jour de la séance plénière du 17 septembre 2026",
-      "resume": "",
+      "resume": "La Commission nationale de l'informatique et des libertés s’est réunie le jeudi 17 septembre 2026 à 9 nbsp;h nbsp;30 avec l’ordre du jour suivant nbsp;:",
+      "categories": [],
       "source_id": "cnil",
       "thematique": "rgpd",
       "niveau": "info",
       "date": "2026-09-17",
       "url": "https://www.cnil.fr/fr/ordre-du-jour-de-la-seance-pleniere-du-17-septembre-2026",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "vie interne de l'institution (« ordre du jour »)"
+    },
+    {
+      "id": "cnil__statut-et-organisation-de-la-cnil",
+      "titre": "Statut et organisation de la CNIL",
+      "resume": "Créée en 1978 par la loi Informatique et Libertés, la CNIL est une autorité administrative indépendante, composée d’un Collège de 18 membres et d’une équipe d’agents contractuels de l’État.",
+      "categories": [],
+      "source_id": "cnil",
+      "thematique": "rgpd",
+      "niveau": "urgent",
+      "date": "2026-09-17",
+      "url": "https://www.cnil.fr/fr/fonctionnement/statut-et-organisation-de-la-cnil",
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
     },
     {
       "id": "digiformag__enquete-au-dela-du-buzz-comment-les-formateurs-utilisent-ils-lia-au-quotidien",
       "titre": "Enquête – Au-delà du buzz : comment les formateurs utilisent-ils l’IA au quotidien ?",
-      "resume": "L’intelligence artificielle s’est-elle déjà durablement installée dans le quotidien des organismes de formation ? Pour mesurer l’impact réel de ces technologies sur le terrain, Digiforma a mené l&#8217;enquête auprès de plus de 700 organismes de formation.\nRéalisée en juin 2026, celle-ci rassemble une grande variété de profils, portée en majorité par des directeurs et directrices d’OF (33,9 %) et ",
+      "resume": "Découvrez notre enquête exclusive sur les usages de l'IA par les organismes de formation en 2026 : outils, gains de temps, freins et conformité IA Act. L’article Enquête Au-delà du buzz : comment les formateurs utilisent-ils l IA au quotidien ? est apparu en premier sur Digiformag .",
+      "categories": [
+        "Actualité de la formation",
+        "IA",
+        "Ressources"
+      ],
       "source_id": "digiformag",
       "thematique": "formation",
-      "niveau": "urgent",
+      "niveau": "info",
       "date": "2026-09-17",
       "url": "https://www.digiformag.com/enquete-au-dela-du-buzz-comment-les-formateurs-utilisent-ils-lia-au-quotidien/",
-      "lu": false
+      "lu": false,
+      "indicateur": "25",
+      "pertinent": true,
+      "confiance": "moyenne",
+      "motifClassement": ""
     },
     {
       "id": "digiformag__les-jurys-de-certifications-rncp-et-rs-roles-composition-et-responsabilites",
       "titre": "Les jurys de certifications RNCP et RS : rôles, composition et responsabilités",
-      "resume": "Dans le cadre des certifications enregistrées au RNCP (Répertoire National des Certifications Professionnelles) et au RS (Répertoire Spécifique), le rôle des jurys est primordial. Notez que j&#8217;écris des jurys et non du jury, et que je considère un jury comme un ensemble de personnes travaillant ensemble dans les différents volets de l&#8217;évaluation, et non comme une personne à part entière",
+      "resume": "Évaluation, délivrance, VAE, PV de délibération : maîtrisez les obligations et la composition des jurys de certification RNCP et RS selon France Compétences. L’article Les jurys de certifications RNCP et RS : rôles, composition et responsabilités est apparu en premier sur Digiformag .",
+      "categories": [
+        "Certification RS/RNCP"
+      ],
       "source_id": "digiformag",
       "thematique": "formation",
-      "niveau": "important",
+      "niveau": "urgent",
       "date": "2026-09-15",
       "url": "https://www.digiformag.com/les-jurys-de-certifications-rncp-et-rs-roles-composition-et-responsabilites/",
-      "lu": false
-    },
-    {
-      "id": "france-competences__rapport-dactivite-2025-des-resultats-concrets-pour-lefficacite-et-la-soutenabilite-du-systeme-de-for",
-      "titre": "Gouvernance Rapport d’activité 2025 : des résultats concrets pour l’efficacité et la soutenabilité du système de formation professionnelle 02.09.2026",
-      "resume": "",
-      "source_id": "france-competences",
-      "thematique": "qualiopi",
-      "niveau": "info",
-      "date": "2026-09-14",
-      "url": "https://www.francecompetences.fr/fiche/rapport-dactivite-2025-des-resultats-concrets-pour-lefficacite-et-la-soutenabilite-du-systeme-de-formation-professionnelle/",
-      "lu": false
-    },
-    {
-      "id": "ministere-travail__agenda-de-sabrina-roubache",
-      "titre": "Agenda de Sabrina Roubache",
-      "resume": "",
-      "source_id": "ministere-travail",
-      "thematique": "legislatif",
-      "niveau": "info",
-      "date": "2026-09-14",
-      "url": "https://travail-emploi.gouv.fr/agenda-de-sabrina-roubache",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "offre certifiante RNCP — nous ne sommes pas certificateur (« rncp »)"
     },
     {
       "id": "ministere-travail__coordonnees-des-organisations-syndicales-de-salaries",
@@ -508,18 +1113,30 @@
       "niveau": "info",
       "date": "2026-09-14",
       "url": "https://travail-emploi.gouv.fr/coordonnees-des-organisations-syndicales-de-salaries",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "vie interne de l'institution (« coordonnees des organisations »)"
     },
     {
       "id": "digiformag__apprentissage-les-7-dossiers-a-surveiller-dici-la-fin-de-lannee-2026",
       "titre": "Apprentissage : les 7 dossiers à surveiller d’ici la fin de l’année 2026",
-      "resume": "La rentrée est là, il faut gérer les urgences, les modifications de dernière minute, continuer d’accompagner les candidats sans employeur, et dans le même temps, suivre les futures évolutions importantes qui vont rythmer les prochains mois. Financements, contrôles, qualité, effectifs, budget 2027… Pour vous aider à ne rien manquer, voici un petit récap de ce qu’il ne faudra pas rater dans les proc",
+      "resume": "NPEC, guide Qualiopi, baisse des effectifs, contrôles et PLF : découvrez les 7 chantiers qui attendent les CFA pour cette rentrée 2026. L’article Apprentissage : les 7 dossiers à surveiller d’ici la fin de l’année 2026 est apparu en premier sur Digiformag .",
+      "categories": [
+        "Actualité de la formation",
+        "Apprentissage"
+      ],
       "source_id": "digiformag",
       "thematique": "formation",
-      "niveau": "urgent",
+      "niveau": "important",
       "date": "2026-09-11",
       "url": "https://www.digiformag.com/apprentissage-les-7-dossiers-a-surveiller-dici-la-fin-de-lannee-2026/",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "apprentissage et alternance — hors de notre offre (« apprentis »)"
     },
     {
       "id": "ministere-travail__resultats-du-concours-de-linspection-du-travail-2026",
@@ -530,18 +1147,27 @@
       "niveau": "info",
       "date": "2026-09-11",
       "url": "https://travail-emploi.gouv.fr/resultats-du-concours-de-linspection-du-travail-2026",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "vie interne de l'institution (« resultats du concours »)"
     },
     {
       "id": "cnil__ordre-du-jour-de-la-seance-pleniere-du-10-septembre-2026",
       "titre": "Ordre du jour de la séance plénière du 10 septembre 2026",
-      "resume": "",
+      "resume": "La Commission nationale de l'informatique et des libertés s’est réunie le jeudi 10 septembre 2026 à 9 nbsp;h nbsp;30 avec l’ordre du jour suivant nbsp;:",
+      "categories": [],
       "source_id": "cnil",
       "thematique": "rgpd",
       "niveau": "info",
       "date": "2026-09-10",
       "url": "https://www.cnil.fr/fr/ordre-du-jour-de-la-seance-pleniere-du-10-septembre-2026",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "vie interne de l'institution (« ordre du jour »)"
     },
     {
       "id": "cnil__facturation-electronique-quels-enjeux",
@@ -552,7 +1178,11 @@
       "niveau": "info",
       "date": "2026-09-10",
       "url": "https://www.cnil.fr/fr/facturation-electronique-quels-enjeux",
-      "lu": false
+      "lu": false,
+      "indicateur": "24",
+      "pertinent": true,
+      "confiance": "moyenne",
+      "motifClassement": ""
     },
     {
       "id": "cnil__audeladelecran",
@@ -563,7 +1193,11 @@
       "niveau": "important",
       "date": "2026-09-10",
       "url": "https://www.cnil.fr/fr/audeladelecran",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "RGPD hors de nos traitements (« cybercriminalite »)"
     },
     {
       "id": "ministere-travail__presentation-en-conseil-des-ministres-du-projet-de-loi-portant-transposition-de-la-directive-relative",
@@ -574,7 +1208,11 @@
       "niveau": "urgent",
       "date": "2026-09-10",
       "url": "https://travail-emploi.gouv.fr/presentation-en-conseil-des-ministres-du-projet-de-loi-portant-transposition-de-la-directive-relative-legalite-des-remunerations-entre-les-femmes-et-les-hommes-par-la-transparence-des-remunerations",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "droit social hors champ de la formation (« egalite des remunerations »)"
     },
     {
       "id": "ministere-travail__pilotage-des-dispositifs-de-la-politique-de-lemploi-et-de-la-formation-professionnelle-traitement-des",
@@ -585,7 +1223,11 @@
       "niveau": "urgent",
       "date": "2026-09-10",
       "url": "https://travail-emploi.gouv.fr/pilotage-des-dispositifs-de-la-politique-de-lemploi-et-de-la-formation-professionnelle-traitement-des-donnees-personnelles",
-      "lu": false
+      "lu": false,
+      "indicateur": "23",
+      "pertinent": true,
+      "confiance": "faible",
+      "motifClassement": ""
     },
     {
       "id": "cnil__sanction-non-respect-droits-personnes-extia",
@@ -596,29 +1238,65 @@
       "niveau": "urgent",
       "date": "2026-09-09",
       "url": "https://www.cnil.fr/fr/sanction-non-respect-droits-personnes-extia",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
     },
     {
       "id": "digiformag__france-travail-les-grands-chantiers-de-la-formation-professionnelle-pour-2026-2027-entretien-avec-herve-joua",
       "titre": "France Travail : les grands chantiers de la formation professionnelle pour 2026-2027 (entretien avec Hervé Jouanneau)",
-      "resume": "Entretien avec Hervé Jouanneau, Directeur Orientation et Formation à France Travail.\nCybersécurité de Kairos, intelligence artificielle au service du recrutement en formation, critères de financement de plus en plus liés à l&#8217;employabilité, avenir du CPF et de la POEI&#8230; Hervé Jouanneau, Directeur Orientation et Formation à France Travail a répondu à nos questions. Il dresse un panorama c",
+      "resume": "Sécurité Kairos, essor de l'IA, recentrage sur la POEI : Hervé Jouanneau dévoile les priorités de France Travail pour les organismes de formation. L’article France Travail : les grands chantiers de la formation professionnelle pour 2026-2027 (entretien avec Hervé Jouanneau) est apparu en premier sur Digiformag .",
+      "categories": [
+        "Financements",
+        "Interview"
+      ],
       "source_id": "digiformag",
       "thematique": "formation",
-      "niveau": "urgent",
+      "niveau": "info",
       "date": "2026-09-08",
       "url": "https://www.digiformag.com/france-travail-les-grands-chantiers-de-la-formation-professionnelle-pour-2026-2027-entretien-avec-herve-jouanneau/",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "insertion et publics éloignés de l'emploi — hors de notre offre (« france travail »)"
     },
     {
       "id": "digiformag__reseau-franchise-pourquoi-la-formation-professionnelle-est-votre-meilleure-infrastructure-de-developpement",
       "titre": "Réseau de franchise : pourquoi la formation professionnelle est votre meilleure infrastructure de développement",
-      "resume": "Entretien avec Pauline Moquet, dirigeante du réseau Daniel Moquet\nLe métier de franchiseur consiste à répliquer un savoir-faire pour le déployer à grande échelle et couvrir un territoire qu&#8217;une entreprise seule n&#8217;atteindrait jamais. La France en compte près de 2 000, dans des secteurs aussi variés que les services, la distribution, la restauration ou encore, l&#8217;automobile. C’est u",
+      "resume": "Découvrez comment le réseau Daniel Moquet utilise la formation interne comme levier de transmission du savoir-faire, de fidélisation et de croissance. L’article Réseau de franchise : pourquoi la formation professionnelle est votre meilleure infrastructure de développement est apparu en premier sur Digiformag .",
+      "categories": [
+        "Actualité de la formation",
+        "Interview"
+      ],
       "source_id": "digiformag",
+      "thematique": "formation",
+      "niveau": "info",
+      "date": "2026-09-03",
+      "url": "https://www.digiformag.com/reseau-franchise-pourquoi-la-formation-professionnelle-est-votre-meilleure-infrastructure-de-developpement/",
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
+    },
+    {
+      "id": "ordre-experts-comptables__facturation-electronique-73-des-entreprises",
+      "titre": "Facturation électronique : 73 % des entreprises accompagnées par un expert-comptable opérationnelles au 1er septembre",
+      "resume": "Facturation électronique : 73 % des entreprises accompagnées par un expert-comptable opérationnelles au 1er septembre jeu 03/09/2026 - 16:23 --> Jeudi 3 septembre 2026 - Composant Quelques jours après l’entrée en vigueur de l’obligation de réception des factures électroniques, la préparation des entreprises a, en toute logique, fortement progressé. Selon le dernier Baromètre de la facturation élec",
+      "categories": [],
+      "source_id": "ordre-experts-comptables",
       "thematique": "formation",
       "niveau": "urgent",
       "date": "2026-09-03",
-      "url": "https://www.digiformag.com/reseau-franchise-pourquoi-la-formation-professionnelle-est-votre-meilleure-infrastructure-de-developpement/",
-      "lu": false
+      "url": "https://www.experts-comptables.fr/sic-emissions-evenements-presse/sic-webzine/facturation-electronique-73-des-entreprises",
+      "lu": false,
+      "indicateur": "24",
+      "pertinent": true,
+      "confiance": "forte",
+      "motifClassement": ""
     },
     {
       "id": "cnil__ordre-du-jour-de-la-seance-pleniere-du-3-septembre-2026",
@@ -629,7 +1307,11 @@
       "niveau": "info",
       "date": "2026-09-03",
       "url": "https://www.cnil.fr/fr/ordre-du-jour-de-la-seance-pleniere-du-3-septembre-2026",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "vie interne de l'institution (« ordre du jour »)"
     },
     {
       "id": "cnil__sanction-hopital-prive-loire",
@@ -640,7 +1322,11 @@
       "niveau": "urgent",
       "date": "2026-09-03",
       "url": "https://www.cnil.fr/fr/sanction-hopital-prive-loire",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
     },
     {
       "id": "ministere-travail__calendrier-et-modalites-dinscription-aux-concours-du-ministere-du-travail",
@@ -651,7 +1337,11 @@
       "niveau": "info",
       "date": "2026-09-03",
       "url": "https://travail-emploi.gouv.fr/calendrier-et-modalites-dinscription-aux-concours-du-ministere-du-travail",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "vie interne de l'institution (« calendrier du concours »)"
     },
     {
       "id": "ministere-travail__le-comite-dhistoire-des-administrations-chargees-du-travail-de-lemploi-et-de-la-formation-professionn",
@@ -662,7 +1352,11 @@
       "niveau": "info",
       "date": "2026-09-02",
       "url": "https://travail-emploi.gouv.fr/le-comite-dhistoire-des-administrations-chargees-du-travail-de-lemploi-et-de-la-formation-professionnelle-chatefp-presentation-et-travaux",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "vie interne de l'institution (« comite d'histoire »)"
     },
     {
       "id": "digiformag__edito-une-rentree-decisive-pour-les-organismes-de-formation",
@@ -673,7 +1367,11 @@
       "niveau": "urgent",
       "date": "2026-09-02",
       "url": "https://www.digiformag.com/edito-une-rentree-decisive-pour-les-organismes-de-formation/",
-      "lu": false
+      "lu": false,
+      "indicateur": "23",
+      "pertinent": true,
+      "confiance": "forte",
+      "motifClassement": ""
     },
     {
       "id": "ministere-travail__la-direction-des-affaires-juridiques-daj-des-ministeres-sociaux",
@@ -684,7 +1382,11 @@
       "niveau": "info",
       "date": "2026-09-01",
       "url": "https://travail-emploi.gouv.fr/la-direction-des-affaires-juridiques-daj-des-ministeres-sociaux",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
     },
     {
       "id": "ministere-travail__retraites-des-femmes-et-parentalite-de-nouveaux-droits-au-1er-septembre-2026",
@@ -695,7 +1397,11 @@
       "niveau": "info",
       "date": "2026-09-01",
       "url": "https://travail-emploi.gouv.fr/retraites-des-femmes-et-parentalite-de-nouveaux-droits-au-1er-septembre-2026",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "droit social hors champ de la formation (« retraite »)"
     },
     {
       "id": "cnil__ril-2026",
@@ -706,29 +1412,11 @@
       "niveau": "info",
       "date": "2026-08-31",
       "url": "https://www.cnil.fr/fr/ril-2026",
-      "lu": false
-    },
-    {
-      "id": "france-competences__enquete-nationale-aupres-des-organismes-certificateurs-et-des-organismes-de-formation-habilites",
-      "titre": "Observation et évaluation Enquête nationale auprès des organismes certificateurs et des organismes de formation habilités",
-      "resume": "",
-      "source_id": "france-competences",
-      "thematique": "qualiopi",
-      "niveau": "info",
-      "date": "2026-08-31",
-      "url": "https://www.francecompetences.fr/fiche/enquete-nationale-aupres-des-organismes-certificateurs-et-des-organismes-de-formation-habilites/",
-      "lu": false
-    },
-    {
-      "id": "france-competences__enquete-nationale-sur-la-qualite-de-lapprentissage",
-      "titre": "Observation et évaluation Actualités 29.07.2026",
-      "resume": "",
-      "source_id": "france-competences",
-      "thematique": "qualiopi",
-      "niveau": "info",
-      "date": "2026-08-31",
-      "url": "https://www.francecompetences.fr/fiche/enquete-nationale-sur-la-qualite-de-lapprentissage/",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "événement ou communication institutionnelle (« participez aux »)"
     },
     {
       "id": "ministere-travail__endometriose-un-mooc-pour-les-professionnels-de-la-sante-au-travail",
@@ -739,7 +1427,11 @@
       "niveau": "info",
       "date": "2026-08-28",
       "url": "https://travail-emploi.gouv.fr/endometriose-un-mooc-pour-les-professionnels-de-la-sante-au-travail",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "santé-sécurité au travail (« endometriose »)"
     },
     {
       "id": "ministere-travail__laide-aux-employeurs-qui-recrutent-en-apprentissage",
@@ -750,7 +1442,11 @@
       "niveau": "info",
       "date": "2026-08-28",
       "url": "https://travail-emploi.gouv.fr/laide-aux-employeurs-qui-recrutent-en-apprentissage",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "apprentissage et alternance — hors de notre offre (« apprentis »)"
     },
     {
       "id": "ministere-travail__lagence-nationale-pour-la-formation-professionnelle-des-adultes-afpa",
@@ -761,7 +1457,11 @@
       "niveau": "info",
       "date": "2026-08-28",
       "url": "https://travail-emploi.gouv.fr/lagence-nationale-pour-la-formation-professionnelle-des-adultes-afpa",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
     },
     {
       "id": "cnil__sensibiliser-les-eleves-de-cm2-la-protection-des-donnees",
@@ -772,7 +1472,27 @@
       "niveau": "info",
       "date": "2026-08-27",
       "url": "https://www.cnil.fr/fr/sensibiliser-les-eleves-de-cm2-la-protection-des-donnees",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "RGPD hors de nos traitements (« cm2 »)"
+    },
+    {
+      "id": "ordre-experts-comptables__journee-de-l-evaluation-2026",
+      "titre": "Journée de l’évaluation 2026",
+      "resume": "Journée de l’évaluation 2026 mer 26/08/2026 - 16:00 --> Mercredi 26 août 2026 - Composant Le Conseil national de l’ordre des experts-comptables et la Compagnie nationale des commissaires aux comptes organisent le mardi 13 octobre 2026 , à la Maison de la Chimie (28 bis, rue Saint-Dominique, Paris 7e), la 14e édition de la Journée de l'évaluation ! Cette édition 2026 sera consacrée aux nouveaux déf",
+      "categories": [],
+      "source_id": "ordre-experts-comptables",
+      "thematique": "formation",
+      "niveau": "important",
+      "date": "2026-08-26",
+      "url": "https://www.experts-comptables.fr/sic-emissions-evenements-presse/sic-webzine/journee-de-l-evaluation-2026",
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "événement ou communication institutionnelle (« journee de l »)"
     },
     {
       "id": "cnil__ia-la-cnil-met-jour-son-outil-de-tracabilite-des-modeles-publies-en-source-ouverte",
@@ -783,7 +1503,27 @@
       "niveau": "info",
       "date": "2026-08-26",
       "url": "https://www.cnil.fr/fr/ia-la-cnil-met-jour-son-outil-de-tracabilite-des-modeles-publies-en-source-ouverte",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
+    },
+    {
+      "id": "ordre-experts-comptables__la-ref-2026-les-experts-comptables-au-coeur-de-la",
+      "titre": "La REF 2026 : les experts-comptables au cœur de la facture électronique",
+      "resume": "La REF 2026 : les experts-comptables au cœur de la facture électronique mar 25/08/2026 - 15:40 --> Mardi 25 août 2026 - Composant Les 26 et 27 août 2026, le Conseil national de l’ordre des experts-comptables participera à La REF, la Rencontre des Entrepreneurs de France, organisée par le Medef à Roland-Garros. À quelques jours d’une nouvelle étape majeure de la réforme, le Conseil national animera",
+      "categories": [],
+      "source_id": "ordre-experts-comptables",
+      "thematique": "formation",
+      "niveau": "urgent",
+      "date": "2026-08-25",
+      "url": "https://www.experts-comptables.fr/sic-emissions-evenements-presse/sic-webzine/la-ref-2026-les-experts-comptables-au-coeur-de-la",
+      "lu": false,
+      "indicateur": "24",
+      "pertinent": true,
+      "confiance": "forte",
+      "motifClassement": ""
     },
     {
       "id": "digiformag__appels-offres-dans-la-formation-trouver-gagner-marches",
@@ -794,7 +1534,11 @@
       "niveau": "urgent",
       "date": "2026-08-25",
       "url": "https://www.digiformag.com/appels-offres-dans-la-formation-trouver-gagner-marches/",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
     },
     {
       "id": "cnil__enseignement-superieur-bonnes-pratiques-outils-collaboratifs",
@@ -805,7 +1549,11 @@
       "niveau": "info",
       "date": "2026-08-24",
       "url": "https://www.cnil.fr/fr/enseignement-superieur-bonnes-pratiques-outils-collaboratifs",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
     },
     {
       "id": "cnil__enseignement-premier-second-degres-bonnes-pratiques-outils-collaboratifs",
@@ -816,19 +1564,30 @@
       "niveau": "info",
       "date": "2026-08-24",
       "url": "https://www.cnil.fr/fr/enseignement-premier-second-degres-bonnes-pratiques-outils-collaboratifs",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
     },
     {
       "id": "acteurs-competence__alternance-communication-et-marketing-digital-automne-2026",
       "titre": "Alternance | Communication et marketing digital | Automne 2026",
-      "resume": "La fédération est en recherche de talents pour renforcer ses actions de communication et d&rsquo;influence. Découvrez l&rsquo;offre en détail et l&rsquo;adresse de contact ci-dessous pour candidater. \n\n\n\n\nChargé(e) de communication et de marketing digital\n\n\n\nContrat d&rsquo;apprentissage de 1-2 an(s)\n\n\n\nBasé à Paris (9ème arrondissement)\n\n\n\n\nOffre-Alternance-Communication-Marketing-2026-Acteurs-de",
+      "resume": "La fédération est en recherche de talents pour renforcer ses actions de communication et d influence. Découvrez l offre en détail et l adresse de contact ci-dessous pour candidater. L’article Alternance | Communication et marketing digital | Automne 2026 est apparu en premier sur Les Acteurs de la Compétence .",
+      "categories": [
+        "À la une",
+        "Actualités"
+      ],
       "source_id": "acteurs-competence",
       "thematique": "legislatif",
-      "indicateur": "23",
       "niveau": "info",
       "date": "2026-08-20",
       "url": "https://lesacteursdelacompetence.fr/alternance-communication-et-marketing-digital-automne-2026/",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "apprentissage et alternance — hors de notre offre (« alternance »)"
     },
     {
       "id": "cnil__le-refus-de-credit-en-questions",
@@ -839,7 +1598,11 @@
       "niveau": "info",
       "date": "2026-08-19",
       "url": "https://www.cnil.fr/fr/le-refus-de-credit-en-questions",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "RGPD hors de nos traitements (« refus de credit »)"
     },
     {
       "id": "cnil__piratage-du-systeme-dinformation-des-impots-les-verifications-sont-en-cours",
@@ -850,7 +1613,11 @@
       "niveau": "info",
       "date": "2026-08-18",
       "url": "https://www.cnil.fr/fr/piratage-du-systeme-dinformation-des-impots-les-verifications-sont-en-cours",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
     },
     {
       "id": "ministere-travail__donnees-personnelles-et-cookies",
@@ -861,7 +1628,11 @@
       "niveau": "info",
       "date": "2026-08-18",
       "url": "https://travail-emploi.gouv.fr/donnees-personnelles-et-cookies",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
     },
     {
       "id": "digiformag__cpf-quelles-sanctions-en-cas-de-non-presentation-a-lexamen-final",
@@ -872,7 +1643,11 @@
       "niveau": "urgent",
       "date": "2026-08-17",
       "url": "https://www.digiformag.com/cpf-quelles-sanctions-en-cas-de-non-presentation-a-lexamen-final/",
-      "lu": false
+      "lu": false,
+      "indicateur": "23",
+      "pertinent": true,
+      "confiance": "forte",
+      "motifClassement": ""
     },
     {
       "id": "ministere-travail__incendies-en-gironde-dans-les-landes-et-le-var-entree-en-vigueur-de-laide-exceptionnelle-pour-les-tpe",
@@ -883,7 +1658,11 @@
       "niveau": "info",
       "date": "2026-08-15",
       "url": "https://travail-emploi.gouv.fr/incendies-en-gironde-dans-les-landes-et-le-var-entree-en-vigueur-de-laide-exceptionnelle-pour-les-tpe-pme",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "santé-sécurité au travail (« incendie »)"
     },
     {
       "id": "ministere-travail__le-conge-de-mobilite",
@@ -894,7 +1673,11 @@
       "niveau": "info",
       "date": "2026-08-14",
       "url": "https://travail-emploi.gouv.fr/le-conge-de-mobilite",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "droit social hors champ de la formation (« conge de mobilite »)"
     },
     {
       "id": "ministere-travail__lepreuve-des-risques-professionnels-industriels-et-environnementaux-linspection-du-travail-et-linspec",
@@ -905,7 +1688,11 @@
       "niveau": "info",
       "date": "2026-08-14",
       "url": "https://travail-emploi.gouv.fr/lepreuve-des-risques-professionnels-industriels-et-environnementaux-linspection-du-travail-et-linspection-des-installations-classees-1810-2020",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "santé-sécurité au travail (« risques professionnels »)"
     },
     {
       "id": "digiformag__vae-2-textes-a-integrer-avant-la-rentree",
@@ -916,7 +1703,11 @@
       "niveau": "urgent",
       "date": "2026-08-10",
       "url": "https://www.digiformag.com/vae-2-textes-a-integrer-avant-la-rentree/",
-      "lu": false
+      "lu": false,
+      "indicateur": "23",
+      "pertinent": true,
+      "confiance": "forte",
+      "motifClassement": ""
     },
     {
       "id": "cnil__dpo-identifier-gerer-conflits-interets",
@@ -927,7 +1718,11 @@
       "niveau": "info",
       "date": "2026-08-10",
       "url": "https://www.cnil.fr/fr/dpo-identifier-gerer-conflits-interets",
-      "lu": false
+      "lu": false,
+      "indicateur": "23",
+      "pertinent": true,
+      "confiance": "faible",
+      "motifClassement": ""
     },
     {
       "id": "ministere-travail__taux-de-chomage-au-deuxieme-trimestre-2026-des-fondamentaux-solides-qui-soulignent-la-resistance-du-m",
@@ -938,7 +1733,11 @@
       "niveau": "urgent",
       "date": "2026-08-07",
       "url": "https://travail-emploi.gouv.fr/taux-de-chomage-au-deuxieme-trimestre-2026-des-fondamentaux-solides-qui-soulignent-la-resistance-du-marche-de-lemploi-en-france-et-une-hausse-en-partie-liee-la-poursuite-des-effets-de-la-loi-plein-emploi",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "droit social hors champ de la formation (« taux de chomage »)"
     },
     {
       "id": "cnil__supprimer-mes-donnees-presse",
@@ -949,7 +1748,11 @@
       "niveau": "info",
       "date": "2026-08-05",
       "url": "https://www.cnil.fr/fr/supprimer-mes-donnees-presse",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "RGPD hors de nos traitements (« article de presse »)"
     },
     {
       "id": "cnil__college-de-la-cnil-5-nouveaux-membres-nommes-le-2-aout-2026",
@@ -960,7 +1763,11 @@
       "niveau": "info",
       "date": "2026-08-05",
       "url": "https://www.cnil.fr/fr/college-de-la-cnil-5-nouveaux-membres-nommes-le-2-aout-2026",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "vie interne de l'institution (« nouveaux membres »)"
     },
     {
       "id": "ministere-travail__chiffres-du-chomage-comprendre-son-evolution",
@@ -971,7 +1778,11 @@
       "niveau": "info",
       "date": "2026-08-05",
       "url": "https://travail-emploi.gouv.fr/chiffres-du-chomage-comprendre-son-evolution",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "droit social hors champ de la formation (« chiffres du chomage »)"
     },
     {
       "id": "ministere-travail__retraites-le-gouvernement-renforce-les-droits-des-femmes-en-ameliorant-la-prise-en-compte-de-la-paren",
@@ -982,7 +1793,11 @@
       "niveau": "info",
       "date": "2026-08-05",
       "url": "https://travail-emploi.gouv.fr/retraites-le-gouvernement-renforce-les-droits-des-femmes-en-ameliorant-la-prise-en-compte-de-la-parentalite",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "droit social hors champ de la formation (« retraite »)"
     },
     {
       "id": "digiformag__qualiopi-du-nouveau-a-venir-pour-novembre-2026",
@@ -993,7 +1808,11 @@
       "niveau": "urgent",
       "date": "2026-08-04",
       "url": "https://www.digiformag.com/qualiopi-du-nouveau-a-venir-pour-novembre-2026/",
-      "lu": false
+      "lu": false,
+      "indicateur": "23",
+      "pertinent": true,
+      "confiance": "forte",
+      "motifClassement": ""
     },
     {
       "id": "ministere-travail__incendies-en-gironde-et-dans-les-landes-une-mesure-exceptionnelle-pour-soutenir-les-pme-et-preserver-",
@@ -1004,7 +1823,11 @@
       "niveau": "urgent",
       "date": "2026-08-04",
       "url": "https://travail-emploi.gouv.fr/incendies-en-gironde-et-dans-les-landes-une-mesure-exceptionnelle-pour-soutenir-les-pme-et-preserver-lemploi",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "santé-sécurité au travail (« incendie »)"
     },
     {
       "id": "cnil__webinaire-mise-a-jour-mr",
@@ -1015,19 +1838,30 @@
       "niveau": "important",
       "date": "2026-07-31",
       "url": "https://www.cnil.fr/fr/webinaire-mise-a-jour-mr",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
     },
     {
       "id": "acteurs-competence__la-federation-recrute-2",
       "titre": "Offre d’emploi | Délégué(e) territoriale",
-      "resume": "#Recrutement&nbsp;#Regions\n\n\n\nAfin de renforcer notre action et représentation dans les territoires Grand Est, Hauts-de-France et Bourgogne Franche-Comté., nous sommes à la recherche d&rsquo;un(e) Délégué(e) territorial(e) ! \n\n\n\n\n\n\n\nIntéressé(e) ? Adressez-nous dès maintenant votre candidature (voir ci-dessous le détail de l&rsquo;offre)\n\n\n\nOffres_Emploi (pdf, 268,59 Ko)T&eacute;l&eacute;charger\n\n",
+      "resume": "#Recrutement #Regions Afin de renforcer notre action et représentation dans les territoires Grand Est, Hauts-de-France et Bourgogne Franche-Comté., nous sommes à la recherche d un(e) Délégué(e) territorial(e) ! Intéressé(e) ? Adressez-nous dès maintenant votre candidature (voir ci-dessous le détail de l offre) L’article Offre d emploi | Délégué(e) territoriale est apparu en premier sur Les Acteurs",
+      "categories": [
+        "À la une",
+        "Actualités"
+      ],
       "source_id": "acteurs-competence",
       "thematique": "legislatif",
-      "indicateur": "23",
       "niveau": "urgent",
       "date": "2026-07-30",
       "url": "https://lesacteursdelacompetence.fr/la-federation-recrute-2/",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
     },
     {
       "id": "digiformag__remplir-formations-inter-en-2026-5-leviers",
@@ -1038,19 +1872,30 @@
       "niveau": "important",
       "date": "2026-07-30",
       "url": "https://www.digiformag.com/remplir-formations-inter-en-2026-5-leviers/",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
     },
     {
       "id": "acteurs-competence__conjoncture-economique-des-adherents-tendances-s1-2026",
       "titre": "Conjoncture économique des adhérents – Tendances S1 2026",
-      "resume": "Les Acteurs de la Compétence ont conduit une nouvelle enquête de conjoncture économique menée auprès de ses adhérents en juin dernier. \n\n\n\nLes résultats traduisent une dégradation sensible de la situation économique du ecteur au premier semestre 2026 :&nbsp;\n\n\n\n\nune activité globale encore orientée à la baisse cette année\n\n\n\ndes tensions sur l&#8217;emploi du secteur qui s&rsquo;intensifient\n\n\n\nun",
+      "resume": "Les Acteurs de la Compétence ont conduit une nouvelle enquête de conjoncture économique menée auprès de ses adhérents en juin dernier. Les résultats traduisent une dégradation sensible de la situation économique du ecteur au premier semestre 2026 : Cette enquête permet en outre de mesurer les dynamiques des différents segments d activité représentés dans notre fédération : formation, [ ] L’article",
+      "categories": [
+        "À la une",
+        "Actualités"
+      ],
       "source_id": "acteurs-competence",
       "thematique": "legislatif",
-      "indicateur": "23",
-      "niveau": "urgent",
+      "niveau": "important",
       "date": "2026-07-29",
       "url": "https://lesacteursdelacompetence.fr/conjoncture-economique-des-adherents-tendances-s1-2026/",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
     },
     {
       "id": "ministere-travail__le-ministere-du-travail-et-des-solidarites-se-mobilise-pour-aider-les-entreprises-et-proteger-leurs-s",
@@ -1061,18 +1906,49 @@
       "niveau": "info",
       "date": "2026-07-28",
       "url": "https://travail-emploi.gouv.fr/le-ministere-du-travail-et-des-solidarites-se-mobilise-pour-aider-les-entreprises-et-proteger-leurs-salaries-dans-les-territoires-touches-par-les-incendies",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "santé-sécurité au travail (« incendie »)"
     },
     {
-      "id": "france-competences__la-grande-bibliotheque-de-france-competences-referencee-par-lademe-academie",
-      "titre": "Observation et évaluation Actualités 09.07.2026",
-      "resume": "",
-      "source_id": "france-competences",
-      "thematique": "qualiopi",
+      "id": "acteurs-competence__le-cahier-de-vacances-2026-est-disponible",
+      "titre": "[Jeu] Le Tour de la Compétence 2026 🚲",
+      "resume": "À l’approche de la pause estivale, Les Acteurs de la Compétence publie son traditionnel cahier de vacances, sur le thème du cyclisme ! Découvrez ainsi plusieurs jeux, tels que des mots-croisés et mêlés, un « Vrai ou Faux », un QCM ou encore une carte sur laquelle replacer 10 évènements de la fédération de ces derniers mois, [ ] L’article [Jeu] Le Tour de la Compétence 2026 🚲 est apparu en premier",
+      "categories": [
+        "À la une",
+        "Actualités"
+      ],
+      "source_id": "acteurs-competence",
+      "thematique": "legislatif",
       "niveau": "info",
-      "date": "2026-07-27",
-      "url": "https://www.francecompetences.fr/fiche/la-grande-bibliotheque-de-france-competences-referencee-par-lademe-academie/",
-      "lu": false
+      "date": "2026-07-24",
+      "url": "https://lesacteursdelacompetence.fr/le-cahier-de-vacances-2026-est-disponible/",
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
+    },
+    {
+      "id": "acteurs-competence__communique-cpf-les-acteurs-de-la-competence-appellent-a-une-concertation-sur-lavenir-du-dispositif",
+      "titre": "[Communiqué] CPF : Les Acteurs de la Compétence appellent à une concertation sur l’avenir du dispositif",
+      "resume": "L’annonce, par le ministre du Travail, d’une validation préalable de chaque mobilisation du Compte personnel de formation (CPF) modifierait en profondeur la logique du dispositif et porte gravement atteinte à un droit individuel. À l’heure où les transformations économiques renforcent les besoins en compétences, les Acteurs de la Compétence appellent à prendre le temps du [ ] L’article [Communiqué",
+      "categories": [
+        "À la une",
+        "Actualités"
+      ],
+      "source_id": "acteurs-competence",
+      "thematique": "legislatif",
+      "niveau": "info",
+      "date": "2026-07-23",
+      "url": "https://lesacteursdelacompetence.fr/communique-cpf-les-acteurs-de-la-competence-appellent-a-une-concertation-sur-lavenir-du-dispositif/",
+      "lu": false,
+      "indicateur": "23",
+      "pertinent": true,
+      "confiance": "forte",
+      "motifClassement": ""
     },
     {
       "id": "digiformag__et-si-lapprentissage-netait-pas-mort",
@@ -1083,7 +1959,11 @@
       "niveau": "urgent",
       "date": "2026-07-23",
       "url": "https://www.digiformag.com/et-si-lapprentissage-netait-pas-mort/",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "apprentissage et alternance — hors de notre offre (« apprentis »)"
     },
     {
       "id": "cnil__webinaire-pixels-de-suivi-fournisseurs-prestataires",
@@ -1094,7 +1974,11 @@
       "niveau": "info",
       "date": "2026-07-22",
       "url": "https://www.cnil.fr/fr/webinaire-pixels-de-suivi-fournisseurs-prestataires",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "RGPD hors de nos traitements (« pixels »)"
     },
     {
       "id": "cnil__faq-recommandation-pixels-courriers-electroniques",
@@ -1105,7 +1989,11 @@
       "niveau": "info",
       "date": "2026-07-22",
       "url": "https://www.cnil.fr/fr/faq-recommandation-pixels-courriers-electroniques",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "RGPD hors de nos traitements (« pixels »)"
     },
     {
       "id": "cnil__ordre-du-jour-de-la-seance-pleniere-du-21-juillet-2026",
@@ -1116,7 +2004,11 @@
       "niveau": "info",
       "date": "2026-07-21",
       "url": "https://www.cnil.fr/fr/ordre-du-jour-de-la-seance-pleniere-du-21-juillet-2026",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "vie interne de l'institution (« ordre du jour »)"
     },
     {
       "id": "cnil__cepd-base-juridique-interregulation",
@@ -1127,7 +2019,11 @@
       "niveau": "info",
       "date": "2026-07-20",
       "url": "https://www.cnil.fr/fr/cepd-base-juridique-interregulation",
-      "lu": false
+      "lu": false,
+      "indicateur": "23",
+      "pertinent": true,
+      "confiance": "faible",
+      "motifClassement": ""
     },
     {
       "id": "cnil__ia-agentique-cnil-cianum-note",
@@ -1138,67 +2034,229 @@
       "niveau": "info",
       "date": "2026-07-20",
       "url": "https://www.cnil.fr/fr/ia-agentique-cnil-cianum-note",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "signal trop faible pour tenir comme preuve de veille"
     },
     {
       "id": "centre-inffo__thales-devoile-les-coulisses-de-sa-transformation-centree-sur-les-competences",
       "titre": "Thales dévoile les coulisses de sa transformation centrée sur les compétences",
-      "resume": "",
+      "resume": "Un article de Nejiba Belkadi (EdTechActu)",
+      "categories": [
+        "Centre Inffo",
+        "Expresso",
+        "L'Expresso compétences"
+      ],
       "source_id": "centre-inffo",
       "thematique": "qualiopi",
-      "indicateur": "23",
       "niveau": "info",
       "date": "2026-07-17",
       "url": "https://www.centre-inffo.fr/site-centre-inffo/thales-devoile-les-coulisses-de-sa-transformation-centree-sur-les-competences",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "hors de nos secteurs d'intervention (« thales »)"
     },
     {
       "id": "centre-inffo__clap-de-fin-pour-le-quotidien-de-la-formation",
       "titre": "Clap de fin pour le Quotidien de la formation",
-      "resume": "",
+      "resume": "Le tribunal de commerce de Bobigny (Seine-Saint-Denis) a prononcé la liquidation de Centre Inffo, jeudi 16 juillet. Marquant ainsi la fin du Quotidien de la formation, né le 17 mai 2004. La rédaction du Quotidien adresse ses vifs remerciements à ses fidèles lecteurs, qui n’auront cessé de l’accompagner, au cours de ses 22 années d'existence.",
+      "categories": [
+        "Actualités",
+        "Articles 2026",
+        "Centre Inffo",
+        "Le Quotidien de la formation",
+        "Information sur la formation"
+      ],
       "source_id": "centre-inffo",
       "thematique": "qualiopi",
-      "indicateur": "23",
       "niveau": "info",
       "date": "2026-07-17",
       "url": "https://www.centre-inffo.fr/site-centre-inffo/actualites-centre-inffo/le-quotidien-de-la-formation-actualite-formation-professionnelle-apprentissage/actualites-2026/clap-de-fin-pour-le-quotidien-de-la-formation",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "événement ou communication institutionnelle (« clap de fin »)"
     },
     {
       "id": "centre-inffo__lintelligence-collective-avenir-de-lapprentissage-quels-defis-a-relever",
-      "titre": "L'intelligence collective, avenir de l'apprentissage... Quels défis à relever ?",
-      "resume": "",
+      "titre": "L'intelligence collective, avenir de l'apprentissage... Quels défis à relever ?",
+      "resume": "Face aux défis complexes de notre époque, l’apprentissage individuel montre ses limites. Une équipe internationale de chercheurs propose une nouvelle approche basée sur l’intelligence collective et les technologies collaboratives. État des lieux et perspectives.",
+      "categories": [
+        "Actualités",
+        "Articles 2026",
+        "Articles d'Inffo formation",
+        "Centre Inffo",
+        "Inffo Formation",
+        "Le Quotidien de la formation"
+      ],
       "source_id": "centre-inffo",
       "thematique": "qualiopi",
-      "indicateur": "23",
-      "niveau": "info",
+      "niveau": "important",
       "date": "2026-07-17",
       "url": "https://www.centre-inffo.fr/site-centre-inffo/actualites-centre-inffo/le-quotidien-de-la-formation-actualite-formation-professionnelle-apprentissage/actualites-2026/lintelligence-collective-avenir-de-lapprentissage-quels-defis-a-relever",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "apprentissage et alternance — hors de notre offre (« apprentis »)"
     },
     {
       "id": "centre-inffo__80-des-entreprises-nexploitent-pas-encore-pleinement-le-potentiel-de-la-formation-a-distance",
       "titre": "80 % des entreprises n'exploitent pas encore pleinement le potentiel de la formation à distance",
-      "resume": "",
+      "resume": "Publiée le 24 juin par Askalia et Edunao, une étude consacrée aux usages de la formation en ligne montre que le distanciel reste largement sous-utilisé dans les stratégies de développement des compétences. Si les entreprises l'adoptent souvent pour des raisons de coût ou d'organisation, elles en retirent surtout des bénéfices pédagogiques.",
+      "categories": [
+        "Actualités",
+        "Articles 2026",
+        "Centre Inffo",
+        "Le Quotidien de la formation",
+        "FOAD"
+      ],
       "source_id": "centre-inffo",
       "thematique": "qualiopi",
-      "indicateur": "23",
       "niveau": "urgent",
       "date": "2026-07-17",
       "url": "https://www.centre-inffo.fr/site-centre-inffo/80-des-entreprises-nexploitent-pas-encore-pleinement-le-potentiel-de-la-formation-a-distance",
-      "lu": false
+      "lu": false,
+      "indicateur": "25",
+      "pertinent": true,
+      "confiance": "forte",
+      "motifClassement": ""
     },
     {
       "id": "centre-inffo__emilie-ou-les-yeux-des-soldats-deployes-en-zone-de-guerre",
       "titre": "Émilie ou les yeux des soldats déployés en zone de guerre",
-      "resume": "",
+      "resume": "D’aussi loin que la maréchale des logis-cheffe Émilie se souvienne, l’armée a toujours habité ses souvenirs. « J’ai grandi près du CENZUB [[CENZUB : centre d'entraînement aux actions en zone urbaine.]], à Sissonne, dans l’Aisne. Les véhicules militaires passaient souvent devant chez moi. »",
+      "categories": [
+        "Actualités",
+        "Articles 2026",
+        "Centre Inffo",
+        "Le Quotidien de la formation",
+        "Itinéraire"
+      ],
       "source_id": "centre-inffo",
       "thematique": "qualiopi",
-      "indicateur": "23",
-      "niveau": "info",
+      "niveau": "urgent",
       "date": "2026-07-17",
       "url": "https://www.centre-inffo.fr/site-centre-inffo/actualites-centre-inffo/le-quotidien-de-la-formation-actualite-formation-professionnelle-apprentissage/actualites-2026/emilie-ou-les-yeux-des-soldats-deployes-en-zone-de-guerre",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "hors de nos secteurs d'intervention (« soldats »)"
+    },
+    {
+      "id": "centre-inffo__technologies-de-formation-2026-lia-progresse-mais-la-preuve-de-valeur-devient-le-vrai-enjeu",
+      "titre": "Technologies de formation 2026 : l'IA progresse, mais la preuve de valeur devient le vrai enjeu",
+      "resume": "Un article proposé par Ainoa",
+      "categories": [
+        "Centre Inffo",
+        "Expresso",
+        "L'Expresso compétences"
+      ],
+      "source_id": "centre-inffo",
+      "thematique": "qualiopi",
+      "niveau": "info",
+      "date": "2026-07-16",
+      "url": "https://www.centre-inffo.fr/site-centre-inffo/lexpresso/technologies-de-formation-2026-lia-progresse-mais-la-preuve-de-valeur-devient-le-vrai-enjeu",
+      "lu": false,
+      "indicateur": "25",
+      "pertinent": true,
+      "confiance": "moyenne",
+      "motifClassement": ""
+    },
+    {
+      "id": "centre-inffo__50-ans-des-fiches-pratiques-du-droit-de-la-formation-merci-pour-votre-confiance",
+      "titre": "50 ans des Fiches pratiques du droit de la formation : merci pour votre confiance",
+      "resume": "Cette année, les Fiches pratiques du droit de la formation célèbrent leurs 50 ans. Cet anniversaire est avant tout l'occasion de vous adresser un immense merci. Depuis un demi-siècle, vous êtes nombreux à nous faire confiance pour vous accompagner dans vos pratiques professionnelles, décrypter les évolutions du droit de la formation et vous apporter une [ ]",
+      "categories": [
+        "Actualités",
+        "Centre Inffo",
+        "Droit de la Formation"
+      ],
+      "source_id": "centre-inffo",
+      "thematique": "qualiopi",
+      "niveau": "info",
+      "date": "2026-07-16",
+      "url": "https://www.centre-inffo.fr/site-droit-formation/actualites-droit/50-ans-des-fiches-pratiques-du-droit-de-la-formation-merci-pour-votre-confiance",
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
+    },
+    {
+      "id": "centre-inffo__vos-dernieres-mises-a-jour-des-fiches-pratiques-du-droit-de-la-formation",
+      "titre": "Vos dernières mises à jour des Fiches pratiques du droit de la formation",
+      "resume": "Liste des Fiches pratiques mises à jour au 16 juillet 2026",
+      "categories": [
+        "Actualités",
+        "Alerte courriel",
+        "Droit de la Formation",
+        "Fiches pratiques du droit de la formation",
+        "Vos services Fiches pratiques",
+        "CFA"
+      ],
+      "source_id": "centre-inffo",
+      "thematique": "qualiopi",
+      "niveau": "info",
+      "date": "2026-07-16",
+      "url": "https://www.centre-inffo.fr/site-droit-formation/actualites-droit/vos-dernieres-mises-a-jour-des-fiches-pratiques-du-droit-de-la-formation",
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "apprentissage et alternance — hors de notre offre (« cfa »)"
+    },
+    {
+      "id": "centre-inffo__formateur-independant-lencadrement-pedagogique-ne-suffit-pas-a-caracteriser-lexistence-dun-contrat-de-trav",
+      "titre": "Formateur indépendant : l'encadrement pédagogique ne suffit pas à caractériser l'existence d'un contrat de travail",
+      "resume": "La Cour d’appel de Paris rappelle que les exigences d’organisation et de qualité inhérentes à l’activité d’un organisme de formation ne se confondent pas avec l’exercice d’un pouvoir de direction, de contrôle et de sanction caractéristique du lien de subordination.",
+      "categories": [
+        "Actualités",
+        "Centre Inffo",
+        "Décryptage",
+        "Droit de la Formation",
+        "Jurisprudence",
+        "Formateurs (indépendants)"
+      ],
+      "source_id": "centre-inffo",
+      "thematique": "qualiopi",
+      "niveau": "urgent",
+      "date": "2026-07-16",
+      "url": "https://www.centre-inffo.fr/site-droit-formation/actualites-droit/formateur-independant-lencadrement-pedagogique-ne-suffit-pas-a-caracteriser-lexistence-dun-contrat-de-travail",
+      "lu": false,
+      "indicateur": "23",
+      "pertinent": true,
+      "confiance": "forte",
+      "motifClassement": ""
+    },
+    {
+      "id": "centre-inffo__nouvelle-direction-de-lia-a-bercy-un-laboratoire-de-competences-transferables-a-toute-la-fonction-publique",
+      "titre": "Nouvelle Direction de l'IA à Bercy : un laboratoire de compétences transférables à toute la fonction publique",
+      "resume": "Le ministère de l’Économie et des Finances vient d’officialiser la création de sa Direction de l’intelligence artificielle et du numérique (DIAN). Le développement des compétences et l’accompagnement au changement sont sur sa feuille de route.",
+      "categories": [
+        "Actualités",
+        "Articles 2026",
+        "Centre Inffo",
+        "Le Quotidien de la formation",
+        "Etat",
+        "Intelligence artifcielle"
+      ],
+      "source_id": "centre-inffo",
+      "thematique": "qualiopi",
+      "niveau": "important",
+      "date": "2026-07-16",
+      "url": "https://www.centre-inffo.fr/site-centre-inffo/actualites-centre-inffo/le-quotidien-de-la-formation-actualite-formation-professionnelle-apprentissage/actualites-2026/nouvelle-direction-de-lia-a-bercy-un-laboratoire-de-competences-transferables-a-toute-la-fonction-publique",
+      "lu": false,
+      "indicateur": "25",
+      "pertinent": true,
+      "confiance": "forte",
+      "motifClassement": ""
     },
     {
       "id": "digiformag__handicap-en-formation-les-limites-de-lobligation-de-moyens",
@@ -1209,7 +2267,11 @@
       "niveau": "urgent",
       "date": "2026-07-16",
       "url": "https://www.digiformag.com/handicap-en-formation-les-limites-de-lobligation-de-moyens/",
-      "lu": false
+      "lu": false,
+      "indicateur": "23",
+      "pertinent": true,
+      "confiance": "forte",
+      "motifClassement": ""
     },
     {
       "id": "cnil__ordre-du-jour-de-la-seance-pleniere-du-16-juillet-2026",
@@ -1220,7 +2282,11 @@
       "niveau": "info",
       "date": "2026-07-16",
       "url": "https://www.cnil.fr/fr/ordre-du-jour-de-la-seance-pleniere-du-16-juillet-2026",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "vie interne de l'institution (« ordre du jour »)"
     },
     {
       "id": "france-competences__decisions-denregistrement-aux-repertoires-nationaux-mai-2026",
@@ -1231,7 +2297,11 @@
       "niveau": "info",
       "date": "2026-07-13",
       "url": "https://www.francecompetences.fr/fiche/decisions-denregistrement-aux-repertoires-nationaux-mai-2026/",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "offre certifiante RNCP — nous ne sommes pas certificateur (« repertoires nationaux »)"
     },
     {
       "id": "centre-inffo__la-formation-ne-suffit-pas-a-garantir-une-reconversion-des-femmes-sorties-de-lemploi-dans-lunivers-du-nume",
@@ -1242,7 +2312,11 @@
       "niveau": "urgent",
       "date": "2026-07-13",
       "url": "https://www.centre-inffo.fr/site-centre-inffo/la-formation-ne-suffit-pas-a-garantir-une-reconversion-des-femmes-sorties-de-lemploi-dans-lunivers-du-numerique",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "signal trop faible pour tenir comme preuve de veille"
     },
     {
       "id": "centre-inffo__les-injonctions-a-la-reconversion-professionnelles-sont-fortes-mais-les-moyens-pour-y-parvenir-sont-insuff",
@@ -1253,7 +2327,11 @@
       "niveau": "info",
       "date": "2026-07-13",
       "url": "https://www.centre-inffo.fr/site-centre-inffo/actualites-centre-inffo/le-quotidien-de-la-formation-actualite-formation-professionnelle-apprentissage/actualites-2026/les-injonctions-a-la-reconversion-professionnelles-sont-fortes-mais-les-moyens-pour-y-parvenir-sont-insuffisants",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
     },
     {
       "id": "centre-inffo__france-experimentation-vient-denregistrer-son-500%e1%b5%89-dossier",
@@ -1264,7 +2342,11 @@
       "niveau": "info",
       "date": "2026-07-13",
       "url": "https://www.centre-inffo.fr/site-centre-inffo/actualites-centre-inffo/le-quotidien-de-la-formation-actualite-formation-professionnelle-apprentissage/actualites-2026/france-experimentation-vient-denregistrer-son-500%e1%b5%89-dossier",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
     },
     {
       "id": "centre-inffo__les-agents-publics-se-declarent-en-attente-de-formations-a-lia",
@@ -1275,7 +2357,11 @@
       "niveau": "info",
       "date": "2026-07-13",
       "url": "https://www.centre-inffo.fr/site-centre-inffo/actualites-centre-inffo/le-quotidien-de-la-formation-actualite-formation-professionnelle-apprentissage/actualites-2026/les-agents-publics-se-declarent-en-attente-de-formations-a-lia",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "insertion et publics éloignés de l'emploi — hors de notre offre (« agents publics »)"
     },
     {
       "id": "centre-inffo__richard-lainet-capitaine-penitentiaire",
@@ -1286,7 +2372,11 @@
       "niveau": "info",
       "date": "2026-07-12",
       "url": "https://www.centre-inffo.fr/site-centre-inffo/inffo-formation/articles-dinffo-formation/richard-lainet-capitaine-penitentiaire",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "hors de nos secteurs d'intervention (« penitentiaire »)"
     },
     {
       "id": "digiformag__centre-inffo-en-liquidation-judiciaire",
@@ -1297,7 +2387,11 @@
       "niveau": "info",
       "date": "2026-07-10",
       "url": "https://www.digiformag.com/centre-inffo-en-liquidation-judiciaire/",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
     },
     {
       "id": "cnil__revoir-le-webinaire-nouveau-teleservice-sante-et-recherche-ce-qui-change-pour-vos-demandes",
@@ -1308,7 +2402,11 @@
       "niveau": "info",
       "date": "2026-07-10",
       "url": "https://www.cnil.fr/fr/revoir-le-webinaire-nouveau-teleservice-sante-et-recherche-ce-qui-change-pour-vos-demandes",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
     },
     {
       "id": "ministere-travail__bilan-de-la-mesure-2025-de-la-representativite-des-organisations-syndicales-et-patronales",
@@ -1319,7 +2417,11 @@
       "niveau": "info",
       "date": "2026-07-09",
       "url": "https://travail-emploi.gouv.fr/bilan-de-la-mesure-2025-de-la-representativite-des-organisations-syndicales-et-patronales",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "droit social hors champ de la formation (« representativite »)"
     },
     {
       "id": "digiformag__formation-frugale-faire-mieux-avec-moins-et-parfois-beaucoup-mieux",
@@ -1330,7 +2432,11 @@
       "niveau": "urgent",
       "date": "2026-07-09",
       "url": "https://www.digiformag.com/formation-frugale-faire-mieux-avec-moins-et-parfois-beaucoup-mieux/",
-      "lu": false
+      "lu": false,
+      "indicateur": "25",
+      "pertinent": true,
+      "confiance": "faible",
+      "motifClassement": ""
     },
     {
       "id": "cnil__controle-de-lactivite-des-personnes-employees",
@@ -1341,7 +2447,11 @@
       "niveau": "important",
       "date": "2026-07-09",
       "url": "https://www.cnil.fr/fr/controle-de-lactivite-des-personnes-employees",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
     },
     {
       "id": "cnil__cepd-ia-generative-chaines-blocs",
@@ -1352,7 +2462,30 @@
       "niveau": "info",
       "date": "2026-07-09",
       "url": "https://www.cnil.fr/fr/cepd-ia-generative-chaines-blocs",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "RGPD hors de nos traitements (« moissonnage »)"
+    },
+    {
+      "id": "acteurs-competence__rencontre-avec-la-ministre-sabrina-roubache-un-dialogue-francune-ecoute-reelle-mais-une-vigilance-in",
+      "titre": "Rencontre avec la ministre Sabrina Roubache : un dialogue franc,une écoute réelle, mais une vigilance intacte",
+      "resume": "Le 8 juillet 2026, Les Acteurs de la Compétence ont été reçus par Sabrina Roubache, ministre chargée de l Enseignement et de la Formation professionnels et de l Apprentissage, afin d échanger sur la situation de la formation professionnelle et, plus largement, sur les politiques publiques de développement des compétences. Nous tenons à saluer la qualité de cette rencontre. [ ] L’article Rencontre ",
+      "categories": [
+        "À la une",
+        "Actualités"
+      ],
+      "source_id": "acteurs-competence",
+      "thematique": "legislatif",
+      "niveau": "info",
+      "date": "2026-07-08",
+      "url": "https://lesacteursdelacompetence.fr/rencontre-avec-la-ministre-sabrina-roubache-un-dialogue-francune-ecoute-reelle-mais-une-vigilance-intacte/",
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
     },
     {
       "id": "agefiph__le-cnc-lagefiph-et-ladami-devoilent-les-23-laureats-de",
@@ -1360,11 +2493,14 @@
       "resume": "",
       "source_id": "agefiph",
       "thematique": "opco",
-      "indicateur": "23",
+      "indicateur": "",
       "niveau": "info",
       "date": "2026-07-08",
       "url": "https://www.agefiph.fr/espace-presse/tous-les-documents-presse/le-cnc-lagefiph-et-ladami-devoilent-les-23-laureats-de",
-      "lu": false
+      "lu": false,
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "événement ou communication institutionnelle (« laureats »)"
     },
     {
       "id": "ministere-travail__fortes-chaleurs-mesures-de-prevention-et-actions-de-linspection-du-travail",
@@ -1375,7 +2511,11 @@
       "niveau": "info",
       "date": "2026-07-08",
       "url": "https://travail-emploi.gouv.fr/fortes-chaleurs-mesures-de-prevention-et-actions-de-linspection-du-travail",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "santé-sécurité au travail (« fortes chaleurs »)"
     },
     {
       "id": "cnil__geolocalisation-applications-mobiles-quelles-regles",
@@ -1386,7 +2526,11 @@
       "niveau": "info",
       "date": "2026-07-07",
       "url": "https://www.cnil.fr/fr/geolocalisation-applications-mobiles-quelles-regles",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "RGPD hors de nos traitements (« geolocalisation »)"
     },
     {
       "id": "cnil__geolocalisation-applications-mobiles-proteger-vos-donnees",
@@ -1397,7 +2541,11 @@
       "niveau": "info",
       "date": "2026-07-07",
       "url": "https://www.cnil.fr/fr/geolocalisation-applications-mobiles-proteger-vos-donnees",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "RGPD hors de nos traitements (« geolocalisation »)"
     },
     {
       "id": "digiformag__passeport-de-prevention-limport-de-masse-arrive-enfin",
@@ -1408,7 +2556,11 @@
       "niveau": "urgent",
       "date": "2026-07-06",
       "url": "https://www.digiformag.com/passeport-de-prevention-limport-de-masse-arrive-enfin/",
-      "lu": false
+      "lu": false,
+      "indicateur": "23",
+      "pertinent": true,
+      "confiance": "moyenne",
+      "motifClassement": ""
     },
     {
       "id": "france-competences__certification-professionnelle-les-fondamentaux-et-les-enjeux-de-la-procedure-denregistrement-webinai",
@@ -1419,7 +2571,11 @@
       "niveau": "info",
       "date": "2026-07-06",
       "url": "https://www.francecompetences.fr/fiche/certification-professionnelle-les-fondamentaux-et-les-enjeux-de-la-procedure-denregistrement-webinaire-n2/",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "offre certifiante RNCP — nous ne sommes pas certificateur (« ingenierie de certification »)"
     },
     {
       "id": "france-competences__certification-professionnelle-comment-se-preparer-aux-evolutions-du-decret-2025-500-du-6-juin-2025",
@@ -1430,7 +2586,11 @@
       "niveau": "urgent",
       "date": "2026-07-06",
       "url": "https://www.francecompetences.fr/fiche/certification-professionnelle-comment-se-preparer-aux-evolutions-du-decret-2025-500-du-6-juin-2025/",
-      "lu": false
+      "lu": false,
+      "indicateur": "23",
+      "pertinent": true,
+      "confiance": "moyenne",
+      "motifClassement": ""
     },
     {
       "id": "france-competences__cartographie-des-metiers-un-outil-cle-au-service-de-lemploi-et-des-parcours",
@@ -1441,7 +2601,11 @@
       "niveau": "urgent",
       "date": "2026-07-06",
       "url": "https://www.francecompetences.fr/fiche/cartographie-des-metiers-un-outil-cle-au-service-de-lemploi-et-des-parcours/",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
     },
     {
       "id": "centre-inffo__signature-du-cprdfop-2025-2030la-reunion",
@@ -1452,7 +2616,11 @@
       "niveau": "info",
       "date": "2026-07-06",
       "url": "https://www.centre-inffo.fr/site-regions-formation/actualites-regions/signature-du-cprdfop-2025-2030la-reunion",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "apprentissage et alternance — hors de notre offre (« cprdfop »)"
     },
     {
       "id": "centre-inffo__rupture-irreguliere-dun-contrat-dapprentissage-le-defaut-de-notification-a-lopco-prive-la-rupture-de-tout-",
@@ -1463,7 +2631,11 @@
       "niveau": "info",
       "date": "2026-07-06",
       "url": "https://www.centre-inffo.fr/site-centre-inffo/rupture-irreguliere-dun-contrat-dapprentissage-le-defaut-de-notification-a-lopco-prive-la-rupture-de-tout-effet",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "apprentissage et alternance — hors de notre offre (« apprentis »)"
     },
     {
       "id": "centre-inffo__comment-parler-du-travail-pour-lameliorer-le-role-cle-des-manageurs",
@@ -1474,7 +2646,11 @@
       "niveau": "info",
       "date": "2026-07-06",
       "url": "https://www.centre-inffo.fr/site-centre-inffo/comment-parler-du-travail-pour-lameliorer-le-role-cle-des-manageurs",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
     },
     {
       "id": "centre-inffo__les-echanges-de-donnees-entre-entites-controleuses-intensifies",
@@ -1485,7 +2661,11 @@
       "niveau": "important",
       "date": "2026-07-06",
       "url": "https://www.centre-inffo.fr/site-droit-formation/actualites-droit/les-echanges-de-donnees-entre-entites-controleuses-intensifies",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
     },
     {
       "id": "centre-inffo__transilien-sncf-voyageurs-mise-sur-lalternance-pour-recruter-600-postes-en-2026",
@@ -1496,7 +2676,11 @@
       "niveau": "info",
       "date": "2026-07-06",
       "url": "https://www.centre-inffo.fr/site-centre-inffo/actualites-centre-inffo/le-quotidien-de-la-formation-actualite-formation-professionnelle-apprentissage/actualites-2026/transilien-sncf-voyageurs-mise-sur-lalternance-pour-recruter-600-postes-en-2026",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "apprentissage et alternance — hors de notre offre (« alternance »)"
     },
     {
       "id": "cnil__23-nouvelles-sanctions-simplifiees",
@@ -1507,7 +2691,11 @@
       "niveau": "urgent",
       "date": "2026-07-06",
       "url": "https://www.cnil.fr/fr/23-nouvelles-sanctions-simplifiees",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
     },
     {
       "id": "agefiph__controle-et-taxation-forfaitaire",
@@ -1518,7 +2706,11 @@
       "niveau": "important",
       "date": "2026-07-03",
       "url": "https://www.agefiph.fr/centre-aide/controle-et-taxation-forfaitaire",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
     },
     {
       "id": "ministere-travail__traite-des-etres-humains-trois-condamnations-penales-confirmees-en-appel",
@@ -1529,7 +2721,11 @@
       "niveau": "info",
       "date": "2026-07-03",
       "url": "https://travail-emploi.gouv.fr/traite-des-etres-humains-trois-condamnations-penales-confirmees-en-appel",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "santé-sécurité au travail (« traite des etres humains »)"
     },
     {
       "id": "cnil__enquete-dpo-ia",
@@ -1540,7 +2736,11 @@
       "niveau": "info",
       "date": "2026-07-03",
       "url": "https://www.cnil.fr/fr/enquete-dpo-ia",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
     },
     {
       "id": "digiformag__of-connect-change-de-nom",
@@ -1551,7 +2751,11 @@
       "niveau": "urgent",
       "date": "2026-07-02",
       "url": "https://www.digiformag.com/of-connect-change-de-nom/",
-      "lu": false
+      "lu": false,
+      "indicateur": "23",
+      "pertinent": true,
+      "confiance": "faible",
+      "motifClassement": ""
     },
     {
       "id": "cnil__ordre-du-jour-de-la-seance-pleniere-du-2-juillet-2026",
@@ -1562,7 +2766,11 @@
       "niveau": "info",
       "date": "2026-07-02",
       "url": "https://www.cnil.fr/fr/ordre-du-jour-de-la-seance-pleniere-du-2-juillet-2026",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "vie interne de l'institution (« ordre du jour »)"
     },
     {
       "id": "cnil__jeux-argent-hasard-application-rgpd",
@@ -1573,7 +2781,30 @@
       "niveau": "info",
       "date": "2026-07-02",
       "url": "https://www.cnil.fr/fr/jeux-argent-hasard-application-rgpd",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "RGPD hors de nos traitements (« jeux d'argent »)"
+    },
+    {
+      "id": "acteurs-competence__infographie-le-passeport-de-prevention",
+      "titre": "[Infographie] le Passeport de prévention",
+      "resume": "Dans le cadre du déploiement du Passeport de prévention, la fédération publie une infographie détaillant les points essentiels à comprendre et retenir concernant cet outil. Pour rappel, Le Passeport de prévention est un service numérique qui met en relation les travailleurs, les employeurs et les organismes de formation afin d’assurer la traçabilité des formations en [ ] L’article [Infographie] le",
+      "categories": [
+        "À la une",
+        "Actualités"
+      ],
+      "source_id": "acteurs-competence",
+      "thematique": "legislatif",
+      "niveau": "urgent",
+      "date": "2026-07-01",
+      "url": "https://lesacteursdelacompetence.fr/infographie-le-passeport-de-prevention/",
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "signal trop faible pour tenir comme preuve de veille"
     },
     {
       "id": "ministere-travail__conclusions-de-talents-de-france",
@@ -1584,7 +2815,11 @@
       "niveau": "info",
       "date": "2026-06-30",
       "url": "https://travail-emploi.gouv.fr/conclusions-de-talents-de-france",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
     },
     {
       "id": "ministere-travail__evaluation-du-programme-inclusion-par-le-travail-independant-donnees-personnelles",
@@ -1595,7 +2830,11 @@
       "niveau": "info",
       "date": "2026-06-30",
       "url": "https://travail-emploi.gouv.fr/evaluation-du-programme-inclusion-par-le-travail-independant-donnees-personnelles",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
     },
     {
       "id": "digiformag__formation-professionnelle-les-documents-indispensables-avant-pendant-et-apres-chaque-action-de-formation",
@@ -1606,7 +2845,11 @@
       "niveau": "urgent",
       "date": "2026-06-30",
       "url": "https://www.digiformag.com/formation-professionnelle-les-documents-indispensables-avant-pendant-et-apres-chaque-action-de-formation/",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
     },
     {
       "id": "cnil__vehicules-connectes-utilisation-de-vos-donnees",
@@ -1617,7 +2860,30 @@
       "niveau": "info",
       "date": "2026-06-30",
       "url": "https://www.cnil.fr/fr/vehicules-connectes-utilisation-de-vos-donnees",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "RGPD hors de nos traitements (« vehicules connectes »)"
+    },
+    {
+      "id": "acteurs-competence__vade-mecum-criteres-rse-dans-lachat-de-formation",
+      "titre": "[Vade-mecum] Critères RSE dans l’achat de formation",
+      "resume": "Découvrez le premier vade-mecum sur les critères RSE dans l’achat de formation ! Les critères RSE dans l’achat de formation ne sont plus un sujet de demain. Ils sont déjà là, dans les appels d’offres, les référencements et les demandes des acheteurs publics comme privés, et cette dynamique va continuer à se renforcer. Pour vous [ ] L’article [Vade-mecum] Critères RSE dans l achat de formation est ",
+      "categories": [
+        "À la une",
+        "Actualités"
+      ],
+      "source_id": "acteurs-competence",
+      "thematique": "legislatif",
+      "niveau": "info",
+      "date": "2026-06-29",
+      "url": "https://lesacteursdelacompetence.fr/vade-mecum-criteres-rse-dans-lachat-de-formation/",
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
     },
     {
       "id": "centre-inffo__lutte-contre-la-fraude-moyens-denquete-et-de-controle-de-letat-renforces-en-matiere-de-formation",
@@ -1628,7 +2894,11 @@
       "niveau": "important",
       "date": "2026-06-29",
       "url": "https://www.centre-inffo.fr/site-droit-formation/actualites-droit/lutte-contre-la-fraude-moyens-denquete-et-de-controle-de-letat-renforces-en-matiere-de-formation",
-      "lu": false
+      "lu": false,
+      "indicateur": "23",
+      "pertinent": true,
+      "confiance": "forte",
+      "motifClassement": ""
     },
     {
       "id": "centre-inffo__les-formations-organisees-a-distance-sous-controle-renforce",
@@ -1639,7 +2909,11 @@
       "niveau": "important",
       "date": "2026-06-29",
       "url": "https://www.centre-inffo.fr/site-droit-formation/actualites-droit/les-formations-organisees-a-distance-sous-controle-renforce",
-      "lu": false
+      "lu": false,
+      "indicateur": "23",
+      "pertinent": true,
+      "confiance": "faible",
+      "motifClassement": ""
     },
     {
       "id": "centre-inffo__formation-de-la-fonction-support-au-levier-strategique-de-transformation",
@@ -1650,7 +2924,11 @@
       "niveau": "info",
       "date": "2026-06-29",
       "url": "https://www.centre-inffo.fr/site-centre-inffo/formation-de-la-fonction-support-au-levier-strategique-de-transformation",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
     },
     {
       "id": "centre-inffo__objectif-ecologique-et-solidaire-comment-faire",
@@ -1661,7 +2939,11 @@
       "niveau": "info",
       "date": "2026-06-29",
       "url": "https://www.centre-inffo.fr/site-centre-inffo/actualites-centre-inffo/le-quotidien-de-la-formation-actualite-formation-professionnelle-apprentissage/actualites-2026/objectif-ecologique-et-solidaire-comment-faire",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
     },
     {
       "id": "centre-inffo__insertion-les-apprentis-resistent",
@@ -1672,7 +2954,11 @@
       "niveau": "info",
       "date": "2026-06-29",
       "url": "https://www.centre-inffo.fr/site-centre-inffo/actualites-centre-inffo/le-quotidien-de-la-formation-actualite-formation-professionnelle-apprentissage/actualites-2026/insertion-les-apprentis-resistent",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "apprentissage et alternance — hors de notre offre (« apprentis »)"
     },
     {
       "id": "ministere-travail__plan-emploi-futur-de-jeunes-ambassadeurs-engages-pour-linsertion-professionnelle",
@@ -1683,7 +2969,11 @@
       "niveau": "urgent",
       "date": "2026-06-26",
       "url": "https://travail-emploi.gouv.fr/plan-emploi-futur-de-jeunes-ambassadeurs-engages-pour-linsertion-professionnelle",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "insertion et publics éloignés de l'emploi — hors de notre offre (« insertion professionnelle »)"
     },
     {
       "id": "cnil__g7-technologies-protection-mineurs",
@@ -1694,7 +2984,27 @@
       "niveau": "info",
       "date": "2026-06-26",
       "url": "https://www.cnil.fr/fr/g7-technologies-protection-mineurs",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "RGPD hors de nos traitements (« mineurs »)"
+    },
+    {
+      "id": "ordre-experts-comptables__mallettecyber-pro-un-outil-pedagogique-pour-renforcer",
+      "titre": "MalletteCyber PRO : un outil pédagogique pour renforcer la cybersécurité des TPE-PME",
+      "resume": "MalletteCyber PRO : un outil pédagogique pour renforcer la cybersécurité des TPE-PME jeu 25/06/2026 - 14:27 --> Jeudi 25 juin 2026 - Composant Le 25 juin, Cybermalveillance.gouv.fr a lancé, en partenariat avec le CNOEC, la MalletteCyber PRO, un outil gratuit et clé en main pour aider les TPE-PME à mieux se protéger face aux cyberattaques. Conçue pour sensibiliser dirigeants et collaborateurs, cett",
+      "categories": [],
+      "source_id": "ordre-experts-comptables",
+      "thematique": "formation",
+      "niveau": "urgent",
+      "date": "2026-06-25",
+      "url": "https://www.experts-comptables.fr/sic-emissions-evenements-presse/sic-webzine/mallettecyber-pro-un-outil-pedagogique-pour-renforcer",
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "signal trop faible pour tenir comme preuve de veille"
     },
     {
       "id": "ministere-travail__circulaire-fie-2026-les-orientations-et-financements-prevus-pour-linsertion-professionnelle",
@@ -1705,7 +3015,11 @@
       "niveau": "important",
       "date": "2026-06-25",
       "url": "https://travail-emploi.gouv.fr/circulaire-fie-2026-les-orientations-et-financements-prevus-pour-linsertion-professionnelle",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "insertion et publics éloignés de l'emploi — hors de notre offre (« insertion professionnelle »)"
     },
     {
       "id": "ministere-travail__canicule-jean-pierre-farandou-ministre-du-travail-et-des-solidarites-reunit-les-partenaires-sociaux-p",
@@ -1716,7 +3030,11 @@
       "niveau": "info",
       "date": "2026-06-25",
       "url": "https://travail-emploi.gouv.fr/canicule-jean-pierre-farandou-ministre-du-travail-et-des-solidarites-reunit-les-partenaires-sociaux-pour-echanger-sur-les-dispositifs-actuels-et-les-changements-structurels-en-matiere-de-protection-des-travailleurs-face-aux-chaleurs-extremes",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "santé-sécurité au travail (« canicule »)"
     },
     {
       "id": "france-competences__decisions-denregistrement-aux-repertoires-nationaux-avril-2026",
@@ -1727,7 +3045,11 @@
       "niveau": "info",
       "date": "2026-06-25",
       "url": "https://www.francecompetences.fr/fiche/decisions-denregistrement-aux-repertoires-nationaux-avril-2026/",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "offre certifiante RNCP — nous ne sommes pas certificateur (« repertoires nationaux »)"
     },
     {
       "id": "centre-inffo__depenses-non-rattachables-a-lactivite-de-formation-le-juge-administratif-impose-la-preuve-dune-utilite-ped",
@@ -1738,7 +3060,11 @@
       "niveau": "info",
       "date": "2026-06-25",
       "url": "https://www.centre-inffo.fr/site-droit-formation/depenses-non-rattachables-a-lactivite-de-formation-le-juge-administratif-impose-la-preuve-dune-utilite-pedagogique-reelle",
-      "lu": false
+      "lu": false,
+      "indicateur": "23",
+      "pertinent": true,
+      "confiance": "moyenne",
+      "motifClassement": ""
     },
     {
       "id": "centre-inffo__lia-en-formation-alliee-de-linclusion-ou-fausse-bonne-amie",
@@ -1749,7 +3075,11 @@
       "niveau": "info",
       "date": "2026-06-25",
       "url": "https://www.centre-inffo.fr/site-centre-inffo/lia-en-formation-alliee-de-linclusion-ou-fausse-bonne-amie",
-      "lu": false
+      "lu": false,
+      "indicateur": "25",
+      "pertinent": true,
+      "confiance": "moyenne",
+      "motifClassement": ""
     },
     {
       "id": "centre-inffo__regulation-budgetaire-quels-impacts-sur-les-dispositifs-de-formation-club-du-droit-centre-inffo",
@@ -1760,7 +3090,11 @@
       "niveau": "info",
       "date": "2026-06-25",
       "url": "https://www.centre-inffo.fr/site-centre-inffo/actualites-centre-inffo/le-quotidien-de-la-formation-actualite-formation-professionnelle-apprentissage/actualites-2026/regulation-budgetaire-quels-impacts-sur-les-dispositifs-de-formation-club-du-droit-centre-inffo",
-      "lu": false
+      "lu": false,
+      "indicateur": "23",
+      "pertinent": true,
+      "confiance": "faible",
+      "motifClassement": ""
     },
     {
       "id": "centre-inffo__se-former-a-lia-pour-le-travail-social",
@@ -1771,7 +3105,11 @@
       "niveau": "info",
       "date": "2026-06-25",
       "url": "https://www.centre-inffo.fr/site-centre-inffo/actualites-centre-inffo/le-quotidien-de-la-formation-actualite-formation-professionnelle-apprentissage/actualites-2026/se-former-a-lia-pour-le-travail-social",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "insertion et publics éloignés de l'emploi — hors de notre offre (« travail social »)"
     },
     {
       "id": "cnil__prix-ehess-cnil-2026",
@@ -1782,7 +3120,11 @@
       "niveau": "info",
       "date": "2026-06-24",
       "url": "https://www.cnil.fr/fr/prix-ehess-cnil-2026",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "événement ou communication institutionnelle (« recoivent le »)"
     },
     {
       "id": "cnil__informations-publiques",
@@ -1793,7 +3135,11 @@
       "niveau": "info",
       "date": "2026-06-24",
       "url": "https://www.cnil.fr/fr/informations-publiques",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "vie interne de l'institution (« informations publiques »)"
     },
     {
       "id": "cnil__prix-inria-cnil-2026",
@@ -1804,7 +3150,11 @@
       "niveau": "info",
       "date": "2026-06-24",
       "url": "https://www.cnil.fr/fr/prix-inria-cnil-2026",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "événement ou communication institutionnelle (« remise du prix »)"
     },
     {
       "id": "cnil__vigilance-accompagnement-violation-de-donnees",
@@ -1815,7 +3165,11 @@
       "niveau": "info",
       "date": "2026-06-24",
       "url": "https://www.cnil.fr/fr/vigilance-accompagnement-violation-de-donnees",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
     },
     {
       "id": "centre-inffo__zoom-sur-les-dernieres-parutions-25-juin-2026",
@@ -1826,7 +3180,11 @@
       "niveau": "info",
       "date": "2026-06-24",
       "url": "https://www.centre-inffo.fr/site-centre-inffo/zoom-sur-les-dernieres-parutions-25-juin-2026",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
     },
     {
       "id": "cnil__elections-professionnelles-fonction-publique-vote-electronique",
@@ -1837,7 +3195,43 @@
       "niveau": "info",
       "date": "2026-06-23",
       "url": "https://www.cnil.fr/fr/elections-professionnelles-fonction-publique-vote-electronique",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "droit social hors champ de la formation (« elections professionnelles »)"
+    },
+    {
+      "id": "ordre-experts-comptables__dec-2026-plus-de-1-400-nouveaux-diplomes-celebres-au",
+      "titre": "DEC 2026 : plus de 1 400 nouveaux diplômés célébrés au Dôme de Paris",
+      "resume": "DEC 2026 : plus de 1 400 nouveaux diplômés célébrés au Dôme de Paris ven 19/06/2026 - 10:39 --> Vendredi 19 juin 2026 - Composant Le Conseil national organise, le vendredi 26 juin 2026 au Dôme de Paris, la cérémonie de remise du diplôme d’expertise comptable (DEC), pour les sessions de 2025 . Événement majeur pour la profession comptable , la cérémonie marquera l’entrée dans la profession de plus ",
+      "categories": [],
+      "source_id": "ordre-experts-comptables",
+      "thematique": "formation",
+      "niveau": "urgent",
+      "date": "2026-06-19",
+      "url": "https://www.experts-comptables.fr/sic-emissions-evenements-presse/sic-webzine/dec-2026-plus-de-1-400-nouveaux-diplomes-celebres-au",
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "événement ou communication institutionnelle (« celebres »)"
+    },
+    {
+      "id": "ordre-experts-comptables__assistez-aux-palmares-de-la-durabilite",
+      "titre": "Assistez aux Palmarès de la durabilité !",
+      "resume": "Assistez aux Palmarès de la durabilité ! ven 19/06/2026 - 09:51 --> Vendredi 19 juin 2026 - Composant Le 7 juillet prochain , le Conseil national de l’ordre des experts-comptables et la Compagnie nationale des commissaires aux comptes vous donnent rendez-vous à La Serre (Paris Expo Porte de Versailles) pour les Palmarès de la durabilité 2026 . Cet événement réunira deux temps forts de la professio",
+      "categories": [],
+      "source_id": "ordre-experts-comptables",
+      "thematique": "formation",
+      "niveau": "info",
+      "date": "2026-06-19",
+      "url": "https://www.experts-comptables.fr/sic-emissions-evenements-presse/sic-webzine/assistez-aux-palmares-de-la-durabilite",
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "événement ou communication institutionnelle (« palmares »)"
     },
     {
       "id": "ministere-travail__proteger-les-jeunes-stagiaires-accueillis-en-entreprise-pendant-lepisode-de-forte-chaleur",
@@ -1848,7 +3242,11 @@
       "niveau": "info",
       "date": "2026-06-19",
       "url": "https://travail-emploi.gouv.fr/proteger-les-jeunes-stagiaires-accueillis-en-entreprise-pendant-lepisode-de-forte-chaleur",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "santé-sécurité au travail (« forte chaleur »)"
     },
     {
       "id": "ministere-travail__le-ministere-du-travail-et-des-solidarites-lance-le-passeport-de-competences-service-public-numerique",
@@ -1859,7 +3257,11 @@
       "niveau": "info",
       "date": "2026-06-19",
       "url": "https://travail-emploi.gouv.fr/le-ministere-du-travail-et-des-solidarites-lance-le-passeport-de-competences-service-public-numerique-des-parcours-professionnels",
-      "lu": false
+      "lu": false,
+      "indicateur": "24",
+      "pertinent": true,
+      "confiance": "faible",
+      "motifClassement": ""
     },
     {
       "id": "ministere-travail__une-annee-daction-pour-la-jeunesse-sabrina-roubache-reunit-les-acteurs-de-la-voie-professionnelle-pou",
@@ -1870,7 +3272,11 @@
       "niveau": "info",
       "date": "2026-06-17",
       "url": "https://travail-emploi.gouv.fr/une-annee-daction-pour-la-jeunesse-sabrina-roubache-reunit-les-acteurs-de-la-voie-professionnelle-pour-presenter-sa-feuille-de-route",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "insertion et publics éloignés de l'emploi — hors de notre offre (« voie professionnelle »)"
     },
     {
       "id": "ministere-travail__les-etablissements-ou-services-daccompagnement-par-le-travail-esat",
@@ -1881,7 +3287,11 @@
       "niveau": "info",
       "date": "2026-06-12",
       "url": "https://travail-emploi.gouv.fr/les-etablissements-ou-services-daccompagnement-par-le-travail-esat",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "insertion et publics éloignés de l'emploi — hors de notre offre (« esat »)"
     },
     {
       "id": "cnil__communication-electronique-quelles-regles",
@@ -1892,7 +3302,11 @@
       "niveau": "important",
       "date": "2026-06-10",
       "url": "https://www.cnil.fr/fr/communication-electronique-quelles-regles",
-      "lu": true
+      "lu": true,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "RGPD hors de nos traitements (« prospects et clients »)"
     },
     {
       "id": "agefiph__lagefiph-engagee-pour-linnovation-hauteur-de-2-millions",
@@ -1903,7 +3317,11 @@
       "niveau": "info",
       "date": "2026-06-02",
       "url": "https://www.agefiph.fr/espace-presse/tous-les-documents-presse/lagefiph-engagee-pour-linnovation-hauteur-de-2-millions",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
     },
     {
       "id": "agefiph__les-partenaires-sociaux-acteurs-incontournables-pour-des",
@@ -1914,7 +3332,11 @@
       "niveau": "info",
       "date": "2026-05-26",
       "url": "https://www.agefiph.fr/espace-presse/tous-les-documents-presse/les-partenaires-sociaux-acteurs-incontournables-pour-des",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
     },
     {
       "id": "agefiph__30-ans-de-la-seeph-demystifier-simplifier-accompagner",
@@ -1925,7 +3347,11 @@
       "niveau": "urgent",
       "date": "2026-05-21",
       "url": "https://www.agefiph.fr/espace-presse/tous-les-documents-presse/30-ans-de-la-seeph-demystifier-simplifier-accompagner",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
     },
     {
       "id": "agefiph__doeth-alerte-aux-demarchages-frauduleux",
@@ -1933,11 +3359,14 @@
       "resume": "",
       "source_id": "agefiph",
       "thematique": "opco",
-      "indicateur": "23",
+      "indicateur": "",
       "niveau": "info",
       "date": "2026-03-30",
       "url": "https://www.agefiph.fr/actualites-handicap/doeth-alerte-aux-demarchages-frauduleux",
-      "lu": false
+      "lu": false,
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
     },
     {
       "id": "agefiph__service-dappui-specifique",
@@ -1948,7 +3377,11 @@
       "niveau": "info",
       "date": "2026-02-27",
       "url": "https://www.agefiph.fr/centre-aide/service-dappui-specifique",
-      "lu": false
+      "lu": false,
+      "indicateur": "",
+      "pertinent": false,
+      "confiance": "faible",
+      "motifClassement": "rien ne rattache cet article à la veille 23 / 24 / 25"
     }
   ]
 }
