@@ -15,7 +15,8 @@
 import { initializeApp, getApps, getApp } from 'firebase/app'
 import {
   getAuth, GoogleAuthProvider, signInWithPopup, signOut as fbSignOut,
-  onAuthStateChanged,
+  onAuthStateChanged, sendSignInLinkToEmail, isSignInWithEmailLink,
+  signInWithEmailLink,
 } from 'firebase/auth'
 import { getDatabase, ref, get, set, push, remove, onValue, update } from 'firebase/database'
 import {
@@ -93,6 +94,56 @@ export function authPrete() {
     })
   })
   return promesseAuthPrete
+}
+
+// ── Connexion par lien email (cabinets) ──────────────────────────────────────
+//
+// Destinée aux cabinets clients, qui n'ont pas de compte Pennylane. Le cabinet
+// saisit son adresse, reçoit un lien, clique : il est authentifié. La preuve
+// d'identité est l'accès à sa boîte mail.
+//
+// Pourquoi pas un code d'accès : vérifier un code dans le navigateur suppose de
+// pouvoir lire la valeur attendue, donc de l'exposer. Même impasse que pour un
+// token dans un site statique. Ici, aucun secret ne transite par le code.
+
+const CLE_EMAIL_EN_ATTENTE = 'pls_cabinet_email_en_attente'
+
+function urlRetourPortail() {
+  const base = window.location.origin + window.location.pathname
+  return `${base}#portail-cabinet`
+}
+
+export async function envoyerLienConnexion(email) {
+  const adresse = normaliser(email)
+  if (!adresse.includes('@')) throw new Error('Adresse email invalide.')
+  await sendSignInLinkToEmail(auth(), adresse, {
+    url: urlRetourPortail(),
+    handleCodeInApp: true,
+  })
+  // L'adresse doit être retrouvée au retour du lien, qui recharge la page.
+  try { localStorage.setItem(CLE_EMAIL_EN_ATTENTE, adresse) } catch {}
+  return adresse
+}
+
+export function arriveParLienConnexion() {
+  try { return isSignInWithEmailLink(auth(), window.location.href) } catch { return false }
+}
+
+// Termine la connexion au retour du lien. `emailSaisi` sert de repli quand le
+// lien est ouvert sur un autre appareil que celui de la demande.
+export async function terminerConnexionParLien(emailSaisi) {
+  const memorise = (() => {
+    try { return localStorage.getItem(CLE_EMAIL_EN_ATTENTE) } catch { return null }
+  })()
+  const adresse = normaliser(emailSaisi || memorise)
+  if (!adresse) {
+    const err = new Error('Confirme l\'adresse email utilisée pour demander le lien.')
+    err.emailRequis = true
+    throw err
+  }
+  const res = await signInWithEmailLink(auth(), adresse, window.location.href)
+  try { localStorage.removeItem(CLE_EMAIL_EN_ATTENTE) } catch {}
+  return res.user
 }
 
 // ── Liste des accès ──────────────────────────────────────────────────────────

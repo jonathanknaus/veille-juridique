@@ -63,6 +63,7 @@
 .thematique-rgpd       { background: #E9D8FD; color: #553C9A; }
 .thematique-opco       { background: #FEEBC8; color: #7B341E; }
 .thematique-legislatif { background: #E2E8F0; color: #2D3748; }
+.thematique-formation  { background: #DBEAFE; color: #1D4ED8; }
 
 .vf-empty {
   background: var(--blanc); border: 1px solid var(--border);

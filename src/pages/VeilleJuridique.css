@@ -257,12 +257,14 @@
 .thematique-rgpd       { background: #E9D8FD; color: #553C9A; }
 .thematique-opco       { background: #FEEBC8; color: #7B341E; }
 .thematique-legislatif { background: #E2E8F0; color: #2D3748; }
+.thematique-formation  { background: #DBEAFE; color: #1D4ED8; }
 
 /* Source dots (sidebar) */
 .thematique-qualiopi.source-dot   { background: var(--vert-fonce); }
 .thematique-rgpd.source-dot       { background: #805AD5; }
 .thematique-opco.source-dot       { background: #DD6B20; }
 .thematique-legislatif.source-dot { background: #718096; }
+.thematique-formation.source-dot  { background: #1D4ED8; }
 
 /* Filtre niveaux couleur */
 .filtre-niveau--urgent.actif    { background: #C53030 !important; }

@@ -104,7 +104,7 @@ export default function VeilleJuridique() {
         <div className="veille-head">
           <div>
             <h1 className="veille-title">Veille juridique</h1>
-            <p className="veille-subtitle">Qualiopi · RGPD · OPCO · Législatif — {nonLus} non lu{nonLus > 1 ? 's' : ''}</p>
+            <p className="veille-subtitle">Qualiopi · RGPD · OPCO · Législatif · Formation — {nonLus} non lu{nonLus > 1 ? 's' : ''}</p>
           </div>
           <button className="btn-sync" title="Synchroniser les sources">
             ↻ Synchroniser
