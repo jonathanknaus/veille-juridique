@@ -19,11 +19,20 @@ import './TableauDeBord.css'
 // rejet est affiché, et traiter un article l'en fait sortir aussitôt. C'est la
 // contrepartie du ciblage — on ne propose au traitement que ce qui est
 // pertinent, à condition de pouvoir vérifier ce qu'on a laissé de côté.
+// L'addition doit tomber juste : À traiter = 23 + 24 + 25 + À qualifier.
+//
+// Sans l'onglet « À qualifier », un article pertinent mais sans indicateur
+// n'apparaissait dans AUCUN onglet d'indicateur tout en étant compté dans
+// « À traiter » — on voyait 3 articles diffusés d'un côté et 2 de l'autre, sans
+// moyen de trouver le troisième. C'est le cas des traces d'avant l'arrivée du
+// champ `indicateur` : elles sont valables, mais ne prouvent encore rien pour un
+// indicateur donné. Ce sont elles que l'auditeur ne pourra pas compter.
 const CATEGORIES = [
-  { id: 'a-traiter', libelle: 'À traiter', aide: 'Les articles retenus comme pertinents, tous indicateurs confondus' },
+  { id: 'a-traiter', libelle: 'À traiter', aide: 'Tous les articles pertinents : 23 + 24 + 25 + à qualifier' },
   { id: '23', libelle: 'Légal',     aide: 'Indicateur 23 — veille légale et réglementaire' },
   { id: '24', libelle: 'Métiers',   aide: 'Indicateur 24 — compétences, métiers et emplois de nos secteurs d\'intervention' },
   { id: '25', libelle: 'Pédagogie', aide: 'Indicateur 25 — innovations pédagogiques et technologiques' },
+  { id: 'a-qualifier', libelle: 'À qualifier', aide: 'Pertinents mais rattachés à aucun indicateur : ils ne comptent dans aucun registre' },
   { id: 'hors', libelle: 'Hors périmètre', aide: 'Écartés par le classement, conservés et traitables : le motif est affiché' },
 ]
 
@@ -659,13 +668,14 @@ export default function TableauDeBord() {
   // Compteurs d'onglets. Les archives n'y figurent pas : elles ont leur propre
   // vue, et les compter ici gonflerait le travail restant.
   const comptes = useMemo(() => {
-    const c = { 'a-traiter': 0, 23: 0, 24: 0, 25: 0, hors: 0 }
+    const c = { 'a-traiter': 0, 23: 0, 24: 0, 25: 0, 'a-qualifier': 0, hors: 0 }
     for (const a of tousArticles) {
       if (archives.some(x => x.id === a.id)) continue
       const r = rangement(a, getTraitement(a.id))
       if (!r.pertinent) { c.hors += 1; continue }
       c['a-traiter'] += 1
       if (r.indicateur) c[r.indicateur] += 1
+      else c['a-qualifier'] += 1
     }
     return c
   }, [tousArticles, traitements, archives])
@@ -812,7 +822,15 @@ export default function TableauDeBord() {
                 <code> classement-veille.js</code>.
               </p>
             )}
-            {categorie !== 'hors' && comptes[categorie] === 0 && (
+            {categorie === 'a-qualifier' && comptes['a-qualifier'] > 0 && (
+              <p className="registre-aide">
+                Ces articles comptent comme pertinents mais ne sont rattachés à <strong>aucun
+                indicateur</strong> : ils n'apparaissent donc dans aucun registre, et un auditeur ne
+                peut pas les compter. Ce sont surtout les traces d'avant l'arrivée du champ « type de
+                veille ». Ouvre-les et choisis 23, 24 ou 25 — ils rejoindront l'onglet correspondant.
+              </p>
+            )}
+            {['23', '24', '25'].includes(categorie) && comptes[categorie] === 0 && (
               <p className="registre-aide">
                 Aucun article ici pour l'instant. Si cet onglet reste vide semaine après semaine,
                 ce ne sont pas les règles de tri qu'il faut revoir mais les <strong>sources</strong> :
@@ -912,6 +930,7 @@ export default function TableauDeBord() {
                   const r = rangement(article, trace)
                   if (categorie === 'hors') { if (r.pertinent) return false }
                   else if (!r.pertinent) return false
+                  else if (categorie === 'a-qualifier') { if (r.indicateur) return false }
                   else if (categorie !== 'a-traiter' && r.indicateur !== categorie) return false
                   if (filtreStatut === 'tous') return true
                   if (filtreStatut === 'en-attente') return !trace

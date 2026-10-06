@@ -280,10 +280,16 @@ const BRUIT = [
       'elections professionnelles', 'vote electronique'],
   },
   {
+    // « prospects et clients » a été retiré de cette liste le 2026-10-06 : la
+    // note CNIL sur les communications électroniques aux prospects avait été
+    // DIFFUSÉE à l'équipe par Sarah. Un rejet affirme « ce sujet ne nous
+    // concerne pas » — une diffusion prouve le contraire. L'article ne décroche
+    // pas pour autant de score, il part donc en « À qualifier », où un humain
+    // tranche. C'est le bon endroit pour ce que la machine ne sait pas.
     motif: 'RGPD hors de nos traitements',
     termes: ['vehicules connectes', 'jeux d\'argent', 'geolocalisation',
       'applications mobiles', 'refus de credit', 'article de presse',
-      'cybercriminalite', 'moissonnage', 'pixels', 'prospects et clients',
+      'cybercriminalite', 'moissonnage', 'pixels',
       'mineurs', 'cm2', 'eleves'],
   },
 ]
