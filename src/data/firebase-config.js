@@ -5,7 +5,7 @@
 //
 //  Cette configuration n'est PAS un secret : elle est conçue pour vivre
 //  dans du code public. La protection vient des règles de la base
-//  (voir database.rules.json), pas de cette clé.
+//  (voir REGLES-FIREBASE.md : elles vivent dans le dépôt PLS), pas de cette clé.
 // ============================================================
 
 export const FIREBASE_CONFIG = {
@@ -19,7 +19,7 @@ export const FIREBASE_CONFIG = {
 }
 
 // Administrateurs racine — doit rester identique au bloc ".write" de
-// database.rules.json. Deux rôles : amorçage quand la liste est vide, et
+// les règles de la base (voir REGLES-FIREBASE.md). Deux rôles : amorçage quand la liste est vide, et
 // garde-fou (ces comptes ne peuvent pas être privés d'accès depuis l'interface).
 export const ADMINS_RACINE = [
   'jonathan.knaus@pennylane.com',

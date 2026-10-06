@@ -4,7 +4,7 @@
 // GitHub. Ce schéma exigeait un token d'écriture dans le frontend — impossible
 // à garder secret sur un site statique public, où il était donc lisible par
 // tout le monde. La configuration Firebase, elle, est publique par conception :
-// la protection vient des règles (voir database.rules.json).
+// la protection vient des règles de la base (voir REGLES-FIREBASE.md).
 //
 // Bénéfices au passage : synchronisation temps réel entre PLS et l'outil de
 // veille (plus besoin de naviguer pour rafraîchir), et plus de fichier à

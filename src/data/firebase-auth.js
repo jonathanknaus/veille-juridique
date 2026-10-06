@@ -3,7 +3,7 @@
 // Deux responsabilités distinctes, à ne pas confondre :
 //   - Firebase Auth répond à « qui es-tu ? » et fournit une preuve vérifiable
 //     (jeton signé par Google, validé par les serveurs Google).
-//   - Les règles de la base (database.rules.json) répondent à « qu'as-tu le
+//   - Les règles de la base (voir REGLES-FIREBASE.md) répondent à « qu'as-tu le
 //     droit de faire ? ». C'est la paire qui sécurise, jamais l'une sans l'autre.
 //
 // ⚠️ Portée des permissions par module : elles pilotent l'INTERFACE (ce qui est
