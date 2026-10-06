@@ -66,6 +66,17 @@ export function getDateDerniereFetch() {
 }
 
 // ── Articles ajoutés manuellement ────────────────────────────────────────────
+//
+// Serveur d'abord, cache ensuite — même schéma que store-firebase.js : le
+// localStorage donne l'affichage instantané, la Realtime Database fait foi et
+// partage l'article entre les deux outils.
+//
+// Un article saisi à la main n'est pas un article de second rang : c'est par là
+// que passent Légifrance, la Caisse des Dépôts et le Padlet OPCO, qui n'ont pas
+// de flux RSS. Les laisser dans un seul navigateur, c'était accepter de les
+// perdre.
+import { ecouterArticlesManuels as ecouterServeur, enregistrerArticleManuel, supprimerArticleManuel } from './veille-storage.js'
+
 const MANUEL_KEY = 'vj_articles_manuels'
 
 export function getArticlesManuels() {
@@ -76,10 +87,36 @@ export function getArticlesManuels() {
   }
 }
 
-export function saveArticleManuel(article) {
-  const list = getArticlesManuels()
-  const id = `manuel_${Date.now()}`
-  const nouveau = {
+function ecrireCacheManuels(liste) {
+  localStorage.setItem(MANUEL_KEY, JSON.stringify(liste))
+  return liste
+}
+
+// Un article qui n'est encore que sur ce poste. Deux cas : il a été saisi avant
+// le passage au serveur (2026-10-06), donc il n'a pas d'`ajouteAt` ; ou sa
+// publication a échoué et on l'a marqué. La distinction compte : sans elle, un
+// article supprimé par quelqu'un d'autre réapparaîtrait comme « local » à chaque
+// instantané, et ressusciterait indéfiniment.
+export function estArticleLocal(article) {
+  return !article?.ajouteAt || article?._aPublier === true
+}
+
+// Fusionne l'instantané du serveur avec ce qui n'y est pas encore monté.
+export function fusionnerArticlesManuels(duServeur) {
+  const surLeServeur = new Set((duServeur || []).map(a => a.id))
+  const locaux = getArticlesManuels().filter(a => estArticleLocal(a) && !surLeServeur.has(a.id))
+  return ecrireCacheManuels([...(duServeur || []), ...locaux])
+}
+
+export function ecouterArticlesManuels(callback, onErreur) {
+  return ecouterServeur(
+    duServeur => callback(fusionnerArticlesManuels(duServeur)),
+    onErreur,
+  )
+}
+
+function construireManuel(article, emailAuteur, id = `manuel_${Date.now()}`) {
+  return {
     id,
     titre: article.titre,
     resume: article.resume || '',
@@ -89,13 +126,48 @@ export function saveArticleManuel(article) {
     niveau: article.niveau,
     date: article.date,
     url: article.url,
+    ajoutePar: article.ajoutePar || emailAuteur || '',
+    ajouteAt: article.ajouteAt || new Date().toISOString(),
     manuel: true,
   }
-  localStorage.setItem(MANUEL_KEY, JSON.stringify([...list, nouveau]))
-  return nouveau
 }
 
-export function deleteArticleManuel(id) {
-  const updated = getArticlesManuels().filter(a => a.id !== id)
-  localStorage.setItem(MANUEL_KEY, JSON.stringify(updated))
+// Écrit le cache d'abord pour que l'article s'affiche tout de suite, puis monte
+// au serveur. Si le serveur refuse, l'article n'est pas perdu : il reste en
+// cache, marqué comme à publier, et la bannière propose de réessayer.
+export async function saveArticleManuel(article, emailAuteur) {
+  const nouveau = construireManuel(article, emailAuteur)
+  ecrireCacheManuels([...getArticlesManuels(), nouveau])
+  try {
+    await enregistrerArticleManuel(nouveau.id, nouveau)
+    return nouveau
+  } catch (err) {
+    const marque = { ...nouveau, _aPublier: true }
+    ecrireCacheManuels(getArticlesManuels().map(a => a.id === nouveau.id ? marque : a))
+    throw err
+  }
+}
+
+export async function deleteArticleManuel(id) {
+  ecrireCacheManuels(getArticlesManuels().filter(a => a.id !== id))
+  await supprimerArticleManuel(id)
+}
+
+// Monte au serveur les articles restés locaux. Rend le détail, pour pouvoir dire
+// ce qui est passé et ce qui a échoué plutôt qu'un simple « erreur ».
+export async function publierArticlesLocaux(emailAuteur) {
+  const locaux = getArticlesManuels().filter(estArticleLocal)
+  const echecs = []
+  for (const a of locaux) {
+    const complet = construireManuel(a, emailAuteur, a.id)
+    try {
+      await enregistrerArticleManuel(complet.id, complet)
+      // `complet` est reconstruit sans `_aPublier` : le remplacer suffit à lever
+      // la marque.
+      ecrireCacheManuels(getArticlesManuels().map(x => x.id === complet.id ? complet : x))
+    } catch (err) {
+      echecs.push({ titre: a.titre, message: err?.message || String(err) })
+    }
+  }
+  return { publies: locaux.length - echecs.length, echecs }
 }

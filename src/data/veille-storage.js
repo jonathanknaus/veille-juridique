@@ -182,6 +182,85 @@ export async function desarchiverArticle(articleId) {
   await set(ref(baseDeDonnees(), `${CHEMIN_ARCHIVES}/${articleId}`), null)
 }
 
+// ── Articles ajoutés à la main ───────────────────────────────────────────────
+//
+// Ils vivaient dans le seul localStorage du navigateur : un article saisi par
+// Sarah n'existait que sur son poste, PLS ne le voyait pas, et un nettoyage de
+// navigateur l'effaçait. Or c'est par là que passent les sources sans flux RSS —
+// Légifrance, la Caisse des Dépôts, le Padlet OPCO — donc les pièces les plus
+// susceptibles de compter en audit.
+//
+// Depuis le 2026-10-06 ils vivent ici, le localStorage ne servant plus que de
+// cache d'affichage.
+
+const CHEMIN_MANUELS = 'veille/articles-manuels'
+
+// Mêmes précautions que pour les traces : les règles refusent tout champ
+// inconnu, on filtre donc avant d'envoyer. `id` n'en fait pas partie, c'est la
+// clé du nœud.
+const CHAMPS_MANUEL = [
+  'titre', 'resume', 'source_nom', 'url', 'date', 'thematique', 'niveau',
+  'ajoutePar', 'ajouteAt',
+]
+
+function chargeManuel(article) {
+  const sortie = {}
+  for (const champ of CHAMPS_MANUEL) {
+    const v = article[champ]
+    if (v === undefined || v === null || v === '') continue
+    sortie[champ] = String(v)
+  }
+  if (!sortie.titre || !sortie.url || !sortie.date) {
+    throw new Error('Article incomplet : titre, URL et date sont requis.')
+  }
+  return sortie
+}
+
+function manuelDepuisSnapshot(valeur) {
+  if (!valeur) return []
+  return Object.entries(valeur).map(([id, a]) => ({
+    id,
+    ...reparerProfond(a),
+    // Reposés à la lecture plutôt que stockés : ce sont des constantes, les
+    // écrire dans la base ne ferait que des champs à valider pour rien.
+    source_id: 'manuel',
+    manuel: true,
+  }))
+}
+
+export async function lireArticlesManuels() {
+  await authPrete()
+  const snap = await get(ref(baseDeDonnees(), CHEMIN_MANUELS))
+  return manuelDepuisSnapshot(snap.val())
+}
+
+export function ecouterArticlesManuels(callback, onErreur) {
+  let stop = null
+  let annule = false
+  authPrete().then(() => {
+    if (annule) return
+    stop = onValue(
+      ref(baseDeDonnees(), CHEMIN_MANUELS),
+      snap => callback(manuelDepuisSnapshot(snap.val())),
+      err => { if (onErreur) onErreur(err) },
+    )
+  })
+  return () => { annule = true; if (stop) stop() }
+}
+
+// Écrit un article à sa clé, sans toucher aux autres : deux personnes peuvent
+// en ajouter en même temps sans s'écraser.
+export async function enregistrerArticleManuel(id, article) {
+  await authPrete()
+  await set(ref(baseDeDonnees(), `${CHEMIN_MANUELS}/${id}`), chargeManuel(article))
+  return true
+}
+
+export async function supprimerArticleManuel(id) {
+  await authPrete()
+  await set(ref(baseDeDonnees(), `${CHEMIN_MANUELS}/${id}`), null)
+}
+
 export async function sauvegarderTraces(traces) {
   await authPrete()
   const map = {}

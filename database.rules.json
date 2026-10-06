@@ -131,6 +131,43 @@
             ".validate": false
           }
         }
+      },
+      "articles-manuels": {
+        ".read": "auth != null && auth.token.email != null && auth.token.email_verified === true && (auth.token.email.endsWith('@pennylane.com') || auth.token.email.endsWith('@pennylane-partners.com'))",
+        ".write": "auth != null && auth.token.email != null && auth.token.email_verified === true && (auth.token.email === 'jonathan.knaus@pennylane.com' || auth.token.email === 'sarah.briden@pennylane-partners.com')",
+        "$article": {
+          ".validate": "newData.hasChildren(['titre', 'url', 'date'])",
+          "titre": {
+            ".validate": "newData.isString() && newData.val().length < 500"
+          },
+          "resume": {
+            ".validate": "newData.isString() && newData.val().length < 1000"
+          },
+          "source_nom": {
+            ".validate": "newData.isString() && newData.val().length < 200"
+          },
+          "url": {
+            ".validate": "newData.isString() && newData.val().length < 1000"
+          },
+          "date": {
+            ".validate": "newData.isString() && newData.val().length < 40"
+          },
+          "thematique": {
+            ".validate": "newData.isString() && newData.val().length < 60"
+          },
+          "niveau": {
+            ".validate": "newData.val() === 'urgent' || newData.val() === 'important' || newData.val() === 'info'"
+          },
+          "ajoutePar": {
+            ".validate": "newData.isString() && newData.val().length < 200"
+          },
+          "ajouteAt": {
+            ".validate": "newData.isString() && newData.val().length < 40"
+          },
+          "$autre": {
+            ".validate": false
+          }
+        }
       }
     },
     "profils": {

@@ -1,6 +1,10 @@
 import { useState, useMemo, useEffect } from 'react'
 import { SOURCES, NIVEAUX } from '../data/veille'
-import { chargerArticles, getArticlesCache, getDateDerniereFetch, getArticlesManuels, saveArticleManuel, deleteArticleManuel } from '../data/articles-store'
+import { chargerArticles, getArticlesCache, getDateDerniereFetch, getArticlesManuels, saveArticleManuel, deleteArticleManuel, ecouterArticlesManuels, publierArticlesLocaux, estArticleLocal } from '../data/articles-store'
+// getCurrentUser était utilisé sans être importé : l'archivage échouait sur un
+// « getCurrentUser is not defined », avalé par le catch et affiché comme un
+// refus d'archivage.
+import { getCurrentUser } from '../data/auth'
 import { getTraitements, getTraitement, enregistrerTraitement, DECISIONS, INDICATEURS, INDICATEURS_IDS, exportRegistreCSV, exportRegistrePDF, filtrerParIndicateur, compterParIndicateur } from '../data/traitement'
 import { getFormateurs, addFormateur, updateFormateur, removeFormateur } from '../data/formateurs'
 import { RESPONSABLE } from '../data/formateurs'
@@ -459,7 +463,10 @@ export default function TableauDeBord() {
       () => {}, // registre inaccessible : on continue sur le cache local
     )
     const stopArchives = ecouterArchives(setArchives, () => {})
-    return () => { stop(); stopArchives() }
+    // Articles saisis à la main : en écoute aussi, pour que celui que Sarah
+    // ajoute apparaisse ici sans qu'elle ait à le redire.
+    const stopManuels = ecouterArticlesManuels(setArticlesManuels, () => {})
+    return () => { stop(); stopArchives(); stopManuels() }
   }, [])
 
   // Archive les articles non traités au-delà du seuil. Les traités en sont
@@ -495,15 +502,58 @@ export default function TableauDeBord() {
     }
   }
 
-  function handleSaveArticleManuel(form) {
-    saveArticleManuel(form)
+  async function handleSaveArticleManuel(form) {
+    try {
+      await saveArticleManuel(form, getCurrentUser()?.email)
+    } catch (err) {
+      alert(
+        `Article enregistré sur ce poste, mais pas envoyé à l'équipe : ${err?.message || err}\n\n`
+        + 'Il reste dans la liste, marqué « local ». Utilise « Publier » pour réessayer.'
+      )
+    }
     setArticlesManuels(getArticlesManuels())
   }
 
-  function handleDeleteArticleManuel(id) {
-    if (!confirm('Supprimer cet article ?')) return
-    deleteArticleManuel(id)
+  async function handleDeleteArticleManuel(id) {
+    if (!confirm('Supprimer cet article ? Il disparaîtra aussi pour l\'équipe.')) return
+    try {
+      await deleteArticleManuel(id)
+    } catch (err) {
+      alert(`Suppression refusée par le serveur : ${err?.message || err}`)
+    }
     setArticlesManuels(getArticlesManuels())
+  }
+
+  async function handlePublierLocaux() {
+    const { publies, echecs } = await publierArticlesLocaux(getCurrentUser()?.email)
+    setArticlesManuels(getArticlesManuels())
+    if (echecs.length === 0) {
+      alert(`${publies} article(s) publié(s) pour l'équipe ✓`)
+      return
+    }
+    alert(
+      `${publies} publié(s), ${echecs.length} refusé(s) :\n\n`
+      + echecs.map(e => `· ${e.titre} — ${e.message}`).join('\n')
+    )
+  }
+
+  async function handleSaveTraitement(data) {
+    enregistrerTraitement(data)
+    const updated = getTraitements()
+    setTraitements(updated)
+    setBanniereVisible(shouldWarnBackup(updated))
+    // Sauvegarde automatique sur GitHub à chaque modification
+    setSyncStatus('saving')
+    try {
+      await sauvegarderTraces(updated)
+      setLastBackup()
+      setBanniereVisible(false)
+      setSyncStatus('ok')
+      setTimeout(() => setSyncStatus(null), 3000)
+    } catch {
+      setSyncStatus('error')
+      setTimeout(() => setSyncStatus(null), 5000)
+    }
   }
 
   async function handleSaveTraitement(data) {
@@ -688,8 +738,30 @@ export default function TableauDeBord() {
           </div>
         )}
 
+        {/* Articles saisis à la main restés sur ce poste. Ils ne sont pas perdus,
+            mais l'équipe ne les voit pas — et ce sont souvent les sources sans
+            flux RSS, donc les plus utiles. */}
+        {(() => {
+          const locaux = articlesManuels.filter(estArticleLocal)
+          if (locaux.length === 0) return null
+          const pluriel = locaux.length > 1
+          return (
+            <div className="banniere-backup">
+              <span>
+                📍 {locaux.length} article{pluriel ? 's' : ''} ajouté{pluriel ? 's' : ''} à la main
+                n'existe{pluriel ? 'nt' : ''} que sur ce poste : l'équipe ne {pluriel ? 'les' : 'le'} voit pas,
+                et un nettoyage du navigateur {pluriel ? 'les' : 'l\''}effacerait.
+              </span>
+              <button className="btn-anciens" onClick={handlePublierLocaux}>
+                Publier pour l'équipe
+              </button>
+            </div>
+          )
+        })()}
+
         {/* Statistiques */}
         <div className="stats-grid">
+
           <div className="stat-card"><span className="stat-val">{stats.total}</span><span className="stat-lbl">Articles reçus</span></div>
           <div className="stat-card stat-ok"><span className="stat-val">{stats.traites}</span><span className="stat-lbl">Traités</span></div>
           <div className="stat-card stat-vert"><span className="stat-val">{stats.diffuses}</span><span className="stat-lbl">Diffusés</span></div>
@@ -856,7 +928,16 @@ export default function TableauDeBord() {
                     <tr key={article.id} className={`${trace ? 'ligne-traitee' : ''} ${article.manuel ? 'ligne-manuelle' : ''}`}>
                       <td className="td-source">
                         {nomSource}
-                        {article.manuel && <span className="badge-manuel">Manuel</span>}
+                        {article.manuel && (
+                          <span
+                            className="badge-manuel"
+                            title={estArticleLocal(article)
+                              ? 'Saisi à la main et encore présent sur ce seul poste — à publier pour l\'équipe.'
+                              : `Saisi à la main${article.ajoutePar ? ` par ${article.ajoutePar}` : ''}, partagé avec l'équipe.`}
+                          >
+                            {estArticleLocal(article) ? 'Manuel · local' : 'Manuel'}
+                          </span>
+                        )}
                       </td>
                       <td className="td-date">{new Date(article.date).toLocaleDateString('fr-FR')}</td>
                       <td className="td-titre"><a href={lien} target="_blank" rel="noopener noreferrer" className="lien-titre">{article.titre}</a></td>
