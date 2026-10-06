@@ -668,14 +668,19 @@ export default function TableauDeBord() {
   // Compteurs d'onglets. Les archives n'y figurent pas : elles ont leur propre
   // vue, et les compter ici gonflerait le travail restant.
   const comptes = useMemo(() => {
-    const c = { 'a-traiter': 0, 23: 0, 24: 0, 25: 0, 'a-qualifier': 0, hors: 0 }
+    const c = { 'a-traiter': 0, 23: 0, 24: 0, 25: 0, 'a-qualifier': 0, hors: 0, aQualifierClos: 0 }
     for (const a of tousArticles) {
       if (archives.some(x => x.id === a.id)) continue
-      const r = rangement(a, getTraitement(a.id))
+      const trace = getTraitement(a.id)
+      const r = rangement(a, trace)
       if (!r.pertinent) { c.hors += 1; continue }
       c['a-traiter'] += 1
-      if (r.indicateur) c[r.indicateur] += 1
-      else c['a-qualifier'] += 1
+      if (r.indicateur) { c[r.indicateur] += 1; continue }
+      c['a-qualifier'] += 1
+      // Une décision « archivé » est un dossier clos : la qualifier sert encore
+      // au registre, mais ce n'est pas du travail en attente. On la compte à part
+      // pour ne pas gonfler ce qui reste vraiment à faire.
+      if (trace?.decision === 'archiver') c.aQualifierClos += 1
     }
     return c
   }, [tousArticles, traitements, archives])
@@ -824,10 +829,16 @@ export default function TableauDeBord() {
             )}
             {categorie === 'a-qualifier' && comptes['a-qualifier'] > 0 && (
               <p className="registre-aide">
-                Ces articles comptent comme pertinents mais ne sont rattachés à <strong>aucun
-                indicateur</strong> : ils n'apparaissent donc dans aucun registre, et un auditeur ne
-                peut pas les compter. Ce sont surtout les traces d'avant l'arrivée du champ « type de
-                veille ». Ouvre-les et choisis 23, 24 ou 25 — ils rejoindront l'onglet correspondant.
+                Rattachés à <strong>aucun indicateur</strong> : ils n'apparaissent dans aucun
+                registre, donc un auditeur ne peut pas les compter. Ouvre-les et choisis 23, 24 ou 25.
+                {comptes.aQualifierClos > 0 && (
+                  <>
+                    {' '}Sur les {comptes['a-qualifier']}, <strong>{comptes.aQualifierClos} sont
+                    déjà archivés</strong> — des dossiers clos, remis en bas de liste : les qualifier
+                    étoffe le registre et montre une veille continue, mais ça peut attendre.
+                    Commence par le haut, là où il y a une action à tracer.
+                  </>
+                )}
               </p>
             )}
             {['23', '24', '25'].includes(categorie) && comptes[categorie] === 0 && (
@@ -921,7 +932,17 @@ export default function TableauDeBord() {
                 </tr>
               </thead>
               <tbody>
-                {[...tousArticles].sort((a, b) => new Date(b.date) - new Date(a.date)).filter(article => {
+                {[...tousArticles].sort((a, b) => {
+                  // Dans « À qualifier », les dossiers clos passent en dernier :
+                  // 28 archivages ne doivent pas masquer le seul article diffusé
+                  // qui attend son indicateur.
+                  if (categorie === 'a-qualifier') {
+                    const clos = x => getTraitement(x.id)?.decision === 'archiver' ? 1 : 0
+                    const ecart = clos(a) - clos(b)
+                    if (ecart !== 0) return ecart
+                  }
+                  return new Date(b.date) - new Date(a.date)
+                }).filter(article => {
                   const trace = getTraitement(article.id)
                   // Un article archivé sort de la liste à traiter, sauf si l'on
                   // consulte justement les archives.
