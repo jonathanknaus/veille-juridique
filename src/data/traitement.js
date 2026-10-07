@@ -83,6 +83,7 @@ export function getTraitement(articleId) {
 export function enregistrerTraitement({
   articleId, articleTitre, articleSource, articleThematique, articleDate,
   decision, commentaire, destinataires, urlArticle, indicateur, impact,
+  mailPrepareLe,
 }) {
   const traitements = getTraitements().filter(t => t.articleId !== articleId)
   // Qui a réellement traité : l'adresse était auparavant codée en dur sur
@@ -106,10 +107,48 @@ export function enregistrerTraitement({
   // 'indicateur', on ne l'écrit donc que s'il est qualifié.
   if (INDICATEURS_IDS.includes(String(indicateur))) trace.indicateur = String(indicateur)
   if (impact) trace.impact = impact
+  // « Préparé », pas « envoyé » : l'outil ouvre le client de messagerie, il ne
+  // voit pas si le bouton Envoyer a été cliqué. Écrire « envoyé » dans un
+  // registre de preuve serait affirmer ce qu'on n'a pas constaté.
+  if (mailPrepareLe) trace.mailPrepareLe = mailPrepareLe
 
   const updated = [...traitements, trace]
   localStorage.setItem(STORAGE_KEY, JSON.stringify(updated))
   return trace
+}
+
+// Lien `mailto:` pré-rempli pour diffuser un article à l'équipe.
+//
+// L'outil n'envoie pas lui-même : le site est statique et son bundle est public,
+// y mettre un identifiant SMTP reviendrait à le publier — c'est exactement ce qui
+// est arrivé au token GitHub inliné par Vite. Le mail part donc de la boîte de la
+// personne, avec sa signature, et elle le relit avant d'appuyer sur Envoyer.
+//
+// Les corps longs sont tronqués : au-delà d'environ 2 000 caractères d'URL,
+// certains clients de messagerie coupent le message sans rien dire.
+const LONGUEUR_CORPS_MAX = 1400
+
+export function lienMailDiffusion({ titre, url, source, date, message, indicateur, destinataires }) {
+  const ind = INDICATEURS[indicateur]
+  const lignes = [
+    'Bonjour,',
+    '',
+    (message || '').trim(),
+    '',
+    titre || '',
+    url || '',
+    '',
+    [source, date ? new Date(date).toLocaleDateString('fr-FR') : ''].filter(Boolean).join(' · '),
+    ind ? `Type de veille : indicateur ${indicateur} — ${ind.label}` : '',
+  ].filter(l => l !== null && l !== undefined)
+
+  let corps = lignes.join('\n').replace(/\n{3,}/g, '\n\n')
+  if (corps.length > LONGUEUR_CORPS_MAX) corps = `${corps.slice(0, LONGUEUR_CORPS_MAX)}…`
+
+  const objet = `[Veille] ${(titre || '').slice(0, 120)}`
+  const pour = (destinataires || []).filter(Boolean).join(',')
+  return `mailto:${encodeURIComponent(pour).replace(/%2C/g, ',')}`
+    + `?subject=${encodeURIComponent(objet)}&body=${encodeURIComponent(corps)}`
 }
 
 // Filtre par indicateur. `'non_qualifie'` isole les traces sans rattachement,
@@ -139,7 +178,8 @@ export function exportRegistreCSV(traitements) {
   const header = [
     'Date', 'Type de veille', 'Source', 'Lien', 'Sujet / Information cle',
     'Impact / Action menee sur l\'OF', 'Decision', 'Traite par',
-    'Commentaire', 'Destinataires', 'Thematique', 'Date article', 'ID',
+    'Commentaire', 'Destinataires', 'Mail prepare le', 'Thematique',
+    'Date article', 'ID',
   ]
   const rows = [...traitements]
     .sort((a, b) => new Date(b.traiteAt) - new Date(a.traiteAt))
@@ -154,6 +194,7 @@ export function exportRegistreCSV(traitements) {
       t.traitePar,
       q(t.commentaire),
       q((t.destinataires || []).join(' | ')),
+      t.mailPrepareLe ? new Date(t.mailPrepareLe).toLocaleString('fr-FR') : '',
       t.articleThematique,
       t.articleDate,
       t.id,

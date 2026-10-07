@@ -5,7 +5,7 @@ import { chargerArticles, getArticlesCache, getDateDerniereFetch, getArticlesMan
 // « getCurrentUser is not defined », avalé par le catch et affiché comme un
 // refus d'archivage.
 import { getCurrentUser } from '../data/auth'
-import { getTraitements, getTraitement, enregistrerTraitement, DECISIONS, INDICATEURS, INDICATEURS_IDS, exportRegistreCSV, exportRegistrePDF, filtrerParIndicateur, compterParIndicateur } from '../data/traitement'
+import { getTraitements, getTraitement, enregistrerTraitement, DECISIONS, INDICATEURS, INDICATEURS_IDS, exportRegistreCSV, exportRegistrePDF, filtrerParIndicateur, compterParIndicateur, lienMailDiffusion } from '../data/traitement'
 import { getFormateurs, addFormateur, updateFormateur, removeFormateur } from '../data/formateurs'
 import { RESPONSABLE } from '../data/formateurs'
 import { ecouterTraces, sauvegarderTraces, ecouterArchives, archiverArticles, desarchiverArticle } from '../data/veille-storage'
@@ -94,6 +94,7 @@ function ModaleTraitement({ article, onClose, onSave }) {
     String(trace?.indicateur || article.indicateur || '')
   )
   const [impact, setImpact] = useState(trace?.impact || '')
+  const [mailPrepareLe, setMailPrepareLe] = useState(trace?.mailPrepareLe || '')
   const formateurs = getFormateurs()
 
   function toggleDestinataire(email) {
@@ -114,6 +115,7 @@ function ModaleTraitement({ article, onClose, onSave }) {
       urlArticle,
       indicateur,
       impact,
+      mailPrepareLe: decision === 'diffuser' ? mailPrepareLe : '',
     })
     onClose()
   }
@@ -237,6 +239,42 @@ function ModaleTraitement({ article, onClose, onSave }) {
             L'auditeur ne regarde pas ce qu'on a lu, mais ce qu'on en a fait. C'est ce champ qui porte la preuve.
           </p>
         </div>
+
+        {/* Mail de diffusion. L'outil ne l'envoie pas : il ouvre le client de
+            messagerie pré-rempli, le mail part de ta boîte avec ta signature, et
+            tu le relis avant d'appuyer sur Envoyer. Un site statique public ne
+            peut pas porter d'identifiant SMTP sans le publier. */}
+        {decision === 'diffuser' && (
+          <div className="modale-section">
+            <p className="modale-label">Mail à l'équipe</p>
+            {destinataires.length === 0 ? (
+              <p className="indicateur-aide">Coche au moins un destinataire ci-dessus pour préparer le mail.</p>
+            ) : (
+              <>
+                <a
+                  className="btn-mail"
+                  href={lienMailDiffusion({
+                    titre: article.titre,
+                    url: urlArticle || article.url,
+                    source: source?.nom || article.source_id,
+                    date: article.date,
+                    message: commentaire,
+                    indicateur,
+                    destinataires,
+                  })}
+                  onClick={() => setMailPrepareLe(new Date().toISOString())}
+                >
+                  📧 Préparer le mail ({destinataires.length} destinataire{destinataires.length > 1 ? 's' : ''})
+                </a>
+                <p className="indicateur-aide">
+                  {mailPrepareLe
+                    ? <>Mail préparé le <strong>{new Date(mailPrepareLe).toLocaleString('fr-FR')}</strong> — pense à enregistrer la trace pour garder cette date au registre.</>
+                    : <>Ouvre ton client de messagerie, pré-rempli avec l'objet, le lien et ton message. Rien ne part sans toi.</>}
+                </p>
+              </>
+            )}
+          </div>
+        )}
 
         <div className="modale-footer">
           <button className="btn-annuler" onClick={onClose}>Annuler</button>
@@ -565,25 +603,6 @@ export default function TableauDeBord() {
     }
   }
 
-  async function handleSaveTraitement(data) {
-    enregistrerTraitement(data)
-    const updated = getTraitements()
-    setTraitements(updated)
-    setBanniereVisible(shouldWarnBackup(updated))
-    // Sauvegarde automatique sur GitHub à chaque modification
-    setSyncStatus('saving')
-    try {
-      await sauvegarderTraces(updated)
-      setLastBackup()
-      setBanniereVisible(false)
-      setSyncStatus('ok')
-      setTimeout(() => setSyncStatus(null), 3000)
-    } catch {
-      setSyncStatus('error')
-      setTimeout(() => setSyncStatus(null), 5000)
-    }
-  }
-
   function handleExport() {
     const csv = exportRegistreCSV(traitements)
     const blob = new Blob(['﻿' + csv], { type: 'text/csv;charset=utf-8;' })
@@ -646,21 +665,21 @@ export default function TableauDeBord() {
     // l'historique sans attendre la passe RSS du lundi.
     const base = annoterArticles([...articles, ...articlesManuels])
     const baseIds = new Set(base.map(a => a.id))
-    // Réinjecter les articles orphelins depuis les traces (traités mais plus dans le flux)
+    // Reconstruire les articles orphelins (traitement sans article local)
     const orphelins = traitements
-      .filter(t => !baseIds.has(t.articleId) && t.articleTitre)
+      .filter(t => !baseIds.has(t.articleId))
       .map(t => ({
         id: t.articleId,
-        titre: t.articleTitre,
-        resume: '',
-        source_id: t.articleSource || 'manuel',
+        titre: t.articleTitre || t.articleId,
         source_nom: t.articleSource || 'Source externe',
-        thematique: t.articleThematique || '',
+        source_id: 'manuel',
+        thematique: t.articleThematique || 'legislatif',
         niveau: 'info',
-        date: t.articleDate || '',
+        date: t.articleDate || t.traiteAt,
         url: t.urlArticle || '',
-        lu: true,
-        orphelin: true,
+        resume: '',
+        manuel: true,
+        _orphelin: true,
       }))
     return [...base, ...annoterArticles(orphelins)]
   }, [articles, articlesManuels, traitements])
@@ -687,7 +706,7 @@ export default function TableauDeBord() {
 
   const stats = useMemo(() => {
     const traitesIds = new Set(traitements.map(t => t.articleId))
-    const articlesConnus = tousArticles.filter(a => !a.orphelin)
+    const articlesConnus = tousArticles.filter(a => !a._orphelin)
     const traites = articlesConnus.filter(a => traitesIds.has(a.id)).length
     // « En attente » ne compte que ce qui mérite une décision : un article hors
     // périmètre n'est pas du travail en retard, sinon le compteur affiche 160
@@ -776,7 +795,6 @@ export default function TableauDeBord() {
 
         {/* Statistiques */}
         <div className="stats-grid">
-
           <div className="stat-card"><span className="stat-val">{stats.total}</span><span className="stat-lbl">Articles reçus</span></div>
           <div className="stat-card stat-ok"><span className="stat-val">{stats.traites}</span><span className="stat-lbl">Traités</span></div>
           <div className="stat-card stat-vert"><span className="stat-val">{stats.diffuses}</span><span className="stat-lbl">Diffusés</span></div>

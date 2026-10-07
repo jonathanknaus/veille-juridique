@@ -4,7 +4,7 @@
 // GitHub. Ce schéma exigeait un token d'écriture dans le frontend — impossible
 // à garder secret sur un site statique public, où il était donc lisible par
 // tout le monde. La configuration Firebase, elle, est publique par conception :
-// la protection vient des règles de la base (voir REGLES-FIREBASE.md).
+// la protection vient des règles (voir database.rules.json).
 //
 // Bénéfices au passage : synchronisation temps réel entre PLS et l'outil de
 // veille (plus besoin de naviguer pour rafraîchir), et plus de fichier à
@@ -28,6 +28,10 @@ const CHAMPS = [
   // indicateurs Qualiopi 23 (veille légale), 24 (métiers) et 25 (pédagogie).
   // 'impact' porte l'action menée sur l'organisme, c'est ce que l'auditeur attend.
   'indicateur', 'impact',
+  // Horodatage de la préparation du mail de diffusion (2026-10-07). « Préparé »
+  // et non « envoyé » : l'outil ouvre le client de messagerie, il ne constate pas
+  // le clic sur Envoyer.
+  'mailPrepareLe',
 ]
 
 // Répare les accents abîmés par des encodages UTF-8 successifs.

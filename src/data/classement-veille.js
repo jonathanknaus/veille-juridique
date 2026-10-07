@@ -19,11 +19,11 @@
 //
 //  1. Un article n'est retenu que s'il touche NOTRE périmètre. L'indicateur 24
 //     parle des « secteurs d'intervention » (texte vérifié sur Légifrance le
-//     2026-10-06, décret n° 2026-728) : les nôtres sont les cabinets
-//     d'expertise comptable, pas la formation professionnelle en général. Un
-//     article sur la gestion des compétences chez Thales ne prouve rien pour
-//     nous. Conséquence assumée : l'onglet Métiers est quasi vide avec les
-//     sources actuelles — c'est un constat utile, pas un bug à masquer.
+//     2026-10-06, décret n° 2026-728). Les nôtres sont au nombre de deux : le
+//     métier de nos stagiaires, l'expertise comptable, et notre propre métier,
+//     celui de formateur (ajouté le 2026-10-07). Pas la formation
+//     professionnelle en général pour autant : un article sur la gestion des
+//     compétences chez Thales ne prouve rien pour nous.
 //
 //  2. Ce qui est écarté n'est jamais supprimé : ça part dans « Hors périmètre »,
 //     avec le motif du rejet, et ça reste traitable d'un clic. Un outil de
@@ -65,13 +65,26 @@ const ANCRES_FORMATION = [
   'enseignement', 'afest', 'vae', 'bilan de competences', 'se former',
 ]
 
-// Nos secteurs d'intervention : cabinets d'expertise comptable et finance
-// d'entreprise. C'est ce périmètre que l'indicateur 24 exige de surveiller.
+// Nos secteurs d'intervention, au sens de l'indicateur 24. Ils sont DEUX :
+//
+//  1. le métier de nos stagiaires — cabinets d'expertise comptable ;
+//  2. notre propre métier, celui de formateur (ajouté le 2026-10-07).
+//
+// Le second n'est pas un hors-sujet : les compétences, le statut et les
+// conditions d'exercice du formateur évoluent, et c'est l'autre moitié de ce que
+// l'indicateur demande de surveiller. Attention cependant : le mot « formateur »
+// seul ne suffit jamais à qualifier en 24, il apparaît dans presque tous les
+// articles de formation. Seules les tournures qui parlent du MÉTIER comptent —
+// voir la règle dédiée plus bas.
 const ANCRES_NOS_SECTEURS = [
+  // Cabinets d'expertise comptable
   'expert-comptable', 'experts-comptables', 'expertise comptable', 'comptable',
   'comptabilite', 'commissaire aux comptes', 'cabinet', 'cabinets',
   'profession comptable', 'fiscaliste', 'paie', 'facturation electronique',
   'facture electronique', 'tpe', 'pme', 'entrepreneur', 'entreprises clientes',
+  // Métier de formateur
+  'formateur', 'formateurs', 'formatrice', 'organisme de formation',
+  'metiers de la formation',
 ]
 
 const ANCRES_PEDAGOGIE = [
@@ -102,6 +115,9 @@ const REGLES = [
       'r. 6352', 'l. 6316', 'd. 6316', 'r. 6316', 'l. 6313',
       'convention de formation', 'contrat de formation', 'reglement interieur',
       'sous-traitance', 'code du travail',
+      // Rubriques de Centre Inffo : un article rangé là par l'éditeur parle
+      // bien du droit de la formation, sans avoir à le déduire du titre.
+      'droit de la formation', 'controle de la formation',
     ],
   },
   {
@@ -194,6 +210,30 @@ const REGLES = [
     pourquoi: 'France Compétences sur les métiers : matière directe de l\'indicateur 24',
     termes: ['metiers emergents', 'metiers en particuliere evolution', 'passeport de competences'],
   },
+  {
+    // Le métier de formateur, notre second secteur d'intervention (2026-10-07).
+    //
+    // Uniquement des tournures qui désignent le MÉTIER : « formateur » tout seul
+    // vaudrait pour la moitié du corpus et viderait les indicateurs 23 et 25.
+    // « formateur independant » et « portage salarial » sont ici et non en 23,
+    // même quand l'article est juridique : ce qui nous intéresse alors, c'est la
+    // condition d'exercice du métier, pas une obligation de l'organisme.
+    indicateur: '24', poids: 5,
+    pourquoi: 'le métier de formateur : compétences, statut, conditions d\'exercice',
+    termes: [
+      'metier de formateur', 'metiers de la formation', 'metier de la formation',
+      'competences des formateurs', 'professionnalisation des formateurs',
+      'formateur independant', 'formateurs independants', 'formateur occasionnel',
+      'posture du formateur', 'devenir formateur', 'recrutement de formateurs',
+      'penurie de formateurs', 'statut du formateur', 'portage salarial',
+      'formateur professionnel d\'adultes', 'referent pedagogique',
+      'conditions de travail des formateurs', 'remuneration des formateurs',
+      'sous-traitance de formateurs', 'vivier de formateurs',
+      // Catégorie posée par Centre Inffo lui-même, parenthèses comprises :
+      // c'est le signal le plus fiable qu'on reçoive sur ce métier.
+      'formateurs (independants)',
+    ],
+  },
 
   // ── 25 · Veille sur les innovations pédagogiques et technologiques ─────────
   {
@@ -218,6 +258,9 @@ const REGLES = [
     avec: ANCRES_PEDAGOGIE,
     termes: [
       'intelligence artificielle', 'ia generative', 'ia agentique', 'ia',
+      // Oui, « artifcielle » : c'est l'orthographe de la catégorie telle que
+      // Centre Inffo la publie. On attrape ce qui existe, pas ce qui devrait.
+      'intelligence artifcielle',
       'chatgpt', 'copilot', 'algorithme',
     ],
   },
@@ -264,7 +307,13 @@ const BRUIT = [
       'signent une convention', 'convention de developpement', 'renforce son engagement',
       'devoilent les', 'participez aux', 'clap de fin', 'evenement', 'palmares',
       'assistez', 'journee de l', 'semaine de la', 'organisent une', 'mois europeen',
-      'celebres'],
+      'celebres',
+      // Autopromotion des éditeurs. Centre Inffo range ses propres annonces
+      // produit sous « Droit de la Formation », une rubrique par ailleurs très
+      // utile : sans ces termes, « 50 ans des Fiches pratiques — merci pour votre
+      // confiance » entrait en veille réglementaire.
+      'fiches pratiques', 'merci pour votre confiance', 'alerte courriel',
+      'vos services', 'vos dernieres mises a jour', 'abonnez-vous'],
   },
   {
     motif: 'santé-sécurité au travail',
