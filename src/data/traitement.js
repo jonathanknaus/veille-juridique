@@ -117,18 +117,22 @@ export function enregistrerTraitement({
   return trace
 }
 
-// Lien `mailto:` pré-rempli pour diffuser un article à l'équipe.
+// Mail de diffusion : le corps d'un côté, le lien Gmail de l'autre.
 //
 // L'outil n'envoie pas lui-même : le site est statique et son bundle est public,
 // y mettre un identifiant SMTP reviendrait à le publier — c'est exactement ce qui
 // est arrivé au token GitHub inliné par Vite. Le mail part donc de la boîte de la
-// personne, avec sa signature, et elle le relit avant d'appuyer sur Envoyer.
+// personne, qui le relit avant d'appuyer sur Envoyer.
 //
-// Les corps longs sont tronqués : au-delà d'environ 2 000 caractères d'URL,
-// certains clients de messagerie coupent le message sans rien dire.
+// ⚠️ Pourquoi le corps n'est PAS passé dans l'URL : ni le lien Gmail ni `mailto:`
+// ne transportent du HTML, et Gmail n'insère pas la signature du compte quand le
+// corps arrive pré-rempli. Résultat : un mail en texte brut, sans le logo ni la
+// mise en forme de la vraie signature. On ouvre donc une fenêtre de rédaction
+// VIDE — Gmail y met la signature native — et le texte voyage par le
+// presse-papier, un ⌘V à faire.
 const LONGUEUR_CORPS_MAX = 1400
 
-export function lienMailDiffusion({ titre, url, source, date, message, indicateur, destinataires, signature, via = 'gmail' }) {
+export function corpsMailDiffusion({ titre, url, source, date, message, indicateur }) {
   const ind = INDICATEURS[indicateur]
   const lignes = [
     'Bonjour,',
@@ -142,35 +146,18 @@ export function lienMailDiffusion({ titre, url, source, date, message, indicateu
     ind ? `Type de veille : indicateur ${indicateur} — ${ind.label}` : '',
   ].filter(l => l !== null && l !== undefined)
 
-  let corps = lignes.join('\n').replace(/\n{3,}/g, '\n\n')
-  if (corps.length > LONGUEUR_CORPS_MAX) corps = `${corps.slice(0, LONGUEUR_CORPS_MAX)}…`
+  const corps = lignes.join('\n').replace(/\n{3,}/g, '\n\n')
+  return corps.length > LONGUEUR_CORPS_MAX ? `${corps.slice(0, LONGUEUR_CORPS_MAX)}…` : corps
+}
 
-  // La signature s'ajoute APRÈS la troncature : sinon un message long la coupait,
-  // et l'on se retrouvait avec un mail signé à moitié. Gmail ne l'ajoute pas
-  // lui-même quand le corps est pré-rempli par un lien.
-  if ((signature || '').trim()) corps += `\n\n${signature.trim()}`
-
+// Fenêtre de rédaction Gmail : destinataires et objet seulement, corps laissé
+// vide pour que Gmail y insère la signature du compte.
+export function lienMailDiffusion({ titre, destinataires }) {
   const objet = `[Veille] ${(titre || '').slice(0, 120)}`
   const pour = (destinataires || []).filter(Boolean).join(',')
-
-  // Deux chemins, parce qu'aucun des deux ne marche partout.
-  //
-  // 'gmail' ouvre la fenêtre de rédaction Gmail dans un onglet : ça ne dépend
-  // d'aucun réglage du poste, et c'est le cas de tout le monde chez Pennylane.
-  if (via === 'gmail') {
-    return 'https://mail.google.com/mail/?view=cm&fs=1'
-      + `&to=${encodeURIComponent(pour)}`
-      + `&su=${encodeURIComponent(objet)}`
-      + `&body=${encodeURIComponent(corps)}`
-  }
-
-  // 'client' passe par le logiciel de messagerie déclaré sur le poste.
-  //
-  // ⚠️ Les adresses ne doivent PAS être percent-encodées : avec « %40 » au lieu
-  // de « @ », Chrome ignore le lien sans un mot — le clic ne produisait rien.
-  // Seuls l'objet et le corps s'encodent.
-  return `mailto:${pour}`
-    + `?subject=${encodeURIComponent(objet)}&body=${encodeURIComponent(corps)}`
+  return 'https://mail.google.com/mail/?view=cm&fs=1'
+    + `&to=${encodeURIComponent(pour)}`
+    + `&su=${encodeURIComponent(objet)}`
 }
 
 // Filtre par indicateur. `'non_qualifie'` isole les traces sans rattachement,

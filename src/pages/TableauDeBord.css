@@ -586,14 +586,3 @@
   transition: all 0.12s;
 }
 .btn-mail:hover { background: var(--bg-dark); color: #fff; }
-
-.mail-actions { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
-.btn-mail--secondaire {
-  font-weight: 500;
-  color: var(--texte-secondaire);
-  border-color: var(--bordure, #e2e8f0);
-}
-.btn-mail--secondaire:hover { background: var(--gris, #f1f5f9); color: var(--texte); border-color: var(--texte-secondaire); }
-
-.sig-liste { display: flex; gap: 8px; flex-wrap: wrap; margin: 10px 0 14px; }
-.gf-form .modale-textarea { margin-top: 10px; width: 100%; }

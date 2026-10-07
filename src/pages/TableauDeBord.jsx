@@ -5,10 +5,10 @@ import { chargerArticles, getArticlesCache, getDateDerniereFetch, getArticlesMan
 // « getCurrentUser is not defined », avalé par le catch et affiché comme un
 // refus d'archivage.
 import { getCurrentUser } from '../data/auth'
-import { getTraitements, getTraitement, enregistrerTraitement, DECISIONS, INDICATEURS, INDICATEURS_IDS, exportRegistreCSV, exportRegistrePDF, filtrerParIndicateur, compterParIndicateur, lienMailDiffusion } from '../data/traitement'
+import { getTraitements, getTraitement, enregistrerTraitement, DECISIONS, INDICATEURS, INDICATEURS_IDS, exportRegistreCSV, exportRegistrePDF, filtrerParIndicateur, compterParIndicateur, lienMailDiffusion, corpsMailDiffusion } from '../data/traitement'
 import { getFormateurs, addFormateur, updateFormateur, removeFormateur } from '../data/formateurs'
 import { RESPONSABLE } from '../data/formateurs'
-import { ecouterTraces, sauvegarderTraces, ecouterArchives, archiverArticles, desarchiverArticle, ecouterSignatures, enregistrerSignature, cleSignature } from '../data/veille-storage'
+import { ecouterTraces, sauvegarderTraces, ecouterArchives, archiverArticles, desarchiverArticle } from '../data/veille-storage'
 import { annoterArticles, CONFIANCES } from '../data/classement-veille'
 import './TableauDeBord.css'
 
@@ -81,7 +81,7 @@ function ageEnJours(dateArticle) {
 }
 
 // ── Modale de traitement ──────────────────────────────────────────────────────
-function ModaleTraitement({ article, onClose, onSave, signature }) {
+function ModaleTraitement({ article, onClose, onSave }) {
   const source = article.manuel ? { nom: article.source_nom || 'Source externe' } : SOURCES.find(s => s.id === article.source_id)
   const trace = getTraitement(article.id)
   const [decision, setDecision] = useState(trace?.decision || '')
@@ -95,20 +95,27 @@ function ModaleTraitement({ article, onClose, onSave, signature }) {
   )
   const [impact, setImpact] = useState(trace?.impact || '')
   const [mailPrepareLe, setMailPrepareLe] = useState(trace?.mailPrepareLe || '')
+  const [copie, setCopie] = useState('')
   const formateurs = getFormateurs()
 
   // Ce qui part dans le mail, construit une seule fois pour les deux boutons.
-  function chargeMail() {
-    return {
+  // Copie le texte du message, puis laisse le lien ouvrir Gmail. Le corps ne peut
+  // pas voyager dans l'URL : Gmail n'y insère alors pas la signature du compte, et
+  // les images d'une signature ne passent pas en texte brut.
+  function preparerMail() {
+    const corps = corpsMailDiffusion({
       titre: article.titre,
       url: urlArticle || article.url,
       source: source?.nom || article.source_id,
       date: article.date,
       message: commentaire,
       indicateur,
-      destinataires,
-      signature,
-    }
+    })
+    setMailPrepareLe(new Date().toISOString())
+    navigator.clipboard?.writeText(corps).then(
+      () => setCopie('ok'),
+      () => setCopie('erreur'),
+    )
   }
 
   function toggleDestinataire(email) {
@@ -254,10 +261,11 @@ function ModaleTraitement({ article, onClose, onSave, signature }) {
           </p>
         </div>
 
-        {/* Mail de diffusion. L'outil ne l'envoie pas : il ouvre le client de
-            messagerie pré-rempli, le mail part de ta boîte avec ta signature, et
-            tu le relis avant d'appuyer sur Envoyer. Un site statique public ne
-            peut pas porter d'identifiant SMTP sans le publier. */}
+        {/* Mail de diffusion. L'outil ne l'envoie pas : il ouvre une fenêtre de
+            rédaction Gmail et copie le texte du message. La fenêtre est laissée
+            VIDE à dessein — c'est à cette condition que Gmail insère la signature
+            du compte, images et mise en forme comprises, qu'un corps passé dans
+            l'URL ne peut pas transporter. */}
         {decision === 'diffuser' && (
           <div className="modale-section">
             <p className="modale-label">Mail à l'équipe</p>
@@ -265,30 +273,27 @@ function ModaleTraitement({ article, onClose, onSave, signature }) {
               <p className="indicateur-aide">Coche au moins un destinataire ci-dessus pour préparer le mail.</p>
             ) : (
               <>
-                <div className="mail-actions">
-                  <a
-                    className="btn-mail"
-                    href={lienMailDiffusion({ ...chargeMail(), via: 'gmail' })}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={() => setMailPrepareLe(new Date().toISOString())}
-                  >
-                    📧 Préparer dans Gmail ({destinataires.length})
-                  </a>
-                  <a
-                    className="btn-mail btn-mail--secondaire"
-                    href={lienMailDiffusion({ ...chargeMail(), via: 'client' })}
-                    onClick={() => setMailPrepareLe(new Date().toISOString())}
-                    title="Passe par le logiciel de messagerie déclaré sur ce poste"
-                  >
-                    Autre logiciel
-                  </a>
-                </div>
+                <a
+                  className="btn-mail"
+                  href={lienMailDiffusion({ titre: article.titre, destinataires })}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={preparerMail}
+                >
+                  📧 Préparer dans Gmail ({destinataires.length})
+                </a>
                 <p className="indicateur-aide">
-                  {mailPrepareLe
-                    ? <>Mail préparé le <strong>{new Date(mailPrepareLe).toLocaleString('fr-FR')}</strong> — pense à enregistrer la trace pour garder cette date au registre.</>
-                    : <>Le mail s'ouvre déjà rempli : objet, lien, ton message. Rien ne part sans toi.</>}
+                  {copie === 'ok'
+                    ? <><strong>Message copié : fais ⌘V dans Gmail</strong>, au-dessus de ta signature. Destinataires et objet sont déjà remplis.</>
+                    : copie === 'erreur'
+                      ? <>Gmail est ouvert, mais la copie a échoué — recopie ton message à la main.</>
+                      : <>Gmail s'ouvre avec les destinataires, l'objet et <strong>ta signature</strong>. Le texte du message est copié : un ⌘V et c'est prêt.</>}
                 </p>
+                {mailPrepareLe && (
+                  <p className="indicateur-aide">
+                    Mail préparé le <strong>{new Date(mailPrepareLe).toLocaleString('fr-FR')}</strong> — pense à enregistrer la trace pour garder cette date au registre.
+                  </p>
+                )}
               </>
             )}
           </div>
@@ -386,90 +391,6 @@ function ModaleAjoutArticle({ onClose, onSave }) {
             <button type="submit" className="btn-valider">Ajouter l'article</button>
           </div>
         </form>
-      </div>
-    </div>
-  )
-}
-
-// ── Signatures de mail ────────────────────────────────────────────────────────
-//
-// Une signature par personne, retrouvée d'après le compte connecté. Elle est en
-// base et non en local : la signature de Sarah se saisit depuis n'importe quel
-// poste, et elle survit à un changement de navigateur.
-//
-// Ce ne sont pas les formateurs destinataires qui sont listés ici, mais les
-// personnes qui diffusent — d'où une section à part, sous leur tableau.
-function GestionSignatures({ signatures, onEnregistrer }) {
-  const moi = getCurrentUser()?.email || ''
-  const [email, setEmail] = useState(moi)
-  const [texte, setTexte] = useState(signatures[cleSignature(moi)] || '')
-  const [etat, setEtat] = useState('')
-
-  function charger(adresse) {
-    setEmail(adresse)
-    setTexte(signatures[cleSignature(adresse)] || '')
-    setEtat('')
-  }
-
-  async function handleEnregistrer() {
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { setEtat('Adresse invalide.'); return }
-    setEtat('Enregistrement…')
-    try {
-      await onEnregistrer(email, texte)
-      setEtat('Enregistré ✓')
-    } catch (err) {
-      setEtat(`Refusé : ${err?.message || err}`)
-    }
-  }
-
-  const connues = Object.entries(signatures)
-  return (
-    <div className="gf-section">
-      <h2 className="section-titre">Signatures de mail</h2>
-      <p className="indicateur-aide">
-        Gmail n'ajoute pas sa signature quand le corps du message est pré-rempli : c'est celle-ci qui
-        part dans le mail de diffusion, choisie d'après le compte connecté.
-      </p>
-
-      {connues.length > 0 && (
-        <div className="sig-liste">
-          {connues.map(([cle, valeur]) => {
-            const adresse = cle.replace(/,/g, '.')
-            return (
-              <button
-                key={cle}
-                className={`filtre-btn ${cleSignature(email) === cle ? 'actif' : ''}`}
-                onClick={() => charger(adresse)}
-                title={valeur}
-              >
-                {adresse}
-              </button>
-            )
-          })}
-        </div>
-      )}
-
-      <div className="gf-form">
-        <div className="gf-fields">
-          <input
-            placeholder="email@pennylane.com"
-            type="email"
-            value={email}
-            onChange={e => { setEmail(e.target.value); setEtat('') }}
-          />
-          <button className="btn-ajouter" onClick={handleEnregistrer}>Enregistrer</button>
-        </div>
-        <textarea
-          className="modale-textarea"
-          rows={4}
-          placeholder={'Prénom Nom\nFonction\nPennylane'}
-          value={texte}
-          onChange={e => { setTexte(e.target.value); setEtat('') }}
-        />
-        {etat && <p className="indicateur-aide">{etat}</p>}
-        {email && email !== moi && (
-          <p className="indicateur-aide">Tu modifies la signature de <strong>{email}</strong>, pas la tienne.</p>
-        )}
       </div>
     </div>
   )
@@ -580,7 +501,6 @@ export default function TableauDeBord() {
   const [filtreIndicateur, setFiltreIndicateur] = useState('tous')
   const [seuilMasquage, setSeuilMasquage] = useState(lireSeuil)
   const [archives, setArchives] = useState([])
-  const [signatures, setSignatures] = useState({})
   const [voirArchives, setVoirArchives] = useState(false)
   const [archivageEnCours, setArchivageEnCours] = useState(false)
 
@@ -616,8 +536,7 @@ export default function TableauDeBord() {
     // Articles saisis à la main : en écoute aussi, pour que celui que Sarah
     // ajoute apparaisse ici sans qu'elle ait à le redire.
     const stopManuels = ecouterArticlesManuels(setArticlesManuels, () => {})
-    const stopSignatures = ecouterSignatures(setSignatures, () => {})
-    return () => { stop(); stopArchives(); stopManuels(); stopSignatures() }
+    return () => { stop(); stopArchives(); stopManuels() }
   }, [])
 
   // Archive les articles non traités au-delà du seuil. Les traités en sont
@@ -1266,12 +1185,7 @@ export default function TableauDeBord() {
         })()}
 
         {/* Formateurs */}
-        {onglet === 'formateurs' && (
-          <>
-            <GestionFormateurs />
-            <GestionSignatures signatures={signatures} onEnregistrer={enregistrerSignature} />
-          </>
-        )}
+        {onglet === 'formateurs' && <GestionFormateurs />}
 
       </div>
 
@@ -1280,7 +1194,6 @@ export default function TableauDeBord() {
           article={modaleArticle}
           onClose={() => setModaleArticle(null)}
           onSave={handleSaveTraitement}
-          signature={signatures[cleSignature(getCurrentUser()?.email)] || ''}
         />
       )}
 

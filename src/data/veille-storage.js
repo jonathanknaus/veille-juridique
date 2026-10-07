@@ -265,49 +265,6 @@ export async function supprimerArticleManuel(id) {
   await set(ref(baseDeDonnees(), `${CHEMIN_MANUELS}/${id}`), null)
 }
 
-// ── Signatures de mail ───────────────────────────────────────────────────────
-//
-// Une signature par personne, lue d'après le compte connecté : le mail de
-// diffusion part avec celle de qui le prépare. Gmail n'ajoute pas la sienne quand
-// le corps du message est pré-rempli par un lien — il faut donc la porter nous.
-//
-// En base et non en local, pour deux raisons : la signature de Sarah peut être
-// saisie sans attendre qu'elle le fasse elle-même, et elle survit à un changement
-// de navigateur.
-
-const CHEMIN_SIGNATURES = 'veille/signatures'
-
-// Les clés Firebase refusent le point, omniprésent dans une adresse mail. On le
-// remplace par une virgule, qui n'apparaît jamais dans une adresse valide.
-export function cleSignature(email) {
-  return String(email || '').trim().toLowerCase().replace(/\./g, ',')
-}
-
-export function ecouterSignatures(callback, onErreur) {
-  let stop = null
-  let annule = false
-  authPrete().then(() => {
-    if (annule) return
-    stop = onValue(
-      ref(baseDeDonnees(), CHEMIN_SIGNATURES),
-      snap => callback(reparerProfond(snap.val() || {})),
-      err => { if (onErreur) onErreur(err) },
-    )
-  })
-  return () => { annule = true; if (stop) stop() }
-}
-
-// Une signature vide efface l'entrée : pas de chaîne vide en base, les règles la
-// refuseraient et une entrée fantôme n'apporte rien.
-export async function enregistrerSignature(email, texte) {
-  await authPrete()
-  const cle = cleSignature(email)
-  if (!cle) throw new Error('Adresse manquante.')
-  const valeur = String(texte || '').trim()
-  await set(ref(baseDeDonnees(), `${CHEMIN_SIGNATURES}/${cle}`), valeur || null)
-  return valeur
-}
-
 export async function sauvegarderTraces(traces) {
   await authPrete()
   const map = {}
