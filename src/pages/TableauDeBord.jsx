@@ -6,7 +6,7 @@ import { chargerArticles, getArticlesCache, getDateDerniereFetch, getArticlesMan
 // refus d'archivage.
 import { getCurrentUser } from '../data/auth'
 import { getTraitements, getTraitement, enregistrerTraitement, DECISIONS, INDICATEURS, INDICATEURS_IDS, exportRegistreCSV, exportRegistrePDF, filtrerParIndicateur, compterParIndicateur, lienMailDiffusion, corpsMailDiffusion } from '../data/traitement'
-import { getFormateurs, addFormateur, updateFormateur, removeFormateur } from '../data/formateurs'
+import { getFormateurs, addFormateur, updateFormateur, removeFormateur, ecouterFormateursVeille, publierFormateursVeille } from '../data/formateurs'
 import { RESPONSABLE } from '../data/formateurs'
 import { ecouterTraces, sauvegarderTraces, ecouterArchives, archiverArticles, desarchiverArticle } from '../data/veille-storage'
 import { annoterArticles, CONFIANCES } from '../data/classement-veille'
@@ -397,33 +397,62 @@ function ModaleAjoutArticle({ onClose, onSave }) {
 }
 
 // ── Section gestion formateurs ────────────────────────────────────────────────
-function GestionFormateurs() {
-  const [formateurs, setFormateurs] = useState(getFormateurs())
+function GestionFormateurs({ formateurs, publiee, onChange }) {
   const [form, setForm] = useState({ prenom: '', nom: '', email: '' })
   const [erreur, setErreur] = useState('')
 
-  function handleAdd(e) {
+  // Les écritures passent par le serveur : si elle est refusée, on le dit au lieu
+  // de laisser l'écran afficher une liste que personne d'autre ne verra.
+  async function appliquer(promesse) {
+    try {
+      onChange(await promesse)
+      setErreur('')
+    } catch (err) {
+      onChange(getFormateurs())
+      setErreur(`Refusé par le serveur : ${err?.message || err}`)
+    }
+  }
+
+  async function handleAdd(e) {
     e.preventDefault()
     if (!form.prenom || !form.nom || !form.email) { setErreur('Tous les champs sont requis.'); return }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) { setErreur('Email invalide.'); return }
-    setFormateurs(addFormateur(form.prenom, form.nom, form.email))
+    await appliquer(addFormateur(form.prenom, form.nom, form.email))
     setForm({ prenom: '', nom: '', email: '' })
-    setErreur('')
   }
 
   function handleToggle(id) {
     const f = formateurs.find(f => f.id === id)
-    setFormateurs(updateFormateur(id, { actif: !f.actif }))
+    appliquer(updateFormateur(id, { actif: !f.actif }))
   }
 
   function handleRemove(id) {
-    if (!window.confirm('Supprimer ce formateur ?')) return
-    setFormateurs(removeFormateur(id))
+    if (!window.confirm('Supprimer ce formateur ? Il disparaîtra aussi pour l\'équipe.')) return
+    appliquer(removeFormateur(id))
+  }
+
+  async function handlePublier() {
+    try {
+      const n = await publierFormateursVeille()
+      alert(`${n} formateur(s) publié(s) — la liste est désormais commune aux deux outils ✓`)
+    } catch (err) {
+      alert(`Publication refusée : ${err?.message || err}`)
+    }
   }
 
   return (
     <div className="gf-section">
       <h2 className="section-titre">Équipe de formateurs</h2>
+
+      {!publiee && (
+        <div className="banniere-backup">
+          <span>
+            📍 Cette liste n'existe que sur ce poste : l'autre outil en a une autre, et une diffusion
+            n'atteindrait pas les mêmes personnes.
+          </span>
+          <button className="btn-anciens" onClick={handlePublier}>Publier pour l'équipe</button>
+        </div>
+      )}
 
       <table className="gf-table">
         <thead>
@@ -501,6 +530,8 @@ export default function TableauDeBord() {
   const [filtreIndicateur, setFiltreIndicateur] = useState('tous')
   const [seuilMasquage, setSeuilMasquage] = useState(lireSeuil)
   const [archives, setArchives] = useState([])
+  const [formateurs, setFormateurs] = useState(getFormateurs)
+  const [formateursPublies, setFormateursPublies] = useState(true)
   const [voirArchives, setVoirArchives] = useState(false)
   const [archivageEnCours, setArchivageEnCours] = useState(false)
 
@@ -536,7 +567,14 @@ export default function TableauDeBord() {
     // Articles saisis à la main : en écoute aussi, pour que celui que Sarah
     // ajoute apparaisse ici sans qu'elle ait à le redire.
     const stopManuels = ecouterArticlesManuels(setArticlesManuels, () => {})
-    return () => { stop(); stopArchives(); stopManuels() }
+    // Écoute au niveau du tableau de bord, et pas dans l'onglet Formateurs : le
+    // cache doit être rafraîchi même si personne n'ouvre cet onglet, puisque c'est
+    // lui que lit la modale pour proposer les destinataires.
+    const stopFormateurs = ecouterFormateursVeille(
+      (liste, info) => { setFormateurs(liste); setFormateursPublies(info.publiee) },
+      () => {},
+    )
+    return () => { stop(); stopArchives(); stopManuels(); stopFormateurs() }
   }, [])
 
   // Archive les articles non traités au-delà du seuil. Les traités en sont
@@ -1185,7 +1223,9 @@ export default function TableauDeBord() {
         })()}
 
         {/* Formateurs */}
-        {onglet === 'formateurs' && <GestionFormateurs />}
+        {onglet === 'formateurs' && (
+          <GestionFormateurs formateurs={formateurs} publiee={formateursPublies} onChange={setFormateurs} />
+        )}
 
       </div>
 

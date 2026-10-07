@@ -265,6 +265,78 @@ export async function supprimerArticleManuel(id) {
   await set(ref(baseDeDonnees(), `${CHEMIN_MANUELS}/${id}`), null)
 }
 
+// ── Liste de diffusion ───────────────────────────────────────────────────────
+//
+// Les formateurs destinataires vivaient dans le localStorage : chaque poste avait
+// sa liste, donc Sarah pouvait diffuser à quatre personnes et PLS en afficher
+// cinq. Une liste de diffusion qui diffère selon le navigateur n'est pas une
+// liste de diffusion.
+
+const CHEMIN_FORMATEURS = 'veille/formateurs'
+
+const CHAMPS_FORMATEUR = ['prenom', 'nom', 'email', 'actif']
+
+function chargeFormateur(f) {
+  const sortie = {
+    prenom: String(f.prenom || '').trim(),
+    nom: String(f.nom || '').trim(),
+    email: String(f.email || '').trim().toLowerCase(),
+    actif: f.actif !== false,
+  }
+  if (!sortie.prenom || !sortie.nom || !sortie.email) {
+    throw new Error('Formateur incomplet : prénom, nom et adresse sont requis.')
+  }
+  return sortie
+}
+
+function formateursDepuisSnapshot(valeur) {
+  if (!valeur) return []
+  return Object.entries(valeur)
+    .map(([id, f]) => ({ id, ...reparerProfond(f), actif: f?.actif !== false }))
+    .sort((a, b) => `${a.nom}${a.prenom}`.localeCompare(`${b.nom}${b.prenom}`, 'fr'))
+}
+
+export function ecouterFormateurs(callback, onErreur) {
+  let stop = null
+  let annule = false
+  authPrete().then(() => {
+    if (annule) return
+    stop = onValue(
+      ref(baseDeDonnees(), CHEMIN_FORMATEURS),
+      snap => callback(formateursDepuisSnapshot(snap.val())),
+      err => { if (onErreur) onErreur(err) },
+    )
+  })
+  return () => { annule = true; if (stop) stop() }
+}
+
+// Écriture par clé, comme pour les articles manuels : deux personnes peuvent
+// modifier la liste en même temps sans s'écraser.
+export async function enregistrerFormateur(id, formateur) {
+  await authPrete()
+  await set(ref(baseDeDonnees(), `${CHEMIN_FORMATEURS}/${id}`), chargeFormateur(formateur))
+  return true
+}
+
+export async function supprimerFormateur(id) {
+  await authPrete()
+  await set(ref(baseDeDonnees(), `${CHEMIN_FORMATEURS}/${id}`), null)
+}
+
+export async function publierFormateurs(liste) {
+  await authPrete()
+  const maj = {}
+  for (const f of liste || []) {
+    if (!f?.id) continue
+    maj[f.id] = chargeFormateur(f)
+  }
+  if (Object.keys(maj).length === 0) return 0
+  await update(ref(baseDeDonnees(), CHEMIN_FORMATEURS), maj)
+  return Object.keys(maj).length
+}
+
+export { CHAMPS_FORMATEUR }
+
 export async function sauvegarderTraces(traces) {
   await authPrete()
   const map = {}
