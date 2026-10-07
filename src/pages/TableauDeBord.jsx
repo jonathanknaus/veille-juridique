@@ -8,7 +8,7 @@ import { getCurrentUser } from '../data/auth'
 import { getTraitements, getTraitement, enregistrerTraitement, DECISIONS, INDICATEURS, INDICATEURS_IDS, exportRegistreCSV, exportRegistrePDF, filtrerParIndicateur, compterParIndicateur, lienMailDiffusion } from '../data/traitement'
 import { getFormateurs, addFormateur, updateFormateur, removeFormateur } from '../data/formateurs'
 import { RESPONSABLE } from '../data/formateurs'
-import { ecouterTraces, sauvegarderTraces, ecouterArchives, archiverArticles, desarchiverArticle } from '../data/veille-storage'
+import { ecouterTraces, sauvegarderTraces, ecouterArchives, archiverArticles, desarchiverArticle, ecouterSignatures, enregistrerSignature, cleSignature } from '../data/veille-storage'
 import { annoterArticles, CONFIANCES } from '../data/classement-veille'
 import './TableauDeBord.css'
 
@@ -81,7 +81,7 @@ function ageEnJours(dateArticle) {
 }
 
 // ── Modale de traitement ──────────────────────────────────────────────────────
-function ModaleTraitement({ article, onClose, onSave }) {
+function ModaleTraitement({ article, onClose, onSave, signature }) {
   const source = article.manuel ? { nom: article.source_nom || 'Source externe' } : SOURCES.find(s => s.id === article.source_id)
   const trace = getTraitement(article.id)
   const [decision, setDecision] = useState(trace?.decision || '')
@@ -107,6 +107,7 @@ function ModaleTraitement({ article, onClose, onSave }) {
       message: commentaire,
       indicateur,
       destinataires,
+      signature,
     }
   }
 
@@ -390,6 +391,90 @@ function ModaleAjoutArticle({ onClose, onSave }) {
   )
 }
 
+// ── Signatures de mail ────────────────────────────────────────────────────────
+//
+// Une signature par personne, retrouvée d'après le compte connecté. Elle est en
+// base et non en local : la signature de Sarah se saisit depuis n'importe quel
+// poste, et elle survit à un changement de navigateur.
+//
+// Ce ne sont pas les formateurs destinataires qui sont listés ici, mais les
+// personnes qui diffusent — d'où une section à part, sous leur tableau.
+function GestionSignatures({ signatures, onEnregistrer }) {
+  const moi = getCurrentUser()?.email || ''
+  const [email, setEmail] = useState(moi)
+  const [texte, setTexte] = useState(signatures[cleSignature(moi)] || '')
+  const [etat, setEtat] = useState('')
+
+  function charger(adresse) {
+    setEmail(adresse)
+    setTexte(signatures[cleSignature(adresse)] || '')
+    setEtat('')
+  }
+
+  async function handleEnregistrer() {
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { setEtat('Adresse invalide.'); return }
+    setEtat('Enregistrement…')
+    try {
+      await onEnregistrer(email, texte)
+      setEtat('Enregistré ✓')
+    } catch (err) {
+      setEtat(`Refusé : ${err?.message || err}`)
+    }
+  }
+
+  const connues = Object.entries(signatures)
+  return (
+    <div className="gf-section">
+      <h2 className="section-titre">Signatures de mail</h2>
+      <p className="indicateur-aide">
+        Gmail n'ajoute pas sa signature quand le corps du message est pré-rempli : c'est celle-ci qui
+        part dans le mail de diffusion, choisie d'après le compte connecté.
+      </p>
+
+      {connues.length > 0 && (
+        <div className="sig-liste">
+          {connues.map(([cle, valeur]) => {
+            const adresse = cle.replace(/,/g, '.')
+            return (
+              <button
+                key={cle}
+                className={`filtre-btn ${cleSignature(email) === cle ? 'actif' : ''}`}
+                onClick={() => charger(adresse)}
+                title={valeur}
+              >
+                {adresse}
+              </button>
+            )
+          })}
+        </div>
+      )}
+
+      <div className="gf-form">
+        <div className="gf-fields">
+          <input
+            placeholder="email@pennylane.com"
+            type="email"
+            value={email}
+            onChange={e => { setEmail(e.target.value); setEtat('') }}
+          />
+          <button className="btn-ajouter" onClick={handleEnregistrer}>Enregistrer</button>
+        </div>
+        <textarea
+          className="modale-textarea"
+          rows={4}
+          placeholder={'Prénom Nom\nFonction\nPennylane'}
+          value={texte}
+          onChange={e => { setTexte(e.target.value); setEtat('') }}
+        />
+        {etat && <p className="indicateur-aide">{etat}</p>}
+        {email && email !== moi && (
+          <p className="indicateur-aide">Tu modifies la signature de <strong>{email}</strong>, pas la tienne.</p>
+        )}
+      </div>
+    </div>
+  )
+}
+
 // ── Section gestion formateurs ────────────────────────────────────────────────
 function GestionFormateurs() {
   const [formateurs, setFormateurs] = useState(getFormateurs())
@@ -495,6 +580,7 @@ export default function TableauDeBord() {
   const [filtreIndicateur, setFiltreIndicateur] = useState('tous')
   const [seuilMasquage, setSeuilMasquage] = useState(lireSeuil)
   const [archives, setArchives] = useState([])
+  const [signatures, setSignatures] = useState({})
   const [voirArchives, setVoirArchives] = useState(false)
   const [archivageEnCours, setArchivageEnCours] = useState(false)
 
@@ -530,7 +616,8 @@ export default function TableauDeBord() {
     // Articles saisis à la main : en écoute aussi, pour que celui que Sarah
     // ajoute apparaisse ici sans qu'elle ait à le redire.
     const stopManuels = ecouterArticlesManuels(setArticlesManuels, () => {})
-    return () => { stop(); stopArchives(); stopManuels() }
+    const stopSignatures = ecouterSignatures(setSignatures, () => {})
+    return () => { stop(); stopArchives(); stopManuels(); stopSignatures() }
   }, [])
 
   // Archive les articles non traités au-delà du seuil. Les traités en sont
@@ -1179,7 +1266,12 @@ export default function TableauDeBord() {
         })()}
 
         {/* Formateurs */}
-        {onglet === 'formateurs' && <GestionFormateurs />}
+        {onglet === 'formateurs' && (
+          <>
+            <GestionFormateurs />
+            <GestionSignatures signatures={signatures} onEnregistrer={enregistrerSignature} />
+          </>
+        )}
 
       </div>
 
@@ -1188,6 +1280,7 @@ export default function TableauDeBord() {
           article={modaleArticle}
           onClose={() => setModaleArticle(null)}
           onSave={handleSaveTraitement}
+          signature={signatures[cleSignature(getCurrentUser()?.email)] || ''}
         />
       )}
 

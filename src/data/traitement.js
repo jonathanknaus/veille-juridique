@@ -128,7 +128,7 @@ export function enregistrerTraitement({
 // certains clients de messagerie coupent le message sans rien dire.
 const LONGUEUR_CORPS_MAX = 1400
 
-export function lienMailDiffusion({ titre, url, source, date, message, indicateur, destinataires, via = 'gmail' }) {
+export function lienMailDiffusion({ titre, url, source, date, message, indicateur, destinataires, signature, via = 'gmail' }) {
   const ind = INDICATEURS[indicateur]
   const lignes = [
     'Bonjour,',
@@ -144,6 +144,11 @@ export function lienMailDiffusion({ titre, url, source, date, message, indicateu
 
   let corps = lignes.join('\n').replace(/\n{3,}/g, '\n\n')
   if (corps.length > LONGUEUR_CORPS_MAX) corps = `${corps.slice(0, LONGUEUR_CORPS_MAX)}…`
+
+  // La signature s'ajoute APRÈS la troncature : sinon un message long la coupait,
+  // et l'on se retrouvait avec un mail signé à moitié. Gmail ne l'ajoute pas
+  // lui-même quand le corps est pré-rempli par un lien.
+  if ((signature || '').trim()) corps += `\n\n${signature.trim()}`
 
   const objet = `[Veille] ${(titre || '').slice(0, 120)}`
   const pour = (destinataires || []).filter(Boolean).join(',')
