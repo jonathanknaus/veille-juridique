@@ -36,6 +36,30 @@ const CATEGORIES = [
   { id: 'hors', libelle: 'Hors périmètre', aide: 'Écartés par le classement, conservés et traitables : le motif est affiché' },
 ]
 
+// Copie dans le presse-papier, de façon SYNCHRONE.
+//
+// navigator.clipboard.writeText est une promesse, et Chrome la refuse dès que le
+// document perd le focus : or l'ouverture de l'onglet Gmail le lui prend dans la
+// même fraction de seconde. La copie échouait donc une fois sur deux, et le ⌘V
+// collait ce qui traînait. L'API dépréciée, elle, s'exécute pendant le geste de
+// l'utilisateur, avant que le focus ne bouge — c'est ce qui la rend fiable ici.
+function copierDansPressePapier(texte) {
+  try {
+    const zone = document.createElement('textarea')
+    zone.value = texte
+    zone.setAttribute('readonly', '')
+    zone.style.position = 'fixed'
+    zone.style.top = '-1000px'
+    document.body.appendChild(zone)
+    zone.select()
+    const copie = document.execCommand('copy')
+    document.body.removeChild(zone)
+    return copie
+  } catch {
+    return false
+  }
+}
+
 // Où ranger un article. La décision humaine passe devant le classement
 // automatique, et un article déjà traité reste proposé quoi qu'il arrive : c'est
 // une pièce de preuve, elle ne peut pas sortir de la liste parce qu'une règle a
@@ -96,6 +120,7 @@ function ModaleTraitement({ article, onClose, onSave }) {
   const [impact, setImpact] = useState(trace?.impact || '')
   const [mailPrepareLe, setMailPrepareLe] = useState(trace?.mailPrepareLe || '')
   const [copie, setCopie] = useState('')
+  const [corpsMail, setCorpsMail] = useState('')
   const formateurs = getFormateurs()
 
   // Ce qui part dans le mail, construit une seule fois pour les deux boutons.
@@ -111,11 +136,9 @@ function ModaleTraitement({ article, onClose, onSave }) {
       message: commentaire,
       indicateur,
     })
+    setCorpsMail(corps)
     setMailPrepareLe(new Date().toISOString())
-    navigator.clipboard?.writeText(corps).then(
-      () => setCopie('ok'),
-      () => setCopie('erreur'),
-    )
+    setCopie(copierDansPressePapier(corps) ? 'ok' : 'erreur')
   }
 
   function toggleDestinataire(email) {
@@ -286,9 +309,12 @@ function ModaleTraitement({ article, onClose, onSave }) {
                   {copie === 'ok'
                     ? <><strong>Message copié : fais ⌘V dans Gmail</strong>, au-dessus de ta signature. Destinataires et objet sont déjà remplis.</>
                     : copie === 'erreur'
-                      ? <>Gmail est ouvert, mais la copie a échoué — recopie ton message à la main.</>
+                      ? <>Gmail est ouvert, mais la copie a échoué. Le texte est ci-dessous, sélectionne-le et copie-le.</>
                       : <>Gmail s'ouvre avec les destinataires, l'objet et <strong>ta signature</strong>. Le texte du message est copié : un ⌘V et c'est prêt.</>}
                 </p>
+                {copie === 'erreur' && (
+                  <textarea className="modale-textarea" rows={6} readOnly value={corpsMail} onFocus={e => e.target.select()} />
+                )}
                 {mailPrepareLe && (
                   <p className="indicateur-aide">
                     Mail préparé le <strong>{new Date(mailPrepareLe).toLocaleString('fr-FR')}</strong> — pense à enregistrer la trace pour garder cette date au registre.
