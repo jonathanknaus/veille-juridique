@@ -128,7 +128,7 @@ export function enregistrerTraitement({
 // certains clients de messagerie coupent le message sans rien dire.
 const LONGUEUR_CORPS_MAX = 1400
 
-export function lienMailDiffusion({ titre, url, source, date, message, indicateur, destinataires }) {
+export function lienMailDiffusion({ titre, url, source, date, message, indicateur, destinataires, via = 'gmail' }) {
   const ind = INDICATEURS[indicateur]
   const lignes = [
     'Bonjour,',
@@ -147,7 +147,24 @@ export function lienMailDiffusion({ titre, url, source, date, message, indicateu
 
   const objet = `[Veille] ${(titre || '').slice(0, 120)}`
   const pour = (destinataires || []).filter(Boolean).join(',')
-  return `mailto:${encodeURIComponent(pour).replace(/%2C/g, ',')}`
+
+  // Deux chemins, parce qu'aucun des deux ne marche partout.
+  //
+  // 'gmail' ouvre la fenêtre de rédaction Gmail dans un onglet : ça ne dépend
+  // d'aucun réglage du poste, et c'est le cas de tout le monde chez Pennylane.
+  if (via === 'gmail') {
+    return 'https://mail.google.com/mail/?view=cm&fs=1'
+      + `&to=${encodeURIComponent(pour)}`
+      + `&su=${encodeURIComponent(objet)}`
+      + `&body=${encodeURIComponent(corps)}`
+  }
+
+  // 'client' passe par le logiciel de messagerie déclaré sur le poste.
+  //
+  // ⚠️ Les adresses ne doivent PAS être percent-encodées : avec « %40 » au lieu
+  // de « @ », Chrome ignore le lien sans un mot — le clic ne produisait rien.
+  // Seuls l'objet et le corps s'encodent.
+  return `mailto:${pour}`
     + `?subject=${encodeURIComponent(objet)}&body=${encodeURIComponent(corps)}`
 }
 

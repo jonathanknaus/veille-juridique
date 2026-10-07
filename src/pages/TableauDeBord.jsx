@@ -97,6 +97,19 @@ function ModaleTraitement({ article, onClose, onSave }) {
   const [mailPrepareLe, setMailPrepareLe] = useState(trace?.mailPrepareLe || '')
   const formateurs = getFormateurs()
 
+  // Ce qui part dans le mail, construit une seule fois pour les deux boutons.
+  function chargeMail() {
+    return {
+      titre: article.titre,
+      url: urlArticle || article.url,
+      source: source?.nom || article.source_id,
+      date: article.date,
+      message: commentaire,
+      indicateur,
+      destinataires,
+    }
+  }
+
   function toggleDestinataire(email) {
     setDestinataires(prev => prev.includes(email) ? prev.filter(e => e !== email) : [...prev, email])
   }
@@ -251,25 +264,29 @@ function ModaleTraitement({ article, onClose, onSave }) {
               <p className="indicateur-aide">Coche au moins un destinataire ci-dessus pour préparer le mail.</p>
             ) : (
               <>
-                <a
-                  className="btn-mail"
-                  href={lienMailDiffusion({
-                    titre: article.titre,
-                    url: urlArticle || article.url,
-                    source: source?.nom || article.source_id,
-                    date: article.date,
-                    message: commentaire,
-                    indicateur,
-                    destinataires,
-                  })}
-                  onClick={() => setMailPrepareLe(new Date().toISOString())}
-                >
-                  📧 Préparer le mail ({destinataires.length} destinataire{destinataires.length > 1 ? 's' : ''})
-                </a>
+                <div className="mail-actions">
+                  <a
+                    className="btn-mail"
+                    href={lienMailDiffusion({ ...chargeMail(), via: 'gmail' })}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setMailPrepareLe(new Date().toISOString())}
+                  >
+                    📧 Préparer dans Gmail ({destinataires.length})
+                  </a>
+                  <a
+                    className="btn-mail btn-mail--secondaire"
+                    href={lienMailDiffusion({ ...chargeMail(), via: 'client' })}
+                    onClick={() => setMailPrepareLe(new Date().toISOString())}
+                    title="Passe par le logiciel de messagerie déclaré sur ce poste"
+                  >
+                    Autre logiciel
+                  </a>
+                </div>
                 <p className="indicateur-aide">
                   {mailPrepareLe
                     ? <>Mail préparé le <strong>{new Date(mailPrepareLe).toLocaleString('fr-FR')}</strong> — pense à enregistrer la trace pour garder cette date au registre.</>
-                    : <>Ouvre ton client de messagerie, pré-rempli avec l'objet, le lien et ton message. Rien ne part sans toi.</>}
+                    : <>Le mail s'ouvre déjà rempli : objet, lien, ton message. Rien ne part sans toi.</>}
                 </p>
               </>
             )}
