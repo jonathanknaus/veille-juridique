@@ -101,6 +101,43 @@ const SOURCES = [
     pourIndicateur: '24',
     rss: 'https://www.experts-comptables.fr/rss.xml',
   },
+  {
+    // Demandé le 2026-10-12. La DREETS est l'autorité qui DÉTIENT notre
+    // déclaration d'activité et reçoit notre bilan pédagogique et financier.
+    // Quand elle publie sur ces sujets, c'est une preuve d'indicateur 23 de
+    // première main, et non le commentaire d'un tiers.
+    //
+    // ⚠️ TROIS PIÈGES, tous vérifiés le 2026-10-12 — ne pas les redécouvrir.
+    //
+    //  1. L'hôte porte un I de plus : en Île-de-France c'est une DRIEETS,
+    //     `idf.drieets.gouv.fr`. `idf.dreets.gouv.fr` existe bien en DNS (alias
+    //     de dreets.gouv.fr) mais son certificat ne couvre que `dreets.gouv.fr`.
+    //     L'appel échoue donc en erreur TLS — pas en 404 — et `fetchFeed()`
+    //     l'avalerait dans son catch en ne journalisant qu'un message obscur.
+    //
+    //  2. Le portail NATIONAL `dreets.gouv.fr` expose un flux, mais ses quatre
+    //     articles datent de 2011 à 2021 : c'est une plaquette institutionnelle,
+    //     pas un fil d'actualité. Source morte, à ne pas ajouter.
+    //
+    //  3. Le flux du site ENTIER (`?page=backend` sans rubrique) ramène la vie
+    //     régionale : semaine de l'intégration, diplôme de pédicurie-podologie,
+    //     protection juridique des majeurs. Mesuré sur 30 items de trois régions
+    //     (IDF, Bretagne, Occitanie) : UN SEUL passait le classement, et à tort
+    //     (un jury de VAE en Polynésie française). On s'abonne donc à la
+    //     RUBRIQUE 123, « Formation professionnelle », qui porte exactement nos
+    //     sujets : déclaration d'activité des prestataires, dépôt du BPF via
+    //     « Mon activité formation », exonération de TVA au titre de la
+    //     formation, immatriculation des CFA, fraude au CPF.
+    //
+    // Cette rubrique bouge peu — quelques publications par an. C'est attendu :
+    // ce sont des pages de référence mises à jour, pas des actualités. Un
+    // rendement faible sur cette source n'est donc pas un défaut à corriger.
+    id: 'drieets-idf',
+    nom: 'DRIEETS Île-de-France',
+    thematique: 'legislatif',
+    pourIndicateur: '23',
+    rss: 'https://idf.drieets.gouv.fr/spip.php?page=backend&id_rubrique=123',
+  },
   // ── Service-Public.fr n'expose pas de flux RSS accessible (404 sur toutes les
   //    URL candidates testées le 2026-10-05) → couverture par ajout manuel ─────
   // ── Légifrance n'expose pas de RSS public — couverture via ajout manuel ──────
@@ -265,7 +302,13 @@ async function fetchFeed(source) {
         || nettoyer(item.content)
         || ''
       const url = lienDe(item.link) || lienDe(item.id)
-      const dateRaw = item.pubDate || item.published || item.updated || ''
+      // ⚠️ `dc:date` compte autant que `pubDate`. Les sites SPIP — dont les
+      // DREETS — ne publient QUE `dc:date` : sans ce candidat, la date tombait
+      // sur le repli « aujourd'hui », et chaque passe hebdomadaire re-datait les
+      // mêmes pages du jour. Une fiche CPF de 2021 s'affichait comme une
+      // actualité du matin, et aucune ne devenait jamais archivable. Une date
+      // fausse dans un registre de preuve est pire qu'une date manquante.
+      const dateRaw = item.pubDate || item.published || item.updated || item['dc:date'] || ''
       const date = dateRaw ? new Date(dateRaw).toISOString().slice(0, 10) : new Date().toISOString().slice(0, 10)
 
       return qualifier({

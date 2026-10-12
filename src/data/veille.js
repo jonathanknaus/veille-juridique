@@ -1,3 +1,19 @@
+// ⚠️ DEUX LISTES DE SOURCES, À TENIR ALIGNÉES.
+//
+// Celle-ci sert l'INTERFACE : le nom affiché sur un article, et le panneau des
+// sources surveillées. Celle de `scripts/fetch-rss.mjs` sert la COLLECTE, et
+// porte en plus `pourIndicateur` et `scrape`. Elles ne peuvent pas fusionner
+// telles quelles : la collecte tourne dans GitHub Actions sans le bundle Vite,
+// et cette liste contient des sources couvertes à la main (Légifrance, Caisse
+// des Dépôts, Padlet) qui n'ont pas de flux.
+//
+// Ce qu'une divergence coûte : le nom de la source est résolu par
+// `SOURCES.find(s => s.id === article.source_id)`. Une source qui collecte sans
+// figurer ici affiche son identifiant brut — « ordre-experts-comptables » au
+// lieu de « Ordre des experts-comptables » — et rien dans l'en-tête de la
+// modale de traitement. C'est arrivé du 2026-10-06 au 2026-10-12 sur les
+// 10 articles de l'Ordre. Donc : toute source ajoutée à la collecte doit être
+// ajoutée ici dans le même commit.
 export const SOURCES = [
   { id: 'france-competences', nom: 'France Compétences', thematique: 'qualiopi', url: 'https://www.francecompetences.fr', fiabilite: 'officiel', rss: 'https://www.francecompetences.fr/feed/' },
   { id: 'centre-inffo',       nom: 'Centre Inffo',       thematique: 'qualiopi', url: 'https://www.centre-inffo.fr',    fiabilite: 'specialise', rss: 'https://www.centre-inffo.fr/feed' },
@@ -10,6 +26,10 @@ export const SOURCES = [
   { id: 'padlet-veille',      nom: 'Padlet Veille Formation (OPCO)', thematique: 'opco', url: 'https://padlet.com/veilleformation/les-immanquables-de-la-formation-les-opcos-faf-et-autres-org-vwc2frc8fdxp0jow', fiabilite: 'specialise', rss: null },
   { id: 'acteurs-competence', nom: 'Les Acteurs de la Compétence', thematique: 'legislatif', url: 'https://www.lesacteursdelacompetence.fr', fiabilite: 'specialise', rss: 'https://www.lesacteursdelacompetence.fr/feed/' },
   { id: 'digiformag',         nom: 'Digiformag', thematique: 'formation', url: 'https://www.digiformag.com/digiforma-veille/', fiabilite: 'specialise', rss: 'https://www.digiformag.com/feed/' },
+  { id: 'ordre-experts-comptables', nom: 'Ordre des experts-comptables', thematique: 'formation', url: 'https://www.experts-comptables.fr', fiabilite: 'officiel', rss: 'https://www.experts-comptables.fr/rss.xml' },
+  // Rubrique « Formation professionnelle » du site, et non le flux du site
+  // entier : voir le commentaire détaillé dans scripts/fetch-rss.mjs.
+  { id: 'drieets-idf',        nom: 'DRIEETS Île-de-France', thematique: 'legislatif', url: 'https://idf.drieets.gouv.fr/Formation-professionnelle-123', fiabilite: 'officiel', rss: 'https://idf.drieets.gouv.fr/spip.php?page=backend&id_rubrique=123' },
 ]
 
 export const THEMATIQUES = [
