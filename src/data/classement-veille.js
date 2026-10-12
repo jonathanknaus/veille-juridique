@@ -287,6 +287,63 @@ const REGLES = [
   },
 ]
 
+// ── Catégories décisives ─────────────────────────────────────────────────────
+//
+// Une catégorie posée par l'éditeur du flux ne marque plus seulement des points :
+// elle TRANCHE l'arbitrage (décidé le 2026-10-12).
+//
+// POURQUOI IL A FALLU ÇA. Le classement retient le score le plus haut, et le
+// vocabulaire juridique écrase tout. Mesuré le 2026-10-12 sur « Formateur
+// indépendant : l'encadrement pédagogique ne suffit pas à caractériser un
+// contrat de travail », que Centre Inffo range lui-même dans « Formateurs
+// (indépendants) » : **23 → 18 contre 24 → 10**. Il partait donc en 23, et
+// l'indicateur 24 ne contenait pas un seul article sur le métier de formateur
+// alors que les termes existaient depuis le 2026-10-07. La règle était là, elle
+// ne gagnait jamais.
+//
+// Ce n'est pas que 23 était faux — de la jurisprudence relève bien du droit.
+// C'est que 23 regorge de matière quand 24 est maigre, et qu'un registre
+// d'indicateur 24 vide est un trou de preuve en audit. Entre deux rattachements
+// défendables, on choisit celui qui manque.
+//
+// ⚠️ RÉSERVÉ AUX CATÉGORIES, jamais aux titres ni aux résumés. Une catégorie est
+// une déclaration d'intention de l'éditeur sur le sujet de son article ; un titre
+// est une accroche. C'est pour cette raison seule qu'elle peut primer sur un
+// score, et c'est la limite à ne pas franchir : étendre ce mécanisme aux mots du
+// titre reviendrait à remplacer le classement par une liste de priorités.
+//
+// Un rejet reste souverain : une catégorie décisive ne ressuscite pas un article
+// sur l'apprentissage. Et le score de l'indicateur forcé doit tout de même
+// atteindre SEUIL_RETENU — sans quoi on retiendrait un article sur la seule foi
+// d'une étiquette.
+const CATEGORIES_DECISIVES = [
+  {
+    indicateur: '24',
+    pourquoi: 'l\'éditeur range lui-même l\'article dans le métier de formateur',
+    // Sous-chaîne volontaire : Centre Inffo publie « Formateurs (indépendants) »,
+    // mais sa taxonomie bouge et « Formateurs » seul ou « Métiers de la
+    // formation » doivent compter de la même façon le jour où ils apparaissent.
+    // Le risque de collision est nul : on ne regarde QUE les catégories, et
+    // aucune de celles du corpus (34 distinctes au 2026-10-12) ne contient
+    // « formateur » par accident.
+    categories: ['formateur', 'metiers de la formation', 'metier de la formation'],
+  },
+]
+
+/** La catégorie décisive qui s'applique, ou null. */
+function categorieDecisive(article) {
+  const categories = Array.isArray(article?.categories) ? article.categories : []
+  for (const c of categories) {
+    const normalisee = normaliser(c)
+    for (const regle of CATEGORIES_DECISIVES) {
+      if (regle.categories.some(motif => normalisee.includes(normaliser(motif)))) {
+        return { ...regle, categorie: c }
+      }
+    }
+  }
+  return null
+}
+
 // ── Rejets ───────────────────────────────────────────────────────────────────
 //
 // Deux familles, distinguées à dessein : le BRUIT n'intéressera jamais personne,
@@ -444,8 +501,25 @@ export function classerArticle(article) {
   }
 
   const classe = Object.entries(scores).sort((a, b) => b[1] - a[1])
-  const [indicateur, score] = classe[0]
-  const ecart = score - classe[1][1]
+  let [indicateur, score] = classe[0]
+  let ecart = score - classe[1][1]
+
+  // L'arbitrage par catégorie, avant le contrôle de rejet : c'est bien
+  // l'indicateur retenu au final dont il faut vérifier qu'il est autosuffisant.
+  const decisive = categorieDecisive(article)
+  if (decisive && scores[decisive.indicateur] >= SEUIL_RETENU) {
+    if (indicateur !== decisive.indicateur) {
+      motifs[decisive.indicateur].push(
+        `catégorie « ${decisive.categorie} » → indicateur ${decisive.indicateur}, qui tranche`
+      )
+    }
+    indicateur = decisive.indicateur
+    score = scores[indicateur]
+    // Écart recalculé contre le meilleur des AUTRES : forcé ou pas, la confiance
+    // doit dire la vérité sur la netteté du classement.
+    ecart = score - Math.max(...Object.entries(scores)
+      .filter(([k]) => k !== indicateur).map(([, v]) => v))
+  }
 
   const sujet = texteSujet(article)
   const rejet = chercherRejet(sujet, BRUIT) || chercherRejet(sujet, HORS_OFFRE)
