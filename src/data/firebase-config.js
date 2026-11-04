@@ -24,6 +24,9 @@ export const FIREBASE_CONFIG = {
 export const ADMINS_RACINE = [
   'jonathan.knaus@pennylane.com',
   'sarah.briden@pennylane-partners.com',
+  // Même personne, nouvelle adresse au format .ext : les deux restent admises
+  // le temps de la bascule. Retirer l'ancienne ici ET dans les règles ensuite.
+  'sarah.briden.ext@pennylane.com',
 ]
 
 export const DOMAINES_AUTORISES = ['@pennylane.com', '@pennylane-partners.com']
