@@ -96,6 +96,41 @@ export async function addFormateur(prenom, nom, email) {
   return getFormateurs()
 }
 
+// Ajout en lot depuis une liste d'adresses collée.
+//
+// Ajouté le 2026-11-09 pour ouvrir la diffusion aux Training Managers : saisir
+// huit personnes champ par champ décourage, et les mettre dans DEFAUT les aurait
+// publiées dans un dépôt public. Les adresses vivent donc seulement en base.
+//
+// Prénom et nom sont déduits de l'adresse (prenom.nom@…, suffixe .ext retiré) :
+// sans accents, comme le reste de la liste.
+function depuisAdresse(adresse) {
+  const local = adresse.split('@')[0].replace(/\.ext$/, '')
+  const [prenom, ...reste] = local.split('.')
+  const majuscule = m => m.charAt(0).toUpperCase() + m.slice(1)
+  return {
+    prenom: prenom.split('-').map(majuscule).join('-'),
+    nom: reste.join(' ').toUpperCase(),
+  }
+}
+
+export async function ajouterPlusieursFormateursVeille(texte) {
+  const adresses = [...new Set(
+    String(texte || '').split(/[\s,;]+/).map(a => a.trim().toLowerCase()).filter(Boolean),
+  )]
+  const connues = new Set(getFormateurs().map(f => String(f.email || '').toLowerCase()))
+  const invalides = adresses.filter(a => !/^[^\s@]+\.[^\s@]+@[^\s@]+\.[^\s@]+$/.test(a))
+  const doublons = adresses.filter(a => connues.has(a))
+  const nouveaux = adresses
+    .filter(a => !invalides.includes(a) && !connues.has(a))
+    .map((email, i) => ({ id: `fv_${Date.now()}_${i}`, ...depuisAdresse(email), email, actif: true }))
+  if (nouveaux.length) {
+    ecrireCache([...getFormateurs(), ...nouveaux])
+    await publierFormateurs(nouveaux)
+  }
+  return { ajoutes: nouveaux.length, doublons, invalides, liste: getFormateurs() }
+}
+
 export async function updateFormateur(id, changes) {
   const liste = getFormateurs().map(f => f.id === id ? { ...f, ...changes } : f)
   ecrireCache(liste)

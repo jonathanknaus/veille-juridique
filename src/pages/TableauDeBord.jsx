@@ -6,7 +6,7 @@ import { chargerArticles, getArticlesCache, getDateDerniereFetch, getArticlesMan
 // refus d'archivage.
 import { getCurrentUser } from '../data/auth'
 import { getTraitements, getTraitement, enregistrerTraitement, DECISIONS, INDICATEURS, INDICATEURS_IDS, exportRegistreCSV, exportRegistrePDF, filtrerParIndicateur, compterParIndicateur, lienMailDiffusion, corpsMailDiffusion } from '../data/traitement'
-import { getFormateurs, addFormateur, updateFormateur, removeFormateur, ecouterFormateursVeille, publierFormateursVeille } from '../data/formateurs'
+import { getFormateurs, addFormateur, updateFormateur, removeFormateur, ecouterFormateursVeille, publierFormateursVeille, ajouterPlusieursFormateursVeille } from '../data/formateurs'
 import { RESPONSABLE } from '../data/formateurs'
 import { ecouterTraces, sauvegarderTraces, ecouterArchives, archiverArticles, desarchiverArticle } from '../data/veille-storage'
 import { annoterArticles, CONFIANCES } from '../data/classement-veille'
@@ -426,6 +426,26 @@ function ModaleAjoutArticle({ onClose, onSave }) {
 function GestionFormateurs({ formateurs, publiee, onChange }) {
   const [form, setForm] = useState({ prenom: '', nom: '', email: '' })
   const [erreur, setErreur] = useState('')
+  const [lot, setLot] = useState('')
+  const [bilanLot, setBilanLot] = useState('')
+
+  // Plusieurs adresses d'un coup, prénom et nom déduits de l'adresse. Le bilan dit
+  // ce qui n'est pas passé : une adresse ignorée en silence, c'est un destinataire
+  // qui ne recevra jamais rien.
+  async function handleLot() {
+    try {
+      const r = await ajouterPlusieursFormateursVeille(lot)
+      onChange(r.liste)
+      const morceaux = [`${r.ajoutes} ajouté(s)`]
+      if (r.doublons.length) morceaux.push(`${r.doublons.length} déjà dans la liste`)
+      if (r.invalides.length) morceaux.push(`ignorées car illisibles : ${r.invalides.join(', ')}`)
+      setBilanLot(morceaux.join(' · '))
+      if (!r.invalides.length) setLot('')
+    } catch (err) {
+      onChange(getFormateurs())
+      setBilanLot(`Refusé par le serveur : ${err?.message || err}`)
+    }
+  }
 
   // Les écritures passent par le serveur : si elle est refusée, on le dit au lieu
   // de laisser l'écran afficher une liste que personne d'autre ne verra.
@@ -519,6 +539,21 @@ function GestionFormateurs({ formateurs, publiee, onChange }) {
         </div>
         {erreur && <p className="gf-erreur">{erreur}</p>}
       </form>
+
+      <div className="gf-form">
+        <h3 className="gf-form-titre">Ajouter plusieurs personnes</h3>
+        <textarea
+          className="modale-textarea"
+          rows={4}
+          placeholder={'Colle les adresses, une par ligne ou séparées par des virgules\nprenom.nom@pennylane.com'}
+          value={lot}
+          onChange={e => { setLot(e.target.value); setBilanLot('') }}
+        />
+        <div className="gf-fields">
+          <button className="btn-ajouter" onClick={handleLot} disabled={!lot.trim()}>Ajouter ces adresses</button>
+        </div>
+        {bilanLot && <p className="indicateur-aide">{bilanLot}</p>}
+      </div>
     </div>
   )
 }
