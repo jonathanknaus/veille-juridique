@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.essai1.outputs.page_url || steps.essai2.outputs.page_url || steps.essai3.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
 
@@ -50,5 +50,31 @@ jobs:
         with:
           path: dist
 
+      # Juste après son dépôt, l'artefact peut rester invisible quelques secondes
+      # (jusqu'à ~1 min observé, très fréquent depuis le 22/11/2026) : deploy-pages
+      # échoue alors sans réessayer, et relancer le job ne sert à rien puisqu'il
+      # dépose un second artefact. D'où trois tentatives espacées.
+      # Suivi : https://github.com/actions/deploy-pages/issues/451
+      - name: Laisser l'artefact devenir visible
+        run: sleep 5
+
       - uses: actions/deploy-pages@v5
-        id: deployment
+        id: essai1
+        continue-on-error: true
+
+      - name: Attendre avant la 2e tentative
+        if: steps.essai1.outcome == 'failure'
+        run: sleep 20
+
+      - uses: actions/deploy-pages@v5
+        id: essai2
+        if: steps.essai1.outcome == 'failure'
+        continue-on-error: true
+
+      - name: Attendre avant la 3e tentative
+        if: steps.essai1.outcome == 'failure' && steps.essai2.outcome == 'failure'
+        run: sleep 60
+
+      - uses: actions/deploy-pages@v5
+        id: essai3
+        if: steps.essai1.outcome == 'failure' && steps.essai2.outcome == 'failure'
