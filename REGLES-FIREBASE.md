@@ -2,7 +2,12 @@
 
 Cet outil écrit dans la base Realtime Database du projet **`afs-pls-auth-42a28`**, qui est la même
 que celle de **Pennylane Learning Suite**. Les nœuds utilisés ici sont `veille/traitements`,
-`veille/archives` et `veille/articles-manuels`.
+`veille/archives`, `veille/articles-manuels` et `veille/formateurs` (liste de diffusion).
+
+Leurs écritures sont réservées, par adresse exacte, aux administrateurs racine des deux outils, plus
+une administratrice de la veille seule (depuis le 2026-11-27). Celle-ci figure dans `ADMINS_RACINE`
+de `src/data/firebase-config.js` mais pas dans celui de PLS : les règles ne lui ouvrent que les
+nœuds `veille/*`.
 
 **Le fichier `database.rules.json` est maintenu dans un seul dépôt :**
 

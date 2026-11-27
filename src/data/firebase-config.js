@@ -27,6 +27,12 @@ export const ADMINS_RACINE = [
   // Même personne, nouvelle adresse au format .ext : les deux restent admises
   // le temps de la bascule. Retirer l'ancienne ici ET dans les règles ensuite.
   'sarah.briden.ext@pennylane.com',
+  // Administratrice de la VEILLE seulement (2026-11-27). Elle ne figure PAS dans
+  // ADMINS_RACINE de PLS : les règles ne lui ouvrent en écriture que les nœuds
+  // veille/* (traitements, archives, articles-manuels, formateurs), et rien de
+  // PLS (accès, profils, cabinets, grilles tarifaires). Cette liste diffère donc
+  // volontairement de celle de PLS.
+  'malorie.chovin@pennylane.com',
 ]
 
 export const DOMAINES_AUTORISES = ['@pennylane.com', '@pennylane-partners.com']
