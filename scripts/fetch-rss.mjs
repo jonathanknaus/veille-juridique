@@ -31,6 +31,17 @@ const SOURCES = [
     pourIndicateur: '24', // métiers, compétences, répertoires
     scrape: 'https://www.francecompetences.fr/actualites/',
   },
+  {
+    // Demandé le 2026-11-27. Aucun flux RSS : /rss.xml, /feed et
+    // /actualites/rss répondent 404, et le `?type=9818` habituel de TYPO3 rend
+    // une erreur 500 (testé le 2026-11-27). La page d'actualités est lue par
+    // scrapeAfdas(), qui garde la catégorie posée par l'éditeur.
+    id: 'afdas',
+    nom: 'Afdas',
+    thematique: 'opco',
+    pourIndicateur: '23',
+    scrape: 'https://www.afdas.com/actualites.html',
+  },
   // ── RSS disponibles ──────────────────────────────────────────────────────────
   {
     id: 'centre-inffo',
@@ -66,6 +77,21 @@ const SOURCES = [
     thematique: 'opco',
     pourIndicateur: '23',
     rss: 'https://www.agefiph.fr/rss.xml',
+  },
+  {
+    // Demandé le 2026-11-27. L'OPCO des cabinets d'expertise comptable, donc
+    // celui de la plupart de nos commanditaires.
+    // ⚠️ Le serveur répond, mais LENTEMENT : 21 à 27 s pour le premier octet
+    // (mesuré le 2026-11-27, curl comme Node). Avec le délai commun de 10 s, la
+    // source échouait à chaque passe sur « aborted due to timeout », sans autre
+    // trace. D'où `delai`. Autre piège du même jour : curl par défaut (HTTP/2,
+    // sans en-tête Accept) n'obtient aucune réponse ; ce n'est pas une panne.
+    id: 'atlas',
+    nom: 'Opco Atlas',
+    thematique: 'opco',
+    pourIndicateur: '23',
+    rss: 'https://www.opco-atlas.fr/rss.xml',
+    delai: 45000,
   },
   {
     id: 'digiformag',
@@ -273,7 +299,8 @@ async function fetchFeed(source) {
   try {
     const res = await fetch(source.rss, {
       headers: { 'User-Agent': 'VeilleJuridique/1.0 (https://jonathanknaus.github.io/veille-juridique/)' },
-      signal: AbortSignal.timeout(10000),
+      // 10 s suffisent à toutes les sources, sauf celles qui déclarent `delai`.
+      signal: AbortSignal.timeout(source.delai || 10000),
     })
     if (!res.ok) throw new Error(`HTTP ${res.status}`)
     const xml = await texteReponse(res)
@@ -388,9 +415,75 @@ async function scrapeFranceCompetences(source) {
   }
 }
 
+const MOIS = {
+  janvier: '01', février: '02', fevrier: '02', mars: '03', avril: '04', mai: '05', juin: '06',
+  juillet: '07', août: '08', aout: '08', septembre: '09', octobre: '10', novembre: '11',
+  décembre: '12', decembre: '12',
+}
+
+// « 28 octobre 2026 » → « 2026-10-28 » ; null si la date n'est pas reconnue.
+function dateEnLettres(texte) {
+  const m = /(\d{1,2})(?:er)?\s+([a-zàâçéèêëîïôûùüÿ]+)\s+(\d{4})/i.exec(texte || '')
+  const mois = m && MOIS[m[2].toLowerCase()]
+  return mois ? `${m[3]}-${mois}-${m[1].padStart(2, '0')}` : null
+}
+
+// Page d'actualités d'Afdas (TYPO3), relevée le 2026-11-27 : une carte par article.
+//   <div class="item news-item"> … <p class="item-category">Entreprise</p>
+//   <h2 class="item-title"><a href="/actualites/….html">Titre</a></h2>
+//   <p class="item-meta">28 octobre 2026</p>
+// La catégorie est gardée telle que l'éditeur l'a posée : c'est elle, et non le
+// titre, qui peut trancher le classement (voir classement-veille.js).
+async function scrapeAfdas(source) {
+  try {
+    const res = await fetch(source.scrape, {
+      headers: { 'User-Agent': 'VeilleJuridique/1.0 (https://jonathanknaus.github.io/veille-juridique/)' },
+      signal: AbortSignal.timeout(15000),
+    })
+    if (!res.ok) throw new Error(`HTTP ${res.status}`)
+    const html = await texteReponse(res)
+    const origine = new URL(source.scrape).origin
+    const today = new Date().toISOString().slice(0, 10)
+    // nettoyer() remplace les entités par une espace : sans ce décodage,
+    // « l&#039;Emploi » deviendrait « l Emploi » dans le titre.
+    const texte = (brut) => nettoyer((brut || '').replace(/&#0?39;|&rsquo;/g, '’').replace(/&amp;/g, '&'))
+
+    return html.split('<div class="item news-item"').slice(1).map((carte) => {
+      const lien = /class="item-title"[^>]*>\s*<a[^>]+href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/.exec(carte)
+      if (!lien) return null
+      const url = new URL(lien[1], origine).href
+      const titre = texte(lien[2]).slice(0, 200)
+      const categorie = texte(/class="item-category"[^>]*>([\s\S]*?)<\/p>/.exec(carte)?.[1])
+      const date = dateEnLettres(/class="item-meta"[^>]*>([\s\S]*?)<\/p>/.exec(carte)?.[1]) || today
+      return qualifier({
+        id: slugId(source.id, url),
+        titre,
+        // Comme pour France Compétences, la page ne donne pas de résumé.
+        resume: '',
+        categories: categorie ? [categorie] : [],
+        source_id: source.id,
+        thematique: source.thematique,
+        niveau: detectNiveau(titre, ''),
+        date,
+        url,
+        lu: false,
+      })
+    }).filter(a => a && a.titre).slice(0, PAR_SOURCE)
+  } catch (err) {
+    console.error(`[${source.id}] Erreur scraping: ${err.message}`)
+    return []
+  }
+}
+
+// Un lecteur par site sans flux : chaque page d'actualités a sa propre structure.
+const LECTEURS_HTML = {
+  'france-competences': scrapeFranceCompetences,
+  afdas: scrapeAfdas,
+}
+
 async function main() {
   console.log('Récupération des articles...')
-  const results = await Promise.all(SOURCES.map(s => s.scrape ? scrapeFranceCompetences(s) : fetchFeed(s)))
+  const results = await Promise.all(SOURCES.map(s => s.scrape ? LECTEURS_HTML[s.id](s) : fetchFeed(s)))
   const nouveaux = results.flat()
   const nouveauxIds = new Set(nouveaux.map(a => a.id))
 

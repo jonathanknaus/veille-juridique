@@ -23,6 +23,9 @@ export const SOURCES = [
   { id: 'ministere-travail',  nom: 'Ministère du Travail', thematique: 'legislatif', url: 'https://travail-emploi.gouv.fr', fiabilite: 'officiel', rss: null },
   { id: 'legifrance',         nom: 'Légifrance',           thematique: 'legislatif', url: 'https://www.legifrance.gouv.fr', fiabilite: 'officiel', rss: null, api: 'https://piste.gouv.fr' },
   { id: 'agefiph',            nom: 'Agefiph',              thematique: 'opco',       url: 'https://www.agefiph.fr',          fiabilite: 'officiel', rss: null },
+  { id: 'atlas',              nom: 'Opco Atlas',           thematique: 'opco',       url: 'https://www.opco-atlas.fr',       fiabilite: 'officiel', rss: 'https://www.opco-atlas.fr/rss.xml' },
+  // Pas de flux : page d'actualités lue par scrapeAfdas() dans scripts/fetch-rss.mjs.
+  { id: 'afdas',              nom: 'Afdas',                thematique: 'opco',       url: 'https://www.afdas.com',           fiabilite: 'officiel', rss: null },
   { id: 'padlet-veille',      nom: 'Padlet Veille Formation (OPCO)', thematique: 'opco', url: 'https://padlet.com/veilleformation/les-immanquables-de-la-formation-les-opcos-faf-et-autres-org-vwc2frc8fdxp0jow', fiabilite: 'specialise', rss: null },
   { id: 'acteurs-competence', nom: 'Les Acteurs de la Compétence', thematique: 'legislatif', url: 'https://www.lesacteursdelacompetence.fr', fiabilite: 'specialise', rss: 'https://www.lesacteursdelacompetence.fr/feed/' },
   { id: 'digiformag',         nom: 'Digiformag', thematique: 'formation', url: 'https://www.digiformag.com/digiforma-veille/', fiabilite: 'specialise', rss: 'https://www.digiformag.com/feed/' },
